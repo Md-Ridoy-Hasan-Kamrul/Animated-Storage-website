@@ -6,12 +6,20 @@ import { getTemplateById } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
 import * as portfolioV1 from '../templates/landing-page/3d-portfolio/content';
+import * as promptArchive from '../templates/landing-page/prompt/content';
+import * as portfolioCosmic from '../templates/landing-page/portfolio-cosmic/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
 const CONTENT_BY_TEMPLATE_ID = {
   '3d-portfolio': portfolioV1,
+  prompt: {
+    MARQUEE_GIFS: promptArchive.GALLERY_IMAGES,
+    ABOUT_DECOR: { moon: promptArchive.GALLERY_IMAGES[0], group: promptArchive.GALLERY_IMAGES[1] },
+    PORTRAIT_URL: promptArchive.GALLERY_IMAGES[0],
+    SERVICES: [],
+  },
+  'portfolio-cosmic': portfolioCosmic,
 };
-
 const COPY_ICON_SIZE = 20;
 
 const buildSectionCards = ({ MARQUEE_GIFS, ABOUT_DECOR }) => [

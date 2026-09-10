@@ -1,0 +1,19 @@
+.bp-card {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-card {
+    will-change: auto;
+  }
+}
+
+.prompt-archive {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.prompt-hero-video {
+  background-color: #ffffff;
+  transform: translateZ(0);
+}

@@ -1,18 +1,21 @@
 import React, { memo, useEffect, useRef } from 'react';
 
-const DRAG_CLICK_THRESHOLD_PX = 6;
+/** Ignore micro-jitter; only then treat as drag (not a tab click). */
+const DRAG_CLICK_THRESHOLD_PX = 8;
 
 /**
  * Horizontal category tabs: mouse drag / wheel / touch scroll (no chevron icons).
+ * Clicks still select a tab unless the pointer actually dragged past the threshold.
  */
 const CategoryTabsScroll = memo(({ categories, active, onSelect }) => {
   const scrollerRef = useRef(null);
   const dragRef = useRef({
-    active: false,
+    tracking: false,
+    dragging: false,
     startX: 0,
     startScrollLeft: 0,
-    moved: false,
     pointerId: null,
+    suppressClick: false,
   });
 
   // Mouse wheel → horizontal scroll
@@ -39,42 +42,63 @@ const CategoryTabsScroll = memo(({ categories, active, onSelect }) => {
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
-  // Click-and-drag to scroll
+  // Click-and-drag to scroll — only after movement exceeds threshold
   useEffect(() => {
     const el = scrollerRef.current;
     if (!el) return undefined;
+
+    const resetDrag = (extra = {}) => {
+      dragRef.current = {
+        tracking: false,
+        dragging: false,
+        startX: 0,
+        startScrollLeft: 0,
+        pointerId: null,
+        suppressClick: false,
+        ...extra,
+      };
+    };
 
     const onPointerDown = (event) => {
       if (event.pointerType === 'mouse' && event.button !== 0) return;
 
       dragRef.current = {
-        active: true,
+        tracking: true,
+        dragging: false,
         startX: event.clientX,
         startScrollLeft: el.scrollLeft,
-        moved: false,
         pointerId: event.pointerId,
+        suppressClick: false,
       };
-      el.setPointerCapture?.(event.pointerId);
-      el.classList.add('is-dragging');
     };
 
     const onPointerMove = (event) => {
       const drag = dragRef.current;
-      if (!drag.active) return;
+      if (!drag.tracking) return;
 
       const deltaX = event.clientX - drag.startX;
-      if (Math.abs(deltaX) > DRAG_CLICK_THRESHOLD_PX) {
-        drag.moved = true;
+
+      if (!drag.dragging) {
+        if (Math.abs(deltaX) < DRAG_CLICK_THRESHOLD_PX) return;
+        drag.dragging = true;
+        drag.suppressClick = true;
+        el.classList.add('is-dragging');
+        try {
+          el.setPointerCapture?.(event.pointerId);
+        } catch {
+          /* ignore */
+        }
       }
 
       el.scrollLeft = drag.startScrollLeft - deltaX;
+      event.preventDefault();
     };
 
-    const endDrag = (event) => {
+    const endDrag = () => {
       const drag = dragRef.current;
-      if (!drag.active) return;
+      if (!drag.tracking) return;
 
-      if (drag.pointerId != null) {
+      if (drag.dragging && drag.pointerId != null) {
         try {
           el.releasePointerCapture?.(drag.pointerId);
         } catch {
@@ -83,26 +107,22 @@ const CategoryTabsScroll = memo(({ categories, active, onSelect }) => {
       }
 
       el.classList.remove('is-dragging');
-      dragRef.current = {
-        active: false,
-        startX: 0,
-        startScrollLeft: 0,
-        moved: drag.moved,
-        pointerId: null,
-      };
+      const suppressClick = drag.suppressClick;
+      resetDrag({ suppressClick });
     };
 
     const onClickCapture = (event) => {
-      if (!dragRef.current.moved) return;
+      if (!dragRef.current.suppressClick) return;
       event.preventDefault();
       event.stopPropagation();
-      dragRef.current.moved = false;
+      dragRef.current.suppressClick = false;
     };
 
     el.addEventListener('pointerdown', onPointerDown);
-    el.addEventListener('pointermove', onPointerMove);
+    el.addEventListener('pointermove', onPointerMove, { passive: false });
     el.addEventListener('pointerup', endDrag);
     el.addEventListener('pointercancel', endDrag);
+    el.addEventListener('lostpointercapture', endDrag);
     el.addEventListener('click', onClickCapture, true);
 
     return () => {
@@ -110,6 +130,7 @@ const CategoryTabsScroll = memo(({ categories, active, onSelect }) => {
       el.removeEventListener('pointermove', onPointerMove);
       el.removeEventListener('pointerup', endDrag);
       el.removeEventListener('pointercancel', endDrag);
+      el.removeEventListener('lostpointercapture', endDrag);
       el.removeEventListener('click', onClickCapture, true);
       el.classList.remove('is-dragging');
     };

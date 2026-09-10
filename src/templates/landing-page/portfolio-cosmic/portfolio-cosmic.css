@@ -1,0 +1,111 @@
+/* Scoped design tokens + motion for Portfolio Cosmic (isolation). */
+
+.portfolio-cosmic {
+  --bg: 0 0% 4%;
+  --surface: 0 0% 8%;
+  --text: 0 0% 96%;
+  --muted: 0 0% 53%;
+  --stroke: 0 0% 12%;
+  --accent: 0 0% 96%;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
+
+  background-color: hsl(var(--bg));
+  color: hsl(var(--text));
+  font-family: var(--font-body);
+}
+
+.portfolio-cosmic .pc-bg {
+  background-color: hsl(var(--bg));
+}
+.portfolio-cosmic .pc-surface {
+  background-color: hsl(var(--surface));
+}
+.portfolio-cosmic .pc-text {
+  color: hsl(var(--text));
+}
+.portfolio-cosmic .pc-muted {
+  color: hsl(var(--muted));
+}
+.portfolio-cosmic .pc-stroke {
+  background-color: hsl(var(--stroke));
+}
+.portfolio-cosmic .pc-border-stroke {
+  border-color: hsl(var(--stroke));
+}
+.portfolio-cosmic .pc-font-display {
+  font-family: var(--font-display);
+}
+
+.portfolio-cosmic .accent-gradient {
+  background-image: linear-gradient(90deg, #89aacc 0%, #4e85bf 100%);
+}
+
+.portfolio-cosmic .accent-gradient-border {
+  background: linear-gradient(90deg, #89aacc 0%, #4e85bf 50%, #89aacc 100%);
+  background-size: 200% 200%;
+  animation: pc-gradient-shift 6s ease infinite;
+}
+
+.portfolio-cosmic .pc-halftone {
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+@keyframes pc-scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes pc-role-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pc-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.portfolio-cosmic .animate-scroll-down {
+  animation: pc-scroll-down 1.5s ease-in-out infinite;
+}
+
+.portfolio-cosmic .animate-role-fade-in {
+  animation: pc-role-fade-in 0.4s ease-out;
+}
+
+.portfolio-cosmic .pc-progress-glow {
+  box-shadow: 0 0 8px rgba(137, 170, 204, 0.35);
+}
+
+.portfolio-cosmic .pc-logo-ring {
+  background: linear-gradient(90deg, #89aacc 0%, #4e85bf 100%);
+  transition: transform 0.35s ease;
+}
+
+.portfolio-cosmic .group:hover .pc-logo-ring,
+.portfolio-cosmic a:hover .pc-logo-ring {
+  background: linear-gradient(270deg, #89aacc 0%, #4e85bf 100%);
+}
+
+.portfolio-cosmic {
+  scroll-behavior: smooth;
+}

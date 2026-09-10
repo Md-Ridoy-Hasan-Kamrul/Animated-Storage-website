@@ -25,6 +25,12 @@ const TemplateDetail = lazy(() => import('../pages/TemplateDetail'));
 const ThreeDPortfolioLive = lazy(
   () => import('../templates/landing-page/3d-portfolio/LivePage'),
 );
+const PromptArchiveLive = lazy(
+  () => import('../templates/landing-page/prompt/LivePage'),
+);
+const PortfolioCosmicLive = lazy(
+  () => import('../templates/landing-page/portfolio-cosmic/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -85,6 +91,24 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ThreeDPortfolioLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PROMPT_ARCHIVE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <PromptArchiveLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PORTFOLIO_COSMIC}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <PortfolioCosmicLive />
           </Suspense>
         }
       />
