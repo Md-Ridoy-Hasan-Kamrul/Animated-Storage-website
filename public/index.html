@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src <%= htmlWebpackPlugin.options.cspScriptSrc %>; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' <%= htmlWebpackPlugin.options.apiBase %> <%= htmlWebpackPlugin.options.wsBase %>; img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com https://motionsites.ai https://shrug-person-78902957.figma.site https://images.higgs.ai https://d8j0ntlcm91z4.cloudfront.net; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self'; form-action 'self'; base-uri 'self';"
+    />
+    <title>Kmotion</title>
+    <!-- Prevent dark-mode flash before React mounts (external file keeps CSP strict) -->
+    <script src="/theme-init.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/kmotionbrower1.png?v=2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/kmotionbrower1.png?v=2" />
+    <link rel="apple-touch-icon" href="/images/kmotionbrower1.png?v=2" />
+    <link rel="shortcut icon" type="image/png" href="/images/kmotionbrower1.png?v=2" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

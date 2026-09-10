@@ -1,0 +1,44 @@
+/**
+ * Tab labels (filter bar) — keep order stable.
+ * Folder map: each label (except All) → src/templates/<slug>/
+ */
+export const CATEGORIES = [
+  'All',
+  'Landing Page',
+  'Apps',
+  'Sections',
+  'Hero',
+  'SaaS',
+  'Agency',
+  'AI',
+  'Portfolio',
+  'Technology',
+  'Travel',
+  'Wellness',
+  '3d Website',
+  'Fintech',
+  'Creative',
+  'Ecommerce',
+  'Carousel',
+];
+
+export const CATEGORY_SLUGS = {
+  'Landing Page': 'landing-page',
+  Apps: 'apps',
+  Sections: 'sections',
+  Hero: 'hero',
+  SaaS: 'saas',
+  Agency: 'agency',
+  AI: 'ai',
+  Portfolio: 'portfolio',
+  Technology: 'technology',
+  Travel: 'travel',
+  Wellness: 'wellness',
+  '3d Website': '3d-website',
+  Fintech: 'fintech',
+  Creative: 'creative',
+  Ecommerce: 'ecommerce',
+  Carousel: 'carousel',
+};
+
+export const categoryToSlug = (category) => CATEGORY_SLUGS[category] || null;
