@@ -24,7 +24,7 @@ When writing or editing React code in this project, follow this document **A–Z
 8. **Errors** — try/catch for async; ErrorBoundary for critical UI; user-facing failure feedback.
 9. **Standards** — match ESLint/Prettier; reuse config/ROUTES/shared patterns already in the repo.
 10. **Strict Mode** — keep root `<StrictMode>` in `src/index.jsx`; fix double-render/effect bugs it reveals.
-11. **No duplicate template prompts** — before adding a new `src/templates/...` live page, compare the new copy-prompt to existing `prompt.js` files. If the same prompt body already exists under another title (e.g. 3D Portfolio vs 3D Portfolio 2.0), **stop** — do not build a second copy. Tell the user it already exists and reuse or change the prompt.
+11. **No duplicate template prompts (one prompt → one card)** — if a prompt already lives in e.g. `src/templates/landing-page/3d-portfolio/prompt.js` and powered one card, pasting that same prompt again must **stop** the agent. No second card/animation from the same prompt body.
 
 ### Prefer
 

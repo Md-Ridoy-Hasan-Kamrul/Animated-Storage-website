@@ -14,6 +14,7 @@ import {
 } from '../../data/templates';
 import TemplateCard from './TemplateCard';
 import ComingSoonTube from '../ComingSoonTube';
+import CategoryTabsScroll from './CategoryTabsScroll';
 
 const SORT_OPTIONS = ['Featured', 'Popular', 'Recent'];
 const PRICING_OPTIONS = ['Free'];
@@ -113,25 +114,11 @@ const FilterBar = memo(({
         paddingRight: 'var(--kmotion-content-px, 16px)',
       }}
     >
-      <div className="scrollbar-hide flex min-w-0 flex-1 items-center gap-2 overflow-x-auto pb-0.5">
-        {CATEGORIES.map((cat) => {
-          const isActive = active === cat;
-          return (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => onSelect(cat)}
-              className={
-                isActive
-                  ? 'shrink-0 rounded-full bg-white px-3.5 py-1.5 text-[12px] font-semibold text-black'
-                  : 'shrink-0 rounded-full px-3.5 py-1.5 text-[12px] font-medium text-zinc-400 transition-colors hover:bg-white/[0.06] hover:text-white'
-              }
-            >
-              {cat}
-            </button>
-          );
-        })}
-      </div>
+      <CategoryTabsScroll
+        categories={CATEGORIES}
+        active={active}
+        onSelect={onSelect}
+      />
 
       <div className="hidden shrink-0 items-center gap-3 md:flex">
         <button

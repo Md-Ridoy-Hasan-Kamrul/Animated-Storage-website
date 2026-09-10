@@ -6,12 +6,10 @@ import { getTemplateById } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
 import * as portfolioV1 from '../templates/landing-page/3d-portfolio/content';
-import * as portfolioV2 from '../templates/landing-page/3d-portfolio-2/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
 const CONTENT_BY_TEMPLATE_ID = {
   '3d-portfolio': portfolioV1,
-  '3d-portfolio-2': portfolioV2,
 };
 
 const COPY_ICON_SIZE = 20;

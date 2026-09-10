@@ -70,6 +70,29 @@ body {
   display: none;
 }
 
+/* Category filter row — drag / wheel / touch horizontal scroll */
+.category-tabs-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.category-tabs-scroll::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+
+.category-tabs-scroll.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.category-tabs-scroll.is-dragging button {
+  pointer-events: none;
+}
+
 /* Gallery card embed: continuous human-like preview scroll */
 html.jack-embed,
 html.jack-embed body {
