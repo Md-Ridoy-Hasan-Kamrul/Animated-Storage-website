@@ -1,0 +1,31 @@
+---
+description: Block creating a second template when the copy-prompt text already exists
+alwaysApply: true
+---
+
+# No duplicate template prompts
+
+Before creating **any** new gallery template / live page under `src/templates/`:
+
+1. Read every existing `**/prompt.js` (and `meta.fullPrompt` in the registry).
+2. Compare the **new prompt text** to existing ones (trim only; do **not** “normalize” meaning — if the body is the same design prompt, it counts as a duplicate).
+3. If a match (or near-identical copy with only title/version wording changed, e.g. “3D Portfolio” vs “3D Portfolio 2.0” with the **same** Build/GLOBAL STYLES body) already exists:
+
+**STOP. Do not implement.**
+
+Reply with a short block message, for example:
+
+> **Blocked — duplicate prompt.**  
+> This prompt already ships as **`<existing title>`** (`id: <id>`, path: `src/templates/<category>/<id>/`).  
+> Same design prompt must not be built twice. Reuse that template, or change the prompt/content first.
+
+## Allowed
+
+- New tab/category with a **different** prompt
+- Fixes/refactors of the **existing** template that owns that prompt
+- Explicit user override: only if they say they want a deliberate fork **and** acknowledge the duplicate
+
+## Not allowed
+
+- Creating `3D Portfolio 2.0` (or any rename) that copies an existing `prompt.js` body
+- “Slightly different folder name” with the same prompt string

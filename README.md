@@ -273,6 +273,7 @@ REACT_APP_DEFAULT_LOCALE=en
 - **No validation errors shown as toasts** — show inline form errors; reserve toasts for system events
 - **No placeholder logic** — every function must be fully implemented
 - **No duplicate logic** — extract shared logic into hooks or utils
+- **No duplicate template prompts** — before building a new template under `src/templates/`, compare the proposed copy-prompt to every existing `prompt.js` / `meta.fullPrompt`. If the same design prompt already exists (e.g. “3D Portfolio” and “3D Portfolio 2.0” with the same body), **stop and refuse** — reuse the existing template or change the prompt first. Do not ship two live pages for one prompt.
 - **No magic numbers** — all constants must be named and extracted
 - **No inline styles** — use Tailwind utility classes exclusively
 - **No TypeScript migration without discussion** — stay in JavaScript until agreed
