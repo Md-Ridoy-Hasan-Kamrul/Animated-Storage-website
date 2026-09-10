@@ -1,5 +1,5 @@
 import React from 'react';
-import { scrollToSection } from './scrollToSection';
+import { scrollToSection } from '../utils/scrollToSection';
 
 export const ContactButton = ({ className = '', label = 'Contact Me', onClick }) => (
   <button

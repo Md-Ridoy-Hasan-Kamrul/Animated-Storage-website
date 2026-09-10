@@ -25,6 +25,9 @@ const TemplateDetail = lazy(() => import('../pages/TemplateDetail'));
 const ThreeDPortfolioLive = lazy(
   () => import('../templates/landing-page/3d-portfolio/LivePage'),
 );
+const ThreeDPortfolio2Live = lazy(
+  () => import('../templates/landing-page/3d-portfolio-2/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -85,6 +88,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ThreeDPortfolioLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PORTFOLIO_3D_V2}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ThreeDPortfolio2Live />
           </Suspense>
         }
       />

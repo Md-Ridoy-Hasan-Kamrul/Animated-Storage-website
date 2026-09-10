@@ -1,4 +1,4 @@
-# Production-Grade React Application
+# Production-Grade Animation Application
 
 > **For every developer and AI assistant working on this project:** Read this file completely before writing, reviewing, or modifying any code. All rules below are non-negotiable engineering standards.
 

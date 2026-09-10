@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import HeroSection from './components/HeroSection';
@@ -8,26 +8,19 @@ import ServicesSection from './components/ServicesSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import { useHumanAutoScroll } from '../../../hooks/useHumanAutoScroll';
+import { usePortfolioChrome } from './hooks/usePortfolioChrome';
+import { useEmbedMode } from './hooks/useEmbedMode';
+import { PAGE_BG, DETAIL_FALLBACK } from './constants';
 
-const PAGE_BG = '#0C0C0C';
-const DETAIL_FALLBACK = '/templates/3d-portfolio';
-
+/**
+ * Live 3D Portfolio 2.0 page — orchestration only.
+ */
 const LivePage = () => {
   const navigate = useNavigate();
-  const [isStandalone, setIsStandalone] = useState(false);
-  const [isEmbed, setIsEmbed] = useState(
-    () =>
-      typeof window !== 'undefined' &&
-      new URLSearchParams(window.location.search).get('embed') === '1',
-  );
+  const { isEmbed, isStandalone } = useEmbedMode();
 
+  usePortfolioChrome();
   useHumanAutoScroll();
-
-  useEffect(() => {
-    const embed = new URLSearchParams(window.location.search).get('embed') === '1';
-    setIsEmbed(embed);
-    setIsStandalone(window.self === window.top && !embed);
-  }, []);
 
   const handleBack = useCallback(() => {
     const idx = window.history.state?.idx;
@@ -38,42 +31,10 @@ const LivePage = () => {
     navigate(DETAIL_FALLBACK);
   }, [navigate]);
 
-  useEffect(() => {
-    const prev = {
-      title: document.title,
-      htmlBg: document.documentElement.style.backgroundColor,
-      bodyBg: document.body.style.backgroundColor,
-      bodyFont: document.body.style.fontFamily,
-      bodyMargin: document.body.style.margin,
-      bodyPadding: document.body.style.padding,
-    };
-
-    document.title = 'Kamrul -- 3D Creator';
-    document.documentElement.style.backgroundColor = PAGE_BG;
-    document.body.style.backgroundColor = PAGE_BG;
-    document.body.style.fontFamily = "'Kanit', sans-serif";
-    document.body.style.margin = '0';
-    document.body.style.padding = '0';
-
-    const root = document.getElementById('root');
-    const prevRootBg = root?.style.backgroundColor;
-    if (root) root.style.backgroundColor = PAGE_BG;
-
-    return () => {
-      document.title = prev.title || 'Kmotion';
-      document.documentElement.style.backgroundColor = prev.htmlBg;
-      document.body.style.backgroundColor = prev.bodyBg;
-      document.body.style.fontFamily = prev.bodyFont;
-      document.body.style.margin = prev.bodyMargin;
-      document.body.style.padding = prev.bodyPadding;
-      if (root) root.style.backgroundColor = prevRootBg || '';
-    };
-  }, []);
-
   return (
     <div
       className="jack-portfolio min-h-screen bg-[#0C0C0C] font-[Kanit,sans-serif] text-[#D7E2EA]"
-      style={{ backgroundColor: PAGE_BG }}
+      style={{ backgroundColor: PAGE_BG, overflowX: 'clip' }}
     >
       {isStandalone ? (
         <button

@@ -2,15 +2,17 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LiveProjectButton } from './Buttons';
 import { PROJECTS } from '../content';
-
-const STACK_OFFSET_PX = 28;
+import { PROJECT_IMAGE_HEIGHTS } from '../constants';
+import {
+  getProjectTargetScale,
+  getProjectStackMargin,
+} from '../utils/projectStack';
 
 /**
- * True sticky stack: each full-viewport layer pins at top:0.
- * Next card slides over the previous one; previous card stays fixed underneath.
+ * Sticky stack layer: pins at top:0 / 100dvh; next card slides over previous.
  */
 const ProjectCard = ({ project, index, total, progress }) => {
-  const targetScale = 1 - (total - 1 - index) * 0.05;
+  const targetScale = getProjectTargetScale(index, total);
   const start = index * (1 / total);
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
@@ -22,7 +24,7 @@ const ProjectCard = ({ project, index, total, progress }) => {
       <motion.article
         style={{
           scale,
-          marginTop: index * STACK_OFFSET_PX,
+          marginTop: getProjectStackMargin(index),
           transformOrigin: 'top center',
         }}
         className="flex w-full max-w-6xl flex-col rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 shadow-[0_-8px_40px_rgba(0,0,0,0.45)] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
@@ -53,14 +55,14 @@ const ProjectCard = ({ project, index, total, progress }) => {
               src={project.images[0]}
               alt=""
               className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(120px, 15vw, 220px)' }}
+              style={{ height: PROJECT_IMAGE_HEIGHTS.leftTop }}
               loading="lazy"
             />
             <img
               src={project.images[1]}
               alt=""
               className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(140px, 20vw, 300px)' }}
+              style={{ height: PROJECT_IMAGE_HEIGHTS.leftBottom }}
               loading="lazy"
             />
           </div>
@@ -110,7 +112,6 @@ const ProjectsSection = () => {
         ))}
       </div>
 
-      {/* Extra scroll room so the last card can finish stacking */}
       <div className="h-[20vh]" aria-hidden />
     </section>
   );

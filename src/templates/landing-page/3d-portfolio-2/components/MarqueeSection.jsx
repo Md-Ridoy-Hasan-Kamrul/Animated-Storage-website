@@ -1,5 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MARQUEE_GIFS } from '../content';
+import {
+  MARQUEE_BASE_OFFSET,
+  MARQUEE_SCROLL_FACTOR,
+  MARQUEE_TILE,
+} from '../constants';
+
+const triple = (items) => [...items, ...items, ...items];
+
+const MarqueeRow = ({ images, transform }) => (
+  <div className="flex gap-3" style={{ transform, willChange: 'transform' }}>
+    {images.map((src, i) => (
+      <img
+        // eslint-disable-next-line react/no-array-index-key
+        key={`${src}-${i}`}
+        src={src}
+        alt=""
+        loading="lazy"
+        className="shrink-0 rounded-2xl object-cover"
+        style={{ width: MARQUEE_TILE.width, height: MARQUEE_TILE.height }}
+      />
+    ))}
+  </div>
+);
 
 const MarqueeSection = () => {
   const sectionRef = useRef(null);
@@ -10,8 +33,7 @@ const MarqueeSection = () => {
       const section = sectionRef.current;
       if (!section) return;
       const top = section.offsetTop;
-      const next = (window.scrollY - top + window.innerHeight) * 0.3;
-      setOffset(next);
+      setOffset((window.scrollY - top + window.innerHeight) * MARQUEE_SCROLL_FACTOR);
     };
 
     onScroll();
@@ -19,8 +41,8 @@ const MarqueeSection = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const row1 = [...MARQUEE_GIFS.slice(0, 11), ...MARQUEE_GIFS.slice(0, 11), ...MARQUEE_GIFS.slice(0, 11)];
-  const row2 = [...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11)];
+  const row1 = triple(MARQUEE_GIFS.slice(0, 11));
+  const row2 = triple(MARQUEE_GIFS.slice(11));
 
   return (
     <section
@@ -28,40 +50,14 @@ const MarqueeSection = () => {
       className="overflow-hidden bg-[#0C0C0C] pb-10 pt-24 sm:pt-32 md:pt-40"
     >
       <div className="flex flex-col gap-3">
-        <div
-          className="flex gap-3"
-          style={{
-            transform: `translateX(${offset - 200}px)`,
-            willChange: 'transform',
-          }}
-        >
-          {row1.map((src, i) => (
-            <img
-              key={`r1-${i}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="h-[270px] w-[420px] shrink-0 rounded-2xl object-cover"
-            />
-          ))}
-        </div>
-        <div
-          className="flex gap-3"
-          style={{
-            transform: `translateX(${-(offset - 200)}px)`,
-            willChange: 'transform',
-          }}
-        >
-          {row2.map((src, i) => (
-            <img
-              key={`r2-${i}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="h-[270px] w-[420px] shrink-0 rounded-2xl object-cover"
-            />
-          ))}
-        </div>
+        <MarqueeRow
+          images={row1}
+          transform={`translateX(${offset - MARQUEE_BASE_OFFSET}px)`}
+        />
+        <MarqueeRow
+          images={row2}
+          transform={`translateX(${-(offset - MARQUEE_BASE_OFFSET)}px)`}
+        />
       </div>
     </section>
   );

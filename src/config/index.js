@@ -11,6 +11,7 @@ export const ROUTES = {
   LOGIN: '/login',
   TEMPLATE_DETAIL: '/templates/:id',
   JACK_PORTFOLIO: '/p/3d-portfolio',
+  PORTFOLIO_3D_V2: '/p/3d-portfolio-2',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

@@ -5,16 +5,18 @@ import toast from 'react-hot-toast';
 import { getTemplateById } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
-import {
-  MARQUEE_GIFS,
-  ABOUT_DECOR,
-  PORTRAIT_URL,
-  SERVICES,
-} from '../templates/landing-page/3d-portfolio/content';
+import * as portfolioV1 from '../templates/landing-page/3d-portfolio/content';
+import * as portfolioV2 from '../templates/landing-page/3d-portfolio-2/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
+const CONTENT_BY_TEMPLATE_ID = {
+  '3d-portfolio': portfolioV1,
+  '3d-portfolio-2': portfolioV2,
+};
+
 const COPY_ICON_SIZE = 20;
-const SECTION_CARDS = [
+
+const buildSectionCards = ({ MARQUEE_GIFS, ABOUT_DECOR }) => [
   {
     id: 'personal',
     title: 'Project Card',
@@ -58,6 +60,9 @@ const TemplateDetail = memo(() => {
   const { id } = useParams();
   const navigate = useNavigate();
   const template = useMemo(() => getTemplateById(id), [id]);
+  const content = CONTENT_BY_TEMPLATE_ID[id] || portfolioV1;
+  const sectionCards = useMemo(() => buildSectionCards(content), [content]);
+  const { PORTRAIT_URL, SERVICES } = content;
 
   useSEO({
     title: template ? `${template.title} — Free Prompt` : 'Template',
@@ -150,7 +155,7 @@ const TemplateDetail = memo(() => {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SECTION_CARDS.map((card) => (
+          {sectionCards.map((card) => (
             <Link
               key={card.id}
               to={template.livePath}

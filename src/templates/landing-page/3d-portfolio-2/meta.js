@@ -1,20 +1,20 @@
+import { ROUTES } from '../../../config';
 import { JACK_3D_PROMPT } from './prompt';
 import { PORTRAIT_URL, MARQUEE_GIFS } from './content';
-import { ROUTES } from '../../../config';
 
-/** Gallery + route metadata for Landing Page → 3D Portfolio */
+/** Gallery + route metadata for Landing Page → 3D Portfolio 2.0 */
 export const meta = {
-  id: '3d-portfolio',
-  title: '3D Portfolio',
+  id: '3d-portfolio-2',
+  title: '3D Portfolio 2.0',
   category: 'Landing Page',
   categorySlug: 'landing-page',
   pricing: 'Free',
-  likes: 1815,
+  likes: 0,
   height: 'h-[272px]',
-  livePath: ROUTES.JACK_PORTFOLIO,
-  detailPath: '/templates/3d-portfolio',
+  livePath: ROUTES.PORTFOLIO_3D_V2,
+  detailPath: '/templates/3d-portfolio-2',
   fullPrompt: JACK_3D_PROMPT,
-  description: 'Animated 3D creator portfolio for Kamrul with Framer Motion.',
+  description: 'Kamrul 3D creator portfolio (2.0) — Framer Motion sticky stack.',
   previewImage: PORTRAIT_URL,
   previewGif: MARQUEE_GIFS[12],
 };

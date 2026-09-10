@@ -4,7 +4,8 @@ import Magnet from './Magnet';
 import FitWidthHeading from './FitWidthHeading';
 import { ContactButton } from './Buttons';
 import { PORTRAIT_URL } from '../content';
-import { scrollToSection } from './scrollToSection';
+import { scrollToSection } from '../utils/scrollToSection';
+import { MAGNET_DEFAULTS } from '../constants';
 
 const NAV = [
   { label: 'About', id: 'about' },
@@ -71,10 +72,10 @@ const HeroSection = ({ reserveBackSpace = false, compact = false }) => (
       }
     >
       <Magnet
-        padding={compact ? 0 : 150}
-        strength={compact ? 0 : 3}
-        activeTransition="transform 0.3s ease-out"
-        inactiveTransition="transform 0.6s ease-in-out"
+        padding={compact ? 0 : MAGNET_DEFAULTS.padding}
+        strength={compact ? 0 : MAGNET_DEFAULTS.strength}
+        activeTransition={MAGNET_DEFAULTS.activeTransition}
+        inactiveTransition={MAGNET_DEFAULTS.inactiveTransition}
         className="pointer-events-auto"
       >
         <img

@@ -1,5 +1,6 @@
 import { CATEGORIES, categoryToSlug } from './categories';
 import { meta as threeDPortfolio } from './landing-page/3d-portfolio/meta';
+import { meta as threeDPortfolio2 } from './landing-page/3d-portfolio-2/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -10,7 +11,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = ['All', 'Landing Page'];
  * Registry of all live templates.
  * Add new templates under src/templates/<category-slug>/<template-id>/ then import meta here.
  */
-export const TEMPLATES = [threeDPortfolio];
+export const TEMPLATES = [threeDPortfolio, threeDPortfolio2];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;
 
