@@ -17,3 +17,7 @@
   background-color: #ffffff;
   transform: translateZ(0);
 }
+
+.prompt-hero-stage {
+  transform-origin: center center;
+}

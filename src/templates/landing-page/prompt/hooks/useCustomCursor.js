@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { BREAKPOINT_DESKTOP } from '../constants';
-import { prefersMouseScrub } from '../utils/videoScrub';
 
-/** Desktop custom cursor via direct DOM left/top updates. */
+/** Desktop custom cursor — DOM left/top follow (prompt 1A). */
 export function useCustomCursor(enabled) {
   const cursorRef = useRef(null);
 
@@ -12,7 +11,7 @@ export function useCustomCursor(enabled) {
     const onMove = (event) => {
       const node = cursorRef.current;
       if (!node) return;
-      if (!prefersMouseScrub() || window.innerWidth < BREAKPOINT_DESKTOP) {
+      if (window.innerWidth < BREAKPOINT_DESKTOP) {
         node.style.opacity = '0';
         return;
       }

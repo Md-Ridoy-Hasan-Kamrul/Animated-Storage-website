@@ -24,10 +24,18 @@ const LivePage = () => {
   const { isEmbed, isStandalone } = useEmbedMode();
 
   usePromptFont();
-  useHumanAutoScroll();
+  useHumanAutoScroll({ startDelayMs: isEmbed ? 4500 : 700 });
 
-  const cursorRef = useCustomCursor(isStandalone && !isEmbed);
-  const { leftRef, rightRef, ready, VIDEO_LEFT, VIDEO_RIGHT } = useVideoStage();
+  const cursorRef = useCustomCursor(!isEmbed);
+  const {
+    leftRef,
+    rightRef,
+    stageRef,
+    ready,
+    activeSide,
+    srcLeft,
+    srcRight,
+  } = useVideoStage({ isEmbed });
   const {
     layout,
     wrapRef,
@@ -54,7 +62,7 @@ const LivePage = () => {
     <div
       id="scroll-spacer"
       ref={spacerRef}
-      className={`prompt-archive relative bg-white ${isStandalone ? 'cursor-none' : ''}`}
+      className={`prompt-archive relative bg-white ${!isEmbed ? 'cursor-none max-lg:cursor-auto' : ''}`}
       style={{
         backgroundColor: PAGE_BG_WHITE,
         userSelect: 'none',
@@ -73,13 +81,15 @@ const LivePage = () => {
         </button>
       ) : null}
 
-      <CustomCursor cursorRef={cursorRef} hidden={isEmbed || !isStandalone} />
+      <CustomCursor cursorRef={cursorRef} hidden={isEmbed} />
       <VideoStage
+        stageRef={stageRef}
         leftRef={leftRef}
         rightRef={rightRef}
-        leftSrc={VIDEO_LEFT}
-        rightSrc={VIDEO_RIGHT}
+        leftSrc={srcLeft}
+        rightSrc={srcRight}
         ready={ready}
+        activeSide={activeSide}
       />
       <HeroChrome infoRef={infoRef} buyRef={buyRef} symbolRef={symbolRef} />
       <BlackPanel

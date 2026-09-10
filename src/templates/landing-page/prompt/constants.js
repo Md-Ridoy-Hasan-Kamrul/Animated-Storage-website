@@ -3,7 +3,7 @@
 export const BREAKPOINT_TABLET = 640;
 export const BREAKPOINT_DESKTOP = 1024;
 
-/** Caption / design: ±50px from center (half-width of the dead zone). */
+/** Caption / design: ±50px band is approximate; code uses Math.max(30, width*0.05). */
 export const DEAD_ZONE_HALF_PX = 50;
 /** Fallback floor for very narrow viewports (SECTION 1G). */
 export const DEAD_ZONE_MIN_PX = 30;
@@ -25,4 +25,10 @@ export const OUTRO_OFFSET_DESKTOP = 166;
 export const OUTRO_OFFSET_MOBILE = 132;
 
 /** Hero video failsafe — show stage even if one stream is slow */
-export const VIDEO_READY_FAILSAFE_MS = 2000;
+export const VIDEO_READY_FAILSAFE_MS = 2500;
+
+/** Mouse parallax travel for hero stage (px at screen edge) */
+export const HERO_PARALLAX_X_PX = 56;
+export const HERO_PARALLAX_Y_PX = 40;
+export const HERO_PARALLAX_LERP = 0.14;
+export const HERO_STAGE_SCALE = 1.14;

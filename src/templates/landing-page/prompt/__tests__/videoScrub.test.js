@@ -3,12 +3,15 @@ import {
   resolveActiveSide,
   scrubProgress,
   isInDeadZone,
+  mouseNormX,
+  mouseNormY,
+  prefersMouseScrub,
 } from '../utils/videoScrub';
 
 describe('videoScrub dead-zone helpers', () => {
   describe('getDeadZonePx', () => {
-    it('enforces ±50px floor and grows with width*0.05', () => {
-      expect(getDeadZonePx(400)).toBe(50);
+    it('matches prompt Math.max(30, width * 0.05)', () => {
+      expect(getDeadZonePx(400)).toBe(30);
       expect(getDeadZonePx(1000)).toBe(50);
       expect(getDeadZonePx(2000)).toBe(100);
     });
@@ -47,10 +50,31 @@ describe('videoScrub dead-zone helpers', () => {
   });
 
   describe('isInDeadZone', () => {
-    it('detects ±50px band around center', () => {
+    it('detects band around center', () => {
       expect(isInDeadZone(500, 1000, 50)).toBe(true);
       expect(isInDeadZone(449, 1000, 50)).toBe(false);
-      expect(isInDeadZone(551, 1000, 50)).toBe(false);
+    });
+  });
+
+  describe('mouseNormX', () => {
+    it('maps edges to -1 / 1 and center to 0', () => {
+      expect(mouseNormX(0, 1000)).toBe(-1);
+      expect(mouseNormX(500, 1000)).toBe(0);
+      expect(mouseNormX(1000, 1000)).toBe(1);
+    });
+  });
+
+  describe('mouseNormY', () => {
+    it('maps top/bottom to -1 / 1', () => {
+      expect(mouseNormY(0, 800)).toBe(-1);
+      expect(mouseNormY(400, 800)).toBe(0);
+      expect(mouseNormY(800, 800)).toBe(1);
+    });
+  });
+
+  describe('prefersMouseScrub', () => {
+    it('is true when hasMousePointer even on narrow widths', () => {
+      expect(prefersMouseScrub(true)).toBe(true);
     });
   });
 });

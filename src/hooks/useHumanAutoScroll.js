@@ -4,8 +4,10 @@ import { useEffect } from 'react';
  * Embed preview auto-scroll that mimics human wheel scrolling:
  * continuous small steps, slight speed jitter, brief reading pauses.
  * Does NOT jump section-to-section.
+ *
+ * @param {{ startDelayMs?: number }} [options]
  */
-export function useHumanAutoScroll() {
+export function useHumanAutoScroll({ startDelayMs = 700 } = {}) {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('embed') !== '1') return undefined;
@@ -55,7 +57,6 @@ export function useHumanAutoScroll() {
       }
 
       if (now >= nextJitterAt) {
-        // Faster human-like wheel (~250–420 px/s at 60fps)
         speed = 3.8 + Math.random() * 3.2;
         nextJitterAt = now + 250 + Math.random() * 500;
       }
@@ -93,7 +94,7 @@ export function useHumanAutoScroll() {
       rafId = requestAnimationFrame(tick);
     };
 
-    pauseUntil = performance.now() + 700;
+    pauseUntil = performance.now() + startDelayMs;
     rafId = requestAnimationFrame(tick);
 
     return () => {
@@ -102,5 +103,5 @@ export function useHumanAutoScroll() {
       document.documentElement.classList.remove('jack-embed');
       window.scrollTo(0, 0);
     };
-  }, []);
+  }, [startDelayMs]);
 }

@@ -133,6 +133,7 @@ Build a full-screen, scroll-driven fashion/archive landing page for a brand call
 - \`activeSideRef\` tracks which side was last active, only changes when cursor exceeds dead zone
 - Progress calculation: \`(distance from dead zone edge) / (available range)\` mapped to \`0...video.duration\`
 CRITICAL: Only update currentTime when !video.seeking -- this prevents jittery playback by waiting for the browser to finish rendering the previous seek before requesting a new one.
+
 #### 1H. Video Interaction Logic
 
 **Mobile/Tablet (touch):**

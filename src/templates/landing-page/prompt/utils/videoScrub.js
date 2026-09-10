@@ -1,26 +1,14 @@
 import {
-  DEAD_ZONE_HALF_PX,
   DEAD_ZONE_MIN_PX,
   DEAD_ZONE_WIDTH_RATIO,
   BREAKPOINT_DESKTOP,
 } from '../constants';
 
-/**
- * Dead-zone half-width (± from center).
- * Design caption uses ±50px; SECTION 1G uses max(30, width*0.05).
- * Prefer 50px when the ratio would be smaller; never below the floor.
- */
+/** Prompt SECTION 1G: Math.max(30, width * 0.05) */
 export function getDeadZonePx(width) {
-  const fromRatio = width * DEAD_ZONE_WIDTH_RATIO;
-  return Math.max(DEAD_ZONE_MIN_PX, DEAD_ZONE_HALF_PX, fromRatio);
+  return Math.max(DEAD_ZONE_MIN_PX, width * DEAD_ZONE_WIDTH_RATIO);
 }
 
-/**
- * @param {number} clientX
- * @param {number} width
- * @param {number} deadZone
- * @param {'left'|'right'} previousSide
- */
 export function resolveActiveSide(clientX, width, deadZone, previousSide) {
   const center = width / 2;
   const leftEdge = center - deadZone;
@@ -33,9 +21,6 @@ export function resolveActiveSide(clientX, width, deadZone, previousSide) {
   return 'left';
 }
 
-/**
- * Scrub progress 0..1 for the active side.
- */
 export function scrubProgress(clientX, width, deadZone, activeSide) {
   const center = width / 2;
   const leftEdge = center - deadZone;
@@ -57,6 +42,17 @@ export function isInDeadZone(clientX, width, deadZone) {
   return clientX >= center - deadZone && clientX <= center + deadZone;
 }
 
+export function mouseNormX(clientX, width) {
+  if (width <= 0) return 0;
+  return Math.max(-1, Math.min(1, (clientX / width) * 2 - 1));
+}
+
+/** -1 .. 1 from screen vertical center (top/bottom parallax). */
+export function mouseNormY(clientY, height) {
+  if (height <= 0) return 0;
+  return Math.max(-1, Math.min(1, (clientY / height) * 2 - 1));
+}
+
 export function resolveVideoScrub(clientX, width, previousSide = 'right') {
   const deadZone = getDeadZonePx(width);
   const side = resolveActiveSide(clientX, width, deadZone, previousSide);
@@ -76,15 +72,16 @@ export function computeSpacerHeight(vh, wrapScrollHeight) {
 }
 
 /**
- * Desktop mouse scrub for the hero girl videos.
- * Any viewport ≥ desktop uses scrub unless the device is coarse-pointer only.
+ * Mouse scrub when:
+ * - viewport ≥ desktop, OR
+ * - user is moving a mouse (preview iframes are often < 1024px wide)
  */
-export function prefersMouseScrub() {
+export function prefersMouseScrub(hasMousePointer = false) {
   if (typeof window === 'undefined') return false;
+  if (hasMousePointer) return true;
   if (window.innerWidth < BREAKPOINT_DESKTOP) return false;
   const coarseOnly =
     window.matchMedia('(pointer: coarse)').matches &&
     !window.matchMedia('(pointer: fine)').matches;
-  if (coarseOnly) return false;
-  return true;
+  return !coarseOnly;
 }
