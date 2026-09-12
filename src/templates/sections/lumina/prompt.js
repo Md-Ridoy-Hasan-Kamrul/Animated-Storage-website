@@ -1,6 +1,6 @@
 /**
- * Lumina liquid-glass footer copy prompt.
- * Video section documents same-origin hero.mp4 (CloudFront src is blocked).
+ * Exact Lumina design prompt — used for “Copy prompt”.
+ * Do not alter characters.
  */
 export const LUMINA_PROMPT = `Create a React frontend using Tailwind CSS v4, the \`motion/react\` library for animations, and \`lucide-react\` for icons. I want to build a page with an immersive video background and a highly stylized "liquid glass" footer.
 
@@ -49,11 +49,7 @@ Add this exact custom CSS for the liquid glass effect bordering:
 3. Main App Structure (\`App.tsx\`):
 - Wrap the page in a \`<main>\` with \`relative w-full min-h-[115vh] overflow-x-hidden flex flex-col items-center font-sans selection:bg-white/20 selection:text-white\`.
 - Add a \`<video>\` element fixed to the background (\`fixed inset-0 w-full h-full object-cover z-[0]\`) that auto-plays, loops, and is muted.
-- Do NOT set video.src to the CloudFront URL. Chromium rejects it with MEDIA_ELEMENT_ERROR: Media load rejected by URL safety check and the page stays black.
-- Play the SAME film from a same-origin file: src="/images/Assets Lumina/hero.mp4"
-- Original source (download once into that public path — do not play from this URL):
-  https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4
-- Also call video.play() on canplay, loadeddata, and visibilitychange (keep muted) so the loop runs in gallery iframes.
+- The \`src\` for the video must be exactly this CloudFront URL: \`https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4\`
 
 4. Content Wrapper:
 On top of the video (\`z-10\`), add a \`max-w-7xl\` container that holds an upper CTA (you can use a placeholder for the CTA) and pushes the footer to the bottom.
@@ -64,7 +60,7 @@ On top of the video (\`z-10\`), add a \`max-w-7xl\` container that holds an uppe
 
 6. Footer Layout - Top Grid:
 - A 12-column grid (\`grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-10\`).
-- First column (md:col-span-5):
+- First column (md:col-span-5): 
   - An SVG Logo \`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M 4.688 136 C 68.373 136 120 187.627 120 251.312 C 120 252.883 119.967 254.445 119.905 256 L 0 256 L 0 136.096 C 1.555 136.034 3.117 136 4.688 136 Z M 251.312 136 C 252.883 136 254.445 136.034 256 136.096 L 256 256 L 136.095 256 C 136.032 254.438 136.001 252.875 136 251.312 C 136 187.627 187.627 136 251.312 136 Z M 119.905 0 C 119.967 1.555 120 3.117 120 4.688 C 120 68.373 68.373 120 4.687 120 C 3.117 120 1.555 119.967 0 119.905 L 0 0 Z M 256 119.905 C 254.445 119.967 252.883 120 251.312 120 C 187.627 120 136 68.373 136 4.687 C 136 3.117 136.033 1.555 136.095 0 L 256 0 Z" /></svg>\` along with the text "LUMINA" (text-xl font-medium).
   - A description below it: "Lumina provides premium clarity on global events and cosmic wonders - shared with all for free." (\`text-sm leading-relaxed max-w-sm\`).
 

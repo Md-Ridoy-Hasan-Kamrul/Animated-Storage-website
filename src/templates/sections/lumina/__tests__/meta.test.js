@@ -52,9 +52,11 @@ describe('Lumina content', () => {
     ]);
   });
 
-  it('copy prompt tells rebuilders to play the local hero.mp4', () => {
-    expect(LUMINA_PROMPT).toContain('/images/Assets Lumina/hero.mp4');
-    expect(LUMINA_PROMPT).toContain('liquid-glass');
+  it('copy prompt keeps the original CloudFront video src line', () => {
+    expect(LUMINA_PROMPT).toContain(
+      'The `src` for the video must be exactly this CloudFront URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_114316_1c7889ad-2885-410e-b493-98119fee0ddb.mp4`',
+    );
+    expect(LUMINA_PROMPT).not.toContain('/images/Assets Lumina/hero.mp4');
   });
 
   it('pads gallery card images for TemplateDetail', () => {

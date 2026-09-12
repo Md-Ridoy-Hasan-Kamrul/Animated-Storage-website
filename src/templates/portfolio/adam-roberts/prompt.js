@@ -1,6 +1,6 @@
 /**
- * Adam Roberts / Grilled Pixels copy prompt.
- * Video section documents the same-origin hero.mp4 (CloudFront src is blocked).
+ * Exact Adam Roberts / Grilled Pixels design prompt — used for “Copy prompt”.
+ * Do not alter characters.
  */
 export const ADAM_ROBERTS_PROMPT = `Recreate this exact full-viewport portfolio landing page — pixel-perfect match.
 
@@ -42,23 +42,13 @@ Where Inter is used:
 Page title: "Adam Roberts - Design & Engineering"
 
 ═══════════════════════════════════════
-BACKGROUND VIDEO (must play — this is the page animation)
+BACKGROUND VIDEO (exact URL — do not substitute)
 ═══════════════════════════════════════
-Do NOT set <video src> to the CloudFront URL. Chromium rejects it with
-MEDIA_ELEMENT_ERROR: Media load rejected by URL safety check
-and the page stays black (no film, no motion).
+Full-bleed background <video>:
+src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4"
 
-Play the SAME film from a same-origin file:
-src="/images/Assets Adam Roberts/hero.mp4"
-
-Original source (download once into that public path — do not play from this URL):
-https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4
-
-Attributes: autoPlay muted loop playsInline preload="auto"
-Also call video.play() on canplay, loadeddata, and visibilitychange (keep muted)
-so the loop runs in gallery iframes and after tab focus.
-
-Classes: pointer-events-none absolute inset-0 z-0 h-full w-full object-cover lg:scale-[1.2]
+Attributes: autoPlay muted loop playsInline
+Classes: absolute inset-0 h-full w-full object-cover lg:scale-[1.2]
 (On large screens, video is scaled 120% for a slight crop/zoom)
 
 All UI sits above video at z-10. No dark overlay — white text over the video.
@@ -225,7 +215,7 @@ DO NOT
 ═══════════════════════════════════════
 - Do not add cards, purple gradients, cream backgrounds, or extra sections
 - Do not change copy, award counts, or line breaks
-- Do not play the CloudFront URL as video.src (blocked). Use the same-origin hero.mp4. Do not swap in a different film.
+- Do not replace the CloudFront video URL
 - Do not use Inter for pixel words — must be basis33
 - Do not add scrolling or a second viewport section
 `;

@@ -38,9 +38,11 @@ describe('Adam Roberts content', () => {
     expect(HERO_VIDEO_LOCAL).toBe('/images/Assets Adam Roberts/hero.mp4');
   });
 
-  it('copy prompt tells rebuilders to play the local hero.mp4', () => {
-    expect(ADAM_ROBERTS_PROMPT).toContain('/images/Assets Adam Roberts/hero.mp4');
-    expect(ADAM_ROBERTS_PROMPT).toContain('Media load rejected by URL safety check');
+  it('copy prompt keeps the original CloudFront video src line', () => {
+    expect(ADAM_ROBERTS_PROMPT).toContain(
+      'src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4"',
+    );
+    expect(ADAM_ROBERTS_PROMPT).not.toContain('/images/Assets Adam Roberts/hero.mp4');
   });
 
   it('keeps brand copy, awards, and nav labels', () => {

@@ -23,6 +23,10 @@ Say clearly:
 > Card: **`<title>`** · `prompt.js`: `src/templates/<category>/<id>/prompt.js`  
 > Same prompt diye 2nd time animation/card banano jabe na. Existing template reuse koro, ba notun/different prompt dao.
 
+## Copy prompt must be 100% identical
+
+`prompt.js` / `meta.fullPrompt` is what **Copy full prompt** copies. Store the **exact body the user pasted** (trim outer whitespace only). Do not rewrite video URLs, add local-asset notes, stack adaptations, or extra “how to rebuild” lines. Playback workarounds stay in code, never in the copied prompt.
+
 ## Allowed
 
 - Edit/fix the **existing** template that owns that `prompt.js`
