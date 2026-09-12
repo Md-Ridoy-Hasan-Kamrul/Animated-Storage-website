@@ -22,7 +22,7 @@ export const KmotionLogoLink = memo(({ onClick, height = 32, className = '' }) =
   <Link
     to={ROUTES.HOME}
     onClick={onClick}
-    className={`inline-flex shrink-0 items-center ${className}`}
+    className={`inline-flex shrink-0 cursor-pointer items-center ${className}`}
     aria-label="Kmotion home"
   >
     <KmotionLogo height={height} />

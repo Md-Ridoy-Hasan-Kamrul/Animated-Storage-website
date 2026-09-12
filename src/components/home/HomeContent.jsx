@@ -51,7 +51,7 @@ const PillDropdown = memo(({ label, value, options, onChange, ariaLabel }) => {
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1.5 rounded-full bg-[#2a2a2a] px-3.5 py-1.5 text-[12px] font-medium text-zinc-200 transition-colors hover:bg-[#333] hover:text-white"
+        className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-[#2a2a2a] px-3.5 py-1.5 text-[12px] font-medium text-zinc-200 transition-colors hover:bg-[#333] hover:text-white"
       >
         {label}
         <ChevronDown
@@ -81,8 +81,8 @@ const PillDropdown = memo(({ label, value, options, onChange, ariaLabel }) => {
                 }}
                 className={
                   selected
-                    ? 'flex w-full px-4 py-2.5 text-left text-[13px] font-medium text-white'
-                    : 'flex w-full px-4 py-2.5 text-left text-[13px] font-medium text-zinc-400 transition-colors hover:bg-white/[0.04] hover:text-zinc-200'
+                    ? 'flex w-full cursor-pointer px-4 py-2.5 text-left text-[13px] font-medium text-white'
+                    : 'flex w-full cursor-pointer px-4 py-2.5 text-left text-[13px] font-medium text-zinc-400 transition-colors hover:bg-white/[0.04] hover:text-zinc-200'
                 }
               >
                 {option}
@@ -124,7 +124,7 @@ const FilterBar = memo(({
         <button
           type="button"
           onClick={onClear}
-          className="text-[12px] font-medium text-zinc-500 transition-colors hover:text-white"
+          className="cursor-pointer text-[12px] font-medium text-zinc-500 transition-colors hover:text-white"
         >
           Clear all
         </button>

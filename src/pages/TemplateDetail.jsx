@@ -13,6 +13,7 @@ import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import * as lumina from '../templates/sections/lumina/content';
 import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
+import { KMOTION_PACKAGE, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
 const CONTENT_BY_TEMPLATE_ID = {
   '3d-portfolio': portfolioV1,
@@ -84,16 +85,7 @@ const TemplateDetail = memo(() => {
   });
 
   const npmSnippet = useMemo(
-    () =>
-      template
-        ? [
-            'npm install @kmotion/animation',
-            '',
-            'import { Preview } from "@kmotion/animation/react";',
-            '',
-            `<Preview id="${template.id}" />`,
-          ].join('\n')
-        : '',
+    () => (template ? getKmotionNpmSnippet(template.id) : ''),
     [template],
   );
 
@@ -179,7 +171,7 @@ const TemplateDetail = memo(() => {
             <button
               type="button"
               onClick={copyPrompt}
-              className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[15px] font-semibold text-black transition-transform hover:scale-[1.01] active:scale-[0.99]"
+              className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[15px] font-semibold text-black transition-transform hover:scale-[1.01] active:scale-[0.99]"
             >
               <Copy size={COPY_ICON_SIZE} strokeWidth={1.75} />
               Copy full prompt
@@ -188,7 +180,7 @@ const TemplateDetail = memo(() => {
             <button
               type="button"
               onClick={copyNpm}
-              className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+              className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
             >
               <Package size={COPY_ICON_SIZE} strokeWidth={1.75} />
               Copy npm install
@@ -200,7 +192,7 @@ const TemplateDetail = memo(() => {
 
             <p className="text-[12px] leading-relaxed text-zinc-500">
               Two ways to use this card: copy the prompt, or install{' '}
-              <code className="text-zinc-300">@kmotion/animation</code> and drop in{' '}
+              <code className="text-zinc-300">{KMOTION_PACKAGE}</code> and drop in{' '}
               <code className="text-zinc-300">{`<Preview id="${template.id}" />`}</code>. Vue,
               Svelte, Solid, and JS entries are in the package README.
             </p>

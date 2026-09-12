@@ -1,15 +1,16 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Package } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { copyTextToClipboard } from '../../utils/copyTextToClipboard';
+import { getKmotionNpmSnippet } from '../../utils/kmotionNpmSnippet';
 
-const COPY_ICON_SIZE = 22;
 const PREVIEW_WIDTH = 1280;
 
 const TemplateCard = memo(({ item }) => {
   const navigate = useNavigate();
-  const [copied, setCopied] = useState(false);
+  const [copiedPrompt, setCopiedPrompt] = useState(false);
+  const [copiedNpm, setCopiedNpm] = useState(false);
   const frameWrapRef = useRef(null);
   const rafRef = useRef(0);
   const [frameSize, setFrameSize] = useState({ scale: 0.28, height: 1700 });
@@ -57,7 +58,7 @@ const TemplateCard = memo(({ item }) => {
     return () => io.disconnect();
   }, []);
 
-  const handleCopy = useCallback(
+  const handleCopyPrompt = useCallback(
     async (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -68,14 +69,35 @@ const TemplateCard = memo(({ item }) => {
       }
       try {
         await copyTextToClipboard(prompt);
-        setCopied(true);
+        setCopiedPrompt(true);
         toast.success('Full prompt copied');
-        window.setTimeout(() => setCopied(false), 1600);
+        window.setTimeout(() => setCopiedPrompt(false), 1600);
       } catch {
         toast.error('Copy failed');
       }
     },
     [item.fullPrompt],
+  );
+
+  const handleCopyNpm = useCallback(
+    async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const snippet = getKmotionNpmSnippet(item.id);
+      if (!snippet) {
+        toast.error('Install snippet missing');
+        return;
+      }
+      try {
+        await copyTextToClipboard(snippet);
+        setCopiedNpm(true);
+        toast.success('npm install copied');
+        window.setTimeout(() => setCopiedNpm(false), 1600);
+      } catch {
+        toast.error('Copy failed');
+      }
+    },
+    [item.id],
   );
 
   const openDetail = useCallback(() => {
@@ -126,18 +148,34 @@ const TemplateCard = memo(({ item }) => {
           <p className="mt-0.5 text-[12px] text-zinc-500">{item.category}</p>
         </div>
 
-        <button
-          type="button"
-          aria-label={`Copy prompt for ${item.title}`}
-          onClick={handleCopy}
-          className="mt-0.5 shrink-0 rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-white"
-        >
-          {copied ? (
-            <Check size={COPY_ICON_SIZE} strokeWidth={1.75} />
-          ) : (
-            <Copy size={COPY_ICON_SIZE} strokeWidth={1.75} />
-          )}
-        </button>
+        <div className="mt-0.5 flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            aria-label={`Copy prompt for ${item.title}`}
+            onClick={handleCopyPrompt}
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[13px] font-medium text-zinc-300 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+          >
+            {copiedPrompt ? (
+              <Check size={15} strokeWidth={1.75} />
+            ) : (
+              <Copy size={15} strokeWidth={1.75} />
+            )}
+            Prompt
+          </button>
+          <button
+            type="button"
+            aria-label={`Copy npm install for ${item.title}`}
+            onClick={handleCopyNpm}
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[13px] font-medium text-zinc-300 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+          >
+            {copiedNpm ? (
+              <Check size={15} strokeWidth={1.75} />
+            ) : (
+              <Package size={15} strokeWidth={1.75} />
+            )}
+            npm
+          </button>
+        </div>
       </div>
     </article>
   );

@@ -79,7 +79,7 @@ const Layout = memo(() => {
                   <Link
                     key={label}
                     to={href}
-                    className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-zinc-400 transition-all duration-200 hover:text-white hover:underline hover:underline-offset-4 xl:text-[13px]"
+                    className="group inline-flex cursor-pointer items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-zinc-400 transition-all duration-200 hover:text-white hover:underline hover:underline-offset-4 xl:text-[13px]"
                   >
                     {label}
                     {badge ? (
@@ -97,7 +97,7 @@ const Layout = memo(() => {
             <button
               type="button"
               aria-label="Search"
-              className="rounded-full p-2 text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
+              className="cursor-pointer rounded-full p-2 text-zinc-400 transition-colors hover:bg-white/5 hover:text-white"
             >
               <Search size={18} strokeWidth={1.75} />
             </button>
@@ -105,7 +105,7 @@ const Layout = memo(() => {
             {showCtaInHeader ? (
               <button
                 type="button"
-                className="hidden rounded-full bg-white px-3 py-1.5 text-[12px] font-semibold text-black transition-transform hover:scale-[1.02] active:scale-[0.98] sm:inline-flex md:px-4 md:text-[13px]"
+                className="hidden cursor-pointer rounded-full bg-white px-3 py-1.5 text-[12px] font-semibold text-black transition-transform hover:scale-[1.02] active:scale-[0.98] sm:inline-flex md:px-4 md:text-[13px]"
               >
                 Get for free
               </button>
@@ -114,7 +114,7 @@ const Layout = memo(() => {
             <button
               type="button"
               aria-label="Account"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1e3a5f] text-[11px] font-semibold tracking-wide text-white"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#1e3a5f] text-[11px] font-semibold tracking-wide text-white"
             >
               MD
             </button>
@@ -125,7 +125,7 @@ const Layout = memo(() => {
                 onClick={toggleMenu}
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={menuOpen}
-                className="rounded-full p-2 text-zinc-400 hover:bg-white/5 hover:text-white"
+                className="cursor-pointer rounded-full p-2 text-zinc-400 hover:bg-white/5 hover:text-white"
               >
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -144,7 +144,7 @@ const Layout = memo(() => {
                   key={label}
                   to={href}
                   onClick={closeMenu}
-                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-zinc-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                  className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-zinc-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
                 >
                   {label}
                   {badge ? (
@@ -156,7 +156,7 @@ const Layout = memo(() => {
               ))}
               <button
                 type="button"
-                className="mt-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black"
+                className="mt-2 cursor-pointer rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black"
               >
                 Get for free
               </button>

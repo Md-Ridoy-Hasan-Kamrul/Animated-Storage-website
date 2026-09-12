@@ -167,8 +167,8 @@ const CategoryTabsScroll = memo(({ categories, active, onSelect }) => {
               onClick={() => onSelect(cat)}
               className={
                 isActive
-                  ? 'shrink-0 rounded-full bg-white px-3.5 py-1.5 text-[12px] font-semibold text-black'
-                  : 'shrink-0 rounded-full px-3.5 py-1.5 text-[12px] font-medium text-zinc-400 transition-all duration-200 hover:bg-white/10 hover:text-white'
+                  ? 'shrink-0 cursor-pointer rounded-full bg-white px-3.5 py-1.5 text-[12px] font-semibold text-black'
+                  : 'shrink-0 cursor-pointer rounded-full px-3.5 py-1.5 text-[12px] font-medium text-zinc-400 transition-all duration-200 hover:bg-white/10 hover:text-white'
               }
             >
               {cat}
