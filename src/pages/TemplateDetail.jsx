@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Copy, Heart, Package } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -13,7 +13,7 @@ import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import * as lumina from '../templates/sections/lumina/content';
 import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
-import { KMOTION_PACKAGE, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
+import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
 const CONTENT_BY_TEMPLATE_ID = {
   '3d-portfolio': portfolioV1,
@@ -84,9 +84,10 @@ const TemplateDetail = memo(() => {
     description: template?.description || 'Free animated template prompt',
   });
 
+  const [npmStack, setNpmStack] = useState('react');
   const npmSnippet = useMemo(
-    () => (template ? getKmotionNpmSnippet(template.id) : ''),
-    [template],
+    () => (template ? getKmotionNpmSnippet(template.id, npmStack) : ''),
+    [template, npmStack],
   );
 
   const copyPrompt = useCallback(async () => {
@@ -106,11 +107,12 @@ const TemplateDetail = memo(() => {
     if (!npmSnippet) return;
     try {
       await copyTextToClipboard(npmSnippet);
-      toast.success('npm snippet copied');
+      const stackLabel = KMOTION_STACKS.find((s) => s.id === npmStack)?.label || 'npm';
+      toast.success(`${stackLabel} npm snippet copied`);
     } catch {
       toast.error('Copy failed');
     }
-  }, [npmSnippet]);
+  }, [npmSnippet, npmStack]);
 
   if (!template) {
     return (
@@ -177,24 +179,45 @@ const TemplateDetail = memo(() => {
               Copy full prompt
             </button>
 
-            <button
-              type="button"
-              onClick={copyNpm}
-              className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              <Package size={COPY_ICON_SIZE} strokeWidth={1.75} />
-              Copy npm install
-            </button>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {KMOTION_STACKS.map(({ id: stackId, label }) => {
+                  const selected = npmStack === stackId;
+                  return (
+                    <button
+                      key={stackId}
+                      type="button"
+                      onClick={() => setNpmStack(stackId)}
+                      className={
+                        selected
+                          ? 'cursor-pointer rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-black'
+                          : 'cursor-pointer rounded-full border border-white/10 px-3 py-1 text-[12px] font-medium text-zinc-400 transition-colors hover:border-white/20 hover:text-white'
+                      }
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
 
-            <pre className="overflow-x-auto rounded-xl bg-black/50 px-3.5 py-3 text-[11px] leading-relaxed text-zinc-400">
-              {npmSnippet}
-            </pre>
+              <button
+                type="button"
+                onClick={copyNpm}
+                className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                <Package size={COPY_ICON_SIZE} strokeWidth={1.75} />
+                Copy {KMOTION_STACKS.find((s) => s.id === npmStack)?.label} npm
+              </button>
+
+              <pre className="overflow-x-auto rounded-xl bg-black/50 px-3.5 py-3 text-[11px] leading-relaxed text-zinc-400">
+                {npmSnippet}
+              </pre>
+            </div>
 
             <p className="text-[12px] leading-relaxed text-zinc-500">
               Two ways to use this card: copy the prompt, or install{' '}
-              <code className="text-zinc-300">{KMOTION_PACKAGE}</code> and drop in{' '}
-              <code className="text-zinc-300">{`<Preview id="${template.id}" />`}</code>. Vue,
-              Svelte, Solid, and JS entries are in the package README.
+              <code className="text-zinc-300">{KMOTION_PACKAGE}</code> and pick React, Vue, Svelte,
+              Solid, or JS.
             </p>
           </aside>
         </div>

@@ -1,16 +1,15 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Copy, Check, Package } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { copyTextToClipboard } from '../../utils/copyTextToClipboard';
-import { getKmotionNpmSnippet } from '../../utils/kmotionNpmSnippet';
+import NpmStackMenu from './NpmStackMenu';
 
 const PREVIEW_WIDTH = 1280;
 
 const TemplateCard = memo(({ item }) => {
   const navigate = useNavigate();
   const [copiedPrompt, setCopiedPrompt] = useState(false);
-  const [copiedNpm, setCopiedNpm] = useState(false);
   const frameWrapRef = useRef(null);
   const rafRef = useRef(0);
   const [frameSize, setFrameSize] = useState({ scale: 0.28, height: 1700 });
@@ -79,27 +78,6 @@ const TemplateCard = memo(({ item }) => {
     [item.fullPrompt],
   );
 
-  const handleCopyNpm = useCallback(
-    async (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const snippet = getKmotionNpmSnippet(item.id);
-      if (!snippet) {
-        toast.error('Install snippet missing');
-        return;
-      }
-      try {
-        await copyTextToClipboard(snippet);
-        setCopiedNpm(true);
-        toast.success('npm install copied');
-        window.setTimeout(() => setCopiedNpm(false), 1600);
-      } catch {
-        toast.error('Copy failed');
-      }
-    },
-    [item.id],
-  );
-
   const openDetail = useCallback(() => {
     navigate(item.detailPath || `/templates/${item.id}`);
   }, [item.detailPath, item.id, navigate]);
@@ -162,19 +140,7 @@ const TemplateCard = memo(({ item }) => {
             )}
             Prompt
           </button>
-          <button
-            type="button"
-            aria-label={`Copy npm install for ${item.title}`}
-            onClick={handleCopyNpm}
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-[13px] font-medium text-zinc-300 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
-          >
-            {copiedNpm ? (
-              <Check size={15} strokeWidth={1.75} />
-            ) : (
-              <Package size={15} strokeWidth={1.75} />
-            )}
-            npm
-          </button>
+          <NpmStackMenu templateId={item.id} title={item.title} />
         </div>
       </div>
     </article>
