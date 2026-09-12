@@ -8,6 +8,7 @@ import { meta as lumina } from './sections/lumina/meta';
 import { meta as heritageGrove } from './footer/heritage-grove/meta';
 import { meta as velorah } from './agency/velorah/meta';
 import { meta as foldcraft } from './hero/foldcraft/meta';
+import { meta as ltxWorld } from './ecommerce/ltx-world/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -20,6 +21,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Footer',
   'Agency',
   'Hero',
+  'Ecommerce',
 ];
 
 /**
@@ -36,6 +38,7 @@ export const TEMPLATES = [
   heritageGrove,
   velorah,
   foldcraft,
+  ltxWorld,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

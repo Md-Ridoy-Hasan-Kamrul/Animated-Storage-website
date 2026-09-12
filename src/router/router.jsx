@@ -49,6 +49,9 @@ const VelorahLive = lazy(
 const FoldcraftLive = lazy(
   () => import('../templates/hero/foldcraft/LivePage'),
 );
+const LtxWorldLive = lazy(
+  () => import('../templates/ecommerce/ltx-world/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -181,6 +184,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <FoldcraftLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LTX_WORLD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LtxWorldLive />
           </Suspense>
         }
       />

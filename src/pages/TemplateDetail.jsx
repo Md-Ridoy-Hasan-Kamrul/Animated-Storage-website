@@ -14,6 +14,7 @@ import * as lumina from '../templates/sections/lumina/content';
 import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import * as velorah from '../templates/agency/velorah/content';
 import * as foldcraft from '../templates/hero/foldcraft/content';
+import * as ltxWorld from '../templates/ecommerce/ltx-world/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -32,6 +33,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'heritage-grove': heritageGrove,
   velorah,
   foldcraft,
+  'ltx-world': ltxWorld,
 };
 const COPY_ICON_SIZE = 20;
 

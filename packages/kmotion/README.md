@@ -82,4 +82,4 @@ setOrigin('https://your-kmotion-site.com');
 console.log(TEMPLATES);
 ```
 
-Ids: `3d-portfolio`, `prompt`, `neo-museum`, `portfolio-cosmic`, `adam-roberts`, `lumina`, `heritage-grove`, `velorah`, `foldcraft`.
+Ids: `3d-portfolio`, `prompt`, `neo-museum`, `portfolio-cosmic`, `adam-roberts`, `lumina`, `heritage-grove`, `velorah`, `foldcraft`, `ltx-world`.

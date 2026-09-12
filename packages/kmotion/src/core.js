@@ -11,6 +11,7 @@ export const TEMPLATES = [
   'heritage-grove',
   'velorah',
   'foldcraft',
+  'ltx-world',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

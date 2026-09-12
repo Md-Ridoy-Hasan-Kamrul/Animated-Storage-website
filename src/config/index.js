@@ -19,6 +19,7 @@ export const ROUTES = {
   HERITAGE_GROVE: '/p/heritage-grove',
   VELORAH: '/p/velorah',
   FOLDCRAFT: '/p/foldcraft',
+  LTX_WORLD: '/p/ltx-world',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
