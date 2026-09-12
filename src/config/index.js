@@ -15,6 +15,7 @@ export const ROUTES = {
   PORTFOLIO_COSMIC: '/p/portfolio-cosmic',
   NEO_MUSEUM: '/p/neo-museum',
   ADAM_ROBERTS: '/p/adam-roberts',
+  LUMINA: '/p/lumina',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

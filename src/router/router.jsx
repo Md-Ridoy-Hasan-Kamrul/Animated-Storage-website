@@ -37,6 +37,9 @@ const NeoMuseumLive = lazy(
 const AdamRobertsLive = lazy(
   () => import('../templates/portfolio/adam-roberts/LivePage'),
 );
+const LuminaLive = lazy(
+  () => import('../templates/sections/lumina/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -133,6 +136,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <AdamRobertsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LUMINA}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LuminaLive />
           </Suspense>
         }
       />
