@@ -12,6 +12,7 @@ import * as neoMuseum from '../templates/landing-page/neo-museum/content';
 import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import * as lumina from '../templates/sections/lumina/content';
 import * as heritageGrove from '../templates/footer/heritage-grove/content';
+import * as velorah from '../templates/agency/velorah/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -28,6 +29,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'adam-roberts': adamRoberts,
   lumina,
   'heritage-grove': heritageGrove,
+  velorah,
 };
 const COPY_ICON_SIZE = 20;
 

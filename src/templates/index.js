@@ -6,6 +6,7 @@ import { meta as neoMuseum } from './landing-page/neo-museum/meta';
 import { meta as adamRoberts } from './portfolio/adam-roberts/meta';
 import { meta as lumina } from './sections/lumina/meta';
 import { meta as heritageGrove } from './footer/heritage-grove/meta';
+import { meta as velorah } from './agency/velorah/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -16,6 +17,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Portfolio',
   'Sections',
   'Footer',
+  'Agency',
 ];
 
 /**
@@ -30,6 +32,7 @@ export const TEMPLATES = [
   adamRoberts,
   lumina,
   heritageGrove,
+  velorah,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

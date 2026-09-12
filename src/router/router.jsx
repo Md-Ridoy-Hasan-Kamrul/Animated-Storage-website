@@ -43,6 +43,9 @@ const LuminaLive = lazy(
 const HeritageGroveLive = lazy(
   () => import('../templates/footer/heritage-grove/LivePage'),
 );
+const VelorahLive = lazy(
+  () => import('../templates/agency/velorah/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -157,6 +160,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <HeritageGroveLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.VELORAH}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VelorahLive />
           </Suspense>
         }
       />

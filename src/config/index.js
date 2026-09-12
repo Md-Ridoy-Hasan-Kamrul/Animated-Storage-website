@@ -17,6 +17,7 @@ export const ROUTES = {
   ADAM_ROBERTS: '/p/adam-roberts',
   LUMINA: '/p/lumina',
   HERITAGE_GROVE: '/p/heritage-grove',
+  VELORAH: '/p/velorah',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

@@ -9,6 +9,7 @@ export const TEMPLATES = [
   'adam-roberts',
   'lumina',
   'heritage-grove',
+  'velorah',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
