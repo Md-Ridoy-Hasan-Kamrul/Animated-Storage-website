@@ -9,6 +9,7 @@ import * as portfolioV1 from '../templates/landing-page/3d-portfolio/content';
 import * as promptArchive from '../templates/landing-page/prompt/content';
 import * as portfolioCosmic from '../templates/landing-page/portfolio-cosmic/content';
 import * as neoMuseum from '../templates/landing-page/neo-museum/content';
+import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
 const CONTENT_BY_TEMPLATE_ID = {
@@ -21,6 +22,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   },
   'portfolio-cosmic': portfolioCosmic,
   'neo-museum': neoMuseum,
+  'adam-roberts': adamRoberts,
 };
 const COPY_ICON_SIZE = 20;
 
