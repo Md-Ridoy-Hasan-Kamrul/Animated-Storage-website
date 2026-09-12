@@ -31,6 +31,9 @@ const PromptArchiveLive = lazy(
 const PortfolioCosmicLive = lazy(
   () => import('../templates/landing-page/portfolio-cosmic/LivePage'),
 );
+const NeoMuseumLive = lazy(
+  () => import('../templates/landing-page/neo-museum/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -109,6 +112,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <PortfolioCosmicLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.NEO_MUSEUM}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <NeoMuseumLive />
           </Suspense>
         }
       />

@@ -13,6 +13,7 @@ export const ROUTES = {
   JACK_PORTFOLIO: '/p/3d-portfolio',
   PROMPT_ARCHIVE: '/p/prompt',
   PORTFOLIO_COSMIC: '/p/portfolio-cosmic',
+  NEO_MUSEUM: '/p/neo-museum',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
