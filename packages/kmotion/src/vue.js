@@ -10,7 +10,7 @@ export const Preview = defineComponent({
   props: {
     id: { type: String, required: true },
     origin: { type: String, default: '' },
-    height: { type: String, default: '640px' },
+    height: { type: String, default: '100vh' },
     title: { type: String, default: 'Kmotion preview' },
   },
   setup(props) {

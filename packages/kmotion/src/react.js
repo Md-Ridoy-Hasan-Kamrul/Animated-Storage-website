@@ -8,7 +8,7 @@ export { TEMPLATES, embedUrl, setOrigin, getOrigin, definePreview } from './core
 export function Preview({
   id,
   origin,
-  height = '640px',
+  height = '100vh',
   title = 'Kmotion preview',
   className,
   style,

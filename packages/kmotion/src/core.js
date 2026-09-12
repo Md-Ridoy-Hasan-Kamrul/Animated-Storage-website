@@ -36,7 +36,8 @@ export function embedUrl(id, origin) {
   if (!templateId) {
     throw new Error('kmotion: Preview needs an id, e.g. "heritage-grove"');
   }
-  return `${getOrigin(origin)}/p/${encodeURIComponent(templateId)}?embed=1`;
+  // Full live page — same as “Open full page”, not the gallery card (?embed=1).
+  return `${getOrigin(origin)}/p/${encodeURIComponent(templateId)}`;
 }
 
 function escapeAttr(value) {
@@ -68,7 +69,7 @@ class KmotionPreview extends HTMLElement {
 
     const templateId = this.getTemplateId();
     const origin = this.getAttribute('origin') || '';
-    const height = this.getAttribute('height') || '640px';
+    const height = this.getAttribute('height') || '100vh';
     const title = this.getAttribute('title') || 'Kmotion preview';
 
     let src = '';

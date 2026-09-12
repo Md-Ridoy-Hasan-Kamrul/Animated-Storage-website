@@ -9,7 +9,7 @@ function applyProps(el, props) {
   el.setAttribute('template', props.id || '');
   if (props.origin) el.setAttribute('origin', props.origin);
   else el.removeAttribute('origin');
-  el.setAttribute('height', props.height || '640px');
+  el.setAttribute('height', props.height || '100vh');
   el.setAttribute('title', props.title || 'Kmotion preview');
 }
 

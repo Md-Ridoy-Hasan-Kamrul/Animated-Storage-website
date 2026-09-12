@@ -1,12 +1,14 @@
 # @kmotion/animation
 
-Embed any Kmotion template preview in **React, Vue, Svelte, Solid, or vanilla JS**.
+Embed the **full live animation** (same page as “Open full page” on Kmotion) in **React, Vue, Svelte, Solid, or vanilla JS**. This is not the small gallery card preview.
 
 ```bash
 npm install @kmotion/animation
 ```
 
-Default origin is `http://localhost:5173` (local Kmotion gallery). After you deploy the site, call `setOrigin('https://your-domain.com')` once, or pass `origin` on each preview.
+`<Preview id="neo-museum" />` loads `/p/neo-museum` — the complete template you built from the prompt. Scroll inside the preview to move through the site.
+
+Default origin is `http://localhost:5173`. After you deploy, call `setOrigin('https://your-domain.com')` once, or pass `origin` on each preview.
 
 ## React
 
@@ -61,7 +63,7 @@ Preview(document.querySelector('#app'), { id: 'heritage-grove' });
 Or the web component after any import:
 
 ```html
-<kmotion-preview template="heritage-grove" height="640px"></kmotion-preview>
+<kmotion-preview template="heritage-grove" height="100vh"></kmotion-preview>
 ```
 
 ## Props
@@ -70,7 +72,7 @@ Or the web component after any import:
 | --- | --- | --- | --- |
 | `id` | string | required | Template id, e.g. `heritage-grove` |
 | `origin` | string | `http://localhost:5173` | Kmotion site origin |
-| `height` | string | `640px` | Preview height |
+| `height` | string | `100vh` | Preview height |
 | `title` | string | `Kmotion preview` | iframe title |
 
 ```js

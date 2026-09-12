@@ -4,7 +4,7 @@ definePreview();
 
 export { TEMPLATES, embedUrl, setOrigin, getOrigin, definePreview } from './core.js';
 
-function applyProps(el, { id, origin, height = '640px', title = 'Kmotion preview' }) {
+function applyProps(el, { id, origin, height = '100vh', title = 'Kmotion preview' }) {
   el.setAttribute('template', id);
   if (origin) el.setAttribute('origin', origin);
   else el.removeAttribute('origin');

@@ -1,6 +1,6 @@
 {
   "name": "@kmotion/animation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Embed any Kmotion template preview in React, Vue, Svelte, Solid, or vanilla JS.",
   "type": "module",
   "license": "MIT",
@@ -47,5 +47,8 @@
     "vue": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "@kmotion/animation": "^0.1.1"
   }
 }
