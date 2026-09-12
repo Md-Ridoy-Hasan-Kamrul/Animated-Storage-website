@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Copy, Heart } from 'lucide-react';
+import { ArrowLeft, Copy, Heart, Package } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { getTemplateById } from '../data/templates';
 import { ROUTES } from '../config';
@@ -83,6 +83,20 @@ const TemplateDetail = memo(() => {
     description: template?.description || 'Free animated template prompt',
   });
 
+  const npmSnippet = useMemo(
+    () =>
+      template
+        ? [
+            'npm install @kmotion/animation',
+            '',
+            'import { Preview } from "@kmotion/animation/react";',
+            '',
+            `<Preview id="${template.id}" />`,
+          ].join('\n')
+        : '',
+    [template],
+  );
+
   const copyPrompt = useCallback(async () => {
     if (!template?.fullPrompt) {
       toast.error('Prompt missing');
@@ -95,6 +109,16 @@ const TemplateDetail = memo(() => {
       toast.error('Copy failed');
     }
   }, [template]);
+
+  const copyNpm = useCallback(async () => {
+    if (!npmSnippet) return;
+    try {
+      await copyTextToClipboard(npmSnippet);
+      toast.success('npm snippet copied');
+    } catch {
+      toast.error('Copy failed');
+    }
+  }, [npmSnippet]);
 
   if (!template) {
     return (
@@ -161,9 +185,24 @@ const TemplateDetail = memo(() => {
               Copy full prompt
             </button>
 
+            <button
+              type="button"
+              onClick={copyNpm}
+              className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <Package size={COPY_ICON_SIZE} strokeWidth={1.75} />
+              Copy npm install
+            </button>
+
+            <pre className="overflow-x-auto rounded-xl bg-black/50 px-3.5 py-3 text-[11px] leading-relaxed text-zinc-400">
+              {npmSnippet}
+            </pre>
+
             <p className="text-[12px] leading-relaxed text-zinc-500">
-              Free template. Copy the prompt and rebuild the full animated Kamrul portfolio with
-              Framer Motion.
+              Two ways to use this card: copy the prompt, or install{' '}
+              <code className="text-zinc-300">@kmotion/animation</code> and drop in{' '}
+              <code className="text-zinc-300">{`<Preview id="${template.id}" />`}</code>. Vue,
+              Svelte, Solid, and JS entries are in the package README.
             </p>
           </aside>
         </div>

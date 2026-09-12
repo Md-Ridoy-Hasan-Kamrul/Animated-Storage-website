@@ -1,0 +1,51 @@
+{
+  "name": "@kmotion/animation",
+  "version": "0.1.0",
+  "description": "Embed any Kmotion template preview in React, Vue, Svelte, Solid, or vanilla JS.",
+  "type": "module",
+  "license": "MIT",
+  "author": "kmotion",
+  "keywords": [
+    "kmotion",
+    "animation",
+    "preview",
+    "embed",
+    "react",
+    "vue",
+    "svelte",
+    "solid"
+  ],
+  "sideEffects": [
+    "./src/core.js"
+  ],
+  "exports": {
+    ".": "./src/js.js",
+    "./react": "./src/react.js",
+    "./vue": "./src/vue.js",
+    "./svelte": "./src/svelte.js",
+    "./solid": "./src/solid.js",
+    "./js": "./src/js.js",
+    "./core": "./src/core.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": ">=17",
+    "solid-js": ">=1",
+    "vue": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  }
+}
