@@ -8,7 +8,7 @@ export const meta = {
   category: 'Ecommerce',
   categorySlug: 'ecommerce',
   pricing: 'Free',
-  likes: 0,
+  likes: 3750,
   height: 'h-[272px]',
   livePath: ROUTES.LTX_WORLD,
   detailPath: '/templates/ltx-world',

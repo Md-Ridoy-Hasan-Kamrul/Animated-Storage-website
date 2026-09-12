@@ -32,7 +32,9 @@ export function getClipDurationSeconds(branch, direction) {
   return direction === 'forward' ? branch.forwardDuration : branch.reverseDuration;
 }
 
-export function getHoldAtSeconds(branch, direction) {
-  const duration = getClipDurationSeconds(branch, direction);
+export function getHoldAtSeconds(branch, direction, mediaDuration) {
+  const fallback = getClipDurationSeconds(branch, direction);
+  const duration =
+    Number.isFinite(mediaDuration) && mediaDuration > 0 ? mediaDuration : fallback;
   return Math.max(0, duration - getHoldGuardSeconds(branch.id, direction));
 }

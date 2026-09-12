@@ -15,6 +15,7 @@ import {
   getTitleHideDelaySeconds,
   isSameBranchSelected,
 } from '../utils/sceneMachine';
+import { commitHeldFrame } from '../utils/commitHeldFrame';
 import { restoreFocusedControl } from '../utils/restoreFocusedControl';
 import { waitForFirstFrame, waitForSeeked } from '../utils/waitForFirstFrame';
 
@@ -44,7 +45,11 @@ export function useSeamSafePlayer(videosRef, announce) {
   }, []);
 
   const holdUntilTerminal = useCallback((video, branchId, direction, token) => {
-    const holdAt = getHoldAtSeconds(findBranch(branchId), direction);
+    const holdAt = getHoldAtSeconds(
+      findBranch(branchId),
+      direction,
+      video.duration,
+    );
 
     return new Promise((resolve, reject) => {
       const onEnded = () => finish();
@@ -59,12 +64,7 @@ export function useSeamSafePlayer(videosRef, announce) {
           reject(new Error('stale'));
           return;
         }
-        video.pause();
-        try {
-          video.currentTime = holdAt;
-        } catch {
-          /* ignore */
-        }
+        commitHeldFrame(video);
         resolve();
       };
       video.addEventListener('timeupdate', onTime);

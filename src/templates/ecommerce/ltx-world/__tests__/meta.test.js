@@ -9,12 +9,15 @@ describe('LTX World meta', () => {
     expect(meta.id).toBe('ltx-world');
     expect(meta.title).toBe('LTX World');
     expect(meta.category).toBe('Ecommerce');
+    expect(meta.likes).toBe(3750);
     expect(meta.height).toBe('h-[272px]');
   });
 
   it('binds copy prompt to prompt.js export', () => {
     expect(meta.fullPrompt).toBe(LTX_WORLD_PROMPT);
     expect(LTX_WORLD_PROMPT).toContain(PAGE_TITLE);
+    expect(LTX_WORLD_PROMPT).toContain('Reset from Scene');
+    expect(LTX_WORLD_PROMPT).toContain('Pause in place');
   });
 
   it('uses ltx-world routes', () => {

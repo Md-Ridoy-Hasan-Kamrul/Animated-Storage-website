@@ -271,7 +271,10 @@ On an accepted click:
     A TIMEOUT MUST NEVER COUNT AS SUCCESSFUL DECODING.
  7. Switch visibility atomically. Never crossfade two different scene states.
  8. Monitor only the ACTIVE video near its hold time; pause it on the terminal frame,
-    then commit the scene state.
+    then commit the scene state. Do not assign \`currentTime\` backward to the hold
+    stamp — Scene reverse overshoots, and a seek-back rewinds the last camera settle
+    (a visible shake). Stay on that reverse element; never swap to \`video-1.mp4\`
+    as a base stand-in.
  9. Release the lock and update controller semantics exactly once.
 
 First-frame timeout: 12000ms, but PAUSE the deadline while \`document.hidden\` — frame
@@ -367,6 +370,9 @@ stays identical between clips through any resize.
  4. Disabling the focused control silently loses keyboard focus.
  5. \`top:-5px\` on the controller (rather than relative to the track) makes the capsule
     hang off the top edge.
+ 6. Reset from Scene: pausing then seeking back to the hold timestamp shakes the
+    footage. Pause in place. After reverse, keep the reverse clip visible on its
+    held frame — do not blink back to \`video-1.mp4\` frame 0.
 
 ═══════════════════════════════════════════════════════════════════════
 15. ACCEPTANCE

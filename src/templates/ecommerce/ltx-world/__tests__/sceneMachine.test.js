@@ -38,5 +38,6 @@ describe('LTX scene machine', () => {
     expect(getHoldAtSeconds(scene, 'reverse')).toBeCloseTo(1.9, 4);
     expect(getHoldAtSeconds(scene, 'forward')).toBeCloseTo(2, 4);
     expect(getHoldAtSeconds(cast, 'reverse')).toBeCloseTo(2.4, 4);
+    expect(getHoldAtSeconds(scene, 'reverse', 2.1)).toBeCloseTo(1.92, 4);
   });
 });
