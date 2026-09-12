@@ -13,6 +13,7 @@ import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import * as lumina from '../templates/sections/lumina/content';
 import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import * as velorah from '../templates/agency/velorah/content';
+import * as foldcraft from '../templates/hero/foldcraft/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -30,6 +31,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   lumina,
   'heritage-grove': heritageGrove,
   velorah,
+  foldcraft,
 };
 const COPY_ICON_SIZE = 20;
 

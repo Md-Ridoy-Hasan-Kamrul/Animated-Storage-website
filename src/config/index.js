@@ -18,6 +18,7 @@ export const ROUTES = {
   LUMINA: '/p/lumina',
   HERITAGE_GROVE: '/p/heritage-grove',
   VELORAH: '/p/velorah',
+  FOLDCRAFT: '/p/foldcraft',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

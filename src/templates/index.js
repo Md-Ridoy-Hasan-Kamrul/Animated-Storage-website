@@ -7,6 +7,7 @@ import { meta as adamRoberts } from './portfolio/adam-roberts/meta';
 import { meta as lumina } from './sections/lumina/meta';
 import { meta as heritageGrove } from './footer/heritage-grove/meta';
 import { meta as velorah } from './agency/velorah/meta';
+import { meta as foldcraft } from './hero/foldcraft/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -18,6 +19,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Sections',
   'Footer',
   'Agency',
+  'Hero',
 ];
 
 /**
@@ -33,6 +35,7 @@ export const TEMPLATES = [
   lumina,
   heritageGrove,
   velorah,
+  foldcraft,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

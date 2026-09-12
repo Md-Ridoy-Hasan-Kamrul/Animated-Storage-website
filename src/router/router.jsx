@@ -46,6 +46,9 @@ const HeritageGroveLive = lazy(
 const VelorahLive = lazy(
   () => import('../templates/agency/velorah/LivePage'),
 );
+const FoldcraftLive = lazy(
+  () => import('../templates/hero/foldcraft/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -169,6 +172,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <VelorahLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.FOLDCRAFT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <FoldcraftLive />
           </Suspense>
         }
       />

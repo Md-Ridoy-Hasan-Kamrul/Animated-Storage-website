@@ -10,6 +10,7 @@ export const TEMPLATES = [
   'lumina',
   'heritage-grove',
   'velorah',
+  'foldcraft',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

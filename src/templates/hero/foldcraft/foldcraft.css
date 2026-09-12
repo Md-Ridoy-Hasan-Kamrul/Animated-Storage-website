@@ -1,0 +1,59 @@
+.foldcraft {
+  --font-geist: 'Geist', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-geist);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.foldcraft.font-geist {
+  font-family: var(--font-geist);
+}
+
+.foldcraft *,
+.foldcraft *::before,
+.foldcraft *::after {
+  box-sizing: border-box;
+}
+
+.foldcraft-video {
+  object-position: 70% center;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.foldcraft .animate-fade-slide-up-badge {
+  animation: fadeSlideUp 0.8s ease 0.2s both;
+}
+
+.foldcraft .animate-fade-slide-up-heading {
+  animation: fadeSlideUp 0.8s ease 0.4s both;
+}
+
+.foldcraft .animate-fade-slide-up-copy {
+  animation: fadeSlideUp 0.8s ease 0.7s both;
+}
+
+.foldcraft .animate-fade-slide-up-cta {
+  animation: fadeSlideUp 0.8s ease 0.9s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foldcraft .animate-fade-slide-up-badge,
+  .foldcraft .animate-fade-slide-up-heading,
+  .foldcraft .animate-fade-slide-up-copy,
+  .foldcraft .animate-fade-slide-up-cta {
+    animation: none;
+  }
+}
