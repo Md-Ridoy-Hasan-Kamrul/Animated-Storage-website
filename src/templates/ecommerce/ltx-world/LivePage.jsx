@@ -11,6 +11,7 @@ import {
 } from './constants';
 import { parkVideoAtStart } from './utils/parkVideoAtStart';
 import { useEmbedMode } from './hooks/useEmbedMode';
+import { useEmbedAutoplay } from './hooks/useEmbedAutoplay';
 import { usePageChrome } from './hooks/usePageChrome';
 import { useLtxFonts } from './hooks/useLtxFonts';
 import { useClipReadiness } from './hooks/useClipReadiness';
@@ -23,7 +24,7 @@ import RetryNotice from './components/RetryNotice';
 
 const LivePage = () => {
   const navigate = useNavigate();
-  const { isStandalone } = useEmbedMode();
+  const { isEmbed, isStandalone } = useEmbedMode();
   const videosRef = useRef({});
   const [announcement, setAnnouncement] = useState(ANNOUNCE_LOADING);
 
@@ -36,6 +37,21 @@ const LivePage = () => {
 
   const { pairReady } = useClipReadiness(videosRef);
   const player = useSeamSafePlayer(videosRef, announce);
+  const playBranch = useCallback(
+    (branchId) => {
+      player.handleBranchClick(branchId, null);
+    },
+    [player.handleBranchClick],
+  );
+
+  useEmbedAutoplay({
+    enabled: isEmbed,
+    scene: player.scene,
+    playback: player.playback,
+    locked: player.lock,
+    pairReady,
+    playBranch,
+  });
 
   useEffect(() => {
     const base = videosRef.current[BASE_CLIP_KEY];
