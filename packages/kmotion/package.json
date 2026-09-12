@@ -47,8 +47,5 @@
     "vue": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "@kmotion/animation": "^0.1.1"
   }
 }
