@@ -29,7 +29,7 @@ const PromptArchiveLive = lazy(
   () => import('../templates/landing-page/prompt/LivePage'),
 );
 const PortfolioCosmicLive = lazy(
-  () => import('../templates/landing-page/portfolio-cosmic/LivePage'),
+  () => import('../templates/portfolio/portfolio-cosmic/LivePage'),
 );
 const NeoMuseumLive = lazy(
   () => import('../templates/landing-page/neo-museum/LivePage'),

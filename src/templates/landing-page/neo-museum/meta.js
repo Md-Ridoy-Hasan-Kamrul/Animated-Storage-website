@@ -8,7 +8,7 @@ export const meta = {
   category: 'Landing Page',
   categorySlug: 'landing-page',
   pricing: 'Free',
-  likes: 0,
+  likes: 5232,
   height: 'h-[272px]',
   livePath: ROUTES.NEO_MUSEUM,
   detailPath: '/templates/neo-museum',

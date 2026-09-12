@@ -10,6 +10,7 @@ describe('Neo Museum meta', () => {
     expect(meta.title).toBe('Neo Museum');
     expect(meta.category).toBe('Landing Page');
     expect(meta.height).toBe('h-[272px]');
+    expect(meta.likes).toBe(5232);
   });
 
   it('binds copy prompt to prompt.js export', () => {

@@ -7,6 +7,7 @@ describe('Prompt archive meta', () => {
     expect(meta.title).toBe('Prompt');
     expect(meta.category).toBe('Landing Page');
     expect(meta.height).toBe('h-[272px]');
+    expect(meta.likes).toBe(988);
   });
 
   it('binds copy prompt to prompt.js export', () => {

@@ -17,6 +17,7 @@ describe('Adam Roberts meta', () => {
     expect(meta.title).toBe('Adam Roberts');
     expect(meta.category).toBe('Portfolio');
     expect(meta.height).toBe('h-[272px]');
+    expect(meta.likes).toBe(1132);
   });
 
   it('binds copy prompt to prompt.js export', () => {
@@ -30,11 +31,16 @@ describe('Adam Roberts meta', () => {
 });
 
 describe('Adam Roberts content', () => {
-  it('keeps the exact CloudFront video URL', () => {
+  it('keeps CloudFront as the source of record and local path for playback', () => {
     expect(HERO_VIDEO).toBe(
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4',
     );
     expect(HERO_VIDEO_LOCAL).toBe('/images/Assets Adam Roberts/hero.mp4');
+  });
+
+  it('copy prompt tells rebuilders to play the local hero.mp4', () => {
+    expect(ADAM_ROBERTS_PROMPT).toContain('/images/Assets Adam Roberts/hero.mp4');
+    expect(ADAM_ROBERTS_PROMPT).toContain('Media load rejected by URL safety check');
   });
 
   it('keeps brand copy, awards, and nav labels', () => {

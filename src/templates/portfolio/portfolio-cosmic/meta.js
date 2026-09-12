@@ -5,10 +5,10 @@ import { PROJECTS } from './content';
 export const meta = {
   id: 'portfolio-cosmic',
   title: 'Portfolio Cosmic',
-  category: 'Landing Page',
-  categorySlug: 'landing-page',
+  category: 'Portfolio',
+  categorySlug: 'portfolio',
   pricing: 'Free',
-  likes: 0,
+  likes: 1655,
   height: 'h-[272px]',
   livePath: ROUTES.PORTFOLIO_COSMIC,
   detailPath: '/templates/portfolio-cosmic',

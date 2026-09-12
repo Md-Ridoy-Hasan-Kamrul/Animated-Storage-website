@@ -5,11 +5,12 @@ import { bentoColSpan } from '../utils/cycleIndex';
 import { PROJECTS } from '../content';
 
 describe('Portfolio Cosmic meta', () => {
-  it('registers Landing Page card Portfolio Cosmic', () => {
+  it('registers Portfolio card Portfolio Cosmic', () => {
     expect(meta.id).toBe('portfolio-cosmic');
     expect(meta.title).toBe('Portfolio Cosmic');
-    expect(meta.category).toBe('Landing Page');
+    expect(meta.category).toBe('Portfolio');
     expect(meta.height).toBe('h-[272px]');
+    expect(meta.likes).toBe(1655);
   });
 
   it('binds copy prompt to prompt.js export', () => {
