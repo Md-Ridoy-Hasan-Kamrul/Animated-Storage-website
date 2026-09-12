@@ -40,6 +40,9 @@ const AdamRobertsLive = lazy(
 const LuminaLive = lazy(
   () => import('../templates/sections/lumina/LivePage'),
 );
+const HeritageGroveLive = lazy(
+  () => import('../templates/footer/heritage-grove/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -145,6 +148,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LuminaLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.HERITAGE_GROVE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <HeritageGroveLive />
           </Suspense>
         }
       />

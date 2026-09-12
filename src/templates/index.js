@@ -5,11 +5,18 @@ import { meta as portfolioCosmic } from './portfolio/portfolio-cosmic/meta';
 import { meta as neoMuseum } from './landing-page/neo-museum/meta';
 import { meta as adamRoberts } from './portfolio/adam-roberts/meta';
 import { meta as lumina } from './sections/lumina/meta';
+import { meta as heritageGrove } from './footer/heritage-grove/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
 /** Categories that currently have at least one live template */
-export const ACTIVE_TEMPLATE_CATEGORIES = ['All', 'Landing Page', 'Portfolio', 'Sections'];
+export const ACTIVE_TEMPLATE_CATEGORIES = [
+  'All',
+  'Landing Page',
+  'Portfolio',
+  'Sections',
+  'Footer',
+];
 
 /**
  * Registry of all live templates.
@@ -22,6 +29,7 @@ export const TEMPLATES = [
   neoMuseum,
   adamRoberts,
   lumina,
+  heritageGrove,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

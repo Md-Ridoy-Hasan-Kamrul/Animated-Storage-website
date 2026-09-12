@@ -11,6 +11,7 @@ import * as portfolioCosmic from '../templates/portfolio/portfolio-cosmic/conten
 import * as neoMuseum from '../templates/landing-page/neo-museum/content';
 import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
 import * as lumina from '../templates/sections/lumina/content';
+import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
 const CONTENT_BY_TEMPLATE_ID = {
@@ -25,6 +26,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'neo-museum': neoMuseum,
   'adam-roberts': adamRoberts,
   lumina,
+  'heritage-grove': heritageGrove,
 };
 const COPY_ICON_SIZE = 20;
 

@@ -79,7 +79,7 @@ const Layout = memo(() => {
                   <Link
                     key={label}
                     to={href}
-                    className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-zinc-400 transition-colors hover:text-white xl:text-[13px]"
+                    className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-zinc-400 transition-all duration-200 hover:text-white hover:underline hover:underline-offset-4 xl:text-[13px]"
                   >
                     {label}
                     {badge ? (
@@ -144,7 +144,7 @@ const Layout = memo(() => {
                   key={label}
                   to={href}
                   onClick={closeMenu}
-                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-zinc-300 hover:bg-white/5 hover:text-white"
+                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-zinc-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
                 >
                   {label}
                   {badge ? (
