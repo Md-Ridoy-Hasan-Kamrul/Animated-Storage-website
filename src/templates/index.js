@@ -18,6 +18,7 @@ import { meta as intelligentOperations } from './agency/intelligent-operations/m
 import { meta as interactiveDiscovery } from './hero/interactive-discovery/meta';
 import { meta as nikeHover } from './features/nike-hover/meta';
 import { meta as synthMode } from './fashion/synth-mode/meta';
+import { meta as techForward } from './hero/tech-forward/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -62,6 +63,7 @@ export const TEMPLATES = [
   interactiveDiscovery,
   nikeHover,
   synthMode,
+  techForward,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

@@ -21,6 +21,7 @@ export const TEMPLATES = [
   'interactive-discovery',
   'nike-hover',
   'synth-mode',
+  'tech-forward',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

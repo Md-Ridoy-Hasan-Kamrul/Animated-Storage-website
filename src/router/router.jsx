@@ -79,6 +79,9 @@ const NikeHoverLive = lazy(
 const SynthModeLive = lazy(
   () => import('../templates/fashion/synth-mode/LivePage'),
 );
+const TechForwardLive = lazy(
+  () => import('../templates/hero/tech-forward/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -301,6 +304,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <SynthModeLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TECH_FORWARD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TechForwardLive />
           </Suspense>
         }
       />

@@ -1,0 +1,69 @@
+export const CARD_ID = 'tech-forward';
+export const CARD_TITLE = 'Tech-Forward';
+export const DETAIL_FALLBACK = '/templates/tech-forward';
+export const PAGE_TITLE = 'NeuralKinetics';
+export const PAGE_BG = '#ffffff';
+export const PAGE_INK = '#000000';
+export const PAGE_CLASS = 'tech-forward';
+export const PAGE_HTML_CLASS = 'tech-forward-page';
+
+export const FONT_PRECONNECT_GAPI = 'https://fonts.googleapis.com';
+export const FONT_PRECONNECT_GSTATIC = 'https://fonts.gstatic.com';
+export const FONT_HREF =
+  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap';
+export const FONT_LINK_ID = 'tech-forward-fonts';
+export const FONT_PRECONNECT_GAPI_ID = 'tech-forward-font-preconnect-gapi';
+export const FONT_PRECONNECT_GSTATIC_ID = 'tech-forward-font-preconnect-gstatic';
+
+export const BRAND_NAME = 'NeuralKinetics';
+export const MENU_LABEL = 'Menu';
+export const TAG_ONE = 'Advanced Bionics';
+export const TAG_TWO = 'Cognitive AI';
+export const ADAPTIVE_LABEL = 'Adaptive Systems';
+export const SUBTITLE = 'Best digital banking card 2026';
+export const HEADLINE_LINE_ONE = 'One Card, Zero /';
+export const HEADLINE_LINE_TWO = 'Limits. Worldwide.';
+export const CTA_FEATURES = 'See Features';
+export const CTA_HOW = 'How It Works';
+export const FOOTER_TAGS = ['Neuromorphic', 'AGI', 'Cybernetics'];
+
+export const PLUS_SIZE = 12;
+export const PLUS_STROKE = 3;
+export const LOGO_ROTATE_DEG = -35;
+export const DESKTOP_MIN = 768;
+export const NAV_Z = 50;
+export const VIDEO_Z = 0;
+export const FOOTER_Z = 30;
+export const DOT_SIZE = 8;
+export const CIRCLE_MOBILE = 28;
+export const CIRCLE_DESKTOP = 32;
+export const VIDEO_MOBILE_SIZE = '80%';
+export const VIDEO_DESKTOP_SIZE = '100%';
+export const BACK_ICON_SIZE = 16;
+export const BACK_ICON_STROKE = 2;
+export const HISTORY_CAN_GO_BACK_MIN = 0;
+export const DETAIL_CARD_IMAGE_COUNT = 8;
+
+export const ENTRANCE_HIDDEN = 'hidden';
+export const ENTRANCE_VISIBLE = 'visible';
+export const TWEEN_TYPE = 'tween';
+export const REDUCED_MOTION_NEVER = 'never';
+
+export const MOTION_EASE = [0.16, 1, 0.3, 1];
+export const NAV_Y = -16;
+export const NAV_DURATION_S = 0.8;
+export const VIDEO_FROM_OPACITY = 0;
+export const VIDEO_FROM_SCALE = 1.05;
+export const VIDEO_DURATION_S = 1.8;
+export const FOOTER_Y = 20;
+export const FOOTER_DELAY_S = 0.5;
+export const FOOTER_DURATION_S = 1;
+export const SUBTITLE_Y = 16;
+export const SUBTITLE_DELAY_S = 0.6;
+export const SUBTITLE_DURATION_S = 0.8;
+export const HEADING_Y = 20;
+export const HEADING_DELAY_S = 0.8;
+export const HEADING_DURATION_S = 0.8;
+export const BUTTONS_Y = 16;
+export const BUTTONS_DELAY_S = 1;
+export const BUTTONS_DURATION_S = 0.8;

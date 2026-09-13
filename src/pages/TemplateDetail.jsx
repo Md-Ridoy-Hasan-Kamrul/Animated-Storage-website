@@ -24,6 +24,7 @@ import * as intelligentOperations from '../templates/agency/intelligent-operatio
 import * as interactiveDiscovery from '../templates/hero/interactive-discovery/content';
 import * as nikeHover from '../templates/features/nike-hover/content';
 import * as synthMode from '../templates/fashion/synth-mode/content';
+import * as techForward from '../templates/hero/tech-forward/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -52,6 +53,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'interactive-discovery': interactiveDiscovery,
   'nike-hover': nikeHover,
   'synth-mode': synthMode,
+  'tech-forward': techForward,
 };
 const COPY_ICON_SIZE = 20;
 
