@@ -61,6 +61,9 @@ const CharacterStudioLive = lazy(
 const ScrollTiedVideoLive = lazy(
   () => import('../templates/creative/scroll-tied-video/LivePage'),
 );
+const MostarCityLive = lazy(
+  () => import('../templates/travel/mostar-city/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -229,6 +232,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ScrollTiedVideoLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MOSTAR_CITY}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MostarCityLive />
           </Suspense>
         }
       />

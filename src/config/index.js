@@ -23,6 +23,7 @@ export const ROUTES = {
   CAST_RENDER: '/p/cast-render',
   CHARACTER_STUDIO: '/p/3d-character-studio',
   SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
+  MOSTAR_CITY: '/p/mostar-city',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

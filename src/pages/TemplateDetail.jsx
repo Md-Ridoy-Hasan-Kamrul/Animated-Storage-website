@@ -18,6 +18,7 @@ import * as ltxWorld from '../templates/ecommerce/ltx-world/content';
 import * as castRender from '../templates/3d-website/cast-render/content';
 import * as characterStudio from '../templates/3d-website/3d-character-studio/content';
 import * as scrollTiedVideo from '../templates/creative/scroll-tied-video/content';
+import * as mostarCity from '../templates/travel/mostar-city/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -40,6 +41,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'cast-render': castRender,
   '3d-character-studio': characterStudio,
   'scroll-tied-video': scrollTiedVideo,
+  'mostar-city': mostarCity,
 };
 const COPY_ICON_SIZE = 20;
 

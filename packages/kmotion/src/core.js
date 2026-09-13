@@ -15,6 +15,7 @@ export const TEMPLATES = [
   'cast-render',
   '3d-character-studio',
   'scroll-tied-video',
+  'mostar-city',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
