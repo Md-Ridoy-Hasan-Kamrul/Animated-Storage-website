@@ -19,6 +19,7 @@ import { meta as interactiveDiscovery } from './hero/interactive-discovery/meta'
 import { meta as nikeHover } from './features/nike-hover/meta';
 import { meta as synthMode } from './fashion/synth-mode/meta';
 import { meta as techForward } from './hero/tech-forward/meta';
+import { meta as contactCybernetic } from './hero/contact-cybernetic/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -64,6 +65,7 @@ export const TEMPLATES = [
   nikeHover,
   synthMode,
   techForward,
+  contactCybernetic,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

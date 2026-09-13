@@ -30,6 +30,7 @@ export const ROUTES = {
   NIKE_HOVER: '/p/nike-hover',
   SYNTH_MODE: '/p/synth-mode',
   TECH_FORWARD: '/p/tech-forward',
+  CONTACT_CYBERNETIC: '/p/contact-cybernetic',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
