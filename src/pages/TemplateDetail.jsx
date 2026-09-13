@@ -22,6 +22,7 @@ import * as mostarCity from '../templates/travel/mostar-city/content';
 import * as stillmind from '../templates/hero/stillmind/content';
 import * as intelligentOperations from '../templates/agency/intelligent-operations/content';
 import * as interactiveDiscovery from '../templates/hero/interactive-discovery/content';
+import * as nikeHover from '../templates/features/nike-hover/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -48,6 +49,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   stillmind,
   'intelligent-operations': intelligentOperations,
   'interactive-discovery': interactiveDiscovery,
+  'nike-hover': nikeHover,
 };
 const COPY_ICON_SIZE = 20;
 

@@ -1,0 +1,18 @@
+.nike-hover {
+  font-family: Manrope, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nike-hover .font-sans {
+  font-family: Manrope, sans-serif;
+}
+
+.nike-hover .font-serif {
+  font-family: 'Instrument Serif', serif;
+}
+
+html.nike-hover-page,
+html.nike-hover-page body,
+html.nike-hover-page #root {
+  background: #000;
+}

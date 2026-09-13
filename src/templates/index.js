@@ -16,6 +16,7 @@ import { meta as mostarCity } from './travel/mostar-city/meta';
 import { meta as stillmind } from './hero/stillmind/meta';
 import { meta as intelligentOperations } from './agency/intelligent-operations/meta';
 import { meta as interactiveDiscovery } from './hero/interactive-discovery/meta';
+import { meta as nikeHover } from './features/nike-hover/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -28,6 +29,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Footer',
   'Agency',
   'Hero',
+  'Features',
   'Ecommerce',
   '3d Website',
   'Creative',
@@ -56,6 +58,7 @@ export const TEMPLATES = [
   stillmind,
   intelligentOperations,
   interactiveDiscovery,
+  nikeHover,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

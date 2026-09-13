@@ -19,6 +19,7 @@ export const TEMPLATES = [
   'stillmind',
   'intelligent-operations',
   'interactive-discovery',
+  'nike-hover',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
