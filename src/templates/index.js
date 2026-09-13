@@ -13,6 +13,7 @@ import { meta as castRender } from './3d-website/cast-render/meta';
 import { meta as characterStudio } from './3d-website/3d-character-studio/meta';
 import { meta as scrollTiedVideo } from './creative/scroll-tied-video/meta';
 import { meta as mostarCity } from './travel/mostar-city/meta';
+import { meta as stillmind } from './hero/stillmind/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -50,6 +51,7 @@ export const TEMPLATES = [
   characterStudio,
   scrollTiedVideo,
   mostarCity,
+  stillmind,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

@@ -19,6 +19,7 @@ import * as castRender from '../templates/3d-website/cast-render/content';
 import * as characterStudio from '../templates/3d-website/3d-character-studio/content';
 import * as scrollTiedVideo from '../templates/creative/scroll-tied-video/content';
 import * as mostarCity from '../templates/travel/mostar-city/content';
+import * as stillmind from '../templates/hero/stillmind/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -42,6 +43,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   '3d-character-studio': characterStudio,
   'scroll-tied-video': scrollTiedVideo,
   'mostar-city': mostarCity,
+  stillmind,
 };
 const COPY_ICON_SIZE = 20;
 

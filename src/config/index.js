@@ -24,6 +24,7 @@ export const ROUTES = {
   CHARACTER_STUDIO: '/p/3d-character-studio',
   SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
   MOSTAR_CITY: '/p/mostar-city',
+  STILLMIND: '/p/stillmind',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

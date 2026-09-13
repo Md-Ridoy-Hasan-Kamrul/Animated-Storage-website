@@ -16,6 +16,7 @@ export const TEMPLATES = [
   '3d-character-studio',
   'scroll-tied-video',
   'mostar-city',
+  'stillmind',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
