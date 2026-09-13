@@ -17,6 +17,7 @@ import { meta as stillmind } from './hero/stillmind/meta';
 import { meta as intelligentOperations } from './agency/intelligent-operations/meta';
 import { meta as interactiveDiscovery } from './hero/interactive-discovery/meta';
 import { meta as nikeHover } from './features/nike-hover/meta';
+import { meta as synthMode } from './fashion/synth-mode/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -34,6 +35,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   '3d Website',
   'Creative',
   'Travel',
+  'Fashion',
 ];
 
 /**
@@ -59,6 +61,7 @@ export const TEMPLATES = [
   intelligentOperations,
   interactiveDiscovery,
   nikeHover,
+  synthMode,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

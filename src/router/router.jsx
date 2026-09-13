@@ -76,6 +76,9 @@ const InteractiveDiscoveryLive = lazy(
 const NikeHoverLive = lazy(
   () => import('../templates/features/nike-hover/LivePage'),
 );
+const SynthModeLive = lazy(
+  () => import('../templates/fashion/synth-mode/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -289,6 +292,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <NikeHoverLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SYNTH_MODE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SynthModeLive />
           </Suspense>
         }
       />

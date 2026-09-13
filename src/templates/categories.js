@@ -21,6 +21,7 @@ export const CATEGORIES = [
   'Fintech',
   'Creative',
   'Ecommerce',
+  'Fashion',
   'Carousel',
 ];
 
@@ -42,6 +43,7 @@ export const CATEGORY_SLUGS = {
   Fintech: 'fintech',
   Creative: 'creative',
   Ecommerce: 'ecommerce',
+  Fashion: 'fashion',
   Carousel: 'carousel',
 };
 

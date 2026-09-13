@@ -1,0 +1,192 @@
+.synth-mode {
+  --pad-x: clamp(1.25rem, 4.5vw, 5rem);
+  --pad-y: clamp(1rem, 3vh, 4rem);
+  --header-pt: clamp(1.25rem, 2.5vh, 2.5rem);
+  --gap-nav: clamp(1rem, 2.2vw, 2.25rem);
+  --logo: clamp(1.35rem, 1.2vw + 0.9rem, 2.1rem);
+  --logo-deg: clamp(0.65rem, 0.4vw + 0.45rem, 0.9rem);
+  --nav: clamp(0.65rem, 0.35vw + 0.5rem, 0.875rem);
+  --headline: clamp(2.15rem, 4.5vw + 0.75rem, 5.25rem);
+  --body: clamp(0.7rem, 0.35vw + 0.55rem, 0.9rem);
+  --micro: clamp(0.55rem, 0.25vw + 0.45rem, 0.7rem);
+  --btn-px: clamp(1.15rem, 1.4vw, 1.75rem);
+  --btn-py: clamp(0.6rem, 0.9vh, 0.85rem);
+  --btn-gap: clamp(0.75rem, 1vw, 1.1rem);
+  --feature-pad: clamp(1rem, 1.5vw, 1.75rem);
+  --feature-min: clamp(13rem, 18vw, 20rem);
+  --globe: clamp(2.25rem, 2.5vw + 1rem, 3.25rem);
+  --checker-w: clamp(2.75rem, 4.5vw, 6.5rem);
+  --checker-h: clamp(1.35rem, 2.2vw, 3rem);
+  --corner: clamp(0.65rem, 0.4vw + 0.4rem, 0.95rem);
+  --icon: clamp(1rem, 0.6vw + 0.7rem, 1.35rem);
+  --drawer-pad: clamp(1.25rem, 2.5vw, 2.25rem);
+  --drawer-max: clamp(18rem, 28vw, 28rem);
+  --section-gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  --main-py: clamp(1.25rem, 4vh, 4rem);
+  --cta-nudge: 2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.synth-mode ::selection {
+  background: #000;
+  color: #fff;
+}
+
+.synth-mode .font-orbitron,
+.synth-mode .font-orbitron * {
+  font-family: Orbitron, sans-serif;
+}
+
+.synth-mode .font-jakarta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.synth-mode .synth-header {
+  padding-inline: var(--pad-x);
+  padding-top: var(--header-pt);
+  padding-bottom: var(--section-gap);
+}
+
+.synth-mode .synth-logo {
+  display: inline-flex;
+  align-items: flex-start;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  font-size: var(--logo);
+  line-height: 1;
+  color: #000;
+}
+
+.synth-mode .synth-logo:hover {
+  opacity: 0.8;
+}
+
+.synth-mode .synth-logo-deg {
+  font-size: var(--logo-deg);
+}
+
+.synth-mode .synth-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-nav);
+  font-size: var(--nav);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.synth-mode .synth-nav-link:hover {
+  opacity: 0.5;
+}
+
+.synth-mode .synth-main {
+  padding-inline: var(--pad-x);
+  padding-block: var(--main-py);
+}
+
+.synth-mode .synth-headline {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  font-size: var(--headline);
+}
+
+.synth-mode .synth-checker {
+  width: var(--checker-w);
+  height: var(--checker-h);
+}
+
+.synth-mode .synth-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--btn-gap);
+  border: 1px solid #9ca3af;
+  border-radius: 0.375rem;
+  padding: var(--btn-py) var(--btn-px);
+  font-size: var(--body);
+  letter-spacing: 0.18em;
+}
+
+.synth-mode .synth-cta:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.synth-mode .synth-cta:hover .synth-cta-icon {
+  transform: translate(var(--cta-nudge, 2px), calc(var(--cta-nudge, 2px) * -1));
+}
+
+.synth-mode .synth-cta-icon {
+  transition: transform 180ms ease;
+}
+
+.synth-mode .synth-feature {
+  min-width: var(--feature-min);
+  padding: var(--feature-pad);
+}
+
+.synth-mode .synth-feature-copy {
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: var(--body);
+}
+
+.synth-mode .synth-globe {
+  width: var(--globe);
+  height: var(--globe);
+}
+
+.synth-mode .synth-corner {
+  width: var(--corner);
+  height: var(--corner);
+}
+
+.synth-mode .synth-icon {
+  width: var(--icon);
+  height: var(--icon);
+}
+
+.synth-mode .synth-body {
+  font-size: var(--body);
+}
+
+.synth-mode .synth-micro {
+  font-size: var(--micro);
+}
+
+.synth-mode .synth-drawer {
+  max-width: var(--drawer-max);
+  padding: var(--drawer-pad);
+}
+
+.synth-mode .synth-drawer-title {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: var(--body);
+}
+
+.synth-mode .synth-backdrop {
+  backdrop-filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .synth-mode * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html.synth-mode-page,
+html.synth-mode-page body,
+html.synth-mode-page #root {
+  background: #fff;
+}
+
+@media (max-width: 1023px) {
+  .synth-mode {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

@@ -28,6 +28,7 @@ export const ROUTES = {
   INTELLIGENT_OPERATIONS: '/p/intelligent-operations',
   INTERACTIVE_DISCOVERY: '/p/interactive-discovery',
   NIKE_HOVER: '/p/nike-hover',
+  SYNTH_MODE: '/p/synth-mode',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

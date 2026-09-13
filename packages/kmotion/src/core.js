@@ -20,6 +20,7 @@ export const TEMPLATES = [
   'intelligent-operations',
   'interactive-discovery',
   'nike-hover',
+  'synth-mode',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
