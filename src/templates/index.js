@@ -21,6 +21,7 @@ import { meta as synthMode } from './fashion/synth-mode/meta';
 import { meta as techForward } from './hero/tech-forward/meta';
 import { meta as contactCybernetic } from './hero/contact-cybernetic/meta';
 import { meta as wellnessHero } from './hero/wellness-hero/meta';
+import { meta as mindBodyHealing } from './medicine/mind-body-healing/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -39,6 +40,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Creative',
   'Travel',
   'Fashion',
+  'Medicine',
 ];
 
 /**
@@ -68,6 +70,7 @@ export const TEMPLATES = [
   techForward,
   contactCybernetic,
   wellnessHero,
+  mindBodyHealing,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

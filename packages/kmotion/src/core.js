@@ -24,6 +24,7 @@ export const TEMPLATES = [
   'tech-forward',
   'contact-cybernetic',
   'wellness-hero',
+  'mind-body-healing',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

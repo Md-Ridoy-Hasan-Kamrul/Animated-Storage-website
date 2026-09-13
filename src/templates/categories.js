@@ -23,6 +23,7 @@ export const CATEGORIES = [
   'Ecommerce',
   'Fashion',
   'Carousel',
+  'Medicine',
 ];
 
 export const CATEGORY_SLUGS = {
@@ -45,6 +46,7 @@ export const CATEGORY_SLUGS = {
   Ecommerce: 'ecommerce',
   Fashion: 'fashion',
   Carousel: 'carousel',
+  Medicine: 'medicine',
 };
 
 export const categoryToSlug = (category) => CATEGORY_SLUGS[category] || null;

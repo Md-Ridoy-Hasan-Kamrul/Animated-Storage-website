@@ -88,6 +88,9 @@ const ContactCyberneticLive = lazy(
 const WellnessHeroLive = lazy(
   () => import('../templates/hero/wellness-hero/LivePage'),
 );
+const MindBodyHealingLive = lazy(
+  () => import('../templates/medicine/mind-body-healing/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -337,6 +340,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <WellnessHeroLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MIND_BODY_HEALING}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MindBodyHealingLive />
           </Suspense>
         }
       />

@@ -32,6 +32,7 @@ export const ROUTES = {
   TECH_FORWARD: '/p/tech-forward',
   CONTACT_CYBERNETIC: '/p/contact-cybernetic',
   WELLNESS_HERO: '/p/wellness-hero',
+  MIND_BODY_HEALING: '/p/mind-body-healing',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
