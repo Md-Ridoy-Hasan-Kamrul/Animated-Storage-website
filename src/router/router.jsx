@@ -55,6 +55,9 @@ const LtxWorldLive = lazy(
 const CastRenderLive = lazy(
   () => import('../templates/3d-website/cast-render/LivePage'),
 );
+const CharacterStudioLive = lazy(
+  () => import('../templates/3d-website/3d-character-studio/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -205,6 +208,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <CastRenderLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CHARACTER_STUDIO}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <CharacterStudioLive />
           </Suspense>
         }
       />

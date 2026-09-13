@@ -1,0 +1,85 @@
+.mainframe {
+  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
+}
+
+.mainframe *,
+.mainframe *::before,
+.mainframe *::after {
+  box-sizing: border-box;
+}
+
+.mainframe-video {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+.mainframe-logo {
+  font-family: var(--font-heading);
+}
+
+.mainframe-mark {
+  letter-spacing: -0.02em;
+}
+
+.mainframe-intro {
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+  filter: blur(4px);
+}
+
+.mainframe-type {
+  min-height: 54px;
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.mainframe-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: middle;
+  background: #fff;
+  animation: mainframe-blink 1s step-end infinite;
+}
+
+.mainframe-pills {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.mainframe-pills.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes mainframe-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

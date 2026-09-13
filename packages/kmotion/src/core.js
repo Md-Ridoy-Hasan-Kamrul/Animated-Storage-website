@@ -13,6 +13,7 @@ export const TEMPLATES = [
   'foldcraft',
   'ltx-world',
   'cast-render',
+  '3d-character-studio',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

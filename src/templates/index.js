@@ -10,6 +10,7 @@ import { meta as velorah } from './agency/velorah/meta';
 import { meta as foldcraft } from './hero/foldcraft/meta';
 import { meta as ltxWorld } from './ecommerce/ltx-world/meta';
 import { meta as castRender } from './3d-website/cast-render/meta';
+import { meta as characterStudio } from './3d-website/3d-character-studio/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -42,6 +43,7 @@ export const TEMPLATES = [
   foldcraft,
   ltxWorld,
   castRender,
+  characterStudio,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;
