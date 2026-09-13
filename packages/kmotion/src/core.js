@@ -23,6 +23,7 @@ export const TEMPLATES = [
   'synth-mode',
   'tech-forward',
   'contact-cybernetic',
+  'wellness-hero',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

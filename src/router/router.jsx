@@ -85,6 +85,9 @@ const TechForwardLive = lazy(
 const ContactCyberneticLive = lazy(
   () => import('../templates/hero/contact-cybernetic/LivePage'),
 );
+const WellnessHeroLive = lazy(
+  () => import('../templates/hero/wellness-hero/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -325,6 +328,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ContactCyberneticLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WELLNESS_HERO}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WellnessHeroLive />
           </Suspense>
         }
       />

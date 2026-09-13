@@ -1,0 +1,43 @@
+.wellness-hero {
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #050505;
+  color: #fff;
+}
+
+.wellness-hero *,
+.wellness-hero *::before,
+.wellness-hero *::after {
+  box-sizing: border-box;
+}
+
+.wellness-hero .font-askan {
+  font-family: 'Askan Light', serif;
+}
+
+.wellness-hero .font-inter {
+  font-family: Inter, sans-serif;
+}
+
+.wh-video {
+  object-fit: cover;
+  object-position: 80% center;
+}
+
+@media (min-width: 768px) {
+  .wh-video {
+    object-position: right center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wh-video {
+    object-position: center center;
+  }
+}
+
+html.wellness-hero-page,
+html.wellness-hero-page body {
+  background: #050505;
+}

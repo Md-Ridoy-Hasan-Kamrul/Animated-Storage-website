@@ -31,6 +31,7 @@ export const ROUTES = {
   SYNTH_MODE: '/p/synth-mode',
   TECH_FORWARD: '/p/tech-forward',
   CONTACT_CYBERNETIC: '/p/contact-cybernetic',
+  WELLNESS_HERO: '/p/wellness-hero',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
