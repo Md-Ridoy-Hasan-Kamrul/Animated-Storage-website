@@ -8,7 +8,7 @@ export const meta = {
   category: 'Footer',
   categorySlug: 'footer',
   pricing: 'Free',
-  likes: 0,
+  likes: 5733,
   height: 'h-[272px]',
   livePath: ROUTES.HERITAGE_GROVE,
   detailPath: '/templates/heritage-grove',

@@ -8,7 +8,7 @@ export const meta = {
   category: 'Hero',
   categorySlug: 'hero',
   pricing: 'Free',
-  likes: 0,
+  likes: 967,
   height: 'h-[272px]',
   livePath: ROUTES.FOLDCRAFT,
   detailPath: '/templates/foldcraft',

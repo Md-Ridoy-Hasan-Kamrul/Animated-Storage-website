@@ -8,7 +8,7 @@ export const meta = {
   category: 'Sections',
   categorySlug: 'sections',
   pricing: 'Free',
-  likes: 0,
+  likes: 577,
   height: 'h-[272px]',
   livePath: ROUTES.LUMINA,
   detailPath: '/templates/lumina',

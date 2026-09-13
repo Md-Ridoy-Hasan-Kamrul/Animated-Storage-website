@@ -8,7 +8,7 @@ export const meta = {
   category: 'Agency',
   categorySlug: 'agency',
   pricing: 'Free',
-  likes: 0,
+  likes: 366,
   height: 'h-[272px]',
   livePath: ROUTES.VELORAH,
   detailPath: '/templates/velorah',
