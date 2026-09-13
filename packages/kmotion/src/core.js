@@ -17,6 +17,7 @@ export const TEMPLATES = [
   'scroll-tied-video',
   'mostar-city',
   'stillmind',
+  'intelligent-operations',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

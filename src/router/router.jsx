@@ -67,6 +67,9 @@ const MostarCityLive = lazy(
 const StillmindLive = lazy(
   () => import('../templates/hero/stillmind/LivePage'),
 );
+const IntelligentOperationsLive = lazy(
+  () => import('../templates/agency/intelligent-operations/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -253,6 +256,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <StillmindLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.INTELLIGENT_OPERATIONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <IntelligentOperationsLive />
           </Suspense>
         }
       />

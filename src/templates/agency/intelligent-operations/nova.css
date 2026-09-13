@@ -1,0 +1,22 @@
+.novaai {
+  font-family: Inter, system-ui, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.novaai .font-sans,
+.novaai .font-mono {
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.novaai ::selection {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html.novaai-page,
+html.novaai-page body,
+html.novaai-page #root {
+  background: #0a0a0a;
+}
