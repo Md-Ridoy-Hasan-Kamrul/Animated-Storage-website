@@ -12,6 +12,7 @@ export const TEMPLATES = [
   'velorah',
   'foldcraft',
   'ltx-world',
+  'cast-render',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

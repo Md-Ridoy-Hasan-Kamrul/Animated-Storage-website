@@ -15,6 +15,7 @@ import * as heritageGrove from '../templates/footer/heritage-grove/content';
 import * as velorah from '../templates/agency/velorah/content';
 import * as foldcraft from '../templates/hero/foldcraft/content';
 import * as ltxWorld from '../templates/ecommerce/ltx-world/content';
+import * as castRender from '../templates/3d-website/cast-render/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -34,6 +35,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   velorah,
   foldcraft,
   'ltx-world': ltxWorld,
+  'cast-render': castRender,
 };
 const COPY_ICON_SIZE = 20;
 

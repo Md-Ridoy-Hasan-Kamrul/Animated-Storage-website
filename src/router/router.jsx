@@ -52,6 +52,9 @@ const FoldcraftLive = lazy(
 const LtxWorldLive = lazy(
   () => import('../templates/ecommerce/ltx-world/LivePage'),
 );
+const CastRenderLive = lazy(
+  () => import('../templates/3d-website/cast-render/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -193,6 +196,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LtxWorldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CAST_RENDER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <CastRenderLive />
           </Suspense>
         }
       />

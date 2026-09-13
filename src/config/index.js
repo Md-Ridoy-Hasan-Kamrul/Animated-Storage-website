@@ -20,6 +20,7 @@ export const ROUTES = {
   VELORAH: '/p/velorah',
   FOLDCRAFT: '/p/foldcraft',
   LTX_WORLD: '/p/ltx-world',
+  CAST_RENDER: '/p/cast-render',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
