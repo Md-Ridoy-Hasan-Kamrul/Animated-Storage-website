@@ -22,6 +22,7 @@ export const ROUTES = {
   LTX_WORLD: '/p/ltx-world',
   CAST_RENDER: '/p/cast-render',
   CHARACTER_STUDIO: '/p/3d-character-studio',
+  SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

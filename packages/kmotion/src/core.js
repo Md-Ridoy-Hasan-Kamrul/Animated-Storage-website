@@ -14,6 +14,7 @@ export const TEMPLATES = [
   'ltx-world',
   'cast-render',
   '3d-character-studio',
+  'scroll-tied-video',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

@@ -58,6 +58,9 @@ const CastRenderLive = lazy(
 const CharacterStudioLive = lazy(
   () => import('../templates/3d-website/3d-character-studio/LivePage'),
 );
+const ScrollTiedVideoLive = lazy(
+  () => import('../templates/creative/scroll-tied-video/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -217,6 +220,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <CharacterStudioLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SCROLL_TIED_VIDEO}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ScrollTiedVideoLive />
           </Suspense>
         }
       />

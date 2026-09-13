@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#d7e2ea"/>
+  <rect width="1280" height="720" fill="url(#stv-sky)"/>
+  <text x="80" y="140" fill="#1D3045" font-size="28" font-family="Arial, sans-serif" letter-spacing="4">VECTRUS ENERGY</text>
+  <text x="80" y="600" fill="#1D3045" font-size="42" font-family="Arial, sans-serif">Vectrus Energy</text>
+  <defs>
+    <linearGradient id="stv-sky" x1="0" y1="0" x2="0" y2="720">
+      <stop offset="0%" stop-color="#f4f7f8"/>
+      <stop offset="100%" stop-color="#9aaebc"/>
+    </linearGradient>
+  </defs>
+</svg>

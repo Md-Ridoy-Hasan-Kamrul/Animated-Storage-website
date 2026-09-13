@@ -11,6 +11,7 @@ import { meta as foldcraft } from './hero/foldcraft/meta';
 import { meta as ltxWorld } from './ecommerce/ltx-world/meta';
 import { meta as castRender } from './3d-website/cast-render/meta';
 import { meta as characterStudio } from './3d-website/3d-character-studio/meta';
+import { meta as scrollTiedVideo } from './creative/scroll-tied-video/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -25,6 +26,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Hero',
   'Ecommerce',
   '3d Website',
+  'Creative',
 ];
 
 /**
@@ -44,6 +46,7 @@ export const TEMPLATES = [
   ltxWorld,
   castRender,
   characterStudio,
+  scrollTiedVideo,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;
