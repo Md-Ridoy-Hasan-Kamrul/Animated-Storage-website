@@ -21,6 +21,7 @@ import * as scrollTiedVideo from '../templates/creative/scroll-tied-video/conten
 import * as mostarCity from '../templates/travel/mostar-city/content';
 import * as stillmind from '../templates/hero/stillmind/content';
 import * as intelligentOperations from '../templates/agency/intelligent-operations/content';
+import * as interactiveDiscovery from '../templates/hero/interactive-discovery/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -46,6 +47,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'mostar-city': mostarCity,
   stillmind,
   'intelligent-operations': intelligentOperations,
+  'interactive-discovery': interactiveDiscovery,
 };
 const COPY_ICON_SIZE = 20;
 

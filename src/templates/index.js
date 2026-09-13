@@ -15,6 +15,7 @@ import { meta as scrollTiedVideo } from './creative/scroll-tied-video/meta';
 import { meta as mostarCity } from './travel/mostar-city/meta';
 import { meta as stillmind } from './hero/stillmind/meta';
 import { meta as intelligentOperations } from './agency/intelligent-operations/meta';
+import { meta as interactiveDiscovery } from './hero/interactive-discovery/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -54,6 +55,7 @@ export const TEMPLATES = [
   mostarCity,
   stillmind,
   intelligentOperations,
+  interactiveDiscovery,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

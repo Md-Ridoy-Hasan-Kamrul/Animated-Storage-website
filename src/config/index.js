@@ -26,6 +26,7 @@ export const ROUTES = {
   MOSTAR_CITY: '/p/mostar-city',
   STILLMIND: '/p/stillmind',
   INTELLIGENT_OPERATIONS: '/p/intelligent-operations',
+  INTERACTIVE_DISCOVERY: '/p/interactive-discovery',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

@@ -70,6 +70,9 @@ const StillmindLive = lazy(
 const IntelligentOperationsLive = lazy(
   () => import('../templates/agency/intelligent-operations/LivePage'),
 );
+const InteractiveDiscoveryLive = lazy(
+  () => import('../templates/hero/interactive-discovery/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -265,6 +268,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <IntelligentOperationsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.INTERACTIVE_DISCOVERY}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <InteractiveDiscoveryLive />
           </Suspense>
         }
       />

@@ -18,6 +18,7 @@ export const TEMPLATES = [
   'mostar-city',
   'stillmind',
   'intelligent-operations',
+  'interactive-discovery',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
