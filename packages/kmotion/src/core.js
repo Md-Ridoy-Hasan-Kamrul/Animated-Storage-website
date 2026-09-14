@@ -26,6 +26,7 @@ export const TEMPLATES = [
   'wellness-hero',
   'mind-body-healing',
   'veyra-electric',
+  'real-time-alerts',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

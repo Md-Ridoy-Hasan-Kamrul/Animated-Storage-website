@@ -23,6 +23,7 @@ import { meta as contactCybernetic } from './hero/contact-cybernetic/meta';
 import { meta as wellnessHero } from './hero/wellness-hero/meta';
 import { meta as mindBodyHealing } from './medicine/mind-body-healing/meta';
 import { meta as veyraElectric } from './automative/veyra-electric/meta';
+import { meta as realTimeAlerts } from './sign-in/real-time-alerts/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -43,6 +44,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Fashion',
   'Medicine',
   'Automative',
+  'Sign in',
 ];
 
 /**
@@ -74,6 +76,7 @@ export const TEMPLATES = [
   wellnessHero,
   mindBodyHealing,
   veyraElectric,
+  realTimeAlerts,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

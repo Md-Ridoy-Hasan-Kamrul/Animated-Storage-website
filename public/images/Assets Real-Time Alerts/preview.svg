@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="731" height="720" fill="#2f2a27"/>
+  <rect x="731" width="549" height="720" fill="#fefefe"/>
+  <text x="48" y="560" fill="#ffffff" font-size="18" font-family="Arial, sans-serif">Built for fast-moving teams</text>
+  <text x="48" y="630" fill="#111111" font-size="42" font-family="Arial, sans-serif">Find Signal to Action</text>
+  <text x="48" y="680" fill="#111111" font-size="42" font-family="Arial, sans-serif">Instantly</text>
+  <text x="1006" y="220" text-anchor="middle" fill="#2c3343" font-size="28" font-family="Arial, sans-serif">Welcome Back!</text>
+  <rect x="820" y="280" width="372" height="44" rx="12" fill="#fafafa" stroke="#acacae"/>
+  <rect x="820" y="336" width="372" height="42" rx="12" fill="#f9f9f9"/>
+  <rect x="820" y="396" width="372" height="48" rx="24" fill="#283139"/>
+</svg>
