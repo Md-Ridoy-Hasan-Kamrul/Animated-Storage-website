@@ -13,13 +13,32 @@ import {
   SHORT_DESKTOP_MAX_PX,
   TITLE_RESERVE_DESKTOP_PX,
   TITLE_RESERVE_MOBILE_PX,
+  FRAMED_SKY_CROP,
 } from '../constants';
+
+export function measureFramedPlane(stageWidth, viewportHeight, skyCrop = FRAMED_SKY_CROP) {
+  const widthFillHeight = (stageWidth * IMAGE_RATIO_H) / IMAGE_RATIO_W;
+  if (widthFillHeight >= viewportHeight) {
+    return {
+      width: stageWidth,
+      height: widthFillHeight,
+      left: 0,
+      top: (viewportHeight - widthFillHeight) * skyCrop,
+    };
+  }
+
+  const heightFillWidth = (viewportHeight * IMAGE_RATIO_W) / IMAGE_RATIO_H;
+  return {
+    width: heightFillWidth,
+    height: viewportHeight,
+    left: (stageWidth - heightFillWidth) / 2,
+    top: 0,
+  };
+}
 
 export function measureImagePlane(stageWidth, viewportHeight, options = {}) {
   if (options.framed) {
-    const width = stageWidth;
-    const height = (width * IMAGE_RATIO_H) / IMAGE_RATIO_W;
-    return { width, height, left: 0, top: 0 };
+    return measureFramedPlane(stageWidth, viewportHeight);
   }
 
   const mobile = stageWidth <= MOBILE_MAX_PX;

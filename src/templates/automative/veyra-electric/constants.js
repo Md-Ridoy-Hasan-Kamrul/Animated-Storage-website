@@ -35,6 +35,7 @@ export const FOOTER_NOTES = [
 
 export const IMAGE_RATIO_W = 1672;
 export const IMAGE_RATIO_H = 941;
+export const FRAMED_SKY_CROP = 0.62;
 export const MOBILE_MAX_PX = 900;
 export const SHORT_DESKTOP_MAX_PX = 780;
 export const MOBILE_SIDE_GUTTER_PX = 40;

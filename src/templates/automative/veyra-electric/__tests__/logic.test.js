@@ -40,12 +40,19 @@ describe('VEYRA image plane', () => {
     expect(mobile.top).toBe(132);
   });
 
-  it('pins the framed preview plane to the top of the iframe', () => {
-    const framed = measureImagePlane(800, 640, { framed: true });
-    expect(framed.width).toBe(800);
-    expect(framed.left).toBe(0);
-    expect(framed.top).toBe(0);
-    expect(framed.height / framed.width).toBeCloseTo(IMAGE_RATIO_H / IMAGE_RATIO_W);
+  it('covers the framed iframe instead of letterboxing a card', () => {
+    const details = measureImagePlane(800, 640, { framed: true });
+    expect(details.height).toBe(640);
+    expect(details.top).toBe(0);
+    expect(details.left).toBeLessThan(0);
+    expect(details.width).toBeGreaterThan(800);
+    expect(details.height / details.width).toBeCloseTo(IMAGE_RATIO_H / IMAGE_RATIO_W);
+
+    const card = measureImagePlane(1280, 580, { framed: true });
+    expect(card.width).toBe(1280);
+    expect(card.height).toBeGreaterThan(580);
+    expect(card.top).toBeLessThan(0);
+    expect(card.height / card.width).toBeCloseTo(IMAGE_RATIO_H / IMAGE_RATIO_W);
   });
 });
 

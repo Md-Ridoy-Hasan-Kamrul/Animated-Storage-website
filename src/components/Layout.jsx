@@ -1,5 +1,5 @@
-import React, { memo, useState, useCallback, useEffect, useRef } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React, { memo, useState, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Search, Menu, X } from 'lucide-react';
 import { ROUTES } from '../config';
 import { KmotionLogoLink } from './KmotionLogo';
@@ -13,7 +13,10 @@ const NAV_LINKS = [
   { label: 'Contact', href: ROUTES.CONTACT },
 ];
 
+const TEMPLATE_DETAIL_PREFIX = '/templates/';
+
 const Layout = memo(() => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -24,6 +27,12 @@ const Layout = memo(() => {
     showDesktopNav,
     showCtaInHeader,
   } = useResponsiveLayout();
+
+  useLayoutEffect(() => {
+    if (location.pathname.startsWith(TEMPLATE_DETAIL_PREFIX)) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
 
   const [stickyHeaderPx, setStickyHeaderPx] = useState(headerHeight);
 
