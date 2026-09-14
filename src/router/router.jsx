@@ -97,6 +97,9 @@ const VeyraElectricLive = lazy(
 const RealTimeAlertsLive = lazy(
   () => import('../templates/sign-in/real-time-alerts/LivePage'),
 );
+const EquilibriumLive = lazy(
+  () => import('../templates/hero/equilibrium/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -373,6 +376,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <RealTimeAlertsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.EQUILIBRIUM}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <EquilibriumLive />
           </Suspense>
         }
       />

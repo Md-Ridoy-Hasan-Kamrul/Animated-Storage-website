@@ -30,6 +30,7 @@ import * as wellnessHero from '../templates/hero/wellness-hero/content';
 import * as mindBodyHealing from '../templates/medicine/mind-body-healing/content';
 import * as veyraElectric from '../templates/automative/veyra-electric/content';
 import * as realTimeAlerts from '../templates/sign-in/real-time-alerts/content';
+import * as equilibrium from '../templates/hero/equilibrium/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -64,6 +65,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'mind-body-healing': mindBodyHealing,
   'veyra-electric': veyraElectric,
   'real-time-alerts': realTimeAlerts,
+  equilibrium,
 };
 const COPY_ICON_SIZE = 20;
 
