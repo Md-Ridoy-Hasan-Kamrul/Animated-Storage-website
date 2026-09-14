@@ -25,6 +25,7 @@ export const TEMPLATES = [
   'contact-cybernetic',
   'wellness-hero',
   'mind-body-healing',
+  'veyra-electric',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

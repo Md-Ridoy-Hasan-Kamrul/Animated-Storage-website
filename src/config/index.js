@@ -33,6 +33,7 @@ export const ROUTES = {
   CONTACT_CYBERNETIC: '/p/contact-cybernetic',
   WELLNESS_HERO: '/p/wellness-hero',
   MIND_BODY_HEALING: '/p/mind-body-healing',
+  VEYRA_ELECTRIC: '/p/veyra-electric',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

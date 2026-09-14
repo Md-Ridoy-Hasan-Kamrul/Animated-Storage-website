@@ -28,6 +28,7 @@ import * as techForward from '../templates/hero/tech-forward/content';
 import * as contactCybernetic from '../templates/hero/contact-cybernetic/content';
 import * as wellnessHero from '../templates/hero/wellness-hero/content';
 import * as mindBodyHealing from '../templates/medicine/mind-body-healing/content';
+import * as veyraElectric from '../templates/automative/veyra-electric/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -60,6 +61,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'contact-cybernetic': contactCybernetic,
   'wellness-hero': wellnessHero,
   'mind-body-healing': mindBodyHealing,
+  'veyra-electric': veyraElectric,
 };
 const COPY_ICON_SIZE = 20;
 

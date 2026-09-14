@@ -91,6 +91,9 @@ const WellnessHeroLive = lazy(
 const MindBodyHealingLive = lazy(
   () => import('../templates/medicine/mind-body-healing/LivePage'),
 );
+const VeyraElectricLive = lazy(
+  () => import('../templates/automative/veyra-electric/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -349,6 +352,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <MindBodyHealingLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.VEYRA_ELECTRIC}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VeyraElectricLive />
           </Suspense>
         }
       />

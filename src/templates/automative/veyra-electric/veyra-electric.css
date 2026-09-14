@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&display=swap');
+html.veyra-electric-page,
+html.veyra-electric-page body {
+  background: #6b879d;
+}
+.veyra-electric {
+  --sky:#708fa2; --acid:#edff39; --ink:#fff; --muted:#e1eaf0; --panel:#35586e; --line:#ffffff30; --on-acid:#10190c;
+  --radius-panel:12px; --radius-control:7px; --gutter:clamp(24px,4vw,72px);
+  --studio:#6b879d;
+  --ease:cubic-bezier(.22,.7,.25,1); --ui-fast:180ms; --ui-enter:240ms;
+  font-family:'Space Grotesk',sans-serif;font-weight:400;letter-spacing:-.03em;color:var(--ink);background:var(--sky);
+  font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
+}
+.veyra-electric, .veyra-electric * {box-sizing:border-box}
+.veyra-electric {margin:0;min-width:320px}
+.veyra-electric button, .veyra-electric a {-webkit-tap-highlight-color:transparent}
+.veyra-electric button {font:inherit;letter-spacing:inherit;color:inherit;cursor:pointer}
+.veyra-electric a {color:inherit;text-decoration:none}
+.veyra-electric button:focus-visible, .veyra-electric a:focus-visible {outline:2px solid var(--acid);outline-offset:5px}
+.veyra-electric button:disabled {cursor:default}
+.veyra-electric svg {stroke-width:1.5}
+.veyra-electric ::selection {background:var(--acid);color:var(--on-acid)}
+.veyra-electric .experience {height:100vh;height:100dvh;min-height:700px;display:flex;flex-direction:column;overflow:hidden;position:relative;background:var(--studio)}
+.veyra-electric .masthead {height:76px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;width:var(--scene-width,calc(100% - 2 * var(--gutter)));margin:0 auto;z-index:5;gap:24px;border-bottom:1px solid var(--line)}
+.veyra-electric .wordmark {font-size:27px;font-weight:400;letter-spacing:-.055em;line-height:1;min-height:44px;display:flex;align-items:center}
+.veyra-electric .header-middle, .veyra-electric .concept-label {font-size:14px;line-height:1.3;color:var(--muted)}
+.veyra-electric .header-middle {position:absolute;left:50%;transform:translateX(-50%)}
+.veyra-electric .concept-label {font-size:13px}
+.veyra-electric .stage {position:relative;flex:1;min-height:0}
+.veyra-electric .image-plane {position:absolute;isolation:isolate}
+.veyra-electric .media-envelope {position:absolute;inset:0;overflow:hidden;border-radius:16px;box-shadow:0 0 0 3px #fff;pointer-events:none;user-select:none}
+.veyra-electric .exterior-envelope {position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.veyra-electric .car-visual, .veyra-electric .detail-visual {position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.veyra-electric .car-image, .veyra-electric .detail-image {position:absolute;width:100%;height:100%;object-fit:contain;object-position:center;inset:0;pointer-events:none;user-select:none}
+.veyra-electric .car-visual {transform-origin:var(--focus-x) var(--focus-y);transition:transform 1.5s cubic-bezier(.65,0,.25,1)}
+.veyra-electric .phase-entering .car-visual, .veyra-electric .phase-detail .car-visual {transform:scale(1.5)}
+.veyra-electric .hover-video {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+.veyra-electric .appearance-visual {position:absolute;inset:0;opacity:0;transition:opacity .24s ease;pointer-events:none}
+.veyra-electric .appearance-visual.shown {opacity:1}
+.veyra-electric .appearance-visual img {width:100%;height:100%;object-fit:contain;display:block}
+.veyra-electric .detail-visual {opacity:0;transition:opacity .85s ease}
+.veyra-electric .detail-visual {background:var(--sky)}
+.veyra-electric .detail-image {transform:scale(1.08);transition:transform 1.3s cubic-bezier(.22,1,.36,1)}
+.veyra-electric .detail-visual.shown {opacity:1}
+.veyra-electric .detail-visual.shown .detail-image {transform:scale(1)}
+.veyra-electric .intro {position:absolute;top:22px;left:50%;width:var(--scene-width);display:flex;align-items:center;justify-content:space-between;gap:28px;text-align:left;pointer-events:none;transform:translateX(-50%);transition:opacity .35s,transform .7s,filter .5s}
+.veyra-electric .intro.hide {opacity:0;transform:translate(-50%,12px);filter:blur(5px)}
+.veyra-electric .intro h1 {font-size:clamp(36px,3.6vw,56px);font-weight:400;line-height:.9;letter-spacing:-.03em;margin:0}
+.veyra-electric .intro-description {font-size:14px;line-height:1.4;color:var(--muted);margin:0;text-align:right}
+.veyra-electric .intro-description span {display:block}
+.veyra-electric .eyebrow {font-size:14px;font-weight:400;line-height:1.35;color:var(--muted);margin:0 0 16px}
+.veyra-electric .hotspot {position:absolute;transform:translate(-50%,-50%);z-index:3;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;background:none;padding:0;border-radius:50%;transition:opacity var(--ui-fast)}
+.veyra-electric .hotspot-ring {position:relative;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:var(--on-acid);background:var(--acid);box-shadow:0 0 0 5px #edff3914;transition:transform var(--ui-fast),box-shadow var(--ui-fast)}
+.veyra-electric .hotspot-ring:after {content:'';position:absolute;inset:-5px;border:1px solid #edff3950;border-radius:50%;animation:breath 5s ease-in-out infinite}
+@keyframes breath{0%,100%{opacity:.2;transform:scale(1)}
+.veyra-electric 50% {opacity:.5;transform:scale(1.07)}}
+.veyra-electric .hotspot.active .hotspot-ring, .veyra-electric .hotspot:hover:not(:disabled) .hotspot-ring {transform:scale(1.06);box-shadow:0 0 0 5px #edff3920}
+.veyra-electric .hotspot:disabled {opacity:.28;cursor:default;pointer-events:none}
+.veyra-electric .hotspot:disabled .hotspot-ring:after {animation:none;opacity:0}
+.veyra-electric .hotspot-label {position:absolute;bottom:calc(100% + 2px);left:50%;transform:translate(-50%,4px);opacity:0;display:flex;gap:10px;align-items:center;white-space:nowrap;background:var(--acid);color:var(--on-acid);border-radius:var(--radius-control);padding:11px 14px;font-size:14px;line-height:1.25;transition:opacity var(--ui-fast),transform var(--ui-enter) var(--ease);pointer-events:none}
+.veyra-electric .hotspot.active .hotspot-label, .veyra-electric .hotspot:focus-visible .hotspot-label {opacity:1;transform:translate(-50%,0)}
+.veyra-electric .appearance-hotspot {position:absolute;inset:0;pointer-events:none;z-index:3}
+.veyra-electric .appearance-hotspot.expanded {z-index:6}
+.veyra-electric .appearance-hotspot>.hotspot {left:var(--anchor-x);top:var(--anchor-y);pointer-events:auto}
+.veyra-electric .appearance-hotspot>.hotspot:disabled {pointer-events:none}
+.veyra-electric .appearance-hotspot.expanded .hotspot-label {opacity:0}
+.veyra-electric .menu-bridge {position:absolute;inset:0 0 -20px;pointer-events:auto;clip-path:polygon(calc(var(--anchor-x) - 24px) calc(var(--anchor-y) - 12px),calc(var(--anchor-x) + 24px) calc(var(--anchor-y) - 12px),calc(50% + 156px) 100%,calc(50% - 156px) 100%)}
+.veyra-electric .appearance-menu {position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);width:312px;padding:10px 18px 12px;border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--panel);color:var(--ink);box-shadow:0 8px 26px #213f5112;pointer-events:auto;animation:menu-in var(--ui-enter) var(--ease)}
+.veyra-electric .appearance-heading {display:flex;align-items:center;justify-content:space-between;font-size:15px;line-height:1.3;gap:12px;min-height:30px}
+.veyra-electric .appearance-close {display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;border-radius:var(--radius-control);margin:-7px -12px -7px 0;transition:background var(--ui-fast),color var(--ui-fast)}
+.veyra-electric .appearance-close:hover {background:var(--acid);color:var(--on-acid)}
+.veyra-electric .appearance-options {display:flex;gap:8px;justify-content:space-between;margin-top:8px}
+.veyra-electric .appearance-option {display:grid;place-items:center;min-width:44px;height:44px;padding:5px;background:transparent;border:1px solid transparent;border-radius:50%;transition:border-color var(--ui-fast),background var(--ui-fast);color:var(--on-acid)}
+.veyra-electric .appearance-option:hover:not(:disabled) {background:#ffffff12}
+.veyra-electric .appearance-option.selected {border-color:var(--acid)}
+.veyra-electric .appearance-option:disabled {opacity:.3;cursor:wait}
+.veyra-electric .paint-chip {display:grid;place-items:center;width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1px #ffffff20}
+.veyra-electric .appearance-menu.wheels .appearance-option {width:78px;height:70px;border-radius:var(--radius-control)}
+.veyra-electric .wheel-chip {display:block;width:64px;height:58px;border-radius:4px;background-size:530% auto;background-position:48% 79%;background-repeat:no-repeat}
+.veyra-electric .appearance-caption {margin-top:9px;font-size:14px;line-height:1.4;color:var(--ink)}
+.veyra-electric .appearance-caption small {display:block;font-size:12px;color:var(--muted);margin-top:2px}
+@keyframes menu-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}
+.veyra-electric .back {position:absolute;z-index:5;left:calc((100% - var(--scene-width)) / 2);top:22px;display:flex;align-items:center;gap:10px;min-height:44px;background:var(--acid);color:var(--on-acid);border:1px solid transparent;border-radius:var(--radius-control);padding:10px 14px;font-size:14px;line-height:1.25;transition:background var(--ui-fast)}
+.veyra-electric .back:hover:not(:disabled) {background:#f3ff86}
+.veyra-electric .back kbd {font:inherit;font-size:12px;border-left:1px solid #18394b38;padding-left:9px;margin-left:8px}
+.veyra-electric .back:disabled {opacity:.6}
+.veyra-electric .detail-copy {position:absolute;z-index:4;right:calc((100% - var(--scene-width)) / 2 + 26px);top:114px;width:calc(var(--scene-width) * .3);max-width:380px;max-height:calc(var(--scene-height) - 52px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ffffff50 transparent;opacity:0;pointer-events:none;transform:translateY(15px);transition:opacity .65s,transform .8s}
+.veyra-electric .detail-copy.shown {opacity:1;transform:translateY(0);pointer-events:auto}
+.veyra-electric .detail-copy h2 {font-size:clamp(34px,3.1vw,52px);line-height:.9;letter-spacing:-.03em;font-weight:400;margin:0 0 24px}
+.veyra-electric .detail-copy h2 span {display:block}
+.veyra-electric .system-description {font-size:15px;line-height:1.4;color:var(--muted);margin:0 0 22px}
+.veyra-electric .part-list {border-top:1px solid var(--line)}
+.veyra-electric .part-list button {display:block;width:100%;min-height:48px;border:0;border-bottom:1px solid var(--line);background:transparent;padding:14px 0;text-align:left;font-size:15px;line-height:1.35;transition:color var(--ui-fast)}
+.veyra-electric .part-list button:hover, .veyra-electric .part-list button.selected {color:var(--acid)}
+.veyra-electric .part-row {display:flex;align-items:center;gap:12px}
+.veyra-electric .part-row small {font-size:12px;color:var(--muted)}
+.veyra-electric .part-row svg {margin-left:auto;flex-shrink:0;transition:transform var(--ui-enter)}
+.veyra-electric .part-list button.selected svg {transform:rotate(45deg)}
+.veyra-electric .part-description {display:block;font-size:14px;line-height:1.4;color:var(--muted);padding:10px 0 1px 26px}
+.veyra-electric .benefit {margin-top:22px}
+.veyra-electric .benefit>span {font-size:13px;color:var(--muted)}
+.veyra-electric .benefit p {font-size:14px;line-height:1.4;margin:6px 0}
+.veyra-electric .annotation {position:absolute;z-index:3;border:0;background:transparent;display:flex;align-items:center;gap:9px;transform:translate(-50%,-50%);padding:8px;min-width:44px;min-height:44px;border-radius:50%}
+.veyra-electric .annotation>span:first-child {width:28px;height:28px;background:var(--acid);color:var(--on-acid);border-radius:50%;display:grid;place-items:center;font-size:12px}
+.veyra-electric .annotation.open>span:first-child {box-shadow:0 0 0 4px #edff3928}
+.veyra-electric .annotation-label {font-size:14px;line-height:1.25;color:var(--on-acid);background:var(--acid);border-radius:var(--radius-control);padding:10px 12px;white-space:nowrap;opacity:0;transition:opacity var(--ui-fast);position:absolute;bottom:100%;left:0;pointer-events:none}
+.veyra-electric .annotation:hover .annotation-label, .veyra-electric .annotation:focus-visible .annotation-label, .veyra-electric .annotation.open .annotation-label {opacity:1}
+.veyra-electric .transition-status {position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:14px;display:flex;align-items:center;gap:10px;color:var(--muted);white-space:nowrap}
+.veyra-electric .small-dot {width:5px;height:5px;border-radius:50%;background:var(--acid);display:inline-block;flex-shrink:0}
+.veyra-electric .scene-footer {height:164px;flex-shrink:0;width:var(--scene-width,calc(100% - 2 * var(--gutter)));margin:0 auto;display:flex;flex-direction:column;justify-content:space-between;padding:24px 0 14px;color:var(--muted)}
+.veyra-electric .feature-notes {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;transition:opacity var(--ui-fast)}
+.veyra-electric .feature-note h3 {font-size:16px;line-height:1.2;font-weight:400;color:var(--ink);margin:0 0 9px}
+.veyra-electric .feature-note p {font-size:14px;line-height:1.4;margin:0;max-width:27ch}
+.veyra-electric .footer-baseline {display:flex;justify-content:space-between;gap:16px;padding-top:15px;border-top:1px solid var(--line);font-size:12px;line-height:1.35}
+.veyra-electric .experience:has(.appearance-hotspot.expanded) .feature-notes {opacity:0;visibility:hidden}
+.veyra-electric .experience:has(.appearance-hotspot.expanded) .footer-baseline {visibility:hidden}
+.veyra-electric .error-message {position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:10;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-panel);color:var(--ink);padding:12px 16px;display:flex;align-items:center;gap:16px;font-size:14px;line-height:1.4;width:max-content;max-width:calc(100% - 32px)}
+.veyra-electric .error-message button {border:0;background:none;min-width:44px;height:44px;display:grid;place-items:center}
+.veyra-electric .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:901px){
+ .veyra-electric{scrollbar-gutter:stable both-edges;background:var(--studio)}
+.veyra-electric .appearance-menu {display:grid;grid-template-columns:145px 1fr;column-gap:24px;width:560px;padding:18px 54px 18px 18px}
+.veyra-electric .appearance-heading {grid-column:1;grid-row:1;min-height:20px;align-items:start}
+.veyra-electric .appearance-close {position:absolute;right:6px;top:6px;margin:0}
+.veyra-electric .appearance-options {grid-column:2;grid-row:1 / 3;align-self:center;margin-top:0}
+.veyra-electric .appearance-caption {grid-column:1;grid-row:2;margin-top:6px}
+.veyra-electric .menu-bridge {clip-path:polygon(calc(var(--anchor-x) - 24px) calc(var(--anchor-y) - 12px),calc(var(--anchor-x) + 24px) calc(var(--anchor-y) - 12px),calc(50% + 280px) 100%,calc(50% - 280px) 100%)}
+}
+@media(min-width:901px) and (max-height:780px){
+ .veyra-electric .masthead{height:64px}
+.veyra-electric .intro h1 {font-size:38px}
+.veyra-electric .intro-description {font-size:13px}
+.veyra-electric .detail-copy h2 {font-size:32px;margin-bottom:18px}
+.veyra-electric .system-description {margin-bottom:14px}
+.veyra-electric .benefit {margin-top:16px}
+.veyra-electric .feature-notes {gap:18px}
+.veyra-electric .feature-note h3 {font-size:15px}
+.veyra-electric .feature-note p {font-size:13px}
+.veyra-electric .experience:not(.phase-overview) {height:auto;min-height:100dvh}
+.veyra-electric .experience:not(.phase-overview) .stage {height:auto;flex:none}
+.veyra-electric .detail-copy {position:relative;right:auto;top:auto;width:var(--scene-width);max-width:none;max-height:none;overflow:visible;margin:0 auto;padding:calc(var(--scene-height) + 116px) 0 8px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.veyra-electric .phase-overview .detail-copy {display:none}
+}
+@media(max-width:1100px){.veyra-electric .header-middle{display:none}}
+@media(max-width:900px){
+ .veyra-electric{scrollbar-gutter:stable;background:var(--studio)}
+.veyra-electric .experience {height:auto;min-height:100svh;overflow:hidden}
+.veyra-electric .masthead {height:72px;width:calc(100% - 40px)}
+.veyra-electric .wordmark {font-size:25px}
+.veyra-electric .stage {flex:none;height:calc(var(--scene-height, (100vw - 40px) * .562799) + 132px);min-height:0}
+.veyra-electric .intro {top:24px;display:block}
+.veyra-electric .intro h1 {font-size:clamp(32px,5.8vw,48px)}
+.veyra-electric .intro-description {margin-top:14px;font-size:14px;text-align:left}
+.veyra-electric .intro-description span {display:inline}
+.veyra-electric .intro-description span+span:before {content:' '}
+.veyra-electric .appearance-menu {width:300px}
+.veyra-electric .scene-footer {height:auto;min-height:256px;flex:1;padding-top:28px;padding-bottom:max(20px,env(safe-area-inset-bottom));gap:28px}
+.veyra-electric .feature-notes {grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.veyra-electric .feature-note p {max-width:30ch}
+.veyra-electric .footer-baseline {font-size:12px;gap:24px}
+.veyra-electric .footer-baseline span:last-child {text-align:right;max-width:26ch}
+.veyra-electric .back {left:20px;top:28px}
+.veyra-electric .back kbd {display:none}
+.veyra-electric .phase-detail .stage, .veyra-electric .phase-entering .stage, .veyra-electric .phase-returning .stage {height:auto;min-height:0}
+.veyra-electric .detail-copy {position:relative;top:auto;right:auto;width:auto;max-width:620px;max-height:none;overflow:visible;margin:0 auto;padding:calc(160px + var(--scene-height, (100vw - 40px) * .562799)) 20px 8px}
+.veyra-electric .detail-copy h2 {font-size:40px}
+.veyra-electric .detail-copy h2 span {display:inline}
+.veyra-electric .detail-copy h2 span+span:before {content:' '}
+.veyra-electric .system-description {font-size:16px}
+.veyra-electric .benefit {margin-top:24px}
+.veyra-electric .phase-overview .detail-copy {display:none}
+.veyra-electric .transition-status {bottom:8px}
+.veyra-electric .annotation-label {font-size:12px;padding:8px;max-width:180px;white-space:normal;text-align:left}
+}
+@media(max-width:480px){
+ .veyra-electric .masthead{height:68px}
+.veyra-electric .concept-label {font-size:12px}
+.veyra-electric .wordmark {font-size:24px}
+.veyra-electric .intro h1 {font-size:clamp(30px,8.2vw,38px)}
+.veyra-electric .intro-description {font-size:13px;max-width:28ch}
+.veyra-electric .intro-description span {display:block}
+.veyra-electric .intro-description span+span:before {content:none}
+.veyra-electric .media-envelope {border-radius:12px}
+.veyra-electric .appearance-menu {width:288px;padding:12px 16px 14px}
+.veyra-electric .feature-note h3 {font-size:15px}
+.veyra-electric .feature-note p {font-size:13px}
+.veyra-electric .feature-notes {gap:22px 20px}
+.veyra-electric .hotspot-ring {width:26px;height:26px}
+.veyra-electric .hotspot-label {font-size:13px}
+.veyra-electric .detail-copy h2 {font-size:34px}
+.veyra-electric .detail-copy {padding-right:20px;padding-left:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .veyra-electric,.veyra-electric *:before,.veyra-electric *:after{animation:none!important;transition-duration:.01ms!important}
+.veyra-electric .car-visual {transform:none!important}
+}
