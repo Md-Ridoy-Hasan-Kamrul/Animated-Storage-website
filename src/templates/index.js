@@ -25,6 +25,7 @@ import { meta as mindBodyHealing } from './medicine/mind-body-healing/meta';
 import { meta as veyraElectric } from './automative/veyra-electric/meta';
 import { meta as realTimeAlerts } from './sign-in/real-time-alerts/meta';
 import { meta as equilibrium } from './hero/equilibrium/meta';
+import { meta as scalingPlatform } from './saas/scaling-platform/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -38,6 +39,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Agency',
   'Hero',
   'Features',
+  'SaaS',
   'Ecommerce',
   '3d Website',
   'Creative',
@@ -79,6 +81,7 @@ export const TEMPLATES = [
   veyraElectric,
   realTimeAlerts,
   equilibrium,
+  scalingPlatform,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

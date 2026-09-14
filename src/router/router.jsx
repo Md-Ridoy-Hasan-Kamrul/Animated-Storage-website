@@ -100,6 +100,9 @@ const RealTimeAlertsLive = lazy(
 const EquilibriumLive = lazy(
   () => import('../templates/hero/equilibrium/LivePage'),
 );
+const ScalingPlatformLive = lazy(
+  () => import('../templates/saas/scaling-platform/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -385,6 +388,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <EquilibriumLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SCALING_PLATFORM}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ScalingPlatformLive />
           </Suspense>
         }
       />

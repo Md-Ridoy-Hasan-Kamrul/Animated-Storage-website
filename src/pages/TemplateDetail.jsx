@@ -31,6 +31,7 @@ import * as mindBodyHealing from '../templates/medicine/mind-body-healing/conten
 import * as veyraElectric from '../templates/automative/veyra-electric/content';
 import * as realTimeAlerts from '../templates/sign-in/real-time-alerts/content';
 import * as equilibrium from '../templates/hero/equilibrium/content';
+import * as scalingPlatform from '../templates/saas/scaling-platform/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -66,6 +67,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'veyra-electric': veyraElectric,
   'real-time-alerts': realTimeAlerts,
   equilibrium,
+  'scaling-platform': scalingPlatform,
 };
 const COPY_ICON_SIZE = 20;
 
@@ -181,6 +183,7 @@ const TemplateDetail = memo(() => {
               <iframe
                 title={`${template.title} live preview`}
                 src={template.livePath}
+                allow="autoplay; fullscreen"
                 className="absolute inset-0 h-full w-full border-0"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black via-black/70 to-transparent px-4 py-4 text-sm text-white">

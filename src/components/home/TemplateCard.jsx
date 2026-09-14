@@ -104,6 +104,7 @@ const TemplateCard = memo(({ item }) => {
             <iframe
               title={`${item.title} live preview`}
               src={`${item.livePath}?embed=1`}
+              allow="autoplay; fullscreen"
               tabIndex={-1}
               loading="lazy"
               className="absolute left-0 top-0 border-0"

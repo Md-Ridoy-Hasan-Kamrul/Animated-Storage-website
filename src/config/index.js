@@ -36,6 +36,7 @@ export const ROUTES = {
   VEYRA_ELECTRIC: '/p/veyra-electric',
   REAL_TIME_ALERTS: '/p/real-time-alerts',
   EQUILIBRIUM: '/p/equilibrium',
+  SCALING_PLATFORM: '/p/scaling-platform',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
