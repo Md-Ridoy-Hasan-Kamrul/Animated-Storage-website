@@ -15,7 +15,13 @@ import {
   TITLE_RESERVE_MOBILE_PX,
 } from '../constants';
 
-export function measureImagePlane(stageWidth, viewportHeight) {
+export function measureImagePlane(stageWidth, viewportHeight, options = {}) {
+  if (options.framed) {
+    const width = stageWidth;
+    const height = (width * IMAGE_RATIO_H) / IMAGE_RATIO_W;
+    return { width, height, left: 0, top: 0 };
+  }
+
   const mobile = stageWidth <= MOBILE_MAX_PX;
   const mediaHeight =
     Math.max(MIN_VIEWPORT_HEIGHT_PX, viewportHeight) -

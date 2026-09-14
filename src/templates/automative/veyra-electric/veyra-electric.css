@@ -194,3 +194,45 @@ html.veyra-electric-page body {
  .veyra-electric,.veyra-electric *:before,.veyra-electric *:after{animation:none!important;transition-duration:.01ms!important}
 .veyra-electric .car-visual {transform:none!important}
 }
+html.veyra-electric-framed,
+html.veyra-electric-framed body,
+html.veyra-electric-framed #root {
+  height: 100%;
+  overflow: hidden;
+  background: #6b879d;
+}
+html.veyra-electric-framed .veyra-electric {
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+html.veyra-electric-framed .veyra-electric .experience,
+.veyra-electric .experience.preview {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+html.veyra-electric-framed .veyra-electric .masthead,
+html.veyra-electric-framed .veyra-electric .intro,
+html.veyra-electric-framed .veyra-electric .scene-footer,
+html.veyra-electric-framed .veyra-electric .transition-status,
+.veyra-electric .experience.preview .masthead,
+.veyra-electric .experience.preview .intro,
+.veyra-electric .experience.preview .scene-footer,
+.veyra-electric .experience.preview .transition-status {
+  display: none;
+}
+html.veyra-electric-framed .veyra-electric .stage,
+.veyra-electric .experience.preview .stage {
+  position: absolute;
+  inset: 0;
+  height: 100% !important;
+  flex: none;
+  min-height: 0;
+}
+html.veyra-electric-framed .veyra-electric .image-plane,
+.veyra-electric .experience.preview .image-plane {
+  top: 0 !important;
+  left: 0 !important;
+}
+

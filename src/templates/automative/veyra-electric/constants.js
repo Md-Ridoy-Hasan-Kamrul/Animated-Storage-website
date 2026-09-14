@@ -6,6 +6,10 @@ export const PAGE_BG = '#6b879d';
 export const PAGE_INK = '#ffffff';
 export const PAGE_CLASS = 'veyra-electric';
 export const PAGE_HTML_CLASS = 'veyra-electric-page';
+export const FRAMED_HTML_CLASS = 'veyra-electric-framed';
+export const PREVIEW_POSES = [null, 'drive', null, 'battery'];
+export const EMBED_POSE_HOLD_MS = 2400;
+export const EMBED_POSE_REST_MS = 1800;
 
 export const FONT_PRECONNECT_GAPI = 'https://fonts.googleapis.com';
 export const FONT_PRECONNECT_GSTATIC = 'https://fonts.gstatic.com';

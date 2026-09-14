@@ -16,7 +16,7 @@ jest.mock('../hooks/useSpaceGrotesk', () => ({
 }));
 
 jest.mock('../hooks/useEmbedMode', () => ({
-  useEmbedMode: () => ({ isEmbed: false, isStandalone: false }),
+  useEmbedMode: () => ({ isEmbed: false, isFramed: false, isStandalone: false, isPreview: false }),
 }));
 
 describe('Veyra Electric page shell', () => {

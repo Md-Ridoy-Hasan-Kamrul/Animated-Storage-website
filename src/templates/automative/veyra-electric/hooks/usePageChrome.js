@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { PAGE_BG, PAGE_HTML_CLASS, PAGE_INK, PAGE_TITLE } from '../constants';
+import { FRAMED_HTML_CLASS, PAGE_BG, PAGE_HTML_CLASS, PAGE_INK, PAGE_TITLE } from '../constants';
 
 export function usePageChrome() {
   useLayoutEffect(() => {
@@ -12,7 +12,9 @@ export function usePageChrome() {
       bodyBg: body.style.backgroundColor,
     };
 
+    const framed = window.self !== window.top;
     html.classList.add(PAGE_HTML_CLASS);
+    if (framed) html.classList.add(FRAMED_HTML_CLASS);
     document.title = PAGE_TITLE;
     html.style.backgroundColor = PAGE_BG;
     body.style.backgroundColor = PAGE_BG;
@@ -20,7 +22,7 @@ export function usePageChrome() {
     if (root) root.style.backgroundColor = PAGE_BG;
 
     return () => {
-      html.classList.remove(PAGE_HTML_CLASS);
+      html.classList.remove(PAGE_HTML_CLASS, FRAMED_HTML_CLASS);
       document.title = prev.title || 'Kmotion';
       html.style.backgroundColor = prev.htmlBg;
       body.style.backgroundColor = prev.bodyBg;

@@ -4,6 +4,7 @@ import App from '../App';
 import { usePageChrome } from '../hooks/usePageChrome';
 import {
   FOOTER_NOTES,
+  FRAMED_HTML_CLASS,
   HEADLINE,
   INTRO_HINT,
   INTRO_LEAD,
@@ -67,8 +68,22 @@ describe('Veyra Electric chrome', () => {
     const { unmount } = render(<ChromeHost />);
     expect(document.title).toBe(PAGE_TITLE);
     expect(document.documentElement.classList.contains(PAGE_HTML_CLASS)).toBe(true);
+    expect(document.documentElement.classList.contains(FRAMED_HTML_CLASS)).toBe(false);
     unmount();
     expect(document.documentElement.classList.contains(PAGE_HTML_CLASS)).toBe(false);
     expect(document.title).toBe('Kmotion');
+  });
+
+  it('marks framed chrome when the live page sits inside an iframe', () => {
+    const realSelf = window.self;
+    const realTop = window.top;
+    Object.defineProperty(window, 'self', { configurable: true, value: {} });
+    Object.defineProperty(window, 'top', { configurable: true, value: {} });
+    const { unmount } = render(<ChromeHost />);
+    expect(document.documentElement.classList.contains(FRAMED_HTML_CLASS)).toBe(true);
+    unmount();
+    expect(document.documentElement.classList.contains(FRAMED_HTML_CLASS)).toBe(false);
+    Object.defineProperty(window, 'self', { configurable: true, value: realSelf });
+    Object.defineProperty(window, 'top', { configurable: true, value: realTop });
   });
 });

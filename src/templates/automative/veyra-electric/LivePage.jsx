@@ -11,7 +11,7 @@ import { useStandaloneBack } from './hooks/useStandaloneBack';
 
 const LivePage = () => {
   const navigate = useNavigate();
-  const { isStandalone } = useEmbedMode();
+  const { isStandalone, isPreview } = useEmbedMode();
   const handleBack = useStandaloneBack(navigate);
 
   useSpaceGrotesk();
@@ -19,7 +19,7 @@ const LivePage = () => {
 
   return (
     <div className={PAGE_CLASS}>
-      <App />
+      <App preview={isPreview} />
       {isStandalone ? <BackButton onBack={handleBack} /> : null}
     </div>
   );

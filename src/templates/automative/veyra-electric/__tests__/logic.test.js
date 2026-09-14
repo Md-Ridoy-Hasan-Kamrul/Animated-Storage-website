@@ -1,8 +1,16 @@
 import { canUseHotspot } from '../appearance';
 import { hotspots, systems } from '../content';
-import { IMAGE_RATIO_H, IMAGE_RATIO_W, MOBILE_MAX_PX } from '../constants';
+import {
+  EMBED_POSE_HOLD_MS,
+  EMBED_POSE_REST_MS,
+  IMAGE_RATIO_H,
+  IMAGE_RATIO_W,
+  MOBILE_MAX_PX,
+  PREVIEW_POSES,
+} from '../constants';
 import { nextPreviewClip } from '../utils/hoverQueue';
 import { measureImagePlane } from '../utils/imagePlane';
+import { nextPreviewPose, previewPoseDelay } from '../utils/previewCycle';
 
 describe('VEYRA hover queue', () => {
   it('finishes the active system before starting another', () => {
@@ -30,6 +38,27 @@ describe('VEYRA image plane', () => {
     expect(390).toBeLessThanOrEqual(MOBILE_MAX_PX);
     expect(mobile.width).toBe(350);
     expect(mobile.top).toBe(132);
+  });
+
+  it('pins the framed preview plane to the top of the iframe', () => {
+    const framed = measureImagePlane(800, 640, { framed: true });
+    expect(framed.width).toBe(800);
+    expect(framed.left).toBe(0);
+    expect(framed.top).toBe(0);
+    expect(framed.height / framed.width).toBeCloseTo(IMAGE_RATIO_H / IMAGE_RATIO_W);
+  });
+});
+
+describe('VEYRA embed hover cycle', () => {
+  it('walks rest → drive → rest → battery and holds poses longer than rest', () => {
+    expect(PREVIEW_POSES).toEqual([null, 'drive', null, 'battery']);
+    expect(nextPreviewPose(0)).toBe('drive');
+    expect(nextPreviewPose(1)).toBeNull();
+    expect(nextPreviewPose(2)).toBe('battery');
+    expect(nextPreviewPose(3)).toBeNull();
+    expect(previewPoseDelay('drive')).toBe(EMBED_POSE_HOLD_MS);
+    expect(previewPoseDelay(null)).toBe(EMBED_POSE_REST_MS);
+    expect(EMBED_POSE_HOLD_MS).toBeGreaterThan(EMBED_POSE_REST_MS);
   });
 });
 

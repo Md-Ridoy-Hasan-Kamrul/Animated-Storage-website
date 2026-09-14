@@ -18,14 +18,17 @@ import { hotspots, systems } from './content';
 import HoverVideo from './HoverVideo';
 import AppearanceMenu from './AppearanceMenu';
 import { appearanceOptions, baseExterior, canUseHotspot } from './appearance';
+import { usePreviewHover } from './hooks/usePreviewHover';
 import { measureImagePlane } from './utils/imagePlane';
 
 const ROOT_IMAGE = '/media/exterior-polished.png';
 
-export default function App() {
+export default function App({ preview = false }) {
   const [phase, setPhase] = useState('overview');
   const [selected, setSelected] = useState('battery');
   const [hovered, setHovered] = useState(null);
+  const cyclePose = usePreviewHover(preview);
+  const activeHover = hovered || cyclePose;
   const [annotation, setAnnotation] = useState(null);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
@@ -149,7 +152,7 @@ export default function App() {
     if (!element) return undefined;
     const updatePlane = () => {
       const { width } = element.getBoundingClientRect();
-      setPlane(measureImagePlane(width, window.innerHeight));
+      setPlane(measureImagePlane(width, window.innerHeight, { framed: preview }));
     };
     const observer = new ResizeObserver(updatePlane);
     observer.observe(element);
@@ -158,7 +161,7 @@ export default function App() {
       observer.disconnect();
       window.removeEventListener('resize', updatePlane);
     };
-  }, []);
+  }, [preview]);
 
   useEffect(() => {
     let cancelled = false;
@@ -231,7 +234,7 @@ export default function App() {
 
   return (
     <main
-      className={`experience phase-${phase} ${reduced ? 'reduced' : ''}`}
+      className={`experience phase-${phase} ${reduced ? 'reduced' : ''} ${preview ? 'preview' : ''}`}
       style={{
         '--scene-width': typeof plane.width === 'number' ? `${plane.width}px` : undefined,
         '--scene-height': typeof plane.height === 'number' ? `${plane.height}px` : undefined,
@@ -256,7 +259,7 @@ export default function App() {
               <div className="car-visual">
                 <img className="car-image" src={ROOT_IMAGE} alt="Silver electric concept sedan in a studio" draggable={false} />
                 <HoverVideo
-                  desired={!appearance && (hovered === 'drive' || hovered === 'battery') ? hovered : null}
+                  desired={!appearance && (activeHover === 'drive' || activeHover === 'battery') ? activeHover : null}
                   mode={phase}
                   reduced={reduced}
                   onNeutral={setNeutral}
@@ -343,7 +346,7 @@ export default function App() {
                   ref={(node) => {
                     if (target) entryButtons.current[target] = node;
                   }}
-                  className={`hotspot ${hovered === id ? 'active' : ''}`}
+                  className={`hotspot ${activeHover === id ? 'active' : ''}`}
                   style={{ left: `${item.anchor.x}%`, top: `${item.anchor.y}%` }}
                   disabled={!enabled}
                   onPointerEnter={() => {
