@@ -28,6 +28,7 @@ export const TEMPLATES = [
   'veyra-electric',
   'real-time-alerts',
   'equilibrium',
+  'scaling-platform',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
