@@ -29,6 +29,7 @@ import { meta as scalingPlatform } from './saas/scaling-platform/meta';
 import { meta as kage } from './landing-page/kage/meta';
 import { meta as sketchbook } from './landing-page/sketchbook/meta';
 import { meta as sublevelStudio } from './landing-page/sublevel-studio/meta';
+import { meta as livingGreen } from './hero/living-green/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -88,6 +89,7 @@ export const TEMPLATES = [
   realTimeAlerts,
   equilibrium,
   scalingPlatform,
+  livingGreen,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

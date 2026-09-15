@@ -32,6 +32,7 @@ export const TEMPLATES = [
   'kage',
   'sketchbook',
   'sublevel-studio',
+  'living-green',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

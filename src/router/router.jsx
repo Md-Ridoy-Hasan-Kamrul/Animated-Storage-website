@@ -110,6 +110,9 @@ const SketchbookLive = lazy(
 const SublevelStudioLive = lazy(
   () => import('../templates/landing-page/sublevel-studio/LivePage'),
 );
+const LivingGreenLive = lazy(
+  () => import('../templates/hero/living-green/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -431,6 +434,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <SublevelStudioLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LIVING_GREEN}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LivingGreenLive />
           </Suspense>
         }
       />

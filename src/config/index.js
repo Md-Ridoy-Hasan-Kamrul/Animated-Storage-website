@@ -40,6 +40,7 @@ export const ROUTES = {
   KAGE: '/p/kage',
   SKETCHBOOK: '/p/sketchbook',
   SUBLEVEL_STUDIO: '/p/sublevel-studio',
+  LIVING_GREEN: '/p/living-green',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
