@@ -56,6 +56,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
  * Add new templates under src/templates/<category-slug>/<template-id>/ then import meta here.
  */
 export const TEMPLATES = [
+  kage,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,
@@ -83,7 +84,6 @@ export const TEMPLATES = [
   realTimeAlerts,
   equilibrium,
   scalingPlatform,
-  kage,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;
