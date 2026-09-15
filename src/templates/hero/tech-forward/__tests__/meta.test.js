@@ -16,10 +16,10 @@ import { meta } from '../meta';
 import { TECH_FORWARD_PROMPT } from '../prompt';
 
 describe('Tech-Forward meta', () => {
-  it('registers the Hero card Tech-Forward', () => {
+  it('registers the Hero card Tech Forward', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
-    expect(meta.title).toBe('Tech-Forward');
+    expect(meta.title).toBe('Tech Forward');
     expect(meta.category).toBe('Hero');
     expect(meta.categorySlug).toBe('hero');
     expect(meta.height).toBe('h-[272px]');
@@ -65,7 +65,7 @@ describe('Tech-Forward content', () => {
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4',
     );
     expect(HERO_VIDEO_LOCAL).toBe('/images/Assets Tech-Forward/hero.mp4');
-    expect(PREVIEW_STILL).toBe('/images/Assets Tech-Forward/preview.svg');
+    expect(PREVIEW_STILL).toBe('/images/Assets%20Tech-Forward/TechForward.png');
     expect(MARQUEE_GIFS).toHaveLength(DETAIL_CARD_IMAGE_COUNT);
   });
 });

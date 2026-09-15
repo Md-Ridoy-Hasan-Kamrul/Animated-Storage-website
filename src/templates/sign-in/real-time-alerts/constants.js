@@ -1,5 +1,5 @@
 export const CARD_ID = 'real-time-alerts';
-export const CARD_TITLE = 'Real-Time Alerts';
+export const CARD_TITLE = 'Real Time Alerts';
 export const DETAIL_FALLBACK = '/templates/real-time-alerts';
 export const PAGE_TITLE = 'Signal — Log in';
 export const PAGE_BG = '#fefefe';

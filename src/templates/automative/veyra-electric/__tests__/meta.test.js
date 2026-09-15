@@ -53,7 +53,7 @@ describe('Veyra Electric meta', () => {
 
 describe('Veyra Electric content', () => {
   it('keeps the release exterior as the preview still', () => {
-    expect(PREVIEW_STILL).toBe('/media/exterior-polished.png');
+    expect(PREVIEW_STILL).toBe('/images/Assets%20Veyra%20Electric/VeyraElectric.png');
     expect(MARQUEE_GIFS).toHaveLength(DETAIL_CARD_IMAGE_COUNT);
   });
 });

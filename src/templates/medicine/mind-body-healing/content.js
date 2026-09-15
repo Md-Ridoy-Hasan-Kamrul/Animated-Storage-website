@@ -4,7 +4,8 @@ export const HERO_VIDEO =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260715_082433_69699cf8-444b-4484-93cc-053e57896dfd.mp4';
 
 export const HERO_VIDEO_LOCAL = '/images/Assets Mind-Body Healing/hero.mp4';
-export const PREVIEW_STILL = '/images/Assets Mind-Body Healing/preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Mind-Body%20Healing/MindBodyHealing.png';
 
 export const AVATAR_REMOTES = [
   'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100',

@@ -7,7 +7,7 @@ export const HERO_VIDEO =
 /** Same film, same-origin — Chromium blocks the CloudFront URL as a media src. */
 export const HERO_VIDEO_LOCAL = '/images/Assets Foldcraft/hero.mp4';
 
-export const PREVIEW_STILL = '/images/Assets Foldcraft/preview.svg';
+export const PREVIEW_STILL = '/images/Assets%20Foldcraft/Foldcraft.png';
 
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;

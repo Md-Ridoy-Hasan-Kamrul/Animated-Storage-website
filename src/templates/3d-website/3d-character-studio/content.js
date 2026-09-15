@@ -2,7 +2,8 @@ import { DETAIL_CARD_IMAGE_COUNT, VIDEO_URL } from './constants';
 
 export const HERO_VIDEO = VIDEO_URL;
 export const HERO_VIDEO_LOCAL = '/images/Assets 3D Character Studio/hero.mp4';
-export const PREVIEW_STILL = '/images/Assets 3D Character Studio/preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%203D%20Character%20Studio/Mainframe.png';
 
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;

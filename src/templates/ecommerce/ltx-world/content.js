@@ -8,7 +8,7 @@ export const CLIP_URLS = Object.freeze(
   }, {}),
 );
 
-export const PREVIEW_STILL = '/images/Assets LTX World/preview.svg';
+export const PREVIEW_STILL = '/images/Assets%20LTX%20World/LTX.png';
 
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;

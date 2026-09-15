@@ -1,10 +1,10 @@
 import { ROUTES } from '../../../config';
 import { SYLVA_PROMPT } from './prompt';
-import { PREVIEW_STILL } from './constants';
+import { CARD_TITLE, PREVIEW_STILL } from './constants';
 
 export const meta = {
   id: 'living-green',
-  title: 'Living Green — Sylva',
+  title: CARD_TITLE,
   category: 'Hero',
   categorySlug: 'hero',
   pricing: 'Free',

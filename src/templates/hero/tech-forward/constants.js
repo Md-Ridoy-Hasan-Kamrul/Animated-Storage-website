@@ -1,5 +1,5 @@
 export const CARD_ID = 'tech-forward';
-export const CARD_TITLE = 'Tech-Forward';
+export const CARD_TITLE = 'Tech Forward';
 export const DETAIL_FALLBACK = '/templates/tech-forward';
 export const PAGE_TITLE = 'NeuralKinetics';
 export const PAGE_BG = '#ffffff';

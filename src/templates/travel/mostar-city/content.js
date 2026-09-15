@@ -66,7 +66,8 @@ export const SIGHTS = Object.freeze([
   },
 ]);
 
-export const PREVIEW_STILL = SCENE.sky;
+export const PREVIEW_STILL =
+  '/images/Asstes%20Mostar%20city/Mostarcity.png';
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;
 export const ABOUT_DECOR = { moon: PREVIEW_STILL, group: SCENE.bridge };

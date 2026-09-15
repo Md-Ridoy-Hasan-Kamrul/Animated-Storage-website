@@ -17,10 +17,10 @@ import { meta } from '../meta';
 import { REAL_TIME_ALERTS_PROMPT } from '../prompt';
 
 describe('Real-Time Alerts meta', () => {
-  it('registers the Sign in card Real-Time Alerts', () => {
+  it('registers the Sign in card Real Time Alerts', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
-    expect(meta.title).toBe('Real-Time Alerts');
+    expect(meta.title).toBe('Real Time Alerts');
     expect(meta.category).toBe('Sign in');
     expect(meta.categorySlug).toBe('sign-in');
     expect(meta.height).toBe('h-[272px]');

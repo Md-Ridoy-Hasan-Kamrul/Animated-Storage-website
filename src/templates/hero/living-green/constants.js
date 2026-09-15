@@ -1,5 +1,5 @@
 export const CARD_ID = 'living-green';
-export const CARD_TITLE = 'Living Green — Sylva';
+export const CARD_TITLE = 'Living Green Sylva';
 export const DETAIL_FALLBACK = '/templates/living-green';
 export const PAGE_TITLE = 'Sylva — Into the living world';
 export const PAGE_BG = '#383b34';
@@ -21,7 +21,8 @@ export const INNER_GREEN_HTML_SHA256 =
 export const FRAME_TITLE = 'Sylva — Into the living world';
 export const SYLVA_VARIANT = 'living-green';
 export const DETAIL_CARD_IMAGE_COUNT = 8;
-export const PREVIEW_STILL = '/landing-pages/inner-green-assets/card-ethos.jpg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Living%20Green%20Sylva/LivingGreenSylva.png';
 
 export const SYLVA_DEFAULT_PROPS = {
   variant: 'living-green',

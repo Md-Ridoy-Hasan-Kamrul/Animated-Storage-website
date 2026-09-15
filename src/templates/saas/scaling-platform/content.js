@@ -12,7 +12,8 @@ export const HERO_VIDEO_WIDTH = 1920;
 export const HERO_VIDEO_HEIGHT = 1080;
 export const ABOUT_VIDEO_WIDTH = 1440;
 export const ABOUT_VIDEO_HEIGHT = 1440;
-export const PREVIEW_STILL = '/images/Assets Scaling Platform/preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Scaling%20Platform/ScalingPlatform.png';
 
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;

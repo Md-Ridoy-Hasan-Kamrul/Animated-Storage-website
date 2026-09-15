@@ -1,7 +1,8 @@
 import { DETAIL_CARD_IMAGE_COUNT } from './constants';
 
 export const HERO_VIDEO_LOCAL = '/media/hood-hover-forward.mp4';
-export const PREVIEW_STILL = '/media/exterior-polished.png';
+export const PREVIEW_STILL =
+  '/images/Assets%20Veyra%20Electric/VeyraElectric.png';
 
 export const systems = {
   battery: {

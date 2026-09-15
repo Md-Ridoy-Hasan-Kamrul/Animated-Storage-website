@@ -25,7 +25,7 @@ export const VIDEOS = VIDEO_LABELS.map((label, index) => ({
 
 export const HERO_VIDEO = VIDEO_URLS[0];
 export const HERO_VIDEO_LOCAL = VIDEO_LOCAL[0];
-export const PREVIEW_STILL = OVERLAY_PNG;
+export const PREVIEW_STILL = '/images/Assets%20Stillmind/Stillmind.png';
 
 const STILLS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const MARQUEE_GIFS = STILLS;

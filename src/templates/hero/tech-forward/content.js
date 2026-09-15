@@ -5,7 +5,7 @@ export const HERO_VIDEO =
 
 export const HERO_VIDEO_LOCAL = '/images/Assets Tech-Forward/hero.mp4';
 
-export const PREVIEW_STILL = '/images/Assets Tech-Forward/preview.svg';
+export const PREVIEW_STILL = '/images/Assets%20Tech-Forward/TechForward.png';
 export const MARQUEE_GIFS = Array.from({ length: DETAIL_CARD_IMAGE_COUNT }, () => PREVIEW_STILL);
 export const ABOUT_DECOR = { moon: PREVIEW_STILL, group: PREVIEW_STILL };
 export const PORTRAIT_URL = PREVIEW_STILL;

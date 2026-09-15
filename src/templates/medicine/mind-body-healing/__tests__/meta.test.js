@@ -17,10 +17,10 @@ import { meta } from '../meta';
 import { MIND_BODY_HEALING_PROMPT } from '../prompt';
 
 describe('Mind-Body Healing meta', () => {
-  it('registers the Medicine card Mind-Body Healing', () => {
+  it('registers the Medicine card Mind Body Healing', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
-    expect(meta.title).toBe('Mind-Body Healing');
+    expect(meta.title).toBe('Mind Body Healing');
     expect(meta.category).toBe('Medicine');
     expect(meta.categorySlug).toBe('medicine');
     expect(meta.height).toBe('h-[272px]');

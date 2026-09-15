@@ -15,11 +15,11 @@ import {
 import { meta } from '../meta';
 import { SYLVA_PROMPT } from '../prompt';
 
-describe('Living Green — Sylva meta', () => {
-  it('registers the Hero card Living Green — Sylva', () => {
+describe('Living Green Sylva meta', () => {
+  it('registers the Hero card Living Green Sylva', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
-    expect(meta.title).toBe('Living Green — Sylva');
+    expect(meta.title).toBe('Living Green Sylva');
     expect(meta.category).toBe('Hero');
     expect(meta.categorySlug).toBe('hero');
     expect(meta.height).toBe('h-[272px]');

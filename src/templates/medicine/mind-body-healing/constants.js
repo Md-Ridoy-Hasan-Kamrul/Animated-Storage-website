@@ -1,5 +1,5 @@
 export const CARD_ID = 'mind-body-healing';
-export const CARD_TITLE = 'Mind-Body Healing';
+export const CARD_TITLE = 'Mind Body Healing';
 export const DETAIL_FALLBACK = '/templates/mind-body-healing';
 export const PAGE_TITLE = 'Vibrant Wellness';
 export const PAGE_BG = '#050505';
