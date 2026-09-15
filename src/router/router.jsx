@@ -104,6 +104,9 @@ const ScalingPlatformLive = lazy(
   () => import('../templates/saas/scaling-platform/LivePage'),
 );
 const KageLive = lazy(() => import('../templates/landing-page/kage/LivePage'));
+const SketchbookLive = lazy(
+  () => import('../templates/landing-page/sketchbook/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -407,6 +410,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <KageLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SKETCHBOOK}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SketchbookLive />
           </Suspense>
         }
       />

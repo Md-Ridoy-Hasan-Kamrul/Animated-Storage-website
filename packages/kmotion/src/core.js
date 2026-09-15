@@ -30,6 +30,7 @@ export const TEMPLATES = [
   'equilibrium',
   'scaling-platform',
   'kage',
+  'sketchbook',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

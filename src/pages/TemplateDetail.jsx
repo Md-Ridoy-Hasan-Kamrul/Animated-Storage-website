@@ -33,6 +33,7 @@ import * as realTimeAlerts from '../templates/sign-in/real-time-alerts/content';
 import * as equilibrium from '../templates/hero/equilibrium/content';
 import * as scalingPlatform from '../templates/saas/scaling-platform/content';
 import * as kage from '../templates/landing-page/kage/content';
+import * as sketchbook from '../templates/landing-page/sketchbook/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -70,6 +71,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   equilibrium,
   'scaling-platform': scalingPlatform,
   kage,
+  sketchbook,
 };
 const COPY_ICON_SIZE = 20;
 

@@ -38,6 +38,7 @@ export const ROUTES = {
   EQUILIBRIUM: '/p/equilibrium',
   SCALING_PLATFORM: '/p/scaling-platform',
   KAGE: '/p/kage',
+  SKETCHBOOK: '/p/sketchbook',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
