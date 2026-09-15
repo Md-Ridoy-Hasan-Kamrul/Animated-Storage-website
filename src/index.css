@@ -160,23 +160,12 @@ html.jack-embed * {
   font-family: "DM Sans", sans-serif;
 }
 
-/* Coming Soon 3D tube (GSAP SplitText) */
+/* Coming Soon — GalleryHeading Matte Rise (rising-diagonal) */
 .coming-soon-tube-container {
-  min-height: min(52vh, 420px);
-}
-
-.coming-soon-tube {
-  height: 24vw;
-  min-height: 120px;
-  max-height: 220px;
-}
-
-.coming-soon-line {
-  letter-spacing: -0.6vw;
-  font-size: clamp(2.4rem, 12vw, 9rem);
-}
-
-.coming-soon-line .coming-soon-char,
-.coming-soon-line div {
-  backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  min-height: min(68vh, 720px);
+  height: min(68vh, 720px);
+  overflow: hidden;
+  background: #000;
 }
