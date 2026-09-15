@@ -31,6 +31,7 @@ export const TEMPLATES = [
   'scaling-platform',
   'kage',
   'sketchbook',
+  'sublevel-studio',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

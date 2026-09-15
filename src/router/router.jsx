@@ -107,6 +107,9 @@ const KageLive = lazy(() => import('../templates/landing-page/kage/LivePage'));
 const SketchbookLive = lazy(
   () => import('../templates/landing-page/sketchbook/LivePage'),
 );
+const SublevelStudioLive = lazy(
+  () => import('../templates/landing-page/sublevel-studio/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -419,6 +422,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <SketchbookLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SUBLEVEL_STUDIO}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SublevelStudioLive />
           </Suspense>
         }
       />

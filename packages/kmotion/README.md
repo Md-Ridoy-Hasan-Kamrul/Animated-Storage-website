@@ -82,4 +82,4 @@ setOrigin('https://your-kmotion-site.com');
 console.log(TEMPLATES);
 ```
 
-Ids: `3d-portfolio`, `prompt`, `neo-museum`, `portfolio-cosmic`, `adam-roberts`, `lumina`, `heritage-grove`, `velorah`, `foldcraft`, `ltx-world`, `cast-render`, `3d-character-studio`, `scroll-tied-video`, `mostar-city`, `stillmind`, `intelligent-operations`, `interactive-discovery`, `nike-hover`, `synth-mode`, `tech-forward`, `contact-cybernetic`, `wellness-hero`, `mind-body-healing`, `veyra-electric`, `real-time-alerts`, `equilibrium`, `scaling-platform`, `kage`, `sketchbook`.
+Ids: `3d-portfolio`, `prompt`, `neo-museum`, `portfolio-cosmic`, `adam-roberts`, `lumina`, `heritage-grove`, `velorah`, `foldcraft`, `ltx-world`, `cast-render`, `3d-character-studio`, `scroll-tied-video`, `mostar-city`, `stillmind`, `intelligent-operations`, `interactive-discovery`, `nike-hover`, `synth-mode`, `tech-forward`, `contact-cybernetic`, `wellness-hero`, `mind-body-healing`, `veyra-electric`, `real-time-alerts`, `equilibrium`, `scaling-platform`, `kage`, `sketchbook`, `sublevel-studio`.

@@ -39,6 +39,7 @@ export const ROUTES = {
   SCALING_PLATFORM: '/p/scaling-platform',
   KAGE: '/p/kage',
   SKETCHBOOK: '/p/sketchbook',
+  SUBLEVEL_STUDIO: '/p/sublevel-studio',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

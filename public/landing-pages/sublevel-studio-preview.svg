@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#000"/>
+  <rect x="40" y="40" width="220" height="36" fill="#111112" stroke="#2e2e2e"/>
+  <text x="56" y="64" fill="#e6e6e6" font-family="system-ui,sans-serif" font-size="14" font-weight="600">sublevel.</text>
+  <text x="60" y="320" fill="#e6e6e6" font-family="system-ui,sans-serif" font-size="48" font-weight="600">We build the stuff</text>
+  <text x="60" y="380" fill="#e6e6e6" font-family="system-ui,sans-serif" font-size="48" font-weight="600">people remember</text>
+  <rect x="60" y="420" width="72" height="6" fill="#ff4d00"/>
+</svg>

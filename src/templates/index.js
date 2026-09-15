@@ -28,6 +28,7 @@ import { meta as equilibrium } from './hero/equilibrium/meta';
 import { meta as scalingPlatform } from './saas/scaling-platform/meta';
 import { meta as kage } from './landing-page/kage/meta';
 import { meta as sketchbook } from './landing-page/sketchbook/meta';
+import { meta as sublevelStudio } from './landing-page/sublevel-studio/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -59,6 +60,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
 export const TEMPLATES = [
   kage,
   sketchbook,
+  sublevelStudio,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,
