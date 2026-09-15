@@ -19,7 +19,8 @@ export const SOURCE_REVISION = '91db5c1bb779';
 export const SUBLEVEL_STUDIO_HTML_SHA256 =
   '91db5c1bb779687990b01f226a02d7fe7cf7954a40ba8053c4d6b7abf82232e3';
 export const DETAIL_CARD_IMAGE_COUNT = 8;
-export const PREVIEW_STILL = '/landing-pages/sublevel-studio-preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Sublevel%20Studio/SublevelStudio.png';
 export const FRAME_TITLE = 'sublevel.studio | We build the stuff people remember.';
 
 export const ASSET_MANIFEST = [

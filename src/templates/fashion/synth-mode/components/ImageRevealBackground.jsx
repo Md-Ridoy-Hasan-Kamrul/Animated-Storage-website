@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import {
+  GRID_MIN,
   GRID_OPACITY,
   GRID_STROKE,
   GRID_STROKE_WIDTH,
@@ -18,20 +19,18 @@ const LAYER = {
 
 const ImageRevealBackground = ({ isEmbed = false }) => {
   const setRawRef = useRef(null);
-  const { maskUrl, grid } = useImageReveal({
+  const revealRef = useRef(null);
+  const patternRef = useRef(null);
+  const patternPathRef = useRef(null);
+
+  useImageReveal({
     followPointer: !isEmbed,
     setRawRef,
+    revealRef,
+    patternRef,
+    patternPathRef,
   });
   useEmbedReveal(isEmbed, setRawRef);
-
-  const maskStyle = maskUrl
-    ? {
-        maskImage: `url(${maskUrl})`,
-        WebkitMaskImage: `url(${maskUrl})`,
-        maskSize: '100% 100%',
-        WebkitMaskSize: '100% 100%',
-      }
-    : { opacity: 0 };
 
   return (
     <div className={REVEAL_WRAP_CLASS} aria-hidden="true">
@@ -41,22 +40,31 @@ const ImageRevealBackground = ({ isEmbed = false }) => {
         style={{ ...LAYER, backgroundImage: `url(${BG_IMAGE_1})` }}
       />
       <div
+        ref={revealRef}
         data-reveal-layer="reveal"
         className="absolute inset-0"
-        style={{ ...LAYER, backgroundImage: `url(${BG_IMAGE_2})`, ...maskStyle }}
+        style={{
+          ...LAYER,
+          backgroundImage: `url(${BG_IMAGE_2})`,
+          opacity: 0,
+          maskSize: '100% 100%',
+          WebkitMaskSize: '100% 100%',
+        }}
       />
       <svg className="absolute inset-0 h-full w-full" style={{ opacity: GRID_OPACITY }}>
         <defs>
           <pattern
+            ref={patternRef}
             id="synth-grid"
-            width={grid.cell}
-            height={grid.cell}
+            width={GRID_MIN}
+            height={GRID_MIN}
             patternUnits="userSpaceOnUse"
-            x={grid.x}
-            y={grid.y}
+            x={0}
+            y={0}
           >
             <path
-              d={gridPatternPath(grid.cell)}
+              ref={patternPathRef}
+              d={gridPatternPath(GRID_MIN)}
               fill="none"
               stroke={GRID_STROKE}
               strokeWidth={GRID_STROKE_WIDTH}

@@ -1,0 +1,143 @@
+.gallery-preview-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.gallery-preview-notice__stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.gallery-preview-notice__vortex {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-preview-notice__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(11, 11, 11, 0.28), rgba(11, 11, 11, 0.78) 62%),
+    linear-gradient(180deg, rgba(11, 11, 11, 0.45), rgba(11, 11, 11, 0.82));
+  pointer-events: none;
+}
+
+.gallery-preview-notice__panel {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 560px);
+  padding: clamp(28px, 4vw, 40px);
+  border: 1px solid rgba(236, 236, 232, 0.14);
+  border-radius: 20px;
+  background: rgba(12, 12, 12, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  color: #f4f4ef;
+}
+
+.gallery-preview-notice__eyebrow {
+  margin: 0 0 14px;
+  color: #9a9a94;
+  font-family: 'ThreeUI Fragment Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.gallery-preview-notice__title {
+  margin: 0;
+  max-width: 18ch;
+  color: #f6f6f1;
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: clamp(1.85rem, 4.2vw, 2.55rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.gallery-preview-notice__lead {
+  margin: 18px 0 0;
+  color: #c8c8c2;
+  font-size: clamp(0.98rem, 1.7vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.gallery-preview-notice__steps {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.gallery-preview-notice__steps li {
+  position: relative;
+  padding-left: 1.65rem;
+  color: #e4e4de;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.gallery-preview-notice__steps li::before {
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #9a9a94;
+  font-family: 'ThreeUI Fragment Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  content: counter(step);
+  counter-increment: step;
+}
+
+.gallery-preview-notice__steps {
+  counter-reset: step;
+}
+
+.gallery-preview-notice__button {
+  margin-top: 28px;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: #f4f4ef;
+  color: #111111;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.gallery-preview-notice__button:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.gallery-preview-notice__button:focus-visible {
+  outline: 2px solid #f4f4ef;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .gallery-preview-notice {
+    padding: 16px;
+  }
+
+  .gallery-preview-notice__panel {
+    padding: 24px 20px;
+  }
+}

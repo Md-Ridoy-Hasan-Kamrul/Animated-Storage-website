@@ -7,7 +7,8 @@ export const HERO_VIDEO =
 /** Same file, same-origin — Chromium blocks the CloudFront URL as a media src. */
 export const HERO_VIDEO_LOCAL = '/images/Assets Adam Roberts/hero.mp4';
 
-export const PREVIEW_STILL = '/images/Assets Adam Roberts/preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Adam%20Roberts/AdamRoberts.png';
 
 export const BRAND_BLURB_LINES = Object.freeze([
   'Grilled Pixels is my',

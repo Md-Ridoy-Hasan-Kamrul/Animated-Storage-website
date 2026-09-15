@@ -3,9 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { Copy, Check } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { copyTextToClipboard } from '../../utils/copyTextToClipboard';
+import {
+  acquireLivePreviewSlot,
+  onLivePreviewSlotAvailable,
+  releaseLivePreviewSlot,
+} from '../../utils/livePreviewSlots';
 import NpmStackMenu from './NpmStackMenu';
 
 const PREVIEW_WIDTH = 1280;
+const PREVIEW_IO_ROOT_MARGIN = '120px';
+const PREVIEW_IO_THRESHOLD = 0.08;
+const COPY_FEEDBACK_MS = 1600;
 
 const TemplateCard = memo(({ item }) => {
   const navigate = useNavigate();
@@ -13,7 +21,11 @@ const TemplateCard = memo(({ item }) => {
   const frameWrapRef = useRef(null);
   const rafRef = useRef(0);
   const [frameSize, setFrameSize] = useState({ scale: 0.28, height: 1700 });
-  const [previewReady, setPreviewReady] = useState(false);
+  const [inView, setInView] = useState(false);
+  const [liveMounted, setLiveMounted] = useState(false);
+
+  const stillSrc = item.previewImage || item.previewGif || '';
+  const ownerId = item.id;
 
   useEffect(() => {
     const el = frameWrapRef.current;
@@ -49,13 +61,47 @@ const TemplateCard = memo(({ item }) => {
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setPreviewReady(true);
+        setInView(Boolean(entry?.isIntersecting));
       },
-      { rootMargin: '160px', threshold: 0.05 },
+      { rootMargin: PREVIEW_IO_ROOT_MARGIN, threshold: PREVIEW_IO_THRESHOLD },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!inView) {
+      setLiveMounted(false);
+      releaseLivePreviewSlot(ownerId);
+      return undefined;
+    }
+
+    const tryMount = () => {
+      if (acquireLivePreviewSlot(ownerId)) {
+        setLiveMounted(true);
+        return true;
+      }
+      setLiveMounted(false);
+      return false;
+    };
+
+    if (tryMount()) {
+      return () => {
+        setLiveMounted(false);
+        releaseLivePreviewSlot(ownerId);
+      };
+    }
+
+    const unsubscribe = onLivePreviewSlotAvailable(() => {
+      tryMount();
+    });
+
+    return () => {
+      unsubscribe();
+      setLiveMounted(false);
+      releaseLivePreviewSlot(ownerId);
+    };
+  }, [inView, ownerId]);
 
   const handleCopyPrompt = useCallback(
     async (event) => {
@@ -70,7 +116,7 @@ const TemplateCard = memo(({ item }) => {
         await copyTextToClipboard(prompt);
         setCopiedPrompt(true);
         toast.success('Full prompt copied');
-        window.setTimeout(() => setCopiedPrompt(false), 1600);
+        window.setTimeout(() => setCopiedPrompt(false), COPY_FEEDBACK_MS);
       } catch {
         toast.error('Copy failed');
       }
@@ -100,7 +146,24 @@ const TemplateCard = memo(({ item }) => {
         className={`relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0C0C0C] transition-transform duration-500 ease-out group-hover:-translate-y-1 ${item.height}`}
       >
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          {previewReady ? (
+          {stillSrc ? (
+            <img
+              src={stillSrc}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover"
+              draggable={false}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-[#0C0C0C]" aria-hidden />
+          )}
+
+          <div className="absolute left-3 top-3 z-[1] rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-200 backdrop-blur-md">
+            {liveMounted ? 'Live slice' : 'Still preview'}
+          </div>
+
+          {liveMounted ? (
             <iframe
               title={`${item.title} live preview`}
               src={`${item.livePath}?embed=1`}
@@ -115,9 +178,7 @@ const TemplateCard = memo(({ item }) => {
                 transformOrigin: 'top left',
               }}
             />
-          ) : (
-            <div className="absolute inset-0 bg-[#0C0C0C]" aria-hidden />
-          )}
+          ) : null}
         </div>
       </div>
 

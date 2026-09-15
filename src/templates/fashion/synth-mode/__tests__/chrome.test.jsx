@@ -21,7 +21,7 @@ import { BG_IMAGE_1, BG_IMAGE_2 } from '../content';
 import ImageRevealBackground from '../components/ImageRevealBackground';
 
 jest.mock('../hooks/useImageReveal', () => ({
-  useImageReveal: () => ({ maskUrl: '', grid: { cell: 40, x: 0, y: 0 } }),
+  useImageReveal: () => {},
 }));
 
 jest.mock('../hooks/useEmbedReveal', () => ({

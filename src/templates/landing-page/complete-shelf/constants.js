@@ -20,7 +20,8 @@ export const COMPLETE_SHELF_HTML_SHA256 =
   '606f200fed8602c243f40a11c8c364f0e625c57f80e7c97dc76419da207f198e';
 export const FRAME_TITLE = 'Working Volumes — Seven Tools for Making';
 export const DETAIL_CARD_IMAGE_COUNT = 8;
-export const PREVIEW_STILL = '/landing-pages/complete-shelf-preview.svg';
+export const PREVIEW_STILL =
+  '/images/Assets%20Working%20Volumes/WorkingVolumes.png';
 
 export const COMPLETE_SHELF_DEFAULT_PROPS = {
   headingFont: 'iowan-old-style',

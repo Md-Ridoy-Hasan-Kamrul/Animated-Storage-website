@@ -4,6 +4,7 @@ import { Search, Menu, X } from 'lucide-react';
 import { ROUTES } from '../config';
 import { KmotionLogoLink } from './KmotionLogo';
 import { useResponsiveLayout } from '../hooks/useResponsiveLayout';
+import GalleryPreviewNotice from './welcome/GalleryPreviewNotice';
 
 const NAV_LINKS = [
   { label: 'MCP', badge: 'NEW', href: '#' },
@@ -177,6 +178,7 @@ const Layout = memo(() => {
       <main>
         <Outlet />
       </main>
+      <GalleryPreviewNotice />
     </div>
   );
 });

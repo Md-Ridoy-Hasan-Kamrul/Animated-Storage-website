@@ -1,6 +1,7 @@
 import { JACK_3D_PROMPT } from './prompt';
-import { PORTRAIT_URL, MARQUEE_GIFS } from './content';
 import { ROUTES } from '../../../config';
+
+const CARD_PREVIEW = '/images/Assets%203D%20Portfolio/3DCreator.png';
 
 /** Gallery + route metadata for Landing Page → 3D Portfolio */
 export const meta = {
@@ -15,8 +16,8 @@ export const meta = {
   detailPath: '/templates/3d-portfolio',
   fullPrompt: JACK_3D_PROMPT,
   description: 'Animated 3D creator portfolio for Kamrul with Framer Motion.',
-  previewImage: PORTRAIT_URL,
-  previewGif: MARQUEE_GIFS[12],
+  previewImage: CARD_PREVIEW,
+  previewGif: CARD_PREVIEW,
 };
 
 export default meta;

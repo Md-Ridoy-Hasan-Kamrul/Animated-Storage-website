@@ -25,7 +25,7 @@ const LivePage = () => {
   const navigate = useNavigate();
   const { isEmbed, isStandalone } = useEmbedMode();
   const { isOpen, closeMenu, toggleMenu } = useMobileMenu();
-  const { cursorPos, setRaw } = useSmoothCursor({ followPointer: !isEmbed });
+  const { smoothRef, setRaw } = useSmoothCursor({ followPointer: !isEmbed });
 
   useLithosFonts();
   usePageChrome();
@@ -54,7 +54,7 @@ const LivePage = () => {
           style={{ backgroundImage: `url(${BG_IMAGE_1})` }}
           aria-hidden="true"
         />
-        <RevealLayer image={BG_IMAGE_2} cursorX={cursorPos.x} cursorY={cursorPos.y} />
+        <RevealLayer image={BG_IMAGE_2} smoothRef={smoothRef} />
         <HeroHeading />
         <HeroCopy />
       </section>

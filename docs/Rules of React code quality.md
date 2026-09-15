@@ -32,6 +32,9 @@ When writing or editing React code in this project, follow this document **A–Z
 - Custom hooks for reusable stateful logic
 - Named constants for retries, timeouts, routes, limits
 - Lazy/code-split heavy pages (existing webpack splitChunks)
+- Gallery cards: paint `previewImage` stills first; mount live iframes only in-view with a hard concurrent cap; unmount when off-screen
+- Pointer / scrub / rAF values in `useRef` (or direct DOM/CSS writes) — never `useState` for per-frame x/y
+- GSAP/Three teardown on leave: `ctx.revert()`, kill ScrollTriggers, destroy preview iframes (WebGL dispose path)
 
 If a change would violate any rule above, refactor first — do not ship impure or unidiomatic React.
 

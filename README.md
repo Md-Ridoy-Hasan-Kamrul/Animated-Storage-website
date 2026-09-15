@@ -278,6 +278,9 @@ REACT_APP_DEFAULT_LOCALE=en
 - **No inline styles** — use Tailwind utility classes exclusively
 - **No TypeScript migration without discussion** — stay in JavaScript until agreed
 - **No new dependencies** without team review
+- **Gallery cards must not keep unbounded live iframes** — home cards show `previewImage` stills by default; live `?embed=1` iframes mount only while in view and only up to `MAX_GALLERY_LIVE_PREVIEWS` (see `src/utils/livePreviewSlots.js`). Leaving the viewport must unmount the iframe so nested WebGL contexts are destroyed.
+- **Pointer / rAF motion must not use `useState` for x/y** — store cursor and scrub values in `useRef` (or write CSS/DOM directly). High-frequency state updates re-render the tree and cause jank.
+- **Leave routes must clean up** — GSAP: `gsap.context` + `ctx.revert()` or `ScrollTrigger.getAll().forEach(t => t.kill())`. Packaged Three.js lives inside iframes — destroying the iframe is the dispose path; do not leave orphan live previews mounted off-screen.
 
 ### SOLID Principles
 
@@ -571,19 +574,30 @@ toast.error('Failed to save changes. Please try again.');
 
 ### Optimization Rules
 
-- **Code-split all page components** using `React.lazy()` + `Suspense`
+- **Code-split all page components** using `React.lazy()` + `Suspense` (LivePages and admin routes already lazy in `src/router/router.jsx`)
 - **Lazy load** images with `loading="lazy"` attribute
+- **Gallery resource gate** — stills first; at most 2 concurrent live preview iframes; unload when off-screen (`TemplateCard` + `livePreviewSlots`)
+- **Prefer stills over WebGL on the home grid** — never mount dozens of Three.js / nested iframe documents at once (prevents `WebGL context lost`)
 - **Preload** critical fonts and above-the-fold resources in `index.html`
 - **Memoize** selectors — use `useSelector` with `shallowEqual` or memoized selectors
 - **Avoid anonymous functions** in JSX render — extract or use `useCallback`
 - **Bundle size** — no single JS chunk > 200kb (gzipped)
 - **No synchronous operations** in the render path
-- Webpack `splitChunks` must separate vendor, app, and shared bundles
+- Webpack production output **must** use `[contenthash]` for long-term browser caching
+- Webpack `splitChunks` must separate vendor, app, and shared bundles (`vendor-react`, `vendor-redux`, `vendors` + `runtimeChunk: 'single'`)
 
 ```jsx
-// ✅ Code splitting — all page components
+// ✅ Code splitting — all page / live template routes
 const Home = React.lazy(() => import('../pages/Home'));
-const About = React.lazy(() => import('../pages/About'));
+const CompleteShelfLive = React.lazy(
+  () => import('../templates/landing-page/complete-shelf/LivePage'),
+);
+```
+
+```jsx
+// ✅ Gallery card — still always painted; live iframe only if in view + slot free
+{stillSrc ? <img src={stillSrc} alt="" loading="lazy" /> : null}
+{liveMounted ? <iframe src={`${item.livePath}?embed=1`} title="…" /> : null}
 ```
 
 ---
@@ -948,17 +962,16 @@ npm run build
 | Priority  | Issue                                                                 | Action Required                                  |
 | --------- | --------------------------------------------------------------------- | ------------------------------------------------ |
 | ~~FIXED~~ | ~~`REDUX_GUIDE.md` written in Bangla~~                                | ~~Resolved~~ — rewritten in English              |
-| HIGH      | Missing `jest`, `@testing-library/react`, `@testing-library/jest-dom` | Add to `package.json` devDependencies            |
-| HIGH      | No `test` script in `package.json`                                    | Add `"test": "jest --watchAll=false"`            |
+| ~~FIXED~~ | ~~Home gallery mounted unbounded live iframes / WebGL~~               | ~~Resolved~~ — stills + viewport gate + 2-slot cap (`TemplateCard`, `livePreviewSlots`) |
+| ~~FIXED~~ | ~~Page components not lazy-loaded~~                                   | ~~Resolved~~ — `React.lazy` for pages + LivePages in `router.jsx` |
+| ~~FIXED~~ | ~~`webpack.config.js` missing `splitChunks` / contenthash~~           | ~~Resolved~~ — `splitChunks` + `[contenthash:8]` + `MiniCssExtractPlugin` + filesystem cache |
+| ~~FIXED~~ | ~~Missing Jest / Testing Library / `test` script~~                    | ~~Resolved~~ — `jest`, `@testing-library/*`, and `npm test` present |
 | HIGH      | Missing `react-i18next` + `i18next`                                   | Add to dependencies; create i18n init file       |
 | HIGH      | `src/i18n/locales/` empty — no `en.json` / `fr.json`                  | Create translation files for all strings         |
 | MEDIUM    | No ESLint configuration (`.eslintrc.js`)                              | Add Airbnb config + React/hooks plugins          |
 | MEDIUM    | No Prettier configuration (`.prettierrc`)                             | Add standard Prettier rules                      |
 | MEDIUM    | No `.env.example` file                                                | Create with all required variables documented    |
 | MEDIUM    | No CI/CD configuration                                                | Add `.github/workflows/ci.yml`                   |
-| MEDIUM    | Page components not lazy-loaded                                       | Wrap all `pages/` imports in `React.lazy()`      |
-| LOW       | `webpack.config.js` has no `splitChunks` config                       | Add vendor/app chunk splitting for production    |
-| LOW       | `MiniCssExtractPlugin` not used                                       | Extract CSS to separate file in production build |
 
 ---
 

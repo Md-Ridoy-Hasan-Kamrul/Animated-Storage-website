@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { GRID_MIN, SMOOTH_EASE } from '../constants';
 import {
   gridCellSize,
+  gridPatternPath,
   normalizeCursor,
   paintSpotlightMask,
   parallaxTarget,
@@ -13,14 +14,22 @@ import {
 
 const ORIGIN = { x: 0, y: 0 };
 
-export function useImageReveal({ followPointer = true, setRawRef } = {}) {
+/**
+ * Drive reveal mask + grid via DOM refs — no per-frame React state.
+ */
+export function useImageReveal({
+  followPointer = true,
+  setRawRef,
+  revealRef,
+  patternRef,
+  patternPathRef,
+} = {}) {
   const mouseRef = useRef(ORIGIN);
   const smoothRef = useRef(ORIGIN);
   const parallaxRef = useRef(ORIGIN);
   const canvasRef = useRef(null);
   const rafRef = useRef(0);
-  const [maskUrl, setMaskUrl] = useState('');
-  const [grid, setGrid] = useState({ cell: GRID_MIN, x: 0, y: 0 });
+  const lastCellRef = useRef(GRID_MIN);
 
   useEffect(() => {
     if (setRawRef) {
@@ -52,15 +61,27 @@ export function useImageReveal({ followPointer = true, setRawRef } = {}) {
       const radius = spotlightRadius(width);
       const ctx = canvas.getContext('2d');
       const dataUrl = paintSpotlightMask(ctx, x, y, radius);
-      if (dataUrl) setMaskUrl(dataUrl);
+      const reveal = revealRef?.current;
+      if (reveal && dataUrl) {
+        reveal.style.maskImage = `url(${dataUrl})`;
+        reveal.style.webkitMaskImage = `url(${dataUrl})`;
+        reveal.style.opacity = '1';
+      }
 
       const { cx, cy } = normalizeCursor(x, y, width, height);
       parallaxRef.current = stepParallax(parallaxRef.current, parallaxTarget(cx, cy));
-      setGrid({
-        cell: gridCellSize(width),
-        x: parallaxRef.current.x,
-        y: parallaxRef.current.y,
-      });
+      const cell = gridCellSize(width);
+      const pattern = patternRef?.current;
+      if (pattern) {
+        pattern.setAttribute('width', String(cell));
+        pattern.setAttribute('height', String(cell));
+        pattern.setAttribute('x', String(parallaxRef.current.x));
+        pattern.setAttribute('y', String(parallaxRef.current.y));
+        if (cell !== lastCellRef.current && patternPathRef?.current) {
+          lastCellRef.current = cell;
+          patternPathRef.current.setAttribute('d', gridPatternPath(cell));
+        }
+      }
 
       rafRef.current = window.requestAnimationFrame(tick);
     };
@@ -75,7 +96,5 @@ export function useImageReveal({ followPointer = true, setRawRef } = {}) {
       window.removeEventListener('resize', onResize);
       window.cancelAnimationFrame(rafRef.current);
     };
-  }, [followPointer, setRawRef]);
-
-  return { maskUrl, grid };
+  }, [followPointer, patternPathRef, patternRef, revealRef, setRawRef]);
 }

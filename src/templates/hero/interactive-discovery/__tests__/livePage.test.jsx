@@ -8,7 +8,10 @@ jest.mock('react-router-dom', () => ({
 }));
 
 jest.mock('../hooks/useSmoothCursor', () => ({
-  useSmoothCursor: () => ({ cursorPos: { x: -999, y: -999 }, setRaw: jest.fn() }),
+  useSmoothCursor: () => ({
+    smoothRef: { current: { x: -999, y: -999 } },
+    setRaw: jest.fn(),
+  }),
 }));
 
 jest.mock('../hooks/usePageChrome', () => ({

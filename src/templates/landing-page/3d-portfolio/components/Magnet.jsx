@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 const Magnet = ({
   children,
@@ -9,13 +9,19 @@ const Magnet = ({
   inactiveTransition = 'transform 0.6s ease-in-out',
 }) => {
   const ref = useRef(null);
-  const [active, setActive] = useState(false);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const activeRef = useRef(false);
+
+  const applyTransform = useCallback((x, y, active) => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    el.style.transition = active ? activeTransition : inactiveTransition;
+  }, [activeTransition, inactiveTransition]);
 
   const reset = useCallback(() => {
-    setActive(false);
-    setOffset({ x: 0, y: 0 });
-  }, []);
+    activeRef.current = false;
+    applyTransform(0, 0, false);
+  }, [applyTransform]);
 
   useEffect(() => {
     const onMove = (event) => {
@@ -31,27 +37,28 @@ const Magnet = ({
         event.clientY >= rect.top - padding && event.clientY <= rect.bottom + padding;
 
       if (withinX && withinY) {
-        setActive(true);
-        setOffset({
-          x: (event.clientX - centerX) / strength,
-          y: (event.clientY - centerY) / strength,
-        });
-      } else if (active) {
+        activeRef.current = true;
+        applyTransform(
+          (event.clientX - centerX) / strength,
+          (event.clientY - centerY) / strength,
+          true,
+        );
+      } else if (activeRef.current) {
         reset();
       }
     };
 
     window.addEventListener('mousemove', onMove);
     return () => window.removeEventListener('mousemove', onMove);
-  }, [active, padding, reset, strength]);
+  }, [applyTransform, padding, reset, strength]);
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
-        transition: active ? activeTransition : inactiveTransition,
+        transform: 'translate3d(0px, 0px, 0)',
+        transition: inactiveTransition,
         willChange: 'transform',
       }}
     >

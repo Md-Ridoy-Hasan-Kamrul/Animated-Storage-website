@@ -32,7 +32,7 @@ jest.mock('../hooks/useEmbedReveal', () => ({
 }));
 
 jest.mock('../hooks/useImageReveal', () => ({
-  useImageReveal: () => ({ maskUrl: '', grid: { cell: 40, x: 0, y: 0 } }),
+  useImageReveal: () => {},
 }));
 
 describe('Synth Mode page shell', () => {

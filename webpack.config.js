@@ -36,6 +36,12 @@ module.exports = (env, argv) => {
 
   return {
     entry: './src/index.jsx',
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+    },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: isProd ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
