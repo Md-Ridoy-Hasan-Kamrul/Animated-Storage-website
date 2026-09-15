@@ -1,0 +1,35 @@
+html.complete-shelf-html,
+html.complete-shelf-html body,
+html.complete-shelf-html #root {
+  height: 100%;
+  margin: 0;
+  background: #171a24;
+}
+
+.complete-shelf-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #171a24;
+  color: #f4eee6;
+  overflow: hidden;
+}
+
+html.complete-shelf-framed .complete-shelf-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.complete-shelf-page .shader-frame,
+.complete-shelf-page .threeui-background,
+.complete-shelf-page .landing-page-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #171a24;
+}

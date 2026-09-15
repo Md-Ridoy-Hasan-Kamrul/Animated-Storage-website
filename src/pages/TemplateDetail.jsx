@@ -36,6 +36,7 @@ import * as kage from '../templates/landing-page/kage/content';
 import * as sketchbook from '../templates/landing-page/sketchbook/content';
 import * as sublevelStudio from '../templates/landing-page/sublevel-studio/content';
 import * as livingGreen from '../templates/hero/living-green/content';
+import * as completeShelf from '../templates/landing-page/complete-shelf/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -76,6 +77,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   sketchbook,
   'sublevel-studio': sublevelStudio,
   'living-green': livingGreen,
+  'complete-shelf': completeShelf,
 };
 const COPY_ICON_SIZE = 20;
 

@@ -30,6 +30,7 @@ import { meta as kage } from './landing-page/kage/meta';
 import { meta as sketchbook } from './landing-page/sketchbook/meta';
 import { meta as sublevelStudio } from './landing-page/sublevel-studio/meta';
 import { meta as livingGreen } from './hero/living-green/meta';
+import { meta as completeShelf } from './landing-page/complete-shelf/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -62,6 +63,7 @@ export const TEMPLATES = [
   kage,
   sketchbook,
   sublevelStudio,
+  completeShelf,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

@@ -33,6 +33,7 @@ export const TEMPLATES = [
   'sketchbook',
   'sublevel-studio',
   'living-green',
+  'complete-shelf',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

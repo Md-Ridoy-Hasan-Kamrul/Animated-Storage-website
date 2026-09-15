@@ -113,6 +113,9 @@ const SublevelStudioLive = lazy(
 const LivingGreenLive = lazy(
   () => import('../templates/hero/living-green/LivePage'),
 );
+const CompleteShelfLive = lazy(
+  () => import('../templates/landing-page/complete-shelf/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -443,6 +446,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LivingGreenLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.COMPLETE_SHELF}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <CompleteShelfLive />
           </Suspense>
         }
       />

@@ -41,6 +41,7 @@ export const ROUTES = {
   SKETCHBOOK: '/p/sketchbook',
   SUBLEVEL_STUDIO: '/p/sublevel-studio',
   LIVING_GREEN: '/p/living-green',
+  COMPLETE_SHELF: '/p/complete-shelf',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
