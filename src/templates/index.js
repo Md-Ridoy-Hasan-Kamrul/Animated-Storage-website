@@ -26,6 +26,7 @@ import { meta as veyraElectric } from './automative/veyra-electric/meta';
 import { meta as realTimeAlerts } from './sign-in/real-time-alerts/meta';
 import { meta as equilibrium } from './hero/equilibrium/meta';
 import { meta as scalingPlatform } from './saas/scaling-platform/meta';
+import { meta as kage } from './landing-page/kage/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -82,6 +83,7 @@ export const TEMPLATES = [
   realTimeAlerts,
   equilibrium,
   scalingPlatform,
+  kage,
 ];
 
 export const getTemplateById = (id) => TEMPLATES.find((t) => t.id === id) || null;

@@ -29,6 +29,7 @@ export const TEMPLATES = [
   'real-time-alerts',
   'equilibrium',
   'scaling-platform',
+  'kage',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

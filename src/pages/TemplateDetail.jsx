@@ -32,6 +32,7 @@ import * as veyraElectric from '../templates/automative/veyra-electric/content';
 import * as realTimeAlerts from '../templates/sign-in/real-time-alerts/content';
 import * as equilibrium from '../templates/hero/equilibrium/content';
 import * as scalingPlatform from '../templates/saas/scaling-platform/content';
+import * as kage from '../templates/landing-page/kage/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -68,6 +69,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'real-time-alerts': realTimeAlerts,
   equilibrium,
   'scaling-platform': scalingPlatform,
+  kage,
 };
 const COPY_ICON_SIZE = 20;
 

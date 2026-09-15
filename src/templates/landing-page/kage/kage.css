@@ -1,0 +1,35 @@
+html.kage-html,
+html.kage-html body,
+html.kage-html #root {
+  height: 100%;
+  margin: 0;
+  background: #05070a;
+}
+
+.kage-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #05070a;
+  color: #dfe7e0;
+  overflow: hidden;
+}
+
+html.kage-framed .kage-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.kage-page .shader-frame,
+.kage-page .threeui-background,
+.kage-page .landing-page-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #05070a;
+}
