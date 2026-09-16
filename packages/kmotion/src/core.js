@@ -39,6 +39,7 @@ export const TEMPLATES = [
   'logic-core-structure-flow',
   'topology-field-structure-flow',
   'nebula-structure-flow',
+  'flux-vortex-structure-flow',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

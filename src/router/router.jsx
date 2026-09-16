@@ -131,6 +131,9 @@ const TopologyFieldStructureFlowLive = lazy(
 const NebulaStructureFlowLive = lazy(
   () => import('../templates/background/nebula-structure-flow/LivePage'),
 );
+const FluxVortexStructureFlowLive = lazy(
+  () => import('../templates/background/flux-vortex-structure-flow/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -515,6 +518,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <NebulaStructureFlowLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.FLUX_VORTEX_STRUCTURE_FLOW}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <FluxVortexStructureFlowLive />
           </Suspense>
         }
       />

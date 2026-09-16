@@ -36,6 +36,7 @@ import { meta as livingGreenSylvaLivingWorld } from './background/living-green-s
 import { meta as logicCoreStructureFlow } from './background/logic-core-structure-flow/meta';
 import { meta as topologyFieldStructureFlow } from './background/topology-field-structure-flow/meta';
 import { meta as nebulaStructureFlow } from './background/nebula-structure-flow/meta';
+import { meta as fluxVortexStructureFlow } from './background/flux-vortex-structure-flow/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -75,6 +76,7 @@ export const TEMPLATES = [
   logicCoreStructureFlow,
   topologyFieldStructureFlow,
   nebulaStructureFlow,
+  fluxVortexStructureFlow,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

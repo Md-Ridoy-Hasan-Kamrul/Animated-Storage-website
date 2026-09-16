@@ -47,6 +47,7 @@ export const ROUTES = {
   LOGIC_CORE_STRUCTURE_FLOW: '/p/logic-core-structure-flow',
   TOPOLOGY_FIELD_STRUCTURE_FLOW: '/p/topology-field-structure-flow',
   NEBULA_STRUCTURE_FLOW: '/p/nebula-structure-flow',
+  FLUX_VORTEX_STRUCTURE_FLOW: '/p/flux-vortex-structure-flow',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

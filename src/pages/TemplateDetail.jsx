@@ -42,6 +42,7 @@ import * as livingGreenSylvaLivingWorld from '../templates/background/living-gre
 import * as logicCoreStructureFlow from '../templates/background/logic-core-structure-flow/content';
 import * as topologyFieldStructureFlow from '../templates/background/topology-field-structure-flow/content';
 import * as nebulaStructureFlow from '../templates/background/nebula-structure-flow/content';
+import * as fluxVortexStructureFlow from '../templates/background/flux-vortex-structure-flow/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -88,6 +89,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'logic-core-structure-flow': logicCoreStructureFlow,
   'topology-field-structure-flow': topologyFieldStructureFlow,
   'nebula-structure-flow': nebulaStructureFlow,
+  'flux-vortex-structure-flow': fluxVortexStructureFlow,
 };
 const COPY_ICON_SIZE = 20;
 
