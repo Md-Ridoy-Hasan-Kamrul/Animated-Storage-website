@@ -77,10 +77,24 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new webpack.DefinePlugin(envKeys),
+      // Copy static public assets first. index.html must never be copied — it is
+      // generated below by HtmlWebpackPlugin (CSP + script tags). If the raw
+      // template wins the emit race, Vercel serves literal <%= ... %> and blanks.
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.join(__dirname, 'public'),
+            to: path.join(__dirname, 'dist'),
+            globOptions: {
+              ignore: ['**/index.html', 'index.html'],
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         template: './public/index.html',
         filename: 'index.html',
-        // CSP values — evaluated by EJS template in public/index.html
+        // CSP values — evaluated by lodash template in public/index.html
         cspScriptSrc,
         apiBase,
         wsBase,
@@ -94,15 +108,6 @@ module.exports = (env, argv) => {
               useShortDoctype: true,
             }
           : false,
-      }),
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: path.join(__dirname, 'public'),
-            to: path.join(__dirname, 'dist'),
-            globOptions: { ignore: ['**/index.html'] },
-          },
-        ],
       }),
       ...(isProd
         ? [
