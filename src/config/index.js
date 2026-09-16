@@ -43,6 +43,7 @@ export const ROUTES = {
   LIVING_GREEN: '/p/living-green',
   COMPLETE_SHELF: '/p/complete-shelf',
   BESTSELLERS_BOOK_SHOWCASE: '/p/bestsellers-book-showcase',
+  LIVING_GREEN_SYLVA_LIVING_WORLD: '/p/living-green-sylva-living-world',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

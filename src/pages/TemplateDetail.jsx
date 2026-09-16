@@ -38,6 +38,7 @@ import * as sublevelStudio from '../templates/landing-page/sublevel-studio/conte
 import * as livingGreen from '../templates/hero/living-green/content';
 import * as completeShelf from '../templates/landing-page/complete-shelf/content';
 import * as bestsellersBookShowcase from '../templates/landing-page/bestsellers-book-showcase/content';
+import * as livingGreenSylvaLivingWorld from '../templates/background/living-green-sylva-living-world/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -80,6 +81,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'living-green': livingGreen,
   'complete-shelf': completeShelf,
   'bestsellers-book-showcase': bestsellersBookShowcase,
+  'living-green-sylva-living-world': livingGreenSylvaLivingWorld,
 };
 const COPY_ICON_SIZE = 20;
 

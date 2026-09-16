@@ -35,6 +35,7 @@ export const TEMPLATES = [
   'living-green',
   'complete-shelf',
   'bestsellers-book-showcase',
+  'living-green-sylva-living-world',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

@@ -32,6 +32,7 @@ import { meta as sublevelStudio } from './landing-page/sublevel-studio/meta';
 import { meta as livingGreen } from './hero/living-green/meta';
 import { meta as completeShelf } from './landing-page/complete-shelf/meta';
 import { meta as bestsellersBookShowcase } from './landing-page/bestsellers-book-showcase/meta';
+import { meta as livingGreenSylvaLivingWorld } from './background/living-green-sylva-living-world/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -44,6 +45,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Footer',
   'Agency',
   'Hero',
+  'Background',
   'Features',
   'SaaS',
   'Ecommerce',
@@ -66,6 +68,7 @@ export const TEMPLATES = [
   sublevelStudio,
   completeShelf,
   bestsellersBookShowcase,
+  livingGreenSylvaLivingWorld,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

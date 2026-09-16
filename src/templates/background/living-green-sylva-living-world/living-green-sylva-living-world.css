@@ -1,0 +1,45 @@
+html.living-green-sylva-living-world-html,
+html.living-green-sylva-living-world-html body,
+html.living-green-sylva-living-world-html #root {
+  height: 100%;
+  margin: 0;
+  background: #4a4d44;
+}
+
+.living-green-sylva-living-world-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #4a4d44;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+html.living-green-sylva-living-world-framed .living-green-sylva-living-world-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.living-green-sylva-living-world-page .shader-frame,
+.living-green-sylva-living-world-page .threeui-background,
+.living-green-sylva-living-world-page .sylva-living-world-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #4a4d44;
+}
+
+.threeui-background.sylva-living-world-scene {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
