@@ -42,6 +42,7 @@ export const TEMPLATES = [
   'flux-vortex-structure-flow',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
+  'vietnam-japanese-tower-landscape',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

@@ -45,6 +45,7 @@ import * as nebulaStructureFlow from '../templates/background/nebula-structure-f
 import * as fluxVortexStructureFlow from '../templates/background/flux-vortex-structure-flow/content';
 import * as japaneseTowerLandscape from '../templates/background/japanese-tower-landscape/content';
 import * as chinaJapaneseTowerLandscape from '../templates/background/china-japanese-tower-landscape/content';
+import * as vietnamJapaneseTowerLandscape from '../templates/background/vietnam-japanese-tower-landscape/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -94,6 +95,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'flux-vortex-structure-flow': fluxVortexStructureFlow,
   'japanese-tower-landscape': japaneseTowerLandscape,
   'china-japanese-tower-landscape': chinaJapaneseTowerLandscape,
+  'vietnam-japanese-tower-landscape': vietnamJapaneseTowerLandscape,
 };
 const COPY_ICON_SIZE = 20;
 

@@ -140,6 +140,9 @@ const JapaneseTowerLandscapeLive = lazy(
 const ChinaJapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/china-japanese-tower-landscape/LivePage'),
 );
+const VietnamJapaneseTowerLandscapeLive = lazy(
+  () => import('../templates/background/vietnam-japanese-tower-landscape/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -551,6 +554,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ChinaJapaneseTowerLandscapeLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.VIETNAM_JAPANESE_TOWER_LANDSCAPE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VietnamJapaneseTowerLandscapeLive />
           </Suspense>
         }
       />

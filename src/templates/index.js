@@ -39,6 +39,7 @@ import { meta as nebulaStructureFlow } from './background/nebula-structure-flow/
 import { meta as fluxVortexStructureFlow } from './background/flux-vortex-structure-flow/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
+import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -81,6 +82,7 @@ export const TEMPLATES = [
   fluxVortexStructureFlow,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
+  vietnamJapaneseTowerLandscape,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,
