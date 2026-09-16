@@ -113,6 +113,11 @@ module.exports = (env, argv) => {
           ]
         : []),
     ],
+    // Gallery ships large authored media (landing HTML, mp4, stills). Default
+    // 244 KiB hints only spam CI/Vercel — they are not build failures.
+    performance: {
+      hints: false,
+    },
     optimization: {
       minimizer: ['...', new CssMinimizerPlugin()],
       splitChunks: {
