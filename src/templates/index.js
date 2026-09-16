@@ -33,6 +33,7 @@ import { meta as livingGreen } from './hero/living-green/meta';
 import { meta as completeShelf } from './landing-page/complete-shelf/meta';
 import { meta as bestsellersBookShowcase } from './landing-page/bestsellers-book-showcase/meta';
 import { meta as livingGreenSylvaLivingWorld } from './background/living-green-sylva-living-world/meta';
+import { meta as logicCoreStructureFlow } from './background/logic-core-structure-flow/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -69,6 +70,7 @@ export const TEMPLATES = [
   completeShelf,
   bestsellersBookShowcase,
   livingGreenSylvaLivingWorld,
+  logicCoreStructureFlow,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

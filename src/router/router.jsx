@@ -122,6 +122,9 @@ const BestsellersBookShowcaseLive = lazy(
 const LivingGreenSylvaLivingWorldLive = lazy(
   () => import('../templates/background/living-green-sylva-living-world/LivePage'),
 );
+const LogicCoreStructureFlowLive = lazy(
+  () => import('../templates/background/logic-core-structure-flow/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -479,6 +482,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LivingGreenSylvaLivingWorldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LOGIC_CORE_STRUCTURE_FLOW}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LogicCoreStructureFlowLive />
           </Suspense>
         }
       />
