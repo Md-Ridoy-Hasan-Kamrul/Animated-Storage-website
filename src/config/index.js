@@ -45,6 +45,7 @@ export const ROUTES = {
   BESTSELLERS_BOOK_SHOWCASE: '/p/bestsellers-book-showcase',
   LIVING_GREEN_SYLVA_LIVING_WORLD: '/p/living-green-sylva-living-world',
   LOGIC_CORE_STRUCTURE_FLOW: '/p/logic-core-structure-flow',
+  TOPOLOGY_FIELD_STRUCTURE_FLOW: '/p/topology-field-structure-flow',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

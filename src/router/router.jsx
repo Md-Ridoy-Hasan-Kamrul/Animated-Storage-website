@@ -125,6 +125,9 @@ const LivingGreenSylvaLivingWorldLive = lazy(
 const LogicCoreStructureFlowLive = lazy(
   () => import('../templates/background/logic-core-structure-flow/LivePage'),
 );
+const TopologyFieldStructureFlowLive = lazy(
+  () => import('../templates/background/topology-field-structure-flow/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -491,6 +494,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LogicCoreStructureFlowLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TOPOLOGY_FIELD_STRUCTURE_FLOW}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TopologyFieldStructureFlowLive />
           </Suspense>
         }
       />

@@ -1,0 +1,45 @@
+html.topology-field-structure-flow-html,
+html.topology-field-structure-flow-html body,
+html.topology-field-structure-flow-html #root {
+  height: 100%;
+  margin: 0;
+  background: #070707;
+}
+
+.topology-field-structure-flow-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #070707;
+  color: #f3f4f6;
+  overflow: hidden;
+}
+
+html.topology-field-structure-flow-framed .topology-field-structure-flow-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.topology-field-structure-flow-page .shader-frame,
+.topology-field-structure-flow-page .threeui-background,
+.topology-field-structure-flow-page .structure-flow-collection {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #070707;
+}
+
+.threeui-background.structure-flow-collection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
