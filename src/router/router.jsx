@@ -128,6 +128,9 @@ const LogicCoreStructureFlowLive = lazy(
 const TopologyFieldStructureFlowLive = lazy(
   () => import('../templates/background/topology-field-structure-flow/LivePage'),
 );
+const NebulaStructureFlowLive = lazy(
+  () => import('../templates/background/nebula-structure-flow/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -503,6 +506,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <TopologyFieldStructureFlowLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.NEBULA_STRUCTURE_FLOW}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <NebulaStructureFlowLive />
           </Suspense>
         }
       />

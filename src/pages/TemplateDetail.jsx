@@ -41,6 +41,7 @@ import * as bestsellersBookShowcase from '../templates/landing-page/bestsellers-
 import * as livingGreenSylvaLivingWorld from '../templates/background/living-green-sylva-living-world/content';
 import * as logicCoreStructureFlow from '../templates/background/logic-core-structure-flow/content';
 import * as topologyFieldStructureFlow from '../templates/background/topology-field-structure-flow/content';
+import * as nebulaStructureFlow from '../templates/background/nebula-structure-flow/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -86,6 +87,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'living-green-sylva-living-world': livingGreenSylvaLivingWorld,
   'logic-core-structure-flow': logicCoreStructureFlow,
   'topology-field-structure-flow': topologyFieldStructureFlow,
+  'nebula-structure-flow': nebulaStructureFlow,
 };
 const COPY_ICON_SIZE = 20;
 

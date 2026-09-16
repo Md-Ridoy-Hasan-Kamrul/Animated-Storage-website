@@ -38,6 +38,7 @@ export const TEMPLATES = [
   'living-green-sylva-living-world',
   'logic-core-structure-flow',
   'topology-field-structure-flow',
+  'nebula-structure-flow',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
