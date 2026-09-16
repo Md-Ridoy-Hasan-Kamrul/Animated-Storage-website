@@ -134,6 +134,9 @@ const NebulaStructureFlowLive = lazy(
 const FluxVortexStructureFlowLive = lazy(
   () => import('../templates/background/flux-vortex-structure-flow/LivePage'),
 );
+const JapaneseTowerLandscapeLive = lazy(
+  () => import('../templates/background/japanese-tower-landscape/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -527,6 +530,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <FluxVortexStructureFlowLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.JAPANESE_TOWER_LANDSCAPE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <JapaneseTowerLandscapeLive />
           </Suspense>
         }
       />

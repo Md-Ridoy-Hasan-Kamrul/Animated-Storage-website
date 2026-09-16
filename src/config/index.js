@@ -48,6 +48,7 @@ export const ROUTES = {
   TOPOLOGY_FIELD_STRUCTURE_FLOW: '/p/topology-field-structure-flow',
   NEBULA_STRUCTURE_FLOW: '/p/nebula-structure-flow',
   FLUX_VORTEX_STRUCTURE_FLOW: '/p/flux-vortex-structure-flow',
+  JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

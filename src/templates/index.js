@@ -37,6 +37,7 @@ import { meta as logicCoreStructureFlow } from './background/logic-core-structur
 import { meta as topologyFieldStructureFlow } from './background/topology-field-structure-flow/meta';
 import { meta as nebulaStructureFlow } from './background/nebula-structure-flow/meta';
 import { meta as fluxVortexStructureFlow } from './background/flux-vortex-structure-flow/meta';
+import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -77,6 +78,7 @@ export const TEMPLATES = [
   topologyFieldStructureFlow,
   nebulaStructureFlow,
   fluxVortexStructureFlow,
+  japaneseTowerLandscape,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

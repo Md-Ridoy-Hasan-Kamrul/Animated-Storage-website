@@ -43,6 +43,7 @@ import * as logicCoreStructureFlow from '../templates/background/logic-core-stru
 import * as topologyFieldStructureFlow from '../templates/background/topology-field-structure-flow/content';
 import * as nebulaStructureFlow from '../templates/background/nebula-structure-flow/content';
 import * as fluxVortexStructureFlow from '../templates/background/flux-vortex-structure-flow/content';
+import * as japaneseTowerLandscape from '../templates/background/japanese-tower-landscape/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -90,6 +91,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'topology-field-structure-flow': topologyFieldStructureFlow,
   'nebula-structure-flow': nebulaStructureFlow,
   'flux-vortex-structure-flow': fluxVortexStructureFlow,
+  'japanese-tower-landscape': japaneseTowerLandscape,
 };
 const COPY_ICON_SIZE = 20;
 

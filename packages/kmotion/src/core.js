@@ -40,6 +40,7 @@ export const TEMPLATES = [
   'topology-field-structure-flow',
   'nebula-structure-flow',
   'flux-vortex-structure-flow',
+  'japanese-tower-landscape',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
