@@ -43,6 +43,7 @@ export const TEMPLATES = [
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
+  'thailand-japanese-tower-landscape',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

@@ -46,6 +46,7 @@ import * as fluxVortexStructureFlow from '../templates/background/flux-vortex-st
 import * as japaneseTowerLandscape from '../templates/background/japanese-tower-landscape/content';
 import * as chinaJapaneseTowerLandscape from '../templates/background/china-japanese-tower-landscape/content';
 import * as vietnamJapaneseTowerLandscape from '../templates/background/vietnam-japanese-tower-landscape/content';
+import * as thailandJapaneseTowerLandscape from '../templates/background/thailand-japanese-tower-landscape/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -96,6 +97,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'japanese-tower-landscape': japaneseTowerLandscape,
   'china-japanese-tower-landscape': chinaJapaneseTowerLandscape,
   'vietnam-japanese-tower-landscape': vietnamJapaneseTowerLandscape,
+  'thailand-japanese-tower-landscape': thailandJapaneseTowerLandscape,
 };
 const COPY_ICON_SIZE = 20;
 
