@@ -41,6 +41,7 @@ export const TEMPLATES = [
   'nebula-structure-flow',
   'flux-vortex-structure-flow',
   'japanese-tower-landscape',
+  'china-japanese-tower-landscape',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
