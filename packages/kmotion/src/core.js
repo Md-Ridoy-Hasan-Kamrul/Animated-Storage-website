@@ -34,6 +34,7 @@ export const TEMPLATES = [
   'sublevel-studio',
   'living-green',
   'complete-shelf',
+  'bestsellers-book-showcase',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

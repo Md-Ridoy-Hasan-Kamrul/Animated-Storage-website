@@ -116,6 +116,9 @@ const LivingGreenLive = lazy(
 const CompleteShelfLive = lazy(
   () => import('../templates/landing-page/complete-shelf/LivePage'),
 );
+const BestsellersBookShowcaseLive = lazy(
+  () => import('../templates/landing-page/bestsellers-book-showcase/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -455,6 +458,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <CompleteShelfLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.BESTSELLERS_BOOK_SHOWCASE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <BestsellersBookShowcaseLive />
           </Suspense>
         }
       />

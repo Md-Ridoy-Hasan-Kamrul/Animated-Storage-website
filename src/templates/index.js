@@ -31,6 +31,7 @@ import { meta as sketchbook } from './landing-page/sketchbook/meta';
 import { meta as sublevelStudio } from './landing-page/sublevel-studio/meta';
 import { meta as livingGreen } from './hero/living-green/meta';
 import { meta as completeShelf } from './landing-page/complete-shelf/meta';
+import { meta as bestsellersBookShowcase } from './landing-page/bestsellers-book-showcase/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -64,6 +65,7 @@ export const TEMPLATES = [
   sketchbook,
   sublevelStudio,
   completeShelf,
+  bestsellersBookShowcase,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,
