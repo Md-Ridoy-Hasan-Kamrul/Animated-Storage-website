@@ -1,20 +1,20 @@
-/** Letter Storm Warp Field — host + provenance constants. */
+/** Hyperspace Warp Field — host + provenance constants. */
 
-export const CARD_ID = 'warp-field-letter-storm';
-export const CARD_TITLE = 'Letter Storm Warp Field';
-export const PAGE_TITLE = 'Letter Storm Warp Field — Kmotion';
-export const DETAIL_FALLBACK = '/templates/warp-field-letter-storm';
+export const CARD_ID = 'warp-field-hyperspace';
+export const CARD_TITLE = 'Hyperspace Warp Field';
+export const PAGE_TITLE = 'Hyperspace Warp Field — Kmotion';
+export const DETAIL_FALLBACK = '/templates/warp-field-hyperspace';
 
-export const PAGE_CLASS = 'warp-field-letter-storm-page';
-export const PAGE_HTML_CLASS = 'warp-field-letter-storm-html';
-export const FRAMED_HTML_CLASS = 'warp-field-letter-storm-framed';
+export const PAGE_CLASS = 'warp-field-hyperspace-page';
+export const PAGE_HTML_CLASS = 'warp-field-hyperspace-html';
+export const FRAMED_HTML_CLASS = 'warp-field-hyperspace-framed';
 export const SHADER_FRAME_CLASS = 'shader-frame';
 
-export const PAGE_BG = '#02040a';
-export const PAGE_INK = '#e8f5ef';
+export const PAGE_BG = '#01020a';
+export const PAGE_INK = '#e8f0ff';
 
 export const SOURCE_REVISION = 'bd7c486164d8';
-export const WARP_FIELD_VARIANT = 'letters';
+export const WARP_FIELD_VARIANT = 'hyperspace';
 
 export const WARP_FIELD_COMPONENT_SHA256 =
   'c78637ee3419deed6c364f4252ed77adfda3a215eb1b82510450a9b7fadefcbe';
@@ -30,8 +30,8 @@ export const WARP_FIELD_RENDERER_BYTES = 22681;
 export const THREEUI_CSS_BYTES = 40715;
 export const THREE128_MODULE_BYTES = 1140878;
 
-export const WARP_FIELD_LETTER_STORM_PROPS = {
-  variant: 'letters',
+export const WARP_FIELD_HYPERSPACE_PROPS = {
+  variant: 'hyperspace',
   speed: 15,
   streakOpacity: 0.6,
   tileOpacity: 0.9,
@@ -43,17 +43,17 @@ export const WARP_FIELD_LETTER_STORM_PROPS = {
 
 export const ASSET_MANIFEST = [
   {
-    path: 'src/templates/sections/warp-field-letter-storm/sources/WarpFieldBackground.tsx.txt',
+    path: 'src/templates/sections/warp-field-hyperspace/sources/WarpFieldBackground.tsx.txt',
     bytes: WARP_FIELD_COMPONENT_BYTES,
     sha256: WARP_FIELD_COMPONENT_SHA256,
   },
   {
-    path: 'src/templates/sections/warp-field-letter-storm/sources/warpFieldRenderer.ts.txt',
+    path: 'src/templates/sections/warp-field-hyperspace/sources/warpFieldRenderer.ts.txt',
     bytes: WARP_FIELD_RENDERER_BYTES,
     sha256: WARP_FIELD_RENDERER_SHA256,
   },
   {
-    path: 'src/templates/sections/warp-field-letter-storm/sources/threeui.css',
+    path: 'src/templates/sections/warp-field-hyperspace/sources/threeui.css',
     bytes: THREEUI_CSS_BYTES,
     sha256: THREEUI_CSS_SHA256,
   },
@@ -64,7 +64,8 @@ export const ASSET_MANIFEST = [
   },
 ];
 
-export const PREVIEW_STILL = '/images/Assets Letter Storm Warp Field/LetterStormWarpField.png';
+export const PREVIEW_STILL =
+  '/images/Assets Hyperspace Warp Field/HyperspaceWarpField.png';
 export const DETAIL_CARD_IMAGE_COUNT = 4;
 
 export const BACK_BUTTON_CLASS =

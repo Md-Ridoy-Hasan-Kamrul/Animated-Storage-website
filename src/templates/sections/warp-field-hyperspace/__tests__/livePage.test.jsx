@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { WARP_FIELD_LETTER_STORM_PROPS } from '../constants';
+import { WARP_FIELD_HYPERSPACE_PROPS } from '../constants';
 
 beforeAll(() => {
   class ResizeObserverStub {
@@ -63,16 +63,16 @@ jest.mock('../../warp-field-default/warpFieldRenderer', () => ({
 import LivePage from '../LivePage';
 import { WarpFieldBackground } from '../WarpFieldBackground';
 
-describe('WarpFieldBackground Letter Storm host', () => {
-  it('mounts the warp-field canvas host with letters props', () => {
-    const { container } = render(<WarpFieldBackground {...WARP_FIELD_LETTER_STORM_PROPS} />);
+describe('WarpFieldBackground Hyperspace host', () => {
+  it('mounts the warp-field canvas host with hyperspace props', () => {
+    const { container } = render(<WarpFieldBackground {...WARP_FIELD_HYPERSPACE_PROPS} />);
     expect(container.querySelector('.warp-field')).toBeTruthy();
     expect(container.querySelector('canvas')).toBeTruthy();
-    expect(WARP_FIELD_LETTER_STORM_PROPS.variant).toBe('letters');
+    expect(WARP_FIELD_HYPERSPACE_PROPS.variant).toBe('hyperspace');
   });
 });
 
-describe('Letter Storm Warp Field LivePage', () => {
+describe('Hyperspace Warp Field LivePage', () => {
   it('mounts the shader frame host without a back control in embed chrome', () => {
     const { container } = render(
       <MemoryRouter>
@@ -80,7 +80,7 @@ describe('Letter Storm Warp Field LivePage', () => {
       </MemoryRouter>,
     );
     expect(container.querySelector('.shader-frame')).toBeTruthy();
-    expect(container.querySelector('.warp-field-letter-storm-page')).toBeTruthy();
+    expect(container.querySelector('.warp-field-hyperspace-page')).toBeTruthy();
     expect(screen.queryByLabelText('Go back')).toBeNull();
   });
 });

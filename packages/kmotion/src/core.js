@@ -53,6 +53,7 @@ export const TEMPLATES = [
   'warp-field-default',
   'warp-field-letter-storm',
   'warp-field-keycap-drift',
+  'warp-field-hyperspace',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

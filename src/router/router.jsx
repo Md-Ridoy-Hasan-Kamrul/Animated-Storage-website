@@ -49,6 +49,9 @@ const WarpFieldLetterStormLive = lazy(
 const WarpFieldKeycapDriftLive = lazy(
   () => import('../templates/sections/warp-field-keycap-drift/LivePage'),
 );
+const WarpFieldHyperspaceLive = lazy(
+  () => import('../templates/sections/warp-field-hyperspace/LivePage'),
+);
 const HeritageGroveLive = lazy(
   () => import('../templates/footer/heritage-grove/LivePage'),
 );
@@ -303,6 +306,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <WarpFieldKeycapDriftLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WARP_FIELD_HYPERSPACE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WarpFieldHyperspaceLive />
           </Suspense>
         }
       />

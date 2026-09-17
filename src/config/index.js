@@ -61,6 +61,7 @@ export const ROUTES = {
   WARP_FIELD_DEFAULT: '/p/warp-field-default',
   WARP_FIELD_LETTER_STORM: '/p/warp-field-letter-storm',
   WARP_FIELD_KEYCAP_DRIFT: '/p/warp-field-keycap-drift',
+  WARP_FIELD_HYPERSPACE: '/p/warp-field-hyperspace',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

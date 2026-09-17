@@ -1,10 +1,11 @@
 import { ROUTES } from '../../../../config';
-import {
-  TEMPLATES as KMOTION_TEMPLATE_IDS,
-  embedUrl,
-} from '../../../../../packages/kmotion/src/core';
+import { TEMPLATES as KMOTION_TEMPLATE_IDS, embedUrl } from '../../../../../packages/kmotion/src/core';
 import { getKmotionNpmSnippet, KMOTION_PACKAGE } from '../../../../utils/kmotionNpmSnippet';
-import { ACTIVE_TEMPLATE_CATEGORIES, CATEGORIES, CATEGORY_SLUGS } from '../../../../templates';
+import {
+  ACTIVE_TEMPLATE_CATEGORIES,
+  CATEGORIES,
+  CATEGORY_SLUGS,
+} from '../../../../templates';
 import {
   ASSET_MANIFEST,
   CARD_ID,
@@ -12,18 +13,18 @@ import {
   SOURCE_REVISION,
   THREEUI_CSS_SHA256,
   WARP_FIELD_COMPONENT_SHA256,
-  WARP_FIELD_LETTER_STORM_PROPS,
+  WARP_FIELD_HYPERSPACE_PROPS,
   WARP_FIELD_RENDERER_SHA256,
   WARP_FIELD_VARIANT,
 } from '../constants';
 import { meta } from '../meta';
-import { WARP_FIELD_LETTER_STORM_PROMPT } from '../prompt';
+import { WARP_FIELD_HYPERSPACE_PROMPT } from '../prompt';
 
-describe('Letter Storm Warp Field — meta', () => {
-  it('registers the Sections card Letter Storm Warp Field', () => {
+describe('Hyperspace Warp Field — meta', () => {
+  it('registers the Sections card Hyperspace Warp Field', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
-    expect(meta.title).toBe('Letter Storm Warp Field');
+    expect(meta.title).toBe('Hyperspace Warp Field');
     expect(meta.category).toBe('Sections');
     expect(meta.categorySlug).toBe('sections');
     expect(meta.height).toBe('h-[272px]');
@@ -36,25 +37,25 @@ describe('Letter Storm Warp Field — meta', () => {
   });
 
   it('binds copy prompt to the exact pasted body', () => {
-    expect(meta.fullPrompt).toBe(WARP_FIELD_LETTER_STORM_PROMPT);
-    expect(WARP_FIELD_LETTER_STORM_PROMPT.startsWith('# Integrate <WarpFieldBackground />')).toBe(
+    expect(meta.fullPrompt).toBe(WARP_FIELD_HYPERSPACE_PROMPT);
+    expect(WARP_FIELD_HYPERSPACE_PROMPT.startsWith('# Integrate <WarpFieldBackground />')).toBe(
       true,
     );
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).toContain('SHA-256 bd7c486164d8');
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).toContain('variant="letters"');
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).toContain('Letter Storm');
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).toContain(
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).toContain('SHA-256 bd7c486164d8');
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).toContain('variant="hyperspace"');
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).toContain('Hyperspace');
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).toContain(
       'https://threeui.com/source-code/warp-field.json',
     );
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).not.toContain('Role & Prerequisites');
-    expect(WARP_FIELD_LETTER_STORM_PROMPT).not.toContain('Test-Driven Development');
-    expect(meta.fullPrompt.length).toBe(WARP_FIELD_LETTER_STORM_PROMPT.length);
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).not.toContain('Role & Prerequisites');
+    expect(WARP_FIELD_HYPERSPACE_PROMPT).not.toContain('Test-Driven Development');
+    expect(meta.fullPrompt.length).toBe(WARP_FIELD_HYPERSPACE_PROMPT.length);
   });
 
-  it('uses warp-field-letter-storm routes', () => {
-    expect(meta.detailPath).toBe('/templates/warp-field-letter-storm');
-    expect(meta.livePath).toBe(ROUTES.WARP_FIELD_LETTER_STORM);
-    expect(ROUTES.WARP_FIELD_LETTER_STORM).toBe('/p/warp-field-letter-storm');
+  it('uses warp-field-hyperspace routes', () => {
+    expect(meta.detailPath).toBe('/templates/warp-field-hyperspace');
+    expect(meta.livePath).toBe(ROUTES.WARP_FIELD_HYPERSPACE);
+    expect(ROUTES.WARP_FIELD_HYPERSPACE).toBe('/p/warp-field-hyperspace');
   });
 
   it('copies the npm preview snippet for this card id', () => {
@@ -66,12 +67,12 @@ describe('Letter Storm Warp Field — meta', () => {
   });
 });
 
-describe('Letter Storm Warp Field source contract', () => {
-  it('keeps the configured letters variant host defaults', () => {
+describe('Hyperspace Warp Field source contract', () => {
+  it('keeps the configured hyperspace variant host defaults', () => {
     expect(SOURCE_REVISION).toBe('bd7c486164d8');
-    expect(WARP_FIELD_VARIANT).toBe('letters');
-    expect(WARP_FIELD_LETTER_STORM_PROPS).toEqual({
-      variant: 'letters',
+    expect(WARP_FIELD_VARIANT).toBe('hyperspace');
+    expect(WARP_FIELD_HYPERSPACE_PROPS).toEqual({
+      variant: 'hyperspace',
       speed: 15,
       streakOpacity: 0.6,
       tileOpacity: 0.9,
@@ -93,6 +94,8 @@ describe('Letter Storm Warp Field source contract', () => {
 
   it('lists every required packaged asset for hash checks', () => {
     expect(ASSET_MANIFEST).toHaveLength(4);
-    expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(true);
+    expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(
+      true,
+    );
   });
 });

@@ -1,15 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
-import {
-  ASSET_MANIFEST,
-  WARP_FIELD_COMPONENT_SHA256,
-  WARP_FIELD_RENDERER_SHA256,
-} from '../constants';
+import { ASSET_MANIFEST, WARP_FIELD_COMPONENT_SHA256, WARP_FIELD_RENDERER_SHA256 } from '../constants';
 
 const ROOT = path.resolve(__dirname, '../../../../../');
 
-describe('Letter Storm Warp Field packaged assets', () => {
+describe('Hyperspace Warp Field packaged assets', () => {
   it.each(ASSET_MANIFEST)('keeps byte-exact $path', ({ path: relativePath, bytes, sha256 }) => {
     const absolute = path.join(ROOT, relativePath);
     expect(fs.existsSync(absolute)).toBe(true);
@@ -22,14 +18,14 @@ describe('Letter Storm Warp Field packaged assets', () => {
     const component = fs.readFileSync(
       path.join(
         ROOT,
-        'src/templates/sections/warp-field-letter-storm/sources/WarpFieldBackground.tsx.txt',
+        'src/templates/sections/warp-field-hyperspace/sources/WarpFieldBackground.tsx.txt',
       ),
       'utf8',
     );
     const renderer = fs.readFileSync(
       path.join(
         ROOT,
-        'src/templates/sections/warp-field-letter-storm/sources/warpFieldRenderer.ts.txt',
+        'src/templates/sections/warp-field-hyperspace/sources/warpFieldRenderer.ts.txt',
       ),
       'utf8',
     );
@@ -41,6 +37,6 @@ describe('Letter Storm Warp Field packaged assets', () => {
     );
     expect(component).toContain('export function WarpFieldBackground');
     expect(renderer).toContain('export function createWarpFieldRenderer');
-    expect(renderer).toContain('"letters"');
+    expect(renderer).toContain('"hyperspace"');
   });
 });

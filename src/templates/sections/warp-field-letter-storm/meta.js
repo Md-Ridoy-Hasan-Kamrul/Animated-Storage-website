@@ -4,7 +4,7 @@ import { PREVIEW_STILL } from './constants';
 
 export const meta = {
   id: 'warp-field-letter-storm',
-  title: 'Letter Storm — Warp Field',
+  title: 'Letter Storm Warp Field',
   category: 'Sections',
   categorySlug: 'sections',
   pricing: 'Free',
