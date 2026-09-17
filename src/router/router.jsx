@@ -40,6 +40,9 @@ const AdamRobertsLive = lazy(
 const LuminaLive = lazy(
   () => import('../templates/sections/lumina/LivePage'),
 );
+const WarpFieldDefaultLive = lazy(
+  () => import('../templates/sections/warp-field-default/LivePage'),
+);
 const HeritageGroveLive = lazy(
   () => import('../templates/footer/heritage-grove/LivePage'),
 );
@@ -267,6 +270,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LuminaLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WARP_FIELD_DEFAULT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WarpFieldDefaultLive />
           </Suspense>
         }
       />

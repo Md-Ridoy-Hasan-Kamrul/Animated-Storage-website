@@ -58,6 +58,7 @@ export const ROUTES = {
   JAPANESE_3D_PAPER: '/p/japanese-3d-paper',
   CERTIFICATE_3D_PAPER: '/p/certificate-3d-paper',
   ASHEN_PRESS: '/p/ashen-press',
+  WARP_FIELD_DEFAULT: '/p/warp-field-default',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

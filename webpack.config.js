@@ -53,7 +53,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
+          exclude: /node_modules|vendor[\\/]three128/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -74,6 +74,9 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.js', '.jsx'],
+      alias: {
+        three128: path.resolve(__dirname, 'vendor/three128/three.module.js'),
+      },
     },
     plugins: [
       new webpack.DefinePlugin(envKeys),
