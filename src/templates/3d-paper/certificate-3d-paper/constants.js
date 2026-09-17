@@ -67,7 +67,7 @@ export const ASSET_MANIFEST = [
   },
 ];
 
-export const PREVIEW_STILL = '/images/Assets Certificate 3D Paper/Certificate3DPaper.svg';
+export const PREVIEW_STILL = '/images/Assets Certificate 3D Paper/Certificate3DPaper.png';
 export const DETAIL_CARD_IMAGE_COUNT = 4;
 
 export const BACK_BUTTON_CLASS =
