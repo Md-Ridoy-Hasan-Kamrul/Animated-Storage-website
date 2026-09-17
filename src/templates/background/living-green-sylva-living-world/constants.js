@@ -37,7 +37,7 @@ export const SYLVA_VARIANT = 'living-green';
 export const VARIANT_BACKGROUND = '#4a4d44';
 export const DETAIL_CARD_IMAGE_COUNT = 8;
 export const PREVIEW_STILL =
-  '/images/Assets%20Living%20Green%20Sylva/LivingGreenSylva.png';
+  '/images/Assets Living Green Sylva Living World/LivingGreenSylvaLivingWorld.png';
 
 export const SYLVA_LIVING_WORLD_DEFAULT_PROPS = {
   variant: 'living-green',
