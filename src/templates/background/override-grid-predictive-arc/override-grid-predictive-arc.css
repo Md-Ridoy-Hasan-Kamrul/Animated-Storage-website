@@ -1,0 +1,63 @@
+html.override-grid-predictive-arc-html,
+html.override-grid-predictive-arc-html body,
+html.override-grid-predictive-arc-html #root {
+  height: 100%;
+  margin: 0;
+  background: #050505;
+}
+
+.override-grid-predictive-arc-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #050505;
+  color: #f97316;
+  overflow: hidden;
+}
+
+html.override-grid-predictive-arc-framed .override-grid-predictive-arc-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.override-grid-predictive-arc-page .shader-frame,
+.override-grid-predictive-arc-page .override-grid-predictive-arc {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.threeui-background.override-grid-predictive-arc {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.override-grid-predictive-arc__frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #050505;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease-out;
+}
+
+.override-grid-predictive-arc__frame.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}

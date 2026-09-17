@@ -44,6 +44,7 @@ export const TEMPLATES = [
   'topology-field-structure-flow',
   'nebula-structure-flow',
   'flux-vortex-structure-flow',
+  'override-grid-predictive-arc',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',

@@ -46,6 +46,7 @@ import { meta as logicCoreStructureFlow } from './background/logic-core-structur
 import { meta as topologyFieldStructureFlow } from './background/topology-field-structure-flow/meta';
 import { meta as nebulaStructureFlow } from './background/nebula-structure-flow/meta';
 import { meta as fluxVortexStructureFlow } from './background/flux-vortex-structure-flow/meta';
+import { meta as overrideGridPredictiveArc } from './background/override-grid-predictive-arc/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -96,6 +97,7 @@ export const TEMPLATES = [
   topologyFieldStructureFlow,
   nebulaStructureFlow,
   fluxVortexStructureFlow,
+  overrideGridPredictiveArc,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

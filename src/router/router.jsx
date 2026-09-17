@@ -158,6 +158,9 @@ const NebulaStructureFlowLive = lazy(
 const FluxVortexStructureFlowLive = lazy(
   () => import('../templates/background/flux-vortex-structure-flow/LivePage'),
 );
+const OverrideGridPredictiveArcLive = lazy(
+  () => import('../templates/background/override-grid-predictive-arc/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -651,6 +654,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <FluxVortexStructureFlowLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.OVERRIDE_GRID_PREDICTIVE_ARC}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <OverrideGridPredictiveArcLive />
           </Suspense>
         }
       />
