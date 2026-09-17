@@ -2,162 +2,26 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Copy, Heart, Package } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { getTemplateById } from '../data/templates';
+import { getTemplateById, TEMPLATES } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
-import * as portfolioV1 from '../templates/landing-page/3d-portfolio/content';
-import * as promptArchive from '../templates/landing-page/prompt/content';
-import * as portfolioCosmic from '../templates/portfolio/portfolio-cosmic/content';
-import * as neoMuseum from '../templates/landing-page/neo-museum/content';
-import * as adamRoberts from '../templates/portfolio/adam-roberts/content';
-import * as lumina from '../templates/sections/lumina/content';
-import * as heritageGrove from '../templates/footer/heritage-grove/content';
-import * as velorah from '../templates/agency/velorah/content';
-import * as foldcraft from '../templates/hero/foldcraft/content';
-import * as ltxWorld from '../templates/ecommerce/ltx-world/content';
-import * as castRender from '../templates/3d-website/cast-render/content';
-import * as characterStudio from '../templates/3d-website/3d-character-studio/content';
-import * as scrollTiedVideo from '../templates/creative/scroll-tied-video/content';
-import * as mostarCity from '../templates/travel/mostar-city/content';
-import * as stillmind from '../templates/hero/stillmind/content';
-import * as intelligentOperations from '../templates/agency/intelligent-operations/content';
-import * as interactiveDiscovery from '../templates/hero/interactive-discovery/content';
-import * as nikeHover from '../templates/features/nike-hover/content';
-import * as synthMode from '../templates/fashion/synth-mode/content';
-import * as techForward from '../templates/hero/tech-forward/content';
-import * as contactCybernetic from '../templates/hero/contact-cybernetic/content';
-import * as wellnessHero from '../templates/hero/wellness-hero/content';
-import * as mindBodyHealing from '../templates/medicine/mind-body-healing/content';
-import * as veyraElectric from '../templates/automative/veyra-electric/content';
-import * as realTimeAlerts from '../templates/sign-in/real-time-alerts/content';
-import * as equilibrium from '../templates/hero/equilibrium/content';
-import * as scalingPlatform from '../templates/saas/scaling-platform/content';
-import * as kage from '../templates/landing-page/kage/content';
-import * as sketchbook from '../templates/landing-page/sketchbook/content';
-import * as sublevelStudio from '../templates/landing-page/sublevel-studio/content';
-import * as livingGreen from '../templates/hero/living-green/content';
-import * as completeShelf from '../templates/landing-page/complete-shelf/content';
-import * as bestsellersBookShowcase from '../templates/landing-page/bestsellers-book-showcase/content';
-import * as livingGreenSylvaLivingWorld from '../templates/background/living-green-sylva-living-world/content';
-import * as logicCoreStructureFlow from '../templates/background/logic-core-structure-flow/content';
-import * as topologyFieldStructureFlow from '../templates/background/topology-field-structure-flow/content';
-import * as nebulaStructureFlow from '../templates/background/nebula-structure-flow/content';
-import * as fluxVortexStructureFlow from '../templates/background/flux-vortex-structure-flow/content';
-import * as japaneseTowerLandscape from '../templates/background/japanese-tower-landscape/content';
-import * as chinaJapaneseTowerLandscape from '../templates/background/china-japanese-tower-landscape/content';
-import * as vietnamJapaneseTowerLandscape from '../templates/background/vietnam-japanese-tower-landscape/content';
-import * as thailandJapaneseTowerLandscape from '../templates/background/thailand-japanese-tower-landscape/content';
-import * as turkeyJapaneseTowerLandscape from '../templates/background/turkey-japanese-tower-landscape/content';
-import * as original3dPaper from '../templates/3d-paper/original-3d-paper/content';
-import * as siteOfTheYear3dPaper from '../templates/3d-paper/site-of-the-year-3d-paper/content';
-import * as japanese3dPaper from '../templates/3d-paper/japanese-3d-paper/content';
-import * as certificate3dPaper from '../templates/3d-paper/certificate-3d-paper/content';
+import TemplateCard from '../components/home/TemplateCard';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
-const CONTENT_BY_TEMPLATE_ID = {
-  '3d-portfolio': portfolioV1,
-  prompt: {
-    MARQUEE_GIFS: promptArchive.GALLERY_IMAGES,
-    ABOUT_DECOR: { moon: promptArchive.GALLERY_IMAGES[0], group: promptArchive.GALLERY_IMAGES[1] },
-    PORTRAIT_URL: promptArchive.GALLERY_IMAGES[0],
-    SERVICES: [],
-  },
-  'portfolio-cosmic': portfolioCosmic,
-  'neo-museum': neoMuseum,
-  'adam-roberts': adamRoberts,
-  lumina,
-  'heritage-grove': heritageGrove,
-  velorah,
-  foldcraft,
-  'ltx-world': ltxWorld,
-  'cast-render': castRender,
-  '3d-character-studio': characterStudio,
-  'scroll-tied-video': scrollTiedVideo,
-  'mostar-city': mostarCity,
-  stillmind,
-  'intelligent-operations': intelligentOperations,
-  'interactive-discovery': interactiveDiscovery,
-  'nike-hover': nikeHover,
-  'synth-mode': synthMode,
-  'tech-forward': techForward,
-  'contact-cybernetic': contactCybernetic,
-  'wellness-hero': wellnessHero,
-  'mind-body-healing': mindBodyHealing,
-  'veyra-electric': veyraElectric,
-  'real-time-alerts': realTimeAlerts,
-  equilibrium,
-  'scaling-platform': scalingPlatform,
-  kage,
-  sketchbook,
-  'sublevel-studio': sublevelStudio,
-  'living-green': livingGreen,
-  'complete-shelf': completeShelf,
-  'bestsellers-book-showcase': bestsellersBookShowcase,
-  'living-green-sylva-living-world': livingGreenSylvaLivingWorld,
-  'logic-core-structure-flow': logicCoreStructureFlow,
-  'topology-field-structure-flow': topologyFieldStructureFlow,
-  'nebula-structure-flow': nebulaStructureFlow,
-  'flux-vortex-structure-flow': fluxVortexStructureFlow,
-  'japanese-tower-landscape': japaneseTowerLandscape,
-  'china-japanese-tower-landscape': chinaJapaneseTowerLandscape,
-  'vietnam-japanese-tower-landscape': vietnamJapaneseTowerLandscape,
-  'thailand-japanese-tower-landscape': thailandJapaneseTowerLandscape,
-  'turkey-japanese-tower-landscape': turkeyJapaneseTowerLandscape,
-  'original-3d-paper': original3dPaper,
-  'site-of-the-year-3d-paper': siteOfTheYear3dPaper,
-  'japanese-3d-paper': japanese3dPaper,
-  'certificate-3d-paper': certificate3dPaper,
-};
 const COPY_ICON_SIZE = 20;
-
-const buildSectionCards = ({ MARQUEE_GIFS, ABOUT_DECOR }) => [
-  {
-    id: 'personal',
-    title: 'Project Card',
-    label: '02 PERSONAL',
-    image: MARQUEE_GIFS[7],
-  },
-  {
-    id: 'about',
-    title: 'About Me',
-    label: 'About',
-    image: ABOUT_DECOR.moon,
-    dark: true,
-  },
-  {
-    id: 'catalog',
-    title: 'Projects Catalog',
-    label: 'Marquee',
-    image: MARQUEE_GIFS[0],
-  },
-  {
-    id: 'services',
-    title: 'Portfolio About',
-    label: 'Services',
-    services: true,
-  },
-  {
-    id: 'scroll',
-    title: 'Scroll Marquee',
-    label: 'Motion',
-    image: MARQUEE_GIFS[3],
-  },
-  {
-    id: 'agency',
-    title: 'Agency Services',
-    label: 'Stats',
-    image: ABOUT_DECOR.group,
-  },
-];
 
 const TemplateDetail = memo(() => {
   const { id } = useParams();
   const navigate = useNavigate();
   const template = useMemo(() => getTemplateById(id), [id]);
-  const content = CONTENT_BY_TEMPLATE_ID[id] || portfolioV1;
-  const sectionCards = useMemo(() => buildSectionCards(content), [content]);
-  const { PORTRAIT_URL, SERVICES } = content;
+
+  const relatedTemplates = useMemo(() => {
+    if (!template) return [];
+    return TEMPLATES.filter(
+      (item) => item.category === template.category && item.id !== template.id,
+    );
+  }, [template]);
 
   useSEO({
     title: template ? `${template.title} — Free Prompt` : 'Template',
@@ -312,51 +176,20 @@ const TemplateDetail = memo(() => {
           </aside>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sectionCards.map((card) => (
-            <Link
-              key={card.id}
-              to={template.livePath}
-              className="group overflow-hidden rounded-2xl border border-white/[0.06] bg-[#111] transition-transform hover:-translate-y-0.5"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#0C0C0C]">
-                {card.services ? (
-                  <div className="flex h-full flex-col justify-center gap-2 bg-white px-5 py-4 text-[#0C0C0C]">
-                    {SERVICES.slice(1, 5).map((s) => (
-                      <div key={s.number} className="flex items-baseline gap-3">
-                        <span className="text-lg font-black">{s.number}</span>
-                        <span className="text-xs font-medium uppercase tracking-wide">{s.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                ) : card.dark ? (
-                  <div className="relative flex h-full items-center justify-center">
-                    <img
-                      src={PORTRAIT_URL}
-                      alt=""
-                      className="absolute inset-0 h-full w-full object-cover opacity-30"
-                    />
-                    <img src={card.image} alt="" className="relative z-10 w-24 object-contain" />
-                    <p className="absolute bottom-4 left-4 text-lg font-black uppercase tracking-tight text-white">
-                      About me
-                    </p>
-                  </div>
-                ) : (
-                  <img
-                    src={card.image}
-                    alt=""
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                )}
-              </div>
-              <div className="px-3.5 py-3">
-                <p className="text-[13px] font-semibold text-white">{card.title}</p>
-                <p className="text-[11px] text-zinc-500">{card.label}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {relatedTemplates.length > 0 ? (
+          <section className="mt-10">
+            <h2 className="mb-4 text-sm font-medium text-zinc-400">
+              More from {template.category}
+            </h2>
+            <div className="grid grid-cols-1 gap-x-4 gap-y-6 min-[375px]:gap-x-5 min-[375px]:gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {relatedTemplates.map((item) => (
+                <div key={item.id} className="mx-auto w-full max-w-md sm:mx-0 sm:max-w-none">
+                  <TemplateCard item={item} />
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </div>
   );

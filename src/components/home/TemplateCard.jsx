@@ -22,10 +22,14 @@ const TemplateCard = memo(({ item }) => {
   const rafRef = useRef(0);
   const [frameSize, setFrameSize] = useState({ scale: 0.28, height: 1700 });
   const [inView, setInView] = useState(false);
+  const [hovering, setHovering] = useState(false);
   const [liveMounted, setLiveMounted] = useState(false);
+  const [liveReady, setLiveReady] = useState(false);
 
   const stillSrc = item.previewImage || item.previewGif || '';
   const ownerId = item.id;
+  /** Poster first: only attempt live iframe when there is no still, or on hover. */
+  const wantsLive = inView && (!stillSrc || hovering);
 
   useEffect(() => {
     const el = frameWrapRef.current;
@@ -70,8 +74,9 @@ const TemplateCard = memo(({ item }) => {
   }, []);
 
   useEffect(() => {
-    if (!inView) {
+    if (!wantsLive) {
       setLiveMounted(false);
+      setLiveReady(false);
       releaseLivePreviewSlot(ownerId);
       return undefined;
     }
@@ -88,6 +93,7 @@ const TemplateCard = memo(({ item }) => {
     if (tryMount()) {
       return () => {
         setLiveMounted(false);
+        setLiveReady(false);
         releaseLivePreviewSlot(ownerId);
       };
     }
@@ -99,9 +105,10 @@ const TemplateCard = memo(({ item }) => {
     return () => {
       unsubscribe();
       setLiveMounted(false);
+      setLiveReady(false);
       releaseLivePreviewSlot(ownerId);
     };
-  }, [inView, ownerId]);
+  }, [wantsLive, ownerId]);
 
   const handleCopyPrompt = useCallback(
     async (event) => {
@@ -128,10 +135,16 @@ const TemplateCard = memo(({ item }) => {
     navigate(item.detailPath || `/templates/${item.id}`);
   }, [item.detailPath, item.id, navigate]);
 
+  const showLive = liveMounted && liveReady;
+
   return (
     <article
       className="group flex cursor-pointer flex-col gap-3"
       onClick={openDetail}
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      onFocus={() => setHovering(true)}
+      onBlur={() => setHovering(false)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -150,17 +163,17 @@ const TemplateCard = memo(({ item }) => {
             <img
               src={stillSrc}
               alt=""
-              loading="lazy"
+              loading="eager"
               decoding="async"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 z-0 h-full w-full object-cover"
               draggable={false}
             />
           ) : (
-            <div className="absolute inset-0 bg-[#0C0C0C]" aria-hidden />
+            <div className="absolute inset-0 z-0 bg-[#0C0C0C]" aria-hidden />
           )}
 
-          <div className="absolute left-3 top-3 z-[1] rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-200 backdrop-blur-md">
-            {liveMounted ? 'Live slice' : 'Still preview'}
+          <div className="absolute left-3 top-3 z-[2] rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-200 backdrop-blur-md">
+            {showLive ? 'Live slice' : 'Still preview'}
           </div>
 
           {liveMounted ? (
@@ -170,12 +183,15 @@ const TemplateCard = memo(({ item }) => {
               allow="autoplay; fullscreen"
               tabIndex={-1}
               loading="lazy"
-              className="absolute left-0 top-0 border-0"
+              onLoad={() => setLiveReady(true)}
+              className="absolute left-0 top-0 z-[1] border-0"
               style={{
                 width: PREVIEW_WIDTH,
                 height: frameSize.height,
                 transform: `scale(${frameSize.scale})`,
                 transformOrigin: 'top left',
+                opacity: liveReady ? 1 : 0,
+                transition: 'opacity 240ms ease-out',
               }}
             />
           ) : null}
