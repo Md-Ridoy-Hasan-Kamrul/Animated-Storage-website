@@ -57,6 +57,7 @@ export const ROUTES = {
   SITE_OF_THE_YEAR_3D_PAPER: '/p/site-of-the-year-3d-paper',
   JAPANESE_3D_PAPER: '/p/japanese-3d-paper',
   CERTIFICATE_3D_PAPER: '/p/certificate-3d-paper',
+  ASHEN_PRESS: '/p/ashen-press',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',

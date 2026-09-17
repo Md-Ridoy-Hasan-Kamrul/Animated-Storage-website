@@ -49,6 +49,7 @@ export const TEMPLATES = [
   'site-of-the-year-3d-paper',
   'japanese-3d-paper',
   'certificate-3d-paper',
+  'ashen-press',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

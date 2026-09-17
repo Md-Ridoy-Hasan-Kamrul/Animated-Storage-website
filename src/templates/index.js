@@ -8,6 +8,7 @@ import { meta as lumina } from './sections/lumina/meta';
 import { meta as heritageGrove } from './footer/heritage-grove/meta';
 import { meta as velorah } from './agency/velorah/meta';
 import { meta as foldcraft } from './hero/foldcraft/meta';
+import { meta as ashenPress } from './hero/ashen-press/meta';
 import { meta as ltxWorld } from './ecommerce/ltx-world/meta';
 import { meta as castRender } from './3d-website/cast-render/meta';
 import { meta as characterStudio } from './3d-website/3d-character-studio/meta';
@@ -105,6 +106,7 @@ export const TEMPLATES = [
   heritageGrove,
   velorah,
   foldcraft,
+  ashenPress,
   ltxWorld,
   castRender,
   characterStudio,

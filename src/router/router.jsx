@@ -161,6 +161,7 @@ const Japanese3dPaperLive = lazy(
 const Certificate3dPaperLive = lazy(
   () => import('../templates/3d-paper/certificate-3d-paper/LivePage'),
 );
+const AshenPressLive = lazy(() => import('../templates/hero/ashen-press/LivePage'));
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -635,6 +636,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <Certificate3dPaperLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.ASHEN_PRESS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <AshenPressLive />
           </Suspense>
         }
       />
