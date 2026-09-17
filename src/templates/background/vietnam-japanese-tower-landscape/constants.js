@@ -38,7 +38,7 @@ export const VARIANT_BACKGROUND = '#ecdcbc';
 
 export const DETAIL_CARD_IMAGE_COUNT = 8;
 export const PREVIEW_STILL =
-  '/images/Assets%20Japanese%20Tower%20Landscape/JapaneseTowerLandscape.svg';
+  '/images/Assets Vietnamese Tower Landscape/JapaneseTowerLandscape.png';
 
 export const TOWER_COUNTRIES = [
   'japan',

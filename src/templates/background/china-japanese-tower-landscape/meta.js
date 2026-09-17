@@ -5,8 +5,8 @@ import { CARD_TITLE, PREVIEW_STILL } from './constants';
 export const meta = {
   id: 'china-japanese-tower-landscape',
   title: CARD_TITLE,
-  category: 'Background',
-  categorySlug: 'background',
+  category: 'Hero',
+  categorySlug: 'hero',
   pricing: 'Free',
   likes: 4688,
   height: 'h-[272px]',

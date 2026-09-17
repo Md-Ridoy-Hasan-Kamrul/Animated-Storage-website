@@ -17,18 +17,18 @@ import { meta } from '../meta';
 import { THAILAND_JAPANESE_TOWER_LANDSCAPE_PROMPT } from '../prompt';
 
 describe('Thai Tower Landscape — meta', () => {
-  it('registers the Background card Thai Tower Landscape', () => {
+  it('registers the Hero card Thai Tower Landscape', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
     expect(meta.title).toBe('Thai Tower Landscape');
-    expect(meta.category).toBe('Background');
-    expect(meta.categorySlug).toBe('background');
+    expect(meta.category).toBe('Hero');
+    expect(meta.categorySlug).toBe('hero');
     expect(meta.height).toBe('h-[272px]');
   });
 
-  it('keeps Background on the gallery navbar tabs', () => {
-    expect(CATEGORIES).toContain('Background');
-    expect(CATEGORY_SLUGS.Background).toBe('background');
+  it('keeps Hero on the gallery navbar tabs', () => {
+    expect(CATEGORIES).toContain('Hero');
+    expect(CATEGORY_SLUGS.Hero).toBe('hero');
   });
 
   it('binds copy prompt to the exact pasted body', () => {
