@@ -67,7 +67,7 @@ export const ASSET_MANIFEST = [
   },
 ];
 
-export const PREVIEW_STILL = '/images/Assets Japanese 3D Paper/Japanese3DPaper.svg';
+export const PREVIEW_STILL = '/images/Assets Japanese 3D Paper/Japanese3DPaper.png';
 export const DETAIL_CARD_IMAGE_COUNT = 4;
 
 export const BACK_BUTTON_CLASS =

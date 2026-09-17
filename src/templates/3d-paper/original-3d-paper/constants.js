@@ -37,7 +37,7 @@ export const HOST_ARIA_LABEL = 'Interactive translucent 3D paper certificate';
 
 export const DETAIL_CARD_IMAGE_COUNT = 8;
 export const PREVIEW_STILL =
-  '/images/Assets%20Original%203D%20Paper/Original3DPaper.svg';
+  '/images/Assets%20Original%203D%20Paper/Original3DPaper.png';
 
 export const PAPER_VARIANTS = [
   'original',

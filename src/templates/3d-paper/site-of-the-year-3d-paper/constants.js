@@ -68,7 +68,7 @@ export const ASSET_MANIFEST = [
 ];
 
 export const PREVIEW_STILL =
-  '/images/Assets Site of the Year 3D Paper/SiteOfTheYear3DPaper.svg';
+  '/images/Assets Site of the Year 3D Paper/SiteoftheYear3DPaper.png';
 export const DETAIL_CARD_IMAGE_COUNT = 4;
 
 export const BACK_BUTTON_CLASS =
