@@ -48,6 +48,7 @@ export const TEMPLATES = [
   'liquid-form',
   'terminal-crt',
   'cinematic-crt',
+  'blue-screen-crt',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',

@@ -170,6 +170,9 @@ const TerminalCrtLive = lazy(
 const CinematicCrtLive = lazy(
   () => import('../templates/background/cinematic-crt/LivePage'),
 );
+const BlueScreenCrtLive = lazy(
+  () => import('../templates/background/blue-screen-crt/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -699,6 +702,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <CinematicCrtLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.BLUE_SCREEN_CRT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <BlueScreenCrtLive />
           </Suspense>
         }
       />

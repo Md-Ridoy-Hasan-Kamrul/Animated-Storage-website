@@ -50,6 +50,7 @@ import { meta as overrideGridPredictiveArc } from './background/override-grid-pr
 import { meta as liquidForm } from './background/liquid-form/meta';
 import { meta as terminalCrt } from './background/terminal-crt/meta';
 import { meta as cinematicCrt } from './background/cinematic-crt/meta';
+import { meta as blueScreenCrt } from './background/blue-screen-crt/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -104,6 +105,7 @@ export const TEMPLATES = [
   liquidForm,
   terminalCrt,
   cinematicCrt,
+  blueScreenCrt,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,
