@@ -164,6 +164,9 @@ const OverrideGridPredictiveArcLive = lazy(
 const LiquidFormLive = lazy(
   () => import('../templates/background/liquid-form/LivePage'),
 );
+const TerminalCrtLive = lazy(
+  () => import('../templates/background/terminal-crt/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -675,6 +678,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LiquidFormLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TERMINAL_CRT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TerminalCrtLive />
           </Suspense>
         }
       />

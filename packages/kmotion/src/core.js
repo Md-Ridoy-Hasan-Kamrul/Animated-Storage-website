@@ -46,6 +46,7 @@ export const TEMPLATES = [
   'flux-vortex-structure-flow',
   'override-grid-predictive-arc',
   'liquid-form',
+  'terminal-crt',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
