@@ -47,6 +47,8 @@ import * as japaneseTowerLandscape from '../templates/background/japanese-tower-
 import * as chinaJapaneseTowerLandscape from '../templates/background/china-japanese-tower-landscape/content';
 import * as vietnamJapaneseTowerLandscape from '../templates/background/vietnam-japanese-tower-landscape/content';
 import * as thailandJapaneseTowerLandscape from '../templates/background/thailand-japanese-tower-landscape/content';
+import * as turkeyJapaneseTowerLandscape from '../templates/background/turkey-japanese-tower-landscape/content';
+import * as original3dPaper from '../templates/3d-paper/original-3d-paper/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -98,6 +100,8 @@ const CONTENT_BY_TEMPLATE_ID = {
   'china-japanese-tower-landscape': chinaJapaneseTowerLandscape,
   'vietnam-japanese-tower-landscape': vietnamJapaneseTowerLandscape,
   'thailand-japanese-tower-landscape': thailandJapaneseTowerLandscape,
+  'turkey-japanese-tower-landscape': turkeyJapaneseTowerLandscape,
+  'original-3d-paper': original3dPaper,
 };
 const COPY_ICON_SIZE = 20;
 

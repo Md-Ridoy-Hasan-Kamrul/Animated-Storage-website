@@ -146,6 +146,12 @@ const VietnamJapaneseTowerLandscapeLive = lazy(
 const ThailandJapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/thailand-japanese-tower-landscape/LivePage'),
 );
+const TurkeyJapaneseTowerLandscapeLive = lazy(
+  () => import('../templates/background/turkey-japanese-tower-landscape/LivePage'),
+);
+const Original3dPaperLive = lazy(
+  () => import('../templates/3d-paper/original-3d-paper/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -575,6 +581,24 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ThailandJapaneseTowerLandscapeLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TURKEY_JAPANESE_TOWER_LANDSCAPE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TurkeyJapaneseTowerLandscapeLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.ORIGINAL_3D_PAPER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <Original3dPaperLive />
           </Suspense>
         }
       />

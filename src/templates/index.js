@@ -41,6 +41,8 @@ import { meta as japaneseTowerLandscape } from './background/japanese-tower-land
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
 import { meta as thailandJapaneseTowerLandscape } from './background/thailand-japanese-tower-landscape/meta';
+import { meta as turkeyJapaneseTowerLandscape } from './background/turkey-japanese-tower-landscape/meta';
+import { meta as original3dPaper } from './3d-paper/original-3d-paper/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -58,6 +60,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'SaaS',
   'Ecommerce',
   '3d Website',
+  '3D Paper',
   'Creative',
   'Travel',
   'Fashion',
@@ -85,6 +88,8 @@ export const TEMPLATES = [
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,
   thailandJapaneseTowerLandscape,
+  turkeyJapaneseTowerLandscape,
+  original3dPaper,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,
