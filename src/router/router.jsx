@@ -43,6 +43,9 @@ const LuminaLive = lazy(
 const WarpFieldDefaultLive = lazy(
   () => import('../templates/sections/warp-field-default/LivePage'),
 );
+const WarpFieldLetterStormLive = lazy(
+  () => import('../templates/sections/warp-field-letter-storm/LivePage'),
+);
 const HeritageGroveLive = lazy(
   () => import('../templates/footer/heritage-grove/LivePage'),
 );
@@ -279,6 +282,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <WarpFieldDefaultLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WARP_FIELD_LETTER_STORM}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WarpFieldLetterStormLive />
           </Suspense>
         }
       />

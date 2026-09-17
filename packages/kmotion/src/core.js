@@ -51,6 +51,7 @@ export const TEMPLATES = [
   'certificate-3d-paper',
   'ashen-press',
   'warp-field-default',
+  'warp-field-letter-storm',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
