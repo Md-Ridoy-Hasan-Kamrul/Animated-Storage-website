@@ -52,6 +52,7 @@ export const TEMPLATES = [
   'ashen-press',
   'warp-field-default',
   'warp-field-letter-storm',
+  'warp-field-keycap-drift',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';

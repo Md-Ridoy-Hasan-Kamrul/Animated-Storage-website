@@ -7,6 +7,7 @@ import { meta as adamRoberts } from './portfolio/adam-roberts/meta';
 import { meta as lumina } from './sections/lumina/meta';
 import { meta as warpFieldDefault } from './sections/warp-field-default/meta';
 import { meta as warpFieldLetterStorm } from './sections/warp-field-letter-storm/meta';
+import { meta as warpFieldKeycapDrift } from './sections/warp-field-keycap-drift/meta';
 import { meta as heritageGrove } from './footer/heritage-grove/meta';
 import { meta as velorah } from './agency/velorah/meta';
 import { meta as foldcraft } from './hero/foldcraft/meta';
@@ -107,6 +108,7 @@ export const TEMPLATES = [
   lumina,
   warpFieldDefault,
   warpFieldLetterStorm,
+  warpFieldKeycapDrift,
   heritageGrove,
   velorah,
   foldcraft,

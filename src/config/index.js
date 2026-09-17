@@ -60,6 +60,7 @@ export const ROUTES = {
   ASHEN_PRESS: '/p/ashen-press',
   WARP_FIELD_DEFAULT: '/p/warp-field-default',
   WARP_FIELD_LETTER_STORM: '/p/warp-field-letter-storm',
+  WARP_FIELD_KEYCAP_DRIFT: '/p/warp-field-keycap-drift',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
