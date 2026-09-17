@@ -161,6 +161,9 @@ const FluxVortexStructureFlowLive = lazy(
 const OverrideGridPredictiveArcLive = lazy(
   () => import('../templates/background/override-grid-predictive-arc/LivePage'),
 );
+const LiquidFormLive = lazy(
+  () => import('../templates/background/liquid-form/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -663,6 +666,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <OverrideGridPredictiveArcLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LIQUID_FORM}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LiquidFormLive />
           </Suspense>
         }
       />

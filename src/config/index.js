@@ -53,6 +53,7 @@ export const ROUTES = {
   NEBULA_STRUCTURE_FLOW: '/p/nebula-structure-flow',
   FLUX_VORTEX_STRUCTURE_FLOW: '/p/flux-vortex-structure-flow',
   OVERRIDE_GRID_PREDICTIVE_ARC: '/p/override-grid-predictive-arc',
+  LIQUID_FORM: '/p/liquid-form',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',
