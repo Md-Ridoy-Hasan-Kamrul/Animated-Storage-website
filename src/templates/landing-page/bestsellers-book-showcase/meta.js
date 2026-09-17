@@ -5,8 +5,8 @@ import { PREVIEW_STILL } from './constants';
 export const meta = {
   id: 'bestsellers-book-showcase',
   title: 'Field Manuals',
-  category: 'Landing Page',
-  categorySlug: 'landing-page',
+  category: 'Hero',
+  categorySlug: 'hero',
   pricing: 'Free',
   likes: 4120,
   height: 'h-[272px]',

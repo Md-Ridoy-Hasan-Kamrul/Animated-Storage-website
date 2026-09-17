@@ -5,8 +5,8 @@ import { PREVIEW_STILL } from './constants';
 export const meta = {
   id: 'complete-shelf',
   title: 'Working Volumes',
-  category: 'Landing Page',
-  categorySlug: 'landing-page',
+  category: 'Hero',
+  categorySlug: 'hero',
   pricing: 'Free',
   likes: 3890,
   height: 'h-[272px]',

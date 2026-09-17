@@ -15,18 +15,18 @@ import { meta } from '../meta';
 import { BESTSELLERS_BOOK_SHOWCASE_PROMPT } from '../prompt';
 
 describe('Field Manuals — Bestsellers Book Showcase meta', () => {
-  it('registers the Landing Page card Field Manuals', () => {
+  it('registers the Hero card Field Manuals', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
     expect(meta.title).toBe('Field Manuals');
-    expect(meta.category).toBe('Landing Page');
-    expect(meta.categorySlug).toBe('landing-page');
+    expect(meta.category).toBe('Hero');
+    expect(meta.categorySlug).toBe('hero');
     expect(meta.height).toBe('h-[272px]');
   });
 
-  it('keeps Landing Page on the gallery navbar tabs', () => {
-    expect(CATEGORIES).toContain('Landing Page');
-    expect(CATEGORY_SLUGS['Landing Page']).toBe('landing-page');
+  it('keeps Hero on the gallery navbar tabs', () => {
+    expect(CATEGORIES).toContain('Hero');
+    expect(CATEGORY_SLUGS.Hero).toBe('hero');
   });
 
   it('binds copy prompt to the exact pasted body', () => {

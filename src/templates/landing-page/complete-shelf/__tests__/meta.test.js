@@ -15,18 +15,18 @@ import { meta } from '../meta';
 import { COMPLETE_SHELF_PROMPT } from '../prompt';
 
 describe('Working Volumes — Complete Shelf meta', () => {
-  it('registers the Landing Page card Working Volumes', () => {
+  it('registers the Hero card Working Volumes', () => {
     expect(meta.id).toBe(CARD_ID);
     expect(meta.title).toBe(CARD_TITLE);
     expect(meta.title).toBe('Working Volumes');
-    expect(meta.category).toBe('Landing Page');
-    expect(meta.categorySlug).toBe('landing-page');
+    expect(meta.category).toBe('Hero');
+    expect(meta.categorySlug).toBe('hero');
     expect(meta.height).toBe('h-[272px]');
   });
 
-  it('keeps Landing Page on the gallery navbar tabs', () => {
-    expect(CATEGORIES).toContain('Landing Page');
-    expect(CATEGORY_SLUGS['Landing Page']).toBe('landing-page');
+  it('keeps Hero on the gallery navbar tabs', () => {
+    expect(CATEGORIES).toContain('Hero');
+    expect(CATEGORY_SLUGS.Hero).toBe('hero');
   });
 
   it('binds copy prompt to the exact pasted body', () => {
