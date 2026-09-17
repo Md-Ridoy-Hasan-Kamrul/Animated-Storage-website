@@ -24,6 +24,7 @@ export const ROUTES = {
   CHARACTER_STUDIO: '/p/3d-character-studio',
   WOVEN_CLOTH: '/p/woven-cloth',
   WOVEN_CLOTH_IRIDESCENT: '/p/woven-cloth-iridescent',
+  WOVEN_CLOTH_ATELIER: '/p/woven-cloth-atelier',
   SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
   MOSTAR_CITY: '/p/mostar-city',
   STILLMIND: '/p/stillmind',

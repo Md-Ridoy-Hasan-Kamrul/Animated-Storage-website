@@ -1,0 +1,63 @@
+html.woven-cloth-atelier-html,
+html.woven-cloth-atelier-html body,
+html.woven-cloth-atelier-html #root {
+  height: 100%;
+  margin: 0;
+  background: #12100d;
+}
+
+.woven-cloth-atelier-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #12100d;
+  color: #e8dcc4;
+  overflow: hidden;
+}
+
+html.woven-cloth-atelier-framed .woven-cloth-atelier-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.woven-cloth-atelier-page .shader-frame,
+.woven-cloth-atelier-page .woven-cloth-atelier {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #12100d;
+}
+
+.threeui-background.woven-cloth-atelier {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #12100d;
+}
+
+.woven-cloth-atelier__frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #12100d;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease-out;
+}
+
+.woven-cloth-atelier__frame.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
