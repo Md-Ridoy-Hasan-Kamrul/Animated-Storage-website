@@ -43,6 +43,7 @@ import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japa
 import { meta as thailandJapaneseTowerLandscape } from './background/thailand-japanese-tower-landscape/meta';
 import { meta as turkeyJapaneseTowerLandscape } from './background/turkey-japanese-tower-landscape/meta';
 import { meta as original3dPaper } from './3d-paper/original-3d-paper/meta';
+import { meta as siteOfTheYear3dPaper } from './3d-paper/site-of-the-year-3d-paper/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -90,6 +91,7 @@ export const TEMPLATES = [
   thailandJapaneseTowerLandscape,
   turkeyJapaneseTowerLandscape,
   original3dPaper,
+  siteOfTheYear3dPaper,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

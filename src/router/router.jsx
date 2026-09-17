@@ -152,6 +152,9 @@ const TurkeyJapaneseTowerLandscapeLive = lazy(
 const Original3dPaperLive = lazy(
   () => import('../templates/3d-paper/original-3d-paper/LivePage'),
 );
+const SiteOfTheYear3dPaperLive = lazy(
+  () => import('../templates/3d-paper/site-of-the-year-3d-paper/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -599,6 +602,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <Original3dPaperLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SITE_OF_THE_YEAR_3D_PAPER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SiteOfTheYear3dPaperLive />
           </Suspense>
         }
       />

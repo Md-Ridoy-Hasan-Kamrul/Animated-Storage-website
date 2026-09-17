@@ -46,6 +46,7 @@ export const TEMPLATES = [
   'thailand-japanese-tower-landscape',
   'turkey-japanese-tower-landscape',
   'original-3d-paper',
+  'site-of-the-year-3d-paper',
 ];
 
 const LOCAL_ORIGIN = 'http://localhost:5173';
