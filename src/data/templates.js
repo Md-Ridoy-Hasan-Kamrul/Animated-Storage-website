@@ -6,6 +6,7 @@ export {
   CATEGORIES,
   CATEGORY_SLUGS,
   categoryToSlug,
+  slugToCategory,
   ACTIVE_TEMPLATE_CATEGORIES,
   TEMPLATES,
   getTemplateById,

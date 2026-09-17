@@ -47,7 +47,7 @@ import { meta as siteOfTheYear3dPaper } from './3d-paper/site-of-the-year-3d-pap
 import { meta as japanese3dPaper } from './3d-paper/japanese-3d-paper/meta';
 import { meta as certificate3dPaper } from './3d-paper/certificate-3d-paper/meta';
 
-export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
+export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug, slugToCategory } from './categories';
 
 /** Categories that currently have at least one live template */
 export const ACTIVE_TEMPLATE_CATEGORIES = [

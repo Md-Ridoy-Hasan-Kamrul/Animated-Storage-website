@@ -6,11 +6,14 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import {
   CATEGORIES,
   TEMPLATES,
   categoryHasTemplates,
+  categoryToSlug,
+  slugToCategory,
 } from '../../data/templates';
 import TemplateCard from './TemplateCard';
 import ComingSoonTube from '../ComingSoonTube';
@@ -152,12 +155,41 @@ const FilterBar = memo(({
 FilterBar.displayName = 'FilterBar';
 
 const HomeContent = memo(() => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryFromUrl = slugToCategory(searchParams.get('category'));
+  const [activeCategory, setActiveCategory] = useState(categoryFromUrl);
   const [sort, setSort] = useState('Popular');
   const [pricing, setPricing] = useState('Free');
 
-  const onSelect = useCallback((cat) => setActiveCategory(cat), []);
-  const onClear = useCallback(() => setActiveCategory('All'), []);
+  useEffect(() => {
+    setActiveCategory(categoryFromUrl);
+  }, [categoryFromUrl]);
+
+  const syncCategoryParam = useCallback(
+    (cat) => {
+      if (cat === 'All') {
+        setSearchParams({}, { replace: true });
+        return;
+      }
+      const slug = categoryToSlug(cat);
+      if (slug) {
+        setSearchParams({ category: slug }, { replace: true });
+      }
+    },
+    [setSearchParams],
+  );
+
+  const onSelect = useCallback(
+    (cat) => {
+      setActiveCategory(cat);
+      syncCategoryParam(cat);
+    },
+    [syncCategoryParam],
+  );
+  const onClear = useCallback(() => {
+    setActiveCategory('All');
+    syncCategoryParam('All');
+  }, [syncCategoryParam]);
   const onSortChange = useCallback((next) => setSort(next), []);
   const onPricingChange = useCallback((next) => setPricing(next), []);
 

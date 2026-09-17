@@ -58,3 +58,10 @@ export const CATEGORY_SLUGS = {
 };
 
 export const categoryToSlug = (category) => CATEGORY_SLUGS[category] || null;
+
+/** Resolve gallery tab label from `?category=` slug (All when missing/unknown). */
+export const slugToCategory = (slug) => {
+  if (!slug || slug === 'all') return 'All';
+  const match = Object.entries(CATEGORY_SLUGS).find(([, value]) => value === slug);
+  return match ? match[0] : 'All';
+};

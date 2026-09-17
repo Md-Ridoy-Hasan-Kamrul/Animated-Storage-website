@@ -194,6 +194,15 @@ const TemplateDetail = memo(() => {
     }
   }, [npmSnippet, npmStack]);
 
+  const goBackToCategory = useCallback(() => {
+    const slug = template?.categorySlug;
+    if (slug) {
+      navigate({ pathname: ROUTES.HOME, search: `?category=${encodeURIComponent(slug)}` });
+      return;
+    }
+    navigate(ROUTES.HOME);
+  }, [navigate, template?.categorySlug]);
+
   if (!template) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 px-4 text-center">
@@ -210,7 +219,7 @@ const TemplateDetail = memo(() => {
       <div className="mx-auto max-w-[1600px] px-4 pt-4 sm:px-6 lg:px-8">
         <button
           type="button"
-          onClick={() => navigate(ROUTES.HOME)}
+          onClick={goBackToCategory}
           className="mb-6 inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white"
         >
           <ArrowLeft size={16} />
