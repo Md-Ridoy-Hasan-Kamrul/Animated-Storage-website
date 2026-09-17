@@ -73,6 +73,9 @@ const CharacterStudioLive = lazy(
 const WovenClothLive = lazy(
   () => import('../templates/3d-website/woven-cloth/LivePage'),
 );
+const WovenClothIridescentLive = lazy(
+  () => import('../templates/3d-website/woven-cloth-iridescent/LivePage'),
+);
 const ScrollTiedVideoLive = lazy(
   () => import('../templates/creative/scroll-tied-video/LivePage'),
 );
@@ -381,6 +384,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <WovenClothLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WOVEN_CLOTH_IRIDESCENT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WovenClothIridescentLive />
           </Suspense>
         }
       />

@@ -15,6 +15,7 @@ export const TEMPLATES = [
   'cast-render',
   '3d-character-studio',
   'woven-cloth',
+  'woven-cloth-iridescent',
   'scroll-tied-video',
   'mostar-city',
   'stillmind',
