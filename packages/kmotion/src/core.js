@@ -47,6 +47,7 @@ export const TEMPLATES = [
   'override-grid-predictive-arc',
   'liquid-form',
   'terminal-crt',
+  'cinematic-crt',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',

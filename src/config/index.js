@@ -55,6 +55,7 @@ export const ROUTES = {
   OVERRIDE_GRID_PREDICTIVE_ARC: '/p/override-grid-predictive-arc',
   LIQUID_FORM: '/p/liquid-form',
   TERMINAL_CRT: '/p/terminal-crt',
+  CINEMATIC_CRT: '/p/cinematic-crt',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',

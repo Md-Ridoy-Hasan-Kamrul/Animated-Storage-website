@@ -167,6 +167,9 @@ const LiquidFormLive = lazy(
 const TerminalCrtLive = lazy(
   () => import('../templates/background/terminal-crt/LivePage'),
 );
+const CinematicCrtLive = lazy(
+  () => import('../templates/background/cinematic-crt/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -687,6 +690,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <TerminalCrtLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CINEMATIC_CRT}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <CinematicCrtLive />
           </Suspense>
         }
       />
