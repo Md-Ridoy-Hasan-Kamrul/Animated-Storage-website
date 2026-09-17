@@ -19,6 +19,7 @@ import { meta as characterStudio } from './3d-website/3d-character-studio/meta';
 import { meta as wovenCloth } from './3d-website/woven-cloth/meta';
 import { meta as wovenClothIridescent } from './3d-website/woven-cloth-iridescent/meta';
 import { meta as wovenClothAtelier } from './3d-website/woven-cloth-atelier/meta';
+import { meta as wovenClothWashi } from './3d-website/woven-cloth-washi/meta';
 import { meta as scrollTiedVideo } from './creative/scroll-tied-video/meta';
 import { meta as mostarCity } from './travel/mostar-city/meta';
 import { meta as stillmind } from './hero/stillmind/meta';
@@ -124,6 +125,7 @@ export const TEMPLATES = [
   wovenCloth,
   wovenClothIridescent,
   wovenClothAtelier,
+  wovenClothWashi,
   scrollTiedVideo,
   mostarCity,
   stillmind,

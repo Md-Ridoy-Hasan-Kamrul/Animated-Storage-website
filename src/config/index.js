@@ -25,6 +25,7 @@ export const ROUTES = {
   WOVEN_CLOTH: '/p/woven-cloth',
   WOVEN_CLOTH_IRIDESCENT: '/p/woven-cloth-iridescent',
   WOVEN_CLOTH_ATELIER: '/p/woven-cloth-atelier',
+  WOVEN_CLOTH_WASHI: '/p/woven-cloth-washi',
   SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
   MOSTAR_CITY: '/p/mostar-city',
   STILLMIND: '/p/stillmind',

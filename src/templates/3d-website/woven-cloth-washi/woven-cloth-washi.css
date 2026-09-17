@@ -1,0 +1,63 @@
+html.woven-cloth-washi-html,
+html.woven-cloth-washi-html body,
+html.woven-cloth-washi-html #root {
+  height: 100%;
+  margin: 0;
+  background: #0d0a07;
+}
+
+.woven-cloth-washi-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #0d0a07;
+  color: #e8dcc4;
+  overflow: hidden;
+}
+
+html.woven-cloth-washi-framed .woven-cloth-washi-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.woven-cloth-washi-page .shader-frame,
+.woven-cloth-washi-page .woven-cloth-washi {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #0d0a07;
+}
+
+.threeui-background.woven-cloth-washi {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #0d0a07;
+}
+
+.woven-cloth-washi__frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #0d0a07;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease-out;
+}
+
+.woven-cloth-washi__frame.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
