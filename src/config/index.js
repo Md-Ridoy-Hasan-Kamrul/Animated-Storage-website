@@ -22,6 +22,7 @@ export const ROUTES = {
   LTX_WORLD: '/p/ltx-world',
   CAST_RENDER: '/p/cast-render',
   CHARACTER_STUDIO: '/p/3d-character-studio',
+  WOVEN_CLOTH: '/p/woven-cloth',
   SCROLL_TIED_VIDEO: '/p/scroll-tied-video',
   MOSTAR_CITY: '/p/mostar-city',
   STILLMIND: '/p/stillmind',

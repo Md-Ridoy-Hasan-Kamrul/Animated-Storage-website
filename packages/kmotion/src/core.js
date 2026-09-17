@@ -14,6 +14,7 @@ export const TEMPLATES = [
   'ltx-world',
   'cast-render',
   '3d-character-studio',
+  'woven-cloth',
   'scroll-tied-video',
   'mostar-city',
   'stillmind',

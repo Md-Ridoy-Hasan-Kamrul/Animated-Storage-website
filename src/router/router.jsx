@@ -70,6 +70,9 @@ const CastRenderLive = lazy(
 const CharacterStudioLive = lazy(
   () => import('../templates/3d-website/3d-character-studio/LivePage'),
 );
+const WovenClothLive = lazy(
+  () => import('../templates/3d-website/woven-cloth/LivePage'),
+);
 const ScrollTiedVideoLive = lazy(
   () => import('../templates/creative/scroll-tied-video/LivePage'),
 );
@@ -369,6 +372,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <CharacterStudioLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.WOVEN_CLOTH}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <WovenClothLive />
           </Suspense>
         }
       />
