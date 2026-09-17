@@ -55,6 +55,7 @@ export const ROUTES = {
   TURKEY_JAPANESE_TOWER_LANDSCAPE: '/p/turkey-japanese-tower-landscape',
   ORIGINAL_3D_PAPER: '/p/original-3d-paper',
   SITE_OF_THE_YEAR_3D_PAPER: '/p/site-of-the-year-3d-paper',
+  JAPANESE_3D_PAPER: '/p/japanese-3d-paper',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
