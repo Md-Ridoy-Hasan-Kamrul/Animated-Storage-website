@@ -51,6 +51,7 @@ import * as turkeyJapaneseTowerLandscape from '../templates/background/turkey-ja
 import * as original3dPaper from '../templates/3d-paper/original-3d-paper/content';
 import * as siteOfTheYear3dPaper from '../templates/3d-paper/site-of-the-year-3d-paper/content';
 import * as japanese3dPaper from '../templates/3d-paper/japanese-3d-paper/content';
+import * as certificate3dPaper from '../templates/3d-paper/certificate-3d-paper/content';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -106,6 +107,7 @@ const CONTENT_BY_TEMPLATE_ID = {
   'original-3d-paper': original3dPaper,
   'site-of-the-year-3d-paper': siteOfTheYear3dPaper,
   'japanese-3d-paper': japanese3dPaper,
+  'certificate-3d-paper': certificate3dPaper,
 };
 const COPY_ICON_SIZE = 20;
 

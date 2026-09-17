@@ -158,6 +158,9 @@ const SiteOfTheYear3dPaperLive = lazy(
 const Japanese3dPaperLive = lazy(
   () => import('../templates/3d-paper/japanese-3d-paper/LivePage'),
 );
+const Certificate3dPaperLive = lazy(
+  () => import('../templates/3d-paper/certificate-3d-paper/LivePage'),
+);
 
 // Admin pages — each lazy-loaded so they only download when visited
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
@@ -623,6 +626,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <Japanese3dPaperLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CERTIFICATE_3D_PAPER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <Certificate3dPaperLive />
           </Suspense>
         }
       />

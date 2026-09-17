@@ -45,6 +45,7 @@ import { meta as turkeyJapaneseTowerLandscape } from './background/turkey-japane
 import { meta as original3dPaper } from './3d-paper/original-3d-paper/meta';
 import { meta as siteOfTheYear3dPaper } from './3d-paper/site-of-the-year-3d-paper/meta';
 import { meta as japanese3dPaper } from './3d-paper/japanese-3d-paper/meta';
+import { meta as certificate3dPaper } from './3d-paper/certificate-3d-paper/meta';
 
 export { CATEGORIES, CATEGORY_SLUGS, categoryToSlug } from './categories';
 
@@ -94,6 +95,7 @@ export const TEMPLATES = [
   original3dPaper,
   siteOfTheYear3dPaper,
   japanese3dPaper,
+  certificate3dPaper,
   threeDPortfolio,
   promptArchive,
   portfolioCosmic,

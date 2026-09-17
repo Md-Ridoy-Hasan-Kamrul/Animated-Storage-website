@@ -56,6 +56,7 @@ export const ROUTES = {
   ORIGINAL_3D_PAPER: '/p/original-3d-paper',
   SITE_OF_THE_YEAR_3D_PAPER: '/p/site-of-the-year-3d-paper',
   JAPANESE_3D_PAPER: '/p/japanese-3d-paper',
+  CERTIFICATE_3D_PAPER: '/p/certificate-3d-paper',
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/dashboard',
   ADMIN_EMAILS: '/admin/emails',
