@@ -1,0 +1,172 @@
+.threeui-page-button-stage {
+  --threeui-page-ink: #fff;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050505;
+  color: var(--threeui-page-ink);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.threeui-page-button-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.threeui-page-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.threeui-page-button:focus-visible {
+  outline: 2px solid var(--threeui-page-ink);
+  outline-offset: 5px;
+}
+
+.threeui-page-button-stage--ember-keycap {
+  background: #080604;
+  font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.threeui-page-button-stage--ember-keycap::before {
+  background:
+    radial-gradient(ellipse at 50% 56%, rgba(255, 111, 35, .20), transparent 30%),
+    linear-gradient(180deg, rgba(255, 119, 45, .035), transparent 58%);
+}
+
+.threeui-page-button-ember-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.threeui-page-button-ember-glow,
+.threeui-page-button-ember-bloom {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: plus-lighter;
+  transition: opacity .16s ease, transform .16s ease;
+}
+
+.threeui-page-button-ember-glow {
+  left: 6%;
+  right: 6%;
+  top: -9px;
+  height: 16px;
+  background: radial-gradient(closest-side, rgba(255, 222, 182, .95), rgba(255, 138, 54, .62) 50%, rgba(255, 96, 24, 0) 100%);
+  filter: blur(4px);
+  opacity: 1;
+}
+
+.threeui-page-button-ember-bloom {
+  left: -10%;
+  right: -10%;
+  top: -31px;
+  height: 58px;
+  background: radial-gradient(closest-side, rgba(255, 128, 50, .55), rgba(255, 92, 24, .18) 58%, rgba(255, 72, 14, 0) 100%);
+  filter: blur(12px);
+  opacity: .85;
+}
+
+.threeui-page-button--ember-keycap {
+  gap: .85em;
+  padding: 1.05em 1.6em 1.1em;
+  border-radius: 9px;
+  background: linear-gradient(178deg, #4a4d54 0%, #34373d 18%, #23262b 62%, #1a1c20 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 238, 225, .22),
+    inset 0 -1px 0 rgba(0, 0, 0, .75),
+    0 7px 0 -1px #101215,
+    0 12px 26px rgba(0, 0, 0, .62);
+  color: #fff1e2;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  transform: translateY(0);
+  transition: transform .13s cubic-bezier(.3, .7, .3, 1), box-shadow .13s ease;
+}
+
+.threeui-page-button--ember-keycap .threeui-page-button__spark {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  fill: #ff8a3d;
+  filter: drop-shadow(0 0 .55em rgba(255, 120, 50, .9));
+}
+
+.threeui-page-button--ember-keycap .threeui-page-button__price {
+  color: #b9ada3;
+}
+
+.threeui-page-button-ember-wrap:hover .threeui-page-button--ember-keycap,
+.threeui-page-button--ember-keycap:focus-visible {
+  transform: translateY(5px);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 238, 225, .26),
+    inset 0 -1px 0 rgba(0, 0, 0, .75),
+    0 2px 0 -1px #101215,
+    0 5px 14px rgba(0, 0, 0, .6);
+}
+
+.threeui-page-button--ember-keycap:focus-visible {
+  outline-color: #ff9a59;
+}
+
+.threeui-page-button-ember-wrap:hover .threeui-page-button-ember-glow,
+.threeui-page-button-ember-wrap:focus-within .threeui-page-button-ember-glow {
+  transform: translateY(5px) scaleX(1.05);
+}
+
+.threeui-page-button-ember-wrap:hover .threeui-page-button-ember-bloom,
+.threeui-page-button-ember-wrap:focus-within .threeui-page-button-ember-bloom {
+  opacity: 1;
+  transform: translateY(5px) scale(1.05);
+}
+
+.threeui-page-button--ember-keycap:active {
+  transform: translateY(6px);
+}
+
+.threeui-page-button-stage[data-mode="light"] {
+  --threeui-page-ink: #14161a;
+}
+
+.threeui-page-button-stage--ember-keycap[data-mode="light"] {
+  background: #f2ece6;
+  --threeui-page-ink: #1a1511;
+}
+
+.threeui-page-button-stage--ember-keycap[data-mode="light"]::before {
+  background: radial-gradient(ellipse at 50% 56%, rgba(221, 84, 12, .20), transparent 30%);
+}
+
+.threeui-page-button-stage--ember-keycap[data-mode="light"] .threeui-page-button-ember-bloom {
+  opacity: .66;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .threeui-page-button,
+  .threeui-page-button::before,
+  .threeui-page-button svg,
+  .threeui-page-button-ember-glow,
+  .threeui-page-button-ember-bloom {
+    transition-duration: .01ms !important;
+  }
+}

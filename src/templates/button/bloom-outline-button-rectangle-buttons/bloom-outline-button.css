@@ -1,0 +1,191 @@
+.threeui-page-button-stage {
+  --threeui-page-ink: #fff;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050505;
+  color: var(--threeui-page-ink);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.threeui-page-button-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.threeui-page-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.threeui-page-button:focus-visible {
+  outline: 2px solid var(--threeui-page-ink);
+  outline-offset: 5px;
+}
+
+.threeui-page-button-stage--bloom-outline {
+  --threeui-bloom-outline-edge: #f5ece6;
+  --threeui-bloom-outline-fill: #f5ece6;
+  --threeui-bloom-outline-fg: #3f2c33;
+  --threeui-page-ink: #f5ece6;
+  background: #b5808e;
+  font-family: "General Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.threeui-page-button-stage--bloom-outline::before {
+  background:
+    radial-gradient(ellipse at 29% 24%, rgba(245, 236, 230, .2), transparent 34%),
+    radial-gradient(ellipse at 75% 72%, rgba(63, 44, 51, .15), transparent 36%),
+    repeating-radial-gradient(circle at 44% 48%, rgba(245, 236, 230, .1) 0 1px, transparent 1px 4px);
+  opacity: .7;
+  mix-blend-mode: soft-light;
+}
+
+.threeui-page-button--bloom-outline {
+  --bloom-outline-x: 50%;
+  --bloom-outline-y: 50%;
+  --bloom-outline-diameter: 220px;
+  gap: 13.6px;
+  overflow: hidden;
+  padding: 14.4px 23.2px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--threeui-bloom-outline-edge);
+  font-size: 14.72px;
+  font-weight: 400;
+  letter-spacing: .045em;
+  line-height: 1;
+  text-transform: uppercase;
+  will-change: transform;
+  transition:
+    color .38s cubic-bezier(.22, .61, .36, 1),
+    border-color .38s cubic-bezier(.22, .61, .36, 1),
+    transform .55s cubic-bezier(.19, 1, .22, 1);
+}
+
+.threeui-page-button--bloom-outline::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: var(--bloom-outline-x);
+  top: var(--bloom-outline-y);
+  width: var(--bloom-outline-diameter);
+  height: var(--bloom-outline-diameter);
+  border-radius: 50%;
+  background: var(--threeui-bloom-outline-fill);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .58s cubic-bezier(.19, 1, .22, 1);
+}
+
+.threeui-page-button--bloom-outline > * {
+  position: relative;
+  z-index: 1;
+}
+
+.threeui-page-button--bloom-outline:hover,
+.threeui-page-button--bloom-outline:focus-visible {
+  border-color: var(--threeui-bloom-outline-fg);
+  color: var(--threeui-bloom-outline-fg);
+}
+
+.threeui-page-button--bloom-outline:hover::before,
+.threeui-page-button--bloom-outline:focus-visible::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.threeui-page-button--bloom-outline .threeui-page-button__bloom-label {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.threeui-page-button--bloom-outline .threeui-page-button__bloom-label > span {
+  display: block;
+  transition: transform .5s cubic-bezier(.19, 1, .22, 1);
+}
+
+.threeui-page-button--bloom-outline .threeui-page-button__bloom-label > span + span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(115%);
+}
+
+.threeui-page-button--bloom-outline:hover .threeui-page-button__bloom-label > span:first-child,
+.threeui-page-button--bloom-outline:focus-visible .threeui-page-button__bloom-label > span:first-child {
+  transform: translateY(-115%);
+}
+
+.threeui-page-button--bloom-outline:hover .threeui-page-button__bloom-label > span + span,
+.threeui-page-button--bloom-outline:focus-visible .threeui-page-button__bloom-label > span + span {
+  transform: translateY(0);
+}
+
+.threeui-page-button__bloom-dot {
+  width: 4.8px;
+  height: 4.8px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+  transition: transform .55s cubic-bezier(.19, 1, .22, 1), opacity .4s;
+}
+
+.threeui-page-button--bloom-outline:hover .threeui-page-button__bloom-dot:first-child,
+.threeui-page-button--bloom-outline:focus-visible .threeui-page-button__bloom-dot:first-child {
+  opacity: .5;
+  transform: translateX(5.44px) scale(.6);
+}
+
+.threeui-page-button--bloom-outline:hover .threeui-page-button__bloom-dot:last-child,
+.threeui-page-button--bloom-outline:focus-visible .threeui-page-button__bloom-dot:last-child {
+  transform: translateX(-5.44px) scale(1.7);
+}
+
+.threeui-page-button-stage[data-mode="light"] {
+  --threeui-page-ink: #14161a;
+}
+
+.threeui-page-button-stage--bloom-outline[data-mode="light"] {
+  --threeui-bloom-outline-edge: #3f2c33;
+  --threeui-bloom-outline-fill: #3f2c33;
+  --threeui-bloom-outline-fg: #f5ece6;
+  --threeui-page-ink: #3f2c33;
+  background: #f5ece6;
+}
+
+.threeui-page-button-stage--bloom-outline[data-mode="light"]::before {
+  background:
+    radial-gradient(ellipse at 29% 24%, rgba(181, 128, 142, .2), transparent 34%),
+    radial-gradient(ellipse at 75% 72%, rgba(63, 44, 51, .08), transparent 36%),
+    repeating-radial-gradient(circle at 44% 48%, rgba(138, 95, 108, .08) 0 1px, transparent 1px 4px);
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .threeui-page-button,
+  .threeui-page-button::before,
+  .threeui-page-button svg {
+    transition-duration: .01ms !important;
+  }
+
+  .threeui-page-button--bloom-outline {
+    transform: none !important;
+  }
+}

@@ -78,6 +78,14 @@ import { meta as gradientCtaRectangleButtons } from './button/gradient-cta-recta
 import { meta as lumenCtaRectangleButtons } from './button/lumen-cta-rectangle-buttons/meta';
 import { meta as trochilSignalRectangleButtons } from './button/trochil-signal-rectangle-buttons/meta';
 import { meta as tideformOutlineRectangleButtons } from './button/tideform-outline-rectangle-buttons/meta';
+import { meta as meridianKeycapPrimaryRectangleButtons } from './button/meridian-keycap-primary-rectangle-buttons/meta';
+import { meta as meridianKeycapSecondaryRectangleButtons } from './button/meridian-keycap-secondary-rectangle-buttons/meta';
+import { meta as halvorsenArrowPillRectangleButtons } from './button/halvorsen-arrow-pill-rectangle-buttons/meta';
+import { meta as emberKeycapRectangleButtons } from './button/ember-keycap-rectangle-buttons/meta';
+import { meta as bloomOutlineButtonRectangleButtons } from './button/bloom-outline-button-rectangle-buttons/meta';
+import { meta as playCircleLiquidMetalButton } from './button/play-circle-liquid-metal-button/meta';
+import { meta as signUpPillLiquidMetalButton } from './button/sign-up-pill-liquid-metal-button/meta';
+import { meta as liquidOrbLiquidMetalButton } from './button/liquid-orb-liquid-metal-button/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -161,6 +169,14 @@ export const TEMPLATES = [
   lumenCtaRectangleButtons,
   trochilSignalRectangleButtons,
   tideformOutlineRectangleButtons,
+  meridianKeycapPrimaryRectangleButtons,
+  meridianKeycapSecondaryRectangleButtons,
+  halvorsenArrowPillRectangleButtons,
+  emberKeycapRectangleButtons,
+  bloomOutlineButtonRectangleButtons,
+  playCircleLiquidMetalButton,
+  signUpPillLiquidMetalButton,
+  liquidOrbLiquidMetalButton,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

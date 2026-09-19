@@ -254,6 +254,30 @@ const TrochilSignalRectangleButtonsLive = lazy(
 const TideformOutlineRectangleButtonsLive = lazy(
   () => import('../templates/button/tideform-outline-rectangle-buttons/LivePage'),
 );
+const MeridianKeycapPrimaryRectangleButtonsLive = lazy(
+  () => import('../templates/button/meridian-keycap-primary-rectangle-buttons/LivePage'),
+);
+const MeridianKeycapSecondaryRectangleButtonsLive = lazy(
+  () => import('../templates/button/meridian-keycap-secondary-rectangle-buttons/LivePage'),
+);
+const HalvorsenArrowPillRectangleButtonsLive = lazy(
+  () => import('../templates/button/halvorsen-arrow-pill-rectangle-buttons/LivePage'),
+);
+const EmberKeycapRectangleButtonsLive = lazy(
+  () => import('../templates/button/ember-keycap-rectangle-buttons/LivePage'),
+);
+const BloomOutlineButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/bloom-outline-button-rectangle-buttons/LivePage'),
+);
+const PlayCircleLiquidMetalButtonLive = lazy(
+  () => import('../templates/button/play-circle-liquid-metal-button/LivePage'),
+);
+const SignUpPillLiquidMetalButtonLive = lazy(
+  () => import('../templates/button/sign-up-pill-liquid-metal-button/LivePage'),
+);
+const LiquidOrbLiquidMetalButtonLive = lazy(
+  () => import('../templates/button/liquid-orb-liquid-metal-button/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -1035,6 +1059,78 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <TideformOutlineRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MERIDIAN_KEYCAP_PRIMARY_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MeridianKeycapPrimaryRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MERIDIAN_KEYCAP_SECONDARY_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MeridianKeycapSecondaryRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.HALVORSEN_ARROW_PILL_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <HalvorsenArrowPillRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.EMBER_KEYCAP_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <EmberKeycapRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.BLOOM_OUTLINE_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <BloomOutlineButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PLAY_CIRCLE_LIQUID_METAL_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <PlayCircleLiquidMetalButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SIGN_UP_PILL_LIQUID_METAL_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SignUpPillLiquidMetalButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LIQUID_ORB_LIQUID_METAL_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LiquidOrbLiquidMetalButtonLive />
           </Suspense>
         }
       />
