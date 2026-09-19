@@ -197,6 +197,12 @@ const GatewayFlowConstellationFieldLive = lazy(
 const InterfaceLinesConstellationFieldLive = lazy(
   () => import('../templates/background/interface-lines-constellation-field/LivePage'),
 );
+const CloudFieldPortalFieldLive = lazy(
+  () => import('../templates/background/cloud-field-portal-field/LivePage'),
+);
+const FlowFieldPortalFieldLive = lazy(
+  () => import('../templates/background/flow-field-portal-field/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -807,6 +813,24 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <InterfaceLinesConstellationFieldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CLOUD_FIELD_PORTAL_FIELD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <CloudFieldPortalFieldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.FLOW_FIELD_PORTAL_FIELD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <FlowFieldPortalFieldLive />
           </Suspense>
         }
       />

@@ -59,6 +59,8 @@ import { meta as constellationField } from './background/constellation-field/met
 import { meta as particleDriftConstellationField } from './background/particle-drift-constellation-field/meta';
 import { meta as gatewayFlowConstellationField } from './background/gateway-flow-constellation-field/meta';
 import { meta as interfaceLinesConstellationField } from './background/interface-lines-constellation-field/meta';
+import { meta as cloudFieldPortalField } from './background/cloud-field-portal-field/meta';
+import { meta as flowFieldPortalField } from './background/flow-field-portal-field/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -122,6 +124,8 @@ export const TEMPLATES = [
   particleDriftConstellationField,
   gatewayFlowConstellationField,
   interfaceLinesConstellationField,
+  cloudFieldPortalField,
+  flowFieldPortalField,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

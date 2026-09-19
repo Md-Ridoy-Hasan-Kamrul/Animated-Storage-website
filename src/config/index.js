@@ -65,6 +65,8 @@ export const ROUTES = {
   PARTICLE_DRIFT_CONSTELLATION_FIELD: '/p/particle-drift-constellation-field',
   GATEWAY_FLOW_CONSTELLATION_FIELD: '/p/gateway-flow-constellation-field',
   INTERFACE_LINES_CONSTELLATION_FIELD: '/p/interface-lines-constellation-field',
+  CLOUD_FIELD_PORTAL_FIELD: '/p/cloud-field-portal-field',
+  FLOW_FIELD_PORTAL_FIELD: '/p/flow-field-portal-field',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',
