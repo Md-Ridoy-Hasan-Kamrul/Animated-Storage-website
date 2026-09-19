@@ -56,6 +56,7 @@ export const TEMPLATES = [
   'constellation-field',
   'particle-drift-constellation-field',
   'gateway-flow-constellation-field',
+  'interface-lines-constellation-field',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',

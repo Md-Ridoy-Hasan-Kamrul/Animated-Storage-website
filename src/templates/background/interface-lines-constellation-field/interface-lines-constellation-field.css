@@ -1,0 +1,56 @@
+html.interface-lines-constellation-field-html,
+html.interface-lines-constellation-field-html body,
+html.interface-lines-constellation-field-html #root {
+  height: 100%;
+  margin: 0;
+  background: #050505;
+}
+
+.interface-lines-constellation-field-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #050505;
+  color: #a1a1aa;
+  overflow: hidden;
+}
+
+html.interface-lines-constellation-field-framed .interface-lines-constellation-field-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.interface-lines-constellation-field-page .shader-frame,
+.interface-lines-constellation-field-page .threeui-background.constellation-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.threeui-background.constellation-field {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #050505;
+  pointer-events: auto;
+}
+
+.threeui-background.constellation-field > iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #050505;
+}
