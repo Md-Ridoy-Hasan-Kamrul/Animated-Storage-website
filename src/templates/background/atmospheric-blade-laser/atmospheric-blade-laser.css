@@ -1,0 +1,54 @@
+html.atmospheric-blade-laser-html,
+html.atmospheric-blade-laser-html body,
+html.atmospheric-blade-laser-html #root {
+  height: 100%;
+  margin: 0;
+  background: #020305;
+}
+
+.atmospheric-blade-laser-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #020305;
+  color: #7dffc8;
+  overflow: hidden;
+}
+
+html.atmospheric-blade-laser-framed .atmospheric-blade-laser-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.atmospheric-blade-laser-page .shader-frame,
+.atmospheric-blade-laser-page .threeui-background.laser-variant {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #020305;
+}
+
+.threeui-background.laser-variant {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #020305;
+  pointer-events: auto;
+}
+
+.threeui-background.laser-variant > canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}

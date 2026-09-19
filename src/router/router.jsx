@@ -203,6 +203,12 @@ const CloudFieldPortalFieldLive = lazy(
 const FlowFieldPortalFieldLive = lazy(
   () => import('../templates/background/flow-field-portal-field/LivePage'),
 );
+const MatrixJunctionLaserLive = lazy(
+  () => import('../templates/background/matrix-junction-laser/LivePage'),
+);
+const AtmosphericBladeLaserLive = lazy(
+  () => import('../templates/background/atmospheric-blade-laser/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -831,6 +837,24 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <FlowFieldPortalFieldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MATRIX_JUNCTION_LASER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MatrixJunctionLaserLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.ATMOSPHERIC_BLADE_LASER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <AtmosphericBladeLaserLive />
           </Suspense>
         }
       />

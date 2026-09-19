@@ -59,6 +59,8 @@ export const TEMPLATES = [
   'interface-lines-constellation-field',
   'cloud-field-portal-field',
   'flow-field-portal-field',
+  'matrix-junction-laser',
+  'atmospheric-blade-laser',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
