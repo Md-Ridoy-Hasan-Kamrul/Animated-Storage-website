@@ -227,6 +227,33 @@ const FloatingDotsCtaRectangleButtonsLive = lazy(
 const SlidingTextCtaRectangleButtonsLive = lazy(
   () => import('../templates/button/sliding-text-cta-rectangle-buttons/LivePage'),
 );
+const GradientBeamCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/gradient-beam-cta-rectangle-buttons/LivePage'),
+);
+const GradientPillButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/gradient-pill-button-rectangle-buttons/LivePage'),
+);
+const GenerateButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/generate-button-rectangle-buttons/LivePage'),
+);
+const GlassmorphismCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/glassmorphism-cta-rectangle-buttons/LivePage'),
+);
+const SpinningBorderButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/spinning-border-button-rectangle-buttons/LivePage'),
+);
+const GradientCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/gradient-cta-rectangle-buttons/LivePage'),
+);
+const LumenCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/lumen-cta-rectangle-buttons/LivePage'),
+);
+const TrochilSignalRectangleButtonsLive = lazy(
+  () => import('../templates/button/trochil-signal-rectangle-buttons/LivePage'),
+);
+const TideformOutlineRectangleButtonsLive = lazy(
+  () => import('../templates/button/tideform-outline-rectangle-buttons/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -927,6 +954,87 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <SlidingTextCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GRADIENT_BEAM_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GradientBeamCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GRADIENT_PILL_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GradientPillButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GENERATE_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GenerateButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GLASSMORPHISM_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GlassmorphismCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SPINNING_BORDER_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SpinningBorderButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GRADIENT_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GradientCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LUMEN_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LumenCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TROCHIL_SIGNAL_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TrochilSignalRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TIDEFORM_OUTLINE_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TideformOutlineRectangleButtonsLive />
           </Suspense>
         }
       />

@@ -1,0 +1,118 @@
+.threeui-page-button-stage {
+  --threeui-page-ink: #fff;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050505;
+  color: var(--threeui-page-ink);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.threeui-page-button-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.threeui-page-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.threeui-page-button:focus-visible {
+  outline: 2px solid var(--threeui-page-ink);
+  outline-offset: 5px;
+}
+
+.threeui-page-button-stage--tideform {
+  background: #16181a;
+  font-family: "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.threeui-page-button-stage--tideform::before {
+  background: radial-gradient(ellipse at 76% 44%, rgba(255, 122, 24, .12), transparent 34%);
+}
+
+.threeui-page-button--tideform {
+  gap: 18px;
+  padding: 17px 24px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .055);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .035);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: border-color .25s ease, background-color .25s ease, color .25s ease;
+}
+
+.threeui-page-button--tideform svg {
+  width: 21px;
+  height: 9px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+
+.threeui-page-button--tideform:hover {
+  border-color: #ff7a18;
+  color: #ff7a18;
+  background: rgba(255, 122, 24, .14);
+}
+
+.threeui-page-button--tideform:hover svg {
+  transform: translateX(4px);
+}
+
+.threeui-page-button-stage[data-mode="light"] {
+  --threeui-page-ink: #14161a;
+}
+
+/* Tideform — the outline drops to graphite and the hot state to a deeper
+   orange, which is where it clears text contrast on paper */
+.threeui-page-button-stage--tideform[data-mode="light"] {
+  background: #eeece7;
+  --threeui-page-ink: #16181a;
+}
+
+.threeui-page-button-stage--tideform[data-mode="light"]::before {
+  background: radial-gradient(ellipse at 76% 44%, rgba(214, 96, 12, .16), transparent 34%);
+}
+
+.threeui-page-button-stage--tideform[data-mode="light"] .threeui-page-button--tideform {
+  border-color: rgba(22, 24, 26, .26);
+  background: rgba(22, 24, 26, .035);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .7);
+  color: #16181a;
+}
+
+.threeui-page-button-stage--tideform[data-mode="light"] .threeui-page-button--tideform:hover {
+  border-color: #c25a0c;
+  background: rgba(194, 90, 12, .1);
+  color: #b4530b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .threeui-page-button,
+  .threeui-page-button::before,
+  .threeui-page-button svg {
+    transition-duration: .01ms !important;
+  }
+}

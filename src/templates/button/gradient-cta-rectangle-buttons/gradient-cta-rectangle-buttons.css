@@ -1,0 +1,56 @@
+html.gradient-cta-rectangle-buttons-html,
+html.gradient-cta-rectangle-buttons-html body,
+html.gradient-cta-rectangle-buttons-html #root {
+  height: 100%;
+  margin: 0;
+  background: #111318;
+}
+
+.gradient-cta-rectangle-buttons-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #111318;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+html.gradient-cta-rectangle-buttons-framed .gradient-cta-rectangle-buttons-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.gradient-cta-rectangle-buttons-page .shader-frame,
+.gradient-cta-rectangle-buttons-page .threeui-background.rectangle-buttons-collection {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #111318;
+}
+
+.threeui-background.rectangle-buttons-collection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #111318;
+  pointer-events: auto;
+}
+
+.threeui-background.rectangle-buttons-collection > iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #111318;
+}

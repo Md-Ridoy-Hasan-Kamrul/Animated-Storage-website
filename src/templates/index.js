@@ -69,6 +69,15 @@ import { meta as launchButtonRectangleButtons } from './button/launch-button-rec
 import { meta as dotBorderButtonRectangleButtons } from './button/dot-border-button-rectangle-buttons/meta';
 import { meta as floatingDotsCtaRectangleButtons } from './button/floating-dots-cta-rectangle-buttons/meta';
 import { meta as slidingTextCtaRectangleButtons } from './button/sliding-text-cta-rectangle-buttons/meta';
+import { meta as gradientBeamCtaRectangleButtons } from './button/gradient-beam-cta-rectangle-buttons/meta';
+import { meta as gradientPillButtonRectangleButtons } from './button/gradient-pill-button-rectangle-buttons/meta';
+import { meta as generateButtonRectangleButtons } from './button/generate-button-rectangle-buttons/meta';
+import { meta as glassmorphismCtaRectangleButtons } from './button/glassmorphism-cta-rectangle-buttons/meta';
+import { meta as spinningBorderButtonRectangleButtons } from './button/spinning-border-button-rectangle-buttons/meta';
+import { meta as gradientCtaRectangleButtons } from './button/gradient-cta-rectangle-buttons/meta';
+import { meta as lumenCtaRectangleButtons } from './button/lumen-cta-rectangle-buttons/meta';
+import { meta as trochilSignalRectangleButtons } from './button/trochil-signal-rectangle-buttons/meta';
+import { meta as tideformOutlineRectangleButtons } from './button/tideform-outline-rectangle-buttons/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -143,6 +152,15 @@ export const TEMPLATES = [
   dotBorderButtonRectangleButtons,
   floatingDotsCtaRectangleButtons,
   slidingTextCtaRectangleButtons,
+  gradientBeamCtaRectangleButtons,
+  gradientPillButtonRectangleButtons,
+  generateButtonRectangleButtons,
+  glassmorphismCtaRectangleButtons,
+  spinningBorderButtonRectangleButtons,
+  gradientCtaRectangleButtons,
+  lumenCtaRectangleButtons,
+  trochilSignalRectangleButtons,
+  tideformOutlineRectangleButtons,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,
