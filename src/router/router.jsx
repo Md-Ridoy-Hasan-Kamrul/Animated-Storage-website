@@ -212,6 +212,21 @@ const AtmosphericBladeLaserLive = lazy(
 const VanishingArrayLaserLive = lazy(
   () => import('../templates/background/vanishing-array-laser/LivePage'),
 );
+const RectangleButtonsLive = lazy(
+  () => import('../templates/button/rectangle-buttons/LivePage'),
+);
+const LaunchButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/launch-button-rectangle-buttons/LivePage'),
+);
+const DotBorderButtonRectangleButtonsLive = lazy(
+  () => import('../templates/button/dot-border-button-rectangle-buttons/LivePage'),
+);
+const FloatingDotsCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/floating-dots-cta-rectangle-buttons/LivePage'),
+);
+const SlidingTextCtaRectangleButtonsLive = lazy(
+  () => import('../templates/button/sliding-text-cta-rectangle-buttons/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -867,6 +882,51 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <VanishingArrayLaserLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <RectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.LAUNCH_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <LaunchButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.DOT_BORDER_BUTTON_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <DotBorderButtonRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.FLOATING_DOTS_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <FloatingDotsCtaRectangleButtonsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SLIDING_TEXT_CTA_RECTANGLE_BUTTONS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SlidingTextCtaRectangleButtonsLive />
           </Suspense>
         }
       />

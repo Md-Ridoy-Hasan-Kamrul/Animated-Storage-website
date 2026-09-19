@@ -64,6 +64,11 @@ import { meta as flowFieldPortalField } from './background/flow-field-portal-fie
 import { meta as matrixJunctionLaser } from './background/matrix-junction-laser/meta';
 import { meta as atmosphericBladeLaser } from './background/atmospheric-blade-laser/meta';
 import { meta as vanishingArrayLaser } from './background/vanishing-array-laser/meta';
+import { meta as rectangleButtons } from './button/rectangle-buttons/meta';
+import { meta as launchButtonRectangleButtons } from './button/launch-button-rectangle-buttons/meta';
+import { meta as dotBorderButtonRectangleButtons } from './button/dot-border-button-rectangle-buttons/meta';
+import { meta as floatingDotsCtaRectangleButtons } from './button/floating-dots-cta-rectangle-buttons/meta';
+import { meta as slidingTextCtaRectangleButtons } from './button/sliding-text-cta-rectangle-buttons/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -86,6 +91,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Agency',
   'Hero',
   'Background',
+  'Button',
   'Features',
   'SaaS',
   'Ecommerce',
@@ -132,6 +138,11 @@ export const TEMPLATES = [
   matrixJunctionLaser,
   atmosphericBladeLaser,
   vanishingArrayLaser,
+  rectangleButtons,
+  launchButtonRectangleButtons,
+  dotBorderButtonRectangleButtons,
+  floatingDotsCtaRectangleButtons,
+  slidingTextCtaRectangleButtons,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,
