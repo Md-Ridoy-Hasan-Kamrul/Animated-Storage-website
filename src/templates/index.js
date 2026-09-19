@@ -52,6 +52,7 @@ import { meta as terminalCrt } from './background/terminal-crt/meta';
 import { meta as cinematicCrt } from './background/cinematic-crt/meta';
 import { meta as blueScreenCrt } from './background/blue-screen-crt/meta';
 import { meta as globe } from './background/globe/meta';
+import { meta as sparkBadge } from './background/spark-badge/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -108,6 +109,7 @@ export const TEMPLATES = [
   cinematicCrt,
   blueScreenCrt,
   globe,
+  sparkBadge,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

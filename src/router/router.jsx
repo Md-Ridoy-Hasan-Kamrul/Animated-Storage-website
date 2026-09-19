@@ -176,6 +176,9 @@ const BlueScreenCrtLive = lazy(
 const GlobeLive = lazy(
   () => import('../templates/background/globe/LivePage'),
 );
+const SparkBadgeLive = lazy(
+  () => import('../templates/background/spark-badge/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -723,6 +726,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <GlobeLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.SPARK_BADGE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <SparkBadgeLive />
           </Suspense>
         }
       />

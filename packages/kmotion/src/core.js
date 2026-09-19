@@ -50,6 +50,7 @@ export const TEMPLATES = [
   'cinematic-crt',
   'blue-screen-crt',
   'globe',
+  'spark-badge',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
