@@ -191,6 +191,9 @@ const ConstellationFieldLive = lazy(
 const ParticleDriftConstellationFieldLive = lazy(
   () => import('../templates/background/particle-drift-constellation-field/LivePage'),
 );
+const GatewayFlowConstellationFieldLive = lazy(
+  () => import('../templates/background/gateway-flow-constellation-field/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -783,6 +786,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ParticleDriftConstellationFieldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GATEWAY_FLOW_CONSTELLATION_FIELD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GatewayFlowConstellationFieldLive />
           </Suspense>
         }
       />
