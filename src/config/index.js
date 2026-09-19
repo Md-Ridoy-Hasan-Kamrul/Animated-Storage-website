@@ -69,6 +69,7 @@ export const ROUTES = {
   FLOW_FIELD_PORTAL_FIELD: '/p/flow-field-portal-field',
   MATRIX_JUNCTION_LASER: '/p/matrix-junction-laser',
   ATMOSPHERIC_BLADE_LASER: '/p/atmospheric-blade-laser',
+  VANISHING_ARRAY_LASER: '/p/vanishing-array-laser',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',

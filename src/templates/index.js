@@ -63,6 +63,7 @@ import { meta as cloudFieldPortalField } from './background/cloud-field-portal-f
 import { meta as flowFieldPortalField } from './background/flow-field-portal-field/meta';
 import { meta as matrixJunctionLaser } from './background/matrix-junction-laser/meta';
 import { meta as atmosphericBladeLaser } from './background/atmospheric-blade-laser/meta';
+import { meta as vanishingArrayLaser } from './background/vanishing-array-laser/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -130,6 +131,7 @@ export const TEMPLATES = [
   flowFieldPortalField,
   matrixJunctionLaser,
   atmosphericBladeLaser,
+  vanishingArrayLaser,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

@@ -209,6 +209,9 @@ const MatrixJunctionLaserLive = lazy(
 const AtmosphericBladeLaserLive = lazy(
   () => import('../templates/background/atmospheric-blade-laser/LivePage'),
 );
+const VanishingArrayLaserLive = lazy(
+  () => import('../templates/background/vanishing-array-laser/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -855,6 +858,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <AtmosphericBladeLaserLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.VANISHING_ARRAY_LASER}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <VanishingArrayLaserLive />
           </Suspense>
         }
       />

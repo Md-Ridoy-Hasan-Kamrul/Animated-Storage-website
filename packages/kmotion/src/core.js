@@ -61,6 +61,7 @@ export const TEMPLATES = [
   'flow-field-portal-field',
   'matrix-junction-laser',
   'atmospheric-blade-laser',
+  'vanishing-array-laser',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
