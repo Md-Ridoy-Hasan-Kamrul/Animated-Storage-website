@@ -52,6 +52,7 @@ export const TEMPLATES = [
   'globe',
   'spark-badge',
   'elements',
+  'generative-tree-elements',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',

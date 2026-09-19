@@ -182,6 +182,9 @@ const SparkBadgeLive = lazy(
 const ElementsLive = lazy(
   () => import('../templates/background/elements/LivePage'),
 );
+const GenerativeTreeElementsLive = lazy(
+  () => import('../templates/background/generative-tree-elements/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -747,6 +750,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ElementsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GENERATIVE_TREE_ELEMENTS}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GenerativeTreeElementsLive />
           </Suspense>
         }
       />

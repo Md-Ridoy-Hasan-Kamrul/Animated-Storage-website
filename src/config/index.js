@@ -60,6 +60,7 @@ export const ROUTES = {
   GLOBE: '/p/globe',
   SPARK_BADGE: '/p/spark-badge',
   ELEMENTS: '/p/elements',
+  GENERATIVE_TREE_ELEMENTS: '/p/generative-tree-elements',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',
