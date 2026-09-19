@@ -185,6 +185,9 @@ const ElementsLive = lazy(
 const GenerativeTreeElementsLive = lazy(
   () => import('../templates/background/generative-tree-elements/LivePage'),
 );
+const ConstellationFieldLive = lazy(
+  () => import('../templates/background/constellation-field/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -759,6 +762,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <GenerativeTreeElementsLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.CONSTELLATION_FIELD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ConstellationFieldLive />
           </Suspense>
         }
       />
