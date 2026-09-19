@@ -13,6 +13,7 @@ import {
   ELEMENTAL_MARKS_HTML_SHA256,
   ELEMENTS_COMPONENT_SHA256,
   ELEMENTS_DEFAULT_PROPS,
+  PREVIEW_STILL,
   SOURCE_REVISION,
   SOURCE_URL,
   VARIANT_ID,
@@ -29,6 +30,12 @@ describe('Elements — meta', () => {
     expect(meta.category).toBe('Background');
     expect(meta.categorySlug).toBe('background');
     expect(meta.height).toBe('h-[272px]');
+  });
+
+  it('binds previewImage to a public still path', () => {
+    expect(meta.previewImage).toBe(PREVIEW_STILL);
+    expect(meta.previewGif).toBe(PREVIEW_STILL);
+    expect(PREVIEW_STILL).toBe('/images/Assets%20Elements/Elements.png');
   });
 
   it('keeps Background on the gallery navbar tabs', () => {

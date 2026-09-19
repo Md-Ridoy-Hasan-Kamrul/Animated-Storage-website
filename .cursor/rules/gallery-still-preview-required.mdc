@@ -1,0 +1,30 @@
+---
+description: Every new gallery card must ship a real preview still PNG on disk before the task is done
+alwaysApply: true
+---
+
+# Gallery card → still preview must exist on disk
+
+**Meaning (user intent):**  
+A template card is **not finished** until the gallery **STILL PREVIEW** image loads. A broken-image icon on the card is a shipping failure.
+
+## Required before claiming a card is done
+
+1. Write a real PNG (or SVG) under `public/images/Assets <Card Name>/`.
+2. Point `PREVIEW_STILL` / `meta.previewImage` / `meta.previewGif` at that file using the same URL style as sibling cards, e.g. `/images/Assets%20Elements/Elements.png`.
+3. **Verify on disk:** `Test-Path` / `fs.existsSync` the decoded path under `public/images/...` — do not only set the string constant.
+4. **Verify in browser:** open the image URL and the Background (or target) gallery card; confirm the preview paints (no broken-image icon).
+5. Add/keep a unit test that asserts the preview file exists and has a non-trivial size (`> 10_000` bytes for PNG).
+
+## Common failure (do not repeat)
+
+- Setting `PREVIEW_STILL` while the PNG was never written, was written to a temp path, or was lost after a session — gallery shows **STILL PREVIEW** + broken image.
+
+## Done checklist (last steps of every new card)
+
+- [ ] `public/images/Assets …/<Name>.png` exists in the repo working tree
+- [ ] `meta.previewImage === PREVIEW_STILL`
+- [ ] Gallery card renders the still (hard refresh if needed)
+- [ ] Asset/preview existence test passes
+
+**STOP** if the still is missing: write/capture the image, then finish. Do not hand off with only routes/components.

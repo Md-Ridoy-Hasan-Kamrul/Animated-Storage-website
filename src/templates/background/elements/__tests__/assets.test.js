@@ -5,9 +5,16 @@ import {
   ASSET_MANIFEST,
   ELEMENTAL_MARKS_HTML_SHA256,
   ELEMENTS_COMPONENT_SHA256,
+  PREVIEW_STILL,
 } from '../constants';
 
 const ROOT = path.resolve(__dirname, '../../../../../');
+const MIN_PREVIEW_BYTES = 10_000;
+
+function previewStillAbsolutePath(urlPath) {
+  const decoded = decodeURIComponent(urlPath.replace(/^\//, ''));
+  return path.join(ROOT, 'public', decoded.replace(/^images[\\/]/, 'images' + path.sep));
+}
 
 describe('Elements packaged assets', () => {
   it.each(ASSET_MANIFEST)('keeps byte-exact $path', ({ path: relativePath, bytes, sha256 }) => {
@@ -16,6 +23,15 @@ describe('Elements packaged assets', () => {
     const buffer = fs.readFileSync(absolute);
     expect(buffer.length).toBe(bytes);
     expect(crypto.createHash('sha256').update(buffer).digest('hex')).toBe(sha256);
+  });
+
+  it('ships a real gallery still preview on disk (no broken STILL PREVIEW)', () => {
+    expect(PREVIEW_STILL).toBe('/images/Assets%20Elements/Elements.png');
+    const absolute = path.join(ROOT, 'public/images/Assets Elements/Elements.png');
+    expect(fs.existsSync(absolute)).toBe(true);
+    const size = fs.statSync(absolute).size;
+    expect(size).toBeGreaterThan(MIN_PREVIEW_BYTES);
+    expect(previewStillAbsolutePath(PREVIEW_STILL)).toBe(absolute);
   });
 
   it('keeps the verified ElementsBackground component and elemental marks provenance', () => {
