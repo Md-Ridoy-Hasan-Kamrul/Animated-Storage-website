@@ -57,6 +57,7 @@ export const ROUTES = {
   TERMINAL_CRT: '/p/terminal-crt',
   CINEMATIC_CRT: '/p/cinematic-crt',
   BLUE_SCREEN_CRT: '/p/blue-screen-crt',
+  GLOBE: '/p/globe',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',

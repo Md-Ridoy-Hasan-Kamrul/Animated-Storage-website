@@ -173,6 +173,9 @@ const CinematicCrtLive = lazy(
 const BlueScreenCrtLive = lazy(
   () => import('../templates/background/blue-screen-crt/LivePage'),
 );
+const GlobeLive = lazy(
+  () => import('../templates/background/globe/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -711,6 +714,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <BlueScreenCrtLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GLOBE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GlobeLive />
           </Suspense>
         }
       />

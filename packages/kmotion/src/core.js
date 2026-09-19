@@ -49,6 +49,7 @@ export const TEMPLATES = [
   'terminal-crt',
   'cinematic-crt',
   'blue-screen-crt',
+  'globe',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
