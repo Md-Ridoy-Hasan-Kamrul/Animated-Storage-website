@@ -56,6 +56,7 @@ import { meta as sparkBadge } from './background/spark-badge/meta';
 import { meta as elements } from './background/elements/meta';
 import { meta as generativeTreeElements } from './background/generative-tree-elements/meta';
 import { meta as constellationField } from './background/constellation-field/meta';
+import { meta as particleDriftConstellationField } from './background/particle-drift-constellation-field/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -116,6 +117,7 @@ export const TEMPLATES = [
   elements,
   generativeTreeElements,
   constellationField,
+  particleDriftConstellationField,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

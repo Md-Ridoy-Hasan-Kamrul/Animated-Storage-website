@@ -62,6 +62,7 @@ export const ROUTES = {
   ELEMENTS: '/p/elements',
   GENERATIVE_TREE_ELEMENTS: '/p/generative-tree-elements',
   CONSTELLATION_FIELD: '/p/constellation-field',
+  PARTICLE_DRIFT_CONSTELLATION_FIELD: '/p/particle-drift-constellation-field',
   JAPANESE_TOWER_LANDSCAPE: '/p/japanese-tower-landscape',
   CHINA_JAPANESE_TOWER_LANDSCAPE: '/p/china-japanese-tower-landscape',
   VIETNAM_JAPANESE_TOWER_LANDSCAPE: '/p/vietnam-japanese-tower-landscape',

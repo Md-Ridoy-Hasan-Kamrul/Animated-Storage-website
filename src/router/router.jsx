@@ -188,6 +188,9 @@ const GenerativeTreeElementsLive = lazy(
 const ConstellationFieldLive = lazy(
   () => import('../templates/background/constellation-field/LivePage'),
 );
+const ParticleDriftConstellationFieldLive = lazy(
+  () => import('../templates/background/particle-drift-constellation-field/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -771,6 +774,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ConstellationFieldLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PARTICLE_DRIFT_CONSTELLATION_FIELD}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ParticleDriftConstellationFieldLive />
           </Suspense>
         }
       />

@@ -54,6 +54,7 @@ export const TEMPLATES = [
   'elements',
   'generative-tree-elements',
   'constellation-field',
+  'particle-drift-constellation-field',
   'japanese-tower-landscape',
   'china-japanese-tower-landscape',
   'vietnam-japanese-tower-landscape',
