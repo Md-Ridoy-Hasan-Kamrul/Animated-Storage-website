@@ -6,6 +6,7 @@ import { getTemplateById, TEMPLATES } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
 import TemplateCard from '../components/home/TemplateCard';
+import SourceDocsPanel from '../components/template-detail/SourceDocsPanel';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
@@ -133,14 +134,21 @@ const TemplateDetail = memo(() => {
               Copy full prompt
             </button>
 
+            <SourceDocsPanel template={template} />
+
             <div className="flex flex-col gap-3">
-              <div className="flex flex-wrap gap-1.5">
+              <p className="text-[11px] font-medium uppercase tracking-wide text-zinc-500">
+                Kmotion Preview npm
+              </p>
+              <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Preview framework">
                 {KMOTION_STACKS.map(({ id: stackId, label }) => {
                   const selected = npmStack === stackId;
                   return (
                     <button
                       key={stackId}
                       type="button"
+                      role="tab"
+                      aria-selected={selected}
                       onClick={() => setNpmStack(stackId)}
                       className={
                         selected
@@ -169,9 +177,10 @@ const TemplateDetail = memo(() => {
             </div>
 
             <p className="text-[12px] leading-relaxed text-zinc-500">
-              Two ways to use this card: copy the prompt, or install{' '}
+              Three ways to use this card: copy the full prompt; copy Usage / Code / Skill.md from
+              the source panel (one Code source — not per framework); or install{' '}
               <code className="text-zinc-300">{KMOTION_PACKAGE}</code> and pick React, Vue, Svelte,
-              Solid, or JS.
+              Solid, or JS for the Preview embed.
             </p>
           </aside>
         </div>
