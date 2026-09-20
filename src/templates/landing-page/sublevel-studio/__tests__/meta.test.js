@@ -12,6 +12,11 @@ import {
 } from '../constants';
 import { meta } from '../meta';
 import { SUBLEVEL_STUDIO_PROMPT } from '../prompt';
+import { SUBLEVEL_STUDIO_SKILL, SUBLEVEL_STUDIO_USAGE } from '../sourceDocs';
+import {
+  buildCodeFetchCandidates,
+  resolveTemplateSourceDocs,
+} from '../../../../utils/resolveTemplateSourceDocs';
 
 describe('Sublevel Studio meta', () => {
   it('registers the Landing Page card Sublevel Studio', () => {
@@ -71,5 +76,23 @@ describe('Sublevel Studio source contract', () => {
     expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(
       true,
     );
+  });
+
+  it('exposes Usage / Code / Skill.md for the details source panel', () => {
+    expect(meta.usage).toBe(SUBLEVEL_STUDIO_USAGE);
+    expect(meta.usage).toContain('SublevelStudioLandingPage');
+    expect(meta.codeUrl).toBe(SOURCE_URL);
+    expect(meta.codeUrl).toBe('/landing-pages/sublevel-studio.html');
+    expect(meta.skill).toBe(SUBLEVEL_STUDIO_SKILL);
+    expect(meta.skill).toContain('Build Sublevel Studio');
+    expect(meta.skill).toContain('SHA-256 c04c64d8524a');
+    expect(meta.componentName).toBe('SublevelStudioLandingPage');
+
+    const docs = resolveTemplateSourceDocs(meta);
+    expect(docs.usage).toContain('SublevelStudioLandingPage');
+    expect(docs.skill).toContain('add-sublevel-studio-landing-page');
+    expect(buildCodeFetchCandidates(meta)).toEqual([
+      '/landing-pages/sublevel-studio.html',
+    ]);
   });
 });

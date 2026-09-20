@@ -1,6 +1,7 @@
 import {
   colorForTokenType,
   detectDocsLanguage,
+  HIGHLIGHT_MAX_CHARS,
   tokenizeSource,
   THREEUI_SYNTAX_COLORS,
 } from '../syntaxHighlight';
@@ -62,5 +63,29 @@ describe('syntaxHighlight', () => {
     expect(tokens.some((t) => t.type === 'heading' && t.text.startsWith('# Build'))).toBe(true);
     expect(tokens.some((t) => t.type === 'mdCode' && t.text.includes('#stage'))).toBe(true);
     expect(tokens.some((t) => t.type === 'mdStrong' && t.text.includes('exact'))).toBe(true);
+  });
+
+  it('does not stack-overflow on HTML script comparisons like a<b', () => {
+    const html = `<!DOCTYPE html><html><body><script>
+for(var i=0;i<len;i++){if(a<b&&c>d){foo(i);}}
+</script></body></html>`;
+    expect(() => tokenizeSource(html, 'html')).not.toThrow();
+    const tokens = tokenizeSource(html, 'html');
+    expect(tokens.length).toBeGreaterThan(5);
+    expect(tokens.some((t) => t.text === 'script')).toBe(true);
+  });
+
+  it('still highlights real JSX tags in Usage/TSX', () => {
+    const tokens = tokenizeSource('<Foo bar={1} />', 'tsx');
+    expect(tokens.some((t) => t.type === 'tag' && t.text === 'Foo')).toBe(true);
+    expect(tokens.some((t) => t.type === 'attr' && t.text === 'bar')).toBe(true);
+  });
+
+  it('skips fancy tokenization for huge Code bodies', () => {
+    const huge = `<!DOCTYPE html>${'x'.repeat(HIGHLIGHT_MAX_CHARS)}`;
+    const tokens = tokenizeSource(huge, 'html');
+    expect(tokens).toHaveLength(1);
+    expect(tokens[0].type).toBe('plain');
+    expect(tokens[0].text.length).toBe(HIGHLIGHT_MAX_CHARS);
   });
 });

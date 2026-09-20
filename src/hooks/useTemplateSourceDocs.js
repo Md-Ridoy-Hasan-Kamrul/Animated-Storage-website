@@ -6,21 +6,35 @@ import {
 
 /**
  * Resolves Usage / Code / Skill.md for a template card.
- * Usage + Skill are sync; Code may hydrate from /effects/{id}.{js,html}.
+ * Usage + Skill are sync; Code hydrates from codeUrl only when requested
+ * (avoids downloading multi-MB HTML while the user is still on Usage).
+ *
+ * @param {object} template
+ * @param {{ loadCode?: boolean }} [options]
  */
-export function useTemplateSourceDocs(template) {
+export function useTemplateSourceDocs(template, options = {}) {
+  const loadCode = options.loadCode === true;
   const base = useMemo(() => resolveTemplateSourceDocs(template), [template]);
   const [code, setCode] = useState(base.code);
-  const [codeStatus, setCodeStatus] = useState(base.code ? 'ready' : 'loading');
+  const [codeStatus, setCodeStatus] = useState(
+    base.code ? 'ready' : loadCode ? 'loading' : 'idle',
+  );
 
   useEffect(() => {
     let cancelled = false;
     setCode(base.code);
+
     if (base.code) {
       setCodeStatus('ready');
       return undefined;
     }
-    if (!template?.id) {
+
+    if (!loadCode) {
+      setCodeStatus('idle');
+      return undefined;
+    }
+
+    if (!template?.id && !template?.codeUrl && !template?.sourceUrl) {
       setCodeStatus('empty');
       return undefined;
     }
@@ -35,7 +49,7 @@ export function useTemplateSourceDocs(template) {
     return () => {
       cancelled = true;
     };
-  }, [template, base.code]);
+  }, [template, base.code, loadCode]);
 
   return {
     usage: base.usage,

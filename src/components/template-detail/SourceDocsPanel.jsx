@@ -31,12 +31,16 @@ function copyLabelForTab(tabId) {
  * Framework-specific snippets stay in the Kmotion npm section below.
  */
 const SourceDocsPanel = memo(function SourceDocsPanel({ template }) {
-  const docs = useTemplateSourceDocs(template);
   const [activeTab, setActiveTab] = useState('usage');
   const [copiedTab, setCopiedTab] = useState('');
+  const [codeRequested, setCodeRequested] = useState(false);
+
+  const loadCode = activeTab === 'code' || codeRequested;
+  const docs = useTemplateSourceDocs(template, { loadCode });
 
   const activeBody = useMemo(() => bodyForTab(docs, activeTab), [docs, activeTab]);
-  const isCodeLoading = activeTab === 'code' && docs.codeStatus === 'loading';
+  const isCodeLoading =
+    activeTab === 'code' && (docs.codeStatus === 'loading' || docs.codeStatus === 'idle');
   const canCopy = Boolean(activeBody) && !isCodeLoading;
 
   const onCopy = useCallback(async () => {
@@ -68,7 +72,10 @@ const SourceDocsPanel = memo(function SourceDocsPanel({ template }) {
                 role="tab"
                 aria-selected={selected}
                 id={`source-doc-tab-${id}`}
-                onClick={() => setActiveTab(id)}
+                onClick={() => {
+                  if (id === 'code') setCodeRequested(true);
+                  setActiveTab(id);
+                }}
                 className={
                   selected
                     ? 'shrink-0 cursor-pointer border-b-2 border-white py-3 text-[13px] font-medium text-white'

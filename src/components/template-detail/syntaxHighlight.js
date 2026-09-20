@@ -124,12 +124,17 @@ export function detectDocsLanguage(tabId, source = '') {
   return 'javascript';
 }
 
+/** Skip colorful tokenization above this size — multi-MB HTML would freeze the panel. */
+export const HIGHLIGHT_MAX_CHARS = 120_000;
+
 /**
  * Tokenize JS / TS / TSX / JSX for ThreeUI-like coloring.
  * @param {string} source
+ * @param {{ jsx?: boolean }} [options] — set `jsx: false` inside HTML `<script>` (comparisons like `a<b` must not recurse as JSX).
  * @returns {{ text: string, type: string }[]}
  */
-export function tokenizeScript(source) {
+export function tokenizeScript(source, options = {}) {
+  const allowJsx = options.jsx !== false;
   const out = [];
   let i = 0;
   const len = source.length;
@@ -174,11 +179,14 @@ export function tokenizeScript(source) {
       continue;
     }
 
-    if (ch === '<' && /[A-Za-z/!]/.test(next || '')) {
+    if (allowJsx && ch === '<' && /[A-Za-z/!]/.test(next || '')) {
       const tagTokens = tokenizeJsxTag(source, i);
-      out.push(...tagTokens.tokens);
-      i = tagTokens.nextIndex;
-      continue;
+      if (tagTokens) {
+        out.push(...tagTokens.tokens);
+        i = tagTokens.nextIndex;
+        continue;
+      }
+      // False positive (e.g. `a<b`) — fall through as punctuation.
     }
 
     if (/[0-9]/.test(ch) || (ch === '.' && /[0-9]/.test(next || ''))) {
@@ -216,8 +224,11 @@ export function tokenizeScript(source) {
 }
 
 /**
+ * Parse a single JSX/HTML tag starting at `<`. Returns null when `<` is not a tag
+ * (e.g. comparison `a<b`), so the caller can treat `<` as punctuation instead of recursing.
  * @param {string} source
  * @param {number} start
+ * @returns {{ tokens: { text: string, type: string }[], nextIndex: number } | null}
  */
 function tokenizeJsxTag(source, start) {
   const tokens = [];
@@ -246,16 +257,19 @@ function tokenizeJsxTag(source, start) {
     i = j;
   }
 
+  let closed = false;
   while (i < len) {
     const ch = source[i];
     if (ch === '>') {
       tokens.push(token('>', 'punct'));
       i += 1;
+      closed = true;
       break;
     }
     if (ch === '/' && source[i + 1] === '>') {
       tokens.push(token('/>', 'punct'));
       i += 2;
+      closed = true;
       break;
     }
     if (/\s/.test(ch)) {
@@ -272,7 +286,7 @@ function tokenizeJsxTag(source, start) {
       i = k;
       continue;
     }
-    if (ch === '=' ) {
+    if (ch === '=') {
       tokens.push(token('=', 'punct'));
       i += 1;
       continue;
@@ -299,15 +313,16 @@ function tokenizeJsxTag(source, start) {
       }
       const inner = source.slice(i + 1, k - 1);
       tokens.push(token('{', 'punct'));
-      tokens.push(...tokenizeScript(inner));
+      tokens.push(...tokenizeScript(inner, { jsx: true }));
       tokens.push(token('}', 'punct'));
       i = k;
       continue;
     }
-    tokens.push(token(ch, 'plain'));
-    i += 1;
+    // Not a valid tag character (e.g. `)` in `a<b)`) — abort JSX parse.
+    return null;
   }
 
+  if (!closed) return null;
   return { tokens, nextIndex: i };
 }
 
@@ -332,7 +347,8 @@ export function tokenizeHtml(source) {
     if (inScript) {
       const close = source.toLowerCase().indexOf('</script', i);
       const end = close === -1 ? len : close;
-      out.push(...tokenizeScript(source.slice(i, end)));
+      // Script bodies are JS, not JSX — `i<len` must not recurse as tags.
+      out.push(...tokenizeScript(source.slice(i, end), { jsx: false }));
       i = end;
       inScript = false;
       continue;
@@ -341,9 +357,16 @@ export function tokenizeHtml(source) {
     if (source[i] === '<') {
       const lowerSlice = source.slice(i, i + 12).toLowerCase();
       const tag = tokenizeJsxTag(source, i);
-      out.push(...tag.tokens);
-      i = tag.nextIndex;
-      if (lowerSlice.startsWith('<script')) inScript = true;
+      if (tag) {
+        out.push(...tag.tokens);
+        i = tag.nextIndex;
+        if (lowerSlice.startsWith('<script') && !lowerSlice.startsWith('<script/')) {
+          inScript = true;
+        }
+        continue;
+      }
+      out.push(token('<', 'punct'));
+      i += 1;
       continue;
     }
 
@@ -437,9 +460,15 @@ function tokenizeInlineMarkdown(line) {
  */
 export function tokenizeSource(source, language) {
   if (!source) return [];
-  if (language === 'markdown') return tokenizeMarkdown(source);
-  if (language === 'html') return tokenizeHtml(source);
-  return tokenizeScript(source);
+  // Never paint multi-MB strings into token spans — caller should also truncate for display.
+  const body =
+    source.length > HIGHLIGHT_MAX_CHARS ? source.slice(0, HIGHLIGHT_MAX_CHARS) : source;
+  if (source.length > HIGHLIGHT_MAX_CHARS) {
+    return [token(body, 'plain')];
+  }
+  if (language === 'markdown') return tokenizeMarkdown(body);
+  if (language === 'html') return tokenizeHtml(body);
+  return tokenizeScript(body);
 }
 
 /**
