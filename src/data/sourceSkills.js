@@ -3,6 +3,8 @@
  * One skill per component family — not per framework and not per card variant.
  */
 
+import { KAGE_SKILL } from '../templates/landing-page/kage/sourceDocs';
+
 export const SOURCE_SKILLS = {
   GalleryHeading: `---
 name: add-gallery-heading
@@ -74,6 +76,8 @@ Recreate the authored Thinking Button from the verified Neuform / ThreeUI source
 - Preserve authored motion, focus isolation, and sandbox teardown.
 - Do not substitute a different button demo or library.
 `,
+
+  KageLandingPage: KAGE_SKILL,
 };
 
 /**

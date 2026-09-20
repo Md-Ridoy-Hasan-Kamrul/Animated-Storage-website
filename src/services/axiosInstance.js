@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { API_CONFIG } from '../config';
 import { API_ENDPOINTS } from './httpEndpoint';
-import store from '../store/store';
-import { logout, loginSuccess } from '../store/slices/authSlice';
+import { useAuthStore } from '../store/authStore';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -75,15 +74,16 @@ axiosInstance.interceptors.response.use(
 
         const refreshed = await refreshPromise;
         const newToken = refreshed.token ?? refreshed.accessToken;
-        const user = refreshed.user ?? store.getState().auth.user;
+        const { loginSuccess, user: currentUser } = useAuthStore.getState();
+        const user = refreshed.user ?? currentUser;
 
-        store.dispatch(loginSuccess({ token: newToken, user }));
+        loginSuccess({ token: newToken, user });
 
         originalRequest.headers.Authorization = `Bearer ${newToken}`;
         return axiosInstance(originalRequest);
       } catch {
-        store.dispatch(logout());
-        // ProtectedRoute will redirect to login once Redux state updates
+        useAuthStore.getState().logout();
+        // ProtectedRoute will redirect to login once auth state updates
         return Promise.reject(error);
       }
     }

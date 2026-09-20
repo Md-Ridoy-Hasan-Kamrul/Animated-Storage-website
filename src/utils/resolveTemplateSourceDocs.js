@@ -25,6 +25,8 @@ function trimDoc(value) {
 export function buildCodeFetchCandidates(template) {
   if (!template) return [];
   if (template.codeUrl) return [trimDoc(template.codeUrl)].filter(Boolean);
+  const sourceUrl = trimDoc(template.sourceUrl);
+  if (sourceUrl) return [sourceUrl];
   const id = trimDoc(template.id);
   if (!id) return [];
   return [

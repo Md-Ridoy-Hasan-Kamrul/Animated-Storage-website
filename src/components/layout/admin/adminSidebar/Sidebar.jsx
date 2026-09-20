@@ -1,8 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { ROUTES } from "../../../../config";
-import { selectUser } from "../../../../store/slices/authSlice";
+import { useAuthStore } from "../../../../store/authStore";
 import {
   LayoutDashboard,
   Mail,
@@ -57,9 +56,11 @@ const Sidebar = ({
   onExpand,
 }) => {
   const navigate = useNavigate();
-  const user = useSelector(selectUser);
+  const user = useAuthStore((s) => s.user);
+  const logout = useAuthStore((s) => s.logout);
 
   const handleLogout = () => {
+    logout();
     toast.success("Signed out successfully");
     setTimeout(() => navigate(ROUTES.LOGIN), 900);
   };

@@ -26,7 +26,7 @@ export function useSocket({
   const [socketError, setSocketError] = useState(null);
 
   useEffect(() => {
-    // Read token from localStorage (set by authSlice listener middleware)
+    // Read token from localStorage (set by authStore on login)
     const token = localStorage.getItem('token');
     socket.auth = { token };
 

@@ -13,6 +13,8 @@ import {
 } from '../constants';
 import { meta } from '../meta';
 import { KAGE_PROMPT } from '../prompt';
+import { KAGE_SKILL, KAGE_USAGE } from '../sourceDocs';
+import { resolveTemplateSourceDocs, buildCodeFetchCandidates } from '../../../../utils/resolveTemplateSourceDocs';
 
 describe('KAGE meta', () => {
   it('registers the Landing Page card KAGE', () => {
@@ -77,5 +79,22 @@ describe('KAGE source contract', () => {
   it('lists every required packaged asset for hash checks', () => {
     expect(ASSET_MANIFEST).toHaveLength(17);
     expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(true);
+  });
+
+  it('exposes Usage / Code / Skill.md for the details source panel', () => {
+    expect(meta.usage).toBe(KAGE_USAGE);
+    expect(meta.usage).toContain('KageLandingPage');
+    expect(meta.usage).toContain('primaryColor="#e0231c"');
+    expect(meta.codeUrl).toBe(SOURCE_URL);
+    expect(meta.codeUrl).toBe('/landing-pages/kage.html');
+    expect(meta.skill).toBe(KAGE_SKILL);
+    expect(meta.skill).toContain('Build Kage');
+    expect(meta.skill).toContain('SHA-256 c8e06b90397a');
+    expect(meta.componentName).toBe('KageLandingPage');
+
+    const docs = resolveTemplateSourceDocs(meta);
+    expect(docs.usage).toContain('headingFont="onest"');
+    expect(docs.skill).toContain('add-kage-landing-page');
+    expect(buildCodeFetchCandidates(meta)).toEqual(['/landing-pages/kage.html']);
   });
 });

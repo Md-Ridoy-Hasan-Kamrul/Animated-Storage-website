@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { loginSuccess } from '../store/slices/authSlice';
+import { useAuthStore } from '../store/authStore';
 import { ROUTES, APP_CONFIG } from '../config';
 import { httpMethods } from '../services/httpMethods';
 import { API_ENDPOINTS } from '../services/httpEndpoint';
@@ -28,7 +27,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
+  const loginSuccess = useAuthStore((s) => s.loginSuccess);
 
   const [email, setEmail] = useState(process.env.REACT_APP_DEV_DEFAULT_EMAIL || '');
   const [password, setPassword] = useState(process.env.REACT_APP_DEV_DEFAULT_PASSWORD || '');
@@ -61,7 +60,7 @@ const Login = () => {
     try {
       // ── Dev-only bypass: skip API when backend is not yet connected ──
       if (process.env.REACT_APP_DEV_MOCK_AUTH === 'true') {
-        dispatch(loginSuccess({ user: { email }, token: null }));
+        loginSuccess({ user: { email }, token: null });
         const destination = location.state?.from?.pathname ?? ROUTES.ADMIN_DASHBOARD;
         navigate(destination, { replace: true });
         return;
@@ -79,7 +78,7 @@ const Login = () => {
       }
       const token = data?.token ?? data?.data?.token ?? data?.accessToken;
       const user = data?.user ?? data?.data?.user ?? null;
-      dispatch(loginSuccess({ user, token }));
+      loginSuccess({ user, token });
       const destination = location.state?.from?.pathname ?? ROUTES.ADMIN_DASHBOARD;
       navigate(destination, { replace: true });
     } finally {

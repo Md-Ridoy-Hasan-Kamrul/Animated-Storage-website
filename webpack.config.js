@@ -137,12 +137,6 @@ module.exports = (env, argv) => {
             chunks: 'all',
             priority: 20,
           },
-          redux: {
-            test: /[\\/]node_modules[\\/](@reduxjs|react-redux)[\\/]/,
-            name: 'vendor-redux',
-            chunks: 'all',
-            priority: 10,
-          },
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',

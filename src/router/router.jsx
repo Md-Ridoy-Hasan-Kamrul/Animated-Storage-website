@@ -7,11 +7,10 @@ import {
   Link,
   useLocation,
 } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Layout from '../components/Layout';
 import AdminLayout from '../components/layout/admin/Layout';
 import { ROUTES } from '../config';
-import { selectIsAuthenticated } from '../store/slices/authSlice';
+import { useAuthStore } from '../store/authStore';
 
 // Derive a relative segment from an absolute admin route path
 const seg = (route) => route.replace(`${ROUTES.ADMIN}/`, '');
@@ -369,7 +368,7 @@ const NotFound = () => (
 );
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const location = useLocation();
   if (!isAuthenticated) {
     return <Navigate to={ROUTES.LOGIN} state={{ from: location }} replace />;

@@ -1,11 +1,11 @@
 import React, { memo, useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { Send, ArrowLeft } from 'lucide-react';
-import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { useSocket } from '../../hooks/useSocket';
 import { socket } from '../../services/socket';
 import { httpMethods } from '../../services/httpMethods';
 import API_ENDPOINTS from '../../services/httpEndpoint';
+import { useAuthStore } from '../../store/authStore';
 
 const getInitials = (name = '') =>
   name
@@ -167,7 +167,7 @@ const SentGroup = memo(({ messages }) => (
 SentGroup.displayName = 'SentGroup';
 
 const ChatPanel = memo(({ className = '', style, role = 'user' }) => {
-  const currentUser = useSelector((state) => state.auth.user);
+  const currentUser = useAuthStore((s) => s.user);
   const isAdmin = role === 'admin';
 
   const [rooms, setRooms] = useState([]);
