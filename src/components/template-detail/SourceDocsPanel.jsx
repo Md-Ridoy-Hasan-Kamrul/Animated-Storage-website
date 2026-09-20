@@ -7,6 +7,7 @@ import {
   SOURCE_DOC_TABS,
 } from '../../utils/resolveTemplateSourceDocs';
 import { useTemplateSourceDocs } from '../../hooks/useTemplateSourceDocs';
+import HighlightedCode from './HighlightedCode';
 
 const COPY_ICON_SIZE = 16;
 const PANEL_MAX_HEIGHT = 'min(42vh, 360px)';
@@ -112,9 +113,7 @@ const SourceDocsPanel = memo(function SourceDocsPanel({ template }) {
         {isCodeLoading ? (
           <p className="text-[12px] text-zinc-500">Loading source…</p>
         ) : activeBody ? (
-          <pre className="whitespace-pre-wrap break-words font-mono text-[11px] leading-relaxed text-zinc-300 sm:text-[12px]">
-            {activeBody}
-          </pre>
+          <HighlightedCode source={activeBody} tabId={activeTab} />
         ) : (
           <p className="text-[12px] text-zinc-500">{SOURCE_DOC_EMPTY_MESSAGE}</p>
         )}
