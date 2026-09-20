@@ -13,6 +13,11 @@ import {
 } from '../constants';
 import { meta } from '../meta';
 import { SKETCHBOOK_PROMPT } from '../prompt';
+import { SKETCHBOOK_SKILL, SKETCHBOOK_USAGE } from '../sourceDocs';
+import {
+  buildCodeFetchCandidates,
+  resolveTemplateSourceDocs,
+} from '../../../../utils/resolveTemplateSourceDocs';
 
 describe('Sketchbook meta', () => {
   it('registers the Landing Page card Sketchbook', () => {
@@ -83,5 +88,24 @@ describe('Sketchbook source contract', () => {
     expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(
       true,
     );
+  });
+
+  it('exposes Usage / Code / Skill.md for the details source panel', () => {
+    expect(meta.usage).toBe(SKETCHBOOK_USAGE);
+    expect(meta.usage).toContain('MengToSketchbookLandingPage');
+    expect(meta.usage).toContain('primaryColor="#2b2721"');
+    expect(meta.codeUrl).toBe(SOURCE_URL);
+    expect(meta.codeUrl).toBe('/landing-pages/meng-to-sketchbook.html');
+    expect(meta.skill).toBe(SKETCHBOOK_SKILL);
+    expect(meta.skill).toContain('Build Sketchbook');
+    expect(meta.skill).toContain('SHA-256 e0330548b1ac');
+    expect(meta.componentName).toBe('MengToSketchbookLandingPage');
+
+    const docs = resolveTemplateSourceDocs(meta);
+    expect(docs.usage).toContain('headingFont="instrument-serif"');
+    expect(docs.skill).toContain('add-meng-to-sketchbook-landing-page');
+    expect(buildCodeFetchCandidates(meta)).toEqual([
+      '/landing-pages/meng-to-sketchbook.html',
+    ]);
   });
 });

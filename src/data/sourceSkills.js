@@ -4,6 +4,7 @@
  */
 
 import { KAGE_SKILL } from '../templates/landing-page/kage/sourceDocs';
+import { SKETCHBOOK_SKILL } from '../templates/landing-page/sketchbook/sourceDocs';
 
 export const SOURCE_SKILLS = {
   GalleryHeading: `---
@@ -78,6 +79,8 @@ Recreate the authored Thinking Button from the verified Neuform / ThreeUI source
 `,
 
   KageLandingPage: KAGE_SKILL,
+
+  MengToSketchbookLandingPage: SKETCHBOOK_SKILL,
 };
 
 /**
