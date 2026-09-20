@@ -1,0 +1,42 @@
+html.induction-button-html,
+html.induction-button-html body,
+html.induction-button-html #root {
+  height: 100%;
+  margin: 0;
+  background: #050505;
+}
+
+.induction-button-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #050505;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+html.induction-button-framed .induction-button-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.induction-button-page .shader-frame,
+.induction-button-page .threeui-background.shader-buttons {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.induction-button-page .threeui-background.shader-buttons iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

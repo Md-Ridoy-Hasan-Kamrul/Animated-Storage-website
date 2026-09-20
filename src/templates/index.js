@@ -86,6 +86,10 @@ import { meta as bloomOutlineButtonRectangleButtons } from './button/bloom-outli
 import { meta as playCircleLiquidMetalButton } from './button/play-circle-liquid-metal-button/meta';
 import { meta as signUpPillLiquidMetalButton } from './button/sign-up-pill-liquid-metal-button/meta';
 import { meta as liquidOrbLiquidMetalButton } from './button/liquid-orb-liquid-metal-button/meta';
+import { meta as starPortal } from './button/star-portal/meta';
+import { meta as ignitionButton } from './button/ignition-button/meta';
+import { meta as inductionButton } from './button/induction-button/meta';
+import { meta as plasmaButton } from './button/plasma-button/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -177,6 +181,10 @@ export const TEMPLATES = [
   playCircleLiquidMetalButton,
   signUpPillLiquidMetalButton,
   liquidOrbLiquidMetalButton,
+  starPortal,
+  ignitionButton,
+  inductionButton,
+  plasmaButton,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

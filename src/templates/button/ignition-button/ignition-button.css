@@ -1,0 +1,42 @@
+html.ignition-button-html,
+html.ignition-button-html body,
+html.ignition-button-html #root {
+  height: 100%;
+  margin: 0;
+  background: #121316;
+}
+
+.ignition-button-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #121316;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+html.ignition-button-framed .ignition-button-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.ignition-button-page .shader-frame,
+.ignition-button-page .threeui-background.shader-buttons {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #121316;
+}
+
+.ignition-button-page .threeui-background.shader-buttons iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

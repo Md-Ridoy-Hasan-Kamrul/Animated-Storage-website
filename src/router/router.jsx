@@ -278,6 +278,18 @@ const SignUpPillLiquidMetalButtonLive = lazy(
 const LiquidOrbLiquidMetalButtonLive = lazy(
   () => import('../templates/button/liquid-orb-liquid-metal-button/LivePage'),
 );
+const StarPortalLive = lazy(
+  () => import('../templates/button/star-portal/LivePage'),
+);
+const IgnitionButtonLive = lazy(
+  () => import('../templates/button/ignition-button/LivePage'),
+);
+const InductionButtonLive = lazy(
+  () => import('../templates/button/induction-button/LivePage'),
+);
+const PlasmaButtonLive = lazy(
+  () => import('../templates/button/plasma-button/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -1131,6 +1143,42 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <LiquidOrbLiquidMetalButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.STAR_PORTAL}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <StarPortalLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.IGNITION_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <IgnitionButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.INDUCTION_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <InductionButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.PLASMA_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <PlasmaButtonLive />
           </Suspense>
         }
       />
