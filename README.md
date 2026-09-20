@@ -69,8 +69,7 @@ This is an **enterprise-grade, production-ready React frontend application** bui
 | `react`            | ^18.2.0  | UI framework with concurrent features   |
 | `react-dom`        | ^18.2.0  | DOM renderer                            |
 | `react-router-dom` | ^7.13.0  | Declarative, type-safe routing          |
-| `@reduxjs/toolkit` | ^2.11.2  | Predictable global state management     |
-| `react-redux`      | ^9.2.0   | React bindings for Redux                |
+| `zustand`          | ^5.0.15  | Lightweight global state management     |
 | `axios`            | ^1.13.4  | HTTP client with interceptor support    |
 | `js-cookie`        | ^3.0.5   | Secure cookie management                |
 | `lucide-react`     | ^0.563.0 | Icon library (no emoji allowed)         |
@@ -145,8 +144,10 @@ Project/
 │   ├── router/
 │   │   └── router.jsx                # Centralized route definitions
 │   │
-│   ├── store/                        # Redux state management
-│   │   ├── store.js                  # Configured Redux store
+│   ├── store/                        # Zustand state management
+│   │   ├── authStore.js              # Auth store
+│   │   ├── themeStore.js             # Theme store
+│   │   ├── cartStore.js              # Cart store
 │   │   └── slices/
 │   │       ├── authSlice.js          # Auth state (login/logout/user)
 │   │       ├── themeSlice.js         # Theme state (dark/light)
@@ -182,7 +183,6 @@ Project/
 ├── .eslintrc.js                      # Airbnb ESLint rules
 ├── .prettierrc                       # Prettier formatting rules
 ├── README.md                         # This file — read before contributing
-├── REDUX_GUIDE.md                    # Redux patterns reference
 └── frontend-architecture.md         # Deep architecture documentation
 ```
 
