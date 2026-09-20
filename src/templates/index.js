@@ -90,6 +90,9 @@ import { meta as starPortal } from './button/star-portal/meta';
 import { meta as ignitionButton } from './button/ignition-button/meta';
 import { meta as inductionButton } from './button/induction-button/meta';
 import { meta as plasmaButton } from './button/plasma-button/meta';
+import { meta as tactileButton } from './button/tactile-button/meta';
+import { meta as rakingLightPill } from './button/raking-light-pill/meta';
+import { meta as thinkingButton } from './button/thinking-button/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -185,6 +188,9 @@ export const TEMPLATES = [
   ignitionButton,
   inductionButton,
   plasmaButton,
+  tactileButton,
+  rakingLightPill,
+  thinkingButton,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,

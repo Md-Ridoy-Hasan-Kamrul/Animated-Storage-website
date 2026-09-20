@@ -1,0 +1,42 @@
+html.tactile-button-html,
+html.tactile-button-html body,
+html.tactile-button-html #root {
+  height: 100%;
+  margin: 0;
+  background: #03090d;
+}
+
+.tactile-button-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  height: 100%;
+  background: #03090d;
+  color: rgba(224, 250, 255, 0.7);
+  overflow: hidden;
+}
+
+html.tactile-button-framed .tactile-button-page {
+  min-height: 100%;
+  height: 100%;
+}
+
+.tactile-button-page .shader-frame,
+.tactile-button-page .threeui-background.shader-buttons {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #03090d;
+}
+
+.tactile-button-page .threeui-background.shader-buttons iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

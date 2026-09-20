@@ -290,6 +290,15 @@ const InductionButtonLive = lazy(
 const PlasmaButtonLive = lazy(
   () => import('../templates/button/plasma-button/LivePage'),
 );
+const TactileButtonLive = lazy(
+  () => import('../templates/button/tactile-button/LivePage'),
+);
+const RakingLightPillLive = lazy(
+  () => import('../templates/button/raking-light-pill/LivePage'),
+);
+const ThinkingButtonLive = lazy(
+  () => import('../templates/button/thinking-button/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -1179,6 +1188,33 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <PlasmaButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.TACTILE_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <TactileButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.RAKING_LIGHT_PILL}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <RakingLightPillLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.THINKING_BUTTON}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <ThinkingButtonLive />
           </Suspense>
         }
       />
