@@ -299,6 +299,18 @@ const RakingLightPillLive = lazy(
 const ThinkingButtonLive = lazy(
   () => import('../templates/button/thinking-button/LivePage'),
 );
+const MatteRiseLive = lazy(
+  () => import('../templates/text-animation/matte-rise/LivePage'),
+);
+const GlitchFallLive = lazy(
+  () => import('../templates/text-animation/glitch-fall/LivePage'),
+);
+const RisoSweepLive = lazy(
+  () => import('../templates/text-animation/riso-sweep/LivePage'),
+);
+const HalftoneLoopLive = lazy(
+  () => import('../templates/text-animation/halftone-loop/LivePage'),
+);
 const JapaneseTowerLandscapeLive = lazy(
   () => import('../templates/background/japanese-tower-landscape/LivePage'),
 );
@@ -1215,6 +1227,42 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<PageLoader />}>
             <ThinkingButtonLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.MATTE_RISE}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <MatteRiseLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.GLITCH_FALL}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <GlitchFallLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.RISO_SWEEP}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <RisoSweepLive />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path={ROUTES.HALFTONE_LOOP}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <HalftoneLoopLive />
           </Suspense>
         }
       />

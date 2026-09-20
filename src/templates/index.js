@@ -93,6 +93,10 @@ import { meta as plasmaButton } from './button/plasma-button/meta';
 import { meta as tactileButton } from './button/tactile-button/meta';
 import { meta as rakingLightPill } from './button/raking-light-pill/meta';
 import { meta as thinkingButton } from './button/thinking-button/meta';
+import { meta as matteRise } from './text-animation/matte-rise/meta';
+import { meta as glitchFall } from './text-animation/glitch-fall/meta';
+import { meta as risoSweep } from './text-animation/riso-sweep/meta';
+import { meta as halftoneLoop } from './text-animation/halftone-loop/meta';
 import { meta as japaneseTowerLandscape } from './background/japanese-tower-landscape/meta';
 import { meta as chinaJapaneseTowerLandscape } from './background/china-japanese-tower-landscape/meta';
 import { meta as vietnamJapaneseTowerLandscape } from './background/vietnam-japanese-tower-landscape/meta';
@@ -116,6 +120,7 @@ export const ACTIVE_TEMPLATE_CATEGORIES = [
   'Hero',
   'Background',
   'Button',
+  'Text Animation',
   'Features',
   'SaaS',
   'Ecommerce',
@@ -191,6 +196,10 @@ export const TEMPLATES = [
   tactileButton,
   rakingLightPill,
   thinkingButton,
+  matteRise,
+  glitchFall,
+  risoSweep,
+  halftoneLoop,
   japaneseTowerLandscape,
   chinaJapaneseTowerLandscape,
   vietnamJapaneseTowerLandscape,
