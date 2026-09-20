@@ -3,6 +3,7 @@
  * One skill per component family — not per framework and not per card variant.
  */
 
+import { COMPLETE_SHELF_SKILL } from '../templates/landing-page/complete-shelf/sourceDocs';
 import { KAGE_SKILL } from '../templates/landing-page/kage/sourceDocs';
 import { SKETCHBOOK_SKILL } from '../templates/landing-page/sketchbook/sourceDocs';
 import { SUBLEVEL_STUDIO_SKILL } from '../templates/landing-page/sublevel-studio/sourceDocs';
@@ -84,6 +85,8 @@ Recreate the authored Thinking Button from the verified Neuform / ThreeUI source
   MengToSketchbookLandingPage: SKETCHBOOK_SKILL,
 
   SublevelStudioLandingPage: SUBLEVEL_STUDIO_SKILL,
+
+  CompleteShelfLandingPage: COMPLETE_SHELF_SKILL,
 };
 
 /**

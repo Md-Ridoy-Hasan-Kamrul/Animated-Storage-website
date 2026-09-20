@@ -13,6 +13,11 @@ import {
 } from '../constants';
 import { meta } from '../meta';
 import { COMPLETE_SHELF_PROMPT } from '../prompt';
+import { COMPLETE_SHELF_SKILL, COMPLETE_SHELF_USAGE } from '../sourceDocs';
+import {
+  buildCodeFetchCandidates,
+  resolveTemplateSourceDocs,
+} from '../../../../utils/resolveTemplateSourceDocs';
 
 describe('Working Volumes — Complete Shelf meta', () => {
   it('registers the Hero card Working Volumes', () => {
@@ -86,5 +91,23 @@ describe('Complete Shelf source contract', () => {
     expect(ASSET_MANIFEST.every((entry) => entry.path && entry.bytes && entry.sha256)).toBe(
       true,
     );
+  });
+
+  it('exposes Usage / Code / Skill.md for the details source panel', () => {
+    expect(meta.usage).toBe(COMPLETE_SHELF_USAGE);
+    expect(meta.usage).toContain('CompleteShelfLandingPage');
+    expect(meta.codeUrl).toBe(SOURCE_URL);
+    expect(meta.codeUrl).toBe('/landing-pages/complete-shelf-v2.html');
+    expect(meta.skill).toBe(COMPLETE_SHELF_SKILL);
+    expect(meta.skill).toContain('Build Complete Shelf');
+    expect(meta.skill).toContain('SHA-256 606f200fed86');
+    expect(meta.componentName).toBe('CompleteShelfLandingPage');
+
+    const docs = resolveTemplateSourceDocs(meta);
+    expect(docs.usage).toContain('CompleteShelfLandingPage');
+    expect(docs.skill).toContain('add-complete-shelf-landing-page');
+    expect(buildCodeFetchCandidates(meta)).toEqual([
+      '/landing-pages/complete-shelf-v2.html',
+    ]);
   });
 });

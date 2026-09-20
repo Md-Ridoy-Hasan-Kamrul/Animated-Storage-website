@@ -1,6 +1,7 @@
 import { ROUTES } from '../../../config';
 import { COMPLETE_SHELF_PROMPT } from './prompt';
-import { PREVIEW_STILL } from './constants';
+import { PREVIEW_STILL, SOURCE_URL } from './constants';
+import { COMPLETE_SHELF_SKILL, COMPLETE_SHELF_USAGE } from './sourceDocs';
 
 export const meta = {
   id: 'complete-shelf',
@@ -17,6 +18,11 @@ export const meta = {
     'Working Volumes bookshelf — seven tactile field guides with an editorial interface and interactive Three.js presentation.',
   previewImage: PREVIEW_STILL,
   previewGif: PREVIEW_STILL,
+  /** Details panel: Usage | Code | Skill.md (one Code source, not per-framework). */
+  componentName: 'CompleteShelfLandingPage',
+  usage: COMPLETE_SHELF_USAGE,
+  codeUrl: SOURCE_URL,
+  skill: COMPLETE_SHELF_SKILL,
 };
 
 export default meta;
