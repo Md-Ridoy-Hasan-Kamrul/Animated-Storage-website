@@ -6,6 +6,7 @@ import { getTemplateById, TEMPLATES } from '../data/templates';
 import { ROUTES } from '../config';
 import { useSEO } from '../hooks/useSEO';
 import TemplateCard from '../components/home/TemplateCard';
+import InstallationPanel from '../components/template-detail/InstallationPanel';
 import SourceDocsPanel from '../components/template-detail/SourceDocsPanel';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
@@ -92,24 +93,28 @@ const TemplateDetail = memo(() => {
         </button>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.7fr)] lg:items-start">
-          <div className="overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0C0C0C]">
-            <div className="relative h-[min(72vh,640px)] overflow-hidden">
-              <iframe
-                title={`${template.title} live preview`}
-                src={template.livePath}
-                allow="autoplay; fullscreen"
-                className="absolute inset-0 h-full w-full border-0"
-              />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black via-black/70 to-transparent px-4 py-4 text-sm text-white">
-                <span className="text-zinc-300">Live preview — scroll inside</span>
-                <Link
-                  to={template.livePath}
-                  className="pointer-events-auto rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black"
-                >
-                  Open full page
-                </Link>
+          <div className="flex min-w-0 flex-col gap-6">
+            <div className="overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0C0C0C]">
+              <div className="relative h-[min(72vh,640px)] overflow-hidden">
+                <iframe
+                  title={`${template.title} live preview`}
+                  src={template.livePath}
+                  allow="autoplay; fullscreen"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black via-black/70 to-transparent px-4 py-4 text-sm text-white">
+                  <span className="text-zinc-300">Live preview — scroll inside</span>
+                  <Link
+                    to={template.livePath}
+                    className="pointer-events-auto rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black"
+                  >
+                    Open full page
+                  </Link>
+                </div>
               </div>
             </div>
+
+            <InstallationPanel templateId={template.id} />
           </div>
 
           <aside className="flex flex-col gap-5 rounded-2xl border border-white/[0.06] bg-[#111] p-5 sm:p-6">
