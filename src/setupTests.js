@@ -9,7 +9,20 @@ if (typeof global.TextDecoder === 'undefined') {
   global.TextDecoder = TextDecoder;
 }
 
-// Mock window.matchMedia — not implemented in JSDOM but referenced by dark-mode logic
+// JSDOM has no IntersectionObserver — TactileButton and several effects use it.
+if (typeof global.IntersectionObserver === 'undefined') {
+  global.IntersectionObserver = class IntersectionObserver {
+    observe() {}
+
+    unobserve() {}
+
+    disconnect() {}
+
+    takeRecords() {
+      return [];
+    }
+  };
+}
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: (query) => ({
