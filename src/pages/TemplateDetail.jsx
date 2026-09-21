@@ -8,6 +8,7 @@ import { useSEO } from '../hooks/useSEO';
 import TemplateCard from '../components/home/TemplateCard';
 import InstallationPanel from '../components/template-detail/InstallationPanel';
 import SourceDocsPanel from '../components/template-detail/SourceDocsPanel';
+import TactileButton from '../components/ui/TactileButton';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
 
 const COPY_ICON_SIZE = 20;
@@ -86,12 +87,13 @@ const TemplateDetail = memo(() => {
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black via-black/70 to-transparent px-4 py-4 text-sm text-white">
                   <span className="text-zinc-300">Live preview — scroll inside</span>
-                  <Link
+                  <TactileButton
                     to={template.livePath}
-                    className="pointer-events-auto rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-black"
+                    size="sm"
+                    className="pointer-events-auto"
                   >
                     Open full page
-                  </Link>
+                  </TactileButton>
                 </div>
               </div>
             </div>
@@ -112,14 +114,10 @@ const TemplateDetail = memo(() => {
               <span>{template.likes.toLocaleString()} likes</span>
             </div>
 
-            <button
-              type="button"
-              onClick={copyPrompt}
-              className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[15px] font-semibold text-black transition-transform hover:scale-[1.01] active:scale-[0.99]"
-            >
+            <TactileButton onClick={copyPrompt} size="lg">
               <Copy size={COPY_ICON_SIZE} strokeWidth={1.75} />
               Copy full prompt
-            </button>
+            </TactileButton>
 
             <SourceDocsPanel template={template} />
 

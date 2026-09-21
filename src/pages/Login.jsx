@@ -15,6 +15,7 @@ import {
   Eye,
   EyeOff,
 } from 'lucide-react';
+import TactileButton from '../components/ui/TactileButton';
 
 const FEATURES = [
   { icon: BarChart3, label: 'Real-time analytics & reporting' },
@@ -230,18 +231,14 @@ const Login = () => {
                 )}
               </div>
 
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-orange-600 hover:bg-orange-500 disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-orange-600/25 hover:shadow-orange-500/35 hover:-translate-y-0.5"
-              >
+              <TactileButton type="submit" disabled={isLoading} size="lg">
                 {isLoading ? (
-                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#e0faff] border-t-transparent" />
                 ) : (
                   <LogIn size={18} aria-hidden="true" />
                 )}
                 {isLoading ? 'Signing in…' : 'Sign In to Dashboard'}
-              </button>
+              </TactileButton>
             </form>
 
             <p className="text-center text-xs text-gray-400 mt-6">

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TactileButton from "./ui/TactileButton";
 
 function reportError(error, errorInfo) {
   if (process.env.NODE_ENV !== "production") {
@@ -58,12 +59,9 @@ class ErrorBoundary extends Component {
               </pre>
             )}
             <div className="flex gap-3 justify-center">
-              <button
-                onClick={this.handleReset}
-                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
-              >
+              <TactileButton onClick={this.handleReset} size="md">
                 Try Again
-              </button>
+              </TactileButton>
               <button
                 onClick={() => window.location.reload()}
                 className="bg-gray-200 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-300 transition"

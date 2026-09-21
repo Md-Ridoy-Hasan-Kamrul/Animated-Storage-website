@@ -5,6 +5,7 @@ import {
   GALLERY_PREVIEW_NOTICE_STORAGE_KEY,
 } from './galleryPreviewNoticeCopy';
 import './galleryPreviewNotice.css';
+import TactileButton from '../ui/TactileButton';
 
 function readDismissed() {
   try {
@@ -79,14 +80,15 @@ export function GalleryPreviewNotice() {
             <li key={step}>{step}</li>
           ))}
         </ol>
-        <button
+        <TactileButton
           ref={buttonRef}
           type="button"
-          className="gallery-preview-notice__button"
+          size="lg"
+          className="mt-7"
           onClick={dismiss}
         >
           {GALLERY_PREVIEW_NOTICE.buttonLabel}
-        </button>
+        </TactileButton>
       </div>
     </div>
   );

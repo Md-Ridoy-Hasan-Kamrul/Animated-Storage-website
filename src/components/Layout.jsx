@@ -5,6 +5,7 @@ import { ROUTES } from '../config';
 import { KmotionLogoLink } from './KmotionLogo';
 import { useResponsiveLayout } from '../hooks/useResponsiveLayout';
 import GalleryPreviewNotice from './welcome/GalleryPreviewNotice';
+import TactileButton from './ui/TactileButton';
 
 const NAV_LINKS = [
   { label: 'MCP', badge: 'NEW', href: '#' },
@@ -113,12 +114,9 @@ const Layout = memo(() => {
             </button>
 
             {showCtaInHeader ? (
-              <button
-                type="button"
-                className="hidden cursor-pointer rounded-full bg-white px-3 py-1.5 text-[12px] font-semibold text-black transition-transform hover:scale-[1.02] active:scale-[0.98] sm:inline-flex md:px-4 md:text-[13px]"
-              >
-                Get for free
-              </button>
+              <span className="hidden sm:inline-flex">
+                <TactileButton size="sm">Get for free</TactileButton>
+              </span>
             ) : null}
 
             <button
@@ -164,12 +162,9 @@ const Layout = memo(() => {
                   ) : null}
                 </Link>
               ))}
-              <button
-                type="button"
-                className="mt-2 cursor-pointer rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black"
-              >
+              <TactileButton size="md" className="mt-2 w-full">
                 Get for free
-              </button>
+              </TactileButton>
             </nav>
           </div>
         ) : null}

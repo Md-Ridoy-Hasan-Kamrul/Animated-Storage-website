@@ -3,6 +3,7 @@ import { useApi } from '../../hooks/useApi';
 import toast from 'react-hot-toast';
 import { httpMethods } from '../../services/httpMethods';
 import { API_ENDPOINTS } from '../../services/httpEndpoint';
+import TactileButton from '../ui/TactileButton';
 
 const ContactForm = memo(() => {
   const [formData, setFormData] = useState({
@@ -106,13 +107,9 @@ const ContactForm = memo(() => {
           disabled={isSubmitting}
         />
       </div>
-      <button
-        type='submit'
-        className='w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition font-semibold disabled:opacity-50 disabled:cursor-not-allowed'
-        disabled={isSubmitting}
-      >
+      <TactileButton type="submit" disabled={isSubmitting} size="lg">
         {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
+      </TactileButton>
     </form>
   );
 });
