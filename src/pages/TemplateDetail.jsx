@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useMemo, useState } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Copy, Heart, Package } from 'lucide-react';
+import { ArrowLeft, Copy, Heart } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { getTemplateById, TEMPLATES } from '../data/templates';
 import { ROUTES } from '../config';
@@ -9,7 +9,6 @@ import TemplateCard from '../components/home/TemplateCard';
 import InstallationPanel from '../components/template-detail/InstallationPanel';
 import SourceDocsPanel from '../components/template-detail/SourceDocsPanel';
 import { copyTextToClipboard } from '../utils/copyTextToClipboard';
-import { KMOTION_PACKAGE, KMOTION_STACKS, getKmotionNpmSnippet } from '../utils/kmotionNpmSnippet';
 
 const COPY_ICON_SIZE = 20;
 
@@ -30,12 +29,6 @@ const TemplateDetail = memo(() => {
     description: template?.description || 'Free animated template prompt',
   });
 
-  const [npmStack, setNpmStack] = useState('react');
-  const npmSnippet = useMemo(
-    () => (template ? getKmotionNpmSnippet(template.id, npmStack) : ''),
-    [template, npmStack],
-  );
-
   const copyPrompt = useCallback(async () => {
     if (!template?.fullPrompt) {
       toast.error('Prompt missing');
@@ -48,17 +41,6 @@ const TemplateDetail = memo(() => {
       toast.error('Copy failed');
     }
   }, [template]);
-
-  const copyNpm = useCallback(async () => {
-    if (!npmSnippet) return;
-    try {
-      await copyTextToClipboard(npmSnippet);
-      const stackLabel = KMOTION_STACKS.find((s) => s.id === npmStack)?.label || 'npm';
-      toast.success(`${stackLabel} npm snippet copied`);
-    } catch {
-      toast.error('Copy failed');
-    }
-  }, [npmSnippet, npmStack]);
 
   const goBackToCategory = useCallback(() => {
     const slug = template?.categorySlug;
@@ -141,51 +123,9 @@ const TemplateDetail = memo(() => {
 
             <SourceDocsPanel template={template} />
 
-            <div className="flex flex-col gap-3">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-zinc-500">
-                Kmotion Preview npm
-              </p>
-              <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Preview framework">
-                {KMOTION_STACKS.map(({ id: stackId, label }) => {
-                  const selected = npmStack === stackId;
-                  return (
-                    <button
-                      key={stackId}
-                      type="button"
-                      role="tab"
-                      aria-selected={selected}
-                      onClick={() => setNpmStack(stackId)}
-                      className={
-                        selected
-                          ? 'cursor-pointer rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-black'
-                          : 'cursor-pointer rounded-full border border-white/10 px-3 py-1 text-[12px] font-medium text-zinc-400 transition-colors hover:border-white/20 hover:text-white'
-                      }
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
-
-              <button
-                type="button"
-                onClick={copyNpm}
-                className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                <Package size={COPY_ICON_SIZE} strokeWidth={1.75} />
-                Copy {KMOTION_STACKS.find((s) => s.id === npmStack)?.label} npm
-              </button>
-
-              <pre className="overflow-x-auto rounded-xl bg-black/50 px-3.5 py-3 text-[11px] leading-relaxed text-zinc-400">
-                {npmSnippet}
-              </pre>
-            </div>
-
             <p className="text-[12px] leading-relaxed text-zinc-500">
-              Three ways to use this card: copy the full prompt; copy Usage / Code / Skill.md from
-              the source panel (one Code source — not per framework); or install{' '}
-              <code className="text-zinc-300">{KMOTION_PACKAGE}</code> and pick React, Vue, Svelte,
-              Solid, or JS for the Preview embed.
+              Copy the full prompt, or copy Usage / Code / Skill.md from the source panel. Install
+              and the framework import are under the preview.
             </p>
           </aside>
         </div>
